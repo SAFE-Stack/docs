@@ -1,0 +1,31 @@
+# Project information
+site_name: SAFE Documentation
+site_description: Documentation for SAFE
+site_author: SAFE Stack
+site_url: http://safe-stack.github.io/docs/
+
+# Repository
+repo_name: SAFE-Stack/docs
+repo_url: https://github.com/SAFE-Stack/docs
+theme:
+  name: 'material'
+  custom_dir: 'theme'
+  palette:
+    primary: 'orange'
+    accent: 'blue'
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/SAFE-Stack'
+    - type: 'twitter'
+      link: 'https://twitter.com/safe_stack'
+    - type: globe
+      link: https://safe-stack.github.io/
+
+pages:
+- Home: 'index.md'
+- Introduction: 'intro.md'
+- Getting up and running: 'gettingstarted.md'
+- SAFE Stack overview : 'overview.md'
+- Mobile SAFE: 'mobile.md'
