@@ -1,15 +1,13 @@
 # Introduction
 
 ## What is SAFE?
-The SAFE stack is a flexible end-to-end, functional-first stack for cloud-ready web development that emphasizes type-safe programming. The SAFE stack allows you to develop client/server web applications almost *entirely* in F#, without needing to compromise and shoehorn your codebase into an object-oriented framework or library, or needing to be an expert in CSS or HTML.
+The SAFE stack is a flexible end-to-end, functional-first stack for cloud-ready web development that emphasizes type-safe programming.
 
-## What are the SAFE components?
-The SAFE stack is comprised of four main components:
+The SAFE stack allows you to develop client/server web applications almost *entirely* in [F#](https://www.microsoft.com/net/learn/languages/fsharp/), without needing to compromise and shoehorn your codebase into an object-oriented framework or library, and without needing you to be an expert in CSS or HTML to create compelling, rich client-side web applications.
 
-### Saturn
-The Saturn framework builds on top of Giraffe, which itself models itself on the Suave programming model. Saturn (and Giraffe) provides a flexible web programming framework built on top of ASP .NET Core - a high performance, rock-solid web server. Saturn and Giraffe can host RESTful API endpoints, or drive static websites, or server-generated content, all inside an easy-to-learn functional programming model.
-### Azure
-### Fable
-### Elmish
+The SAFE stack is made up of four components:
 
-## Is SAFE a prescriptive stack?
+* A **web server** running on .NET Core for hosting back-end services in F#
+* A **hosting platform** that provides simple, scalable deployment models plus associated platform services for application developers
+* A mechanism to run F# in the web browser for **client-side delivery of F#**
+* An F# programming model for **client-side user interfaces**
