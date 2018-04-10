@@ -26,6 +26,6 @@ extra:
 pages:
 - Home: 'index.md'
 - Introduction: 'intro.md'
+- SAFE Stack Overview : 'overview.md'
 - Quick Start: 'quickstart.md'
-- SAFE Stack overview : 'overview.md'
-- Mobile SAFE: 'mobile.md'
+- Learning Resources: 'learning.md'
