@@ -1,4 +1,3 @@
-# SAFE Stack overview
 The SAFE acronym is made up of four separate components:
 
 * **S**aturn for back-end services in F#

@@ -1,5 +1,3 @@
-# Introduction
-
 ## What is SAFE?
 The SAFE stack is an **open-source, free, flexible** end-to-end, **functional-first** stack for **cloud-ready web applications** that emphasizes **type-safe programming**.
 

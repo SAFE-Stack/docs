@@ -1,4 +1,3 @@
-# Quick start
 This page provides some basic guidance on getting up and running with your first SAFE application.
 
 ## Install pre-requisites

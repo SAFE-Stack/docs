@@ -1,4 +1,3 @@
-# Learning more about SAFE
 This section contains useful repositories that allow you to learn more about the SAFE stack, at your own pace.
 
 ## SAFE Dojo
