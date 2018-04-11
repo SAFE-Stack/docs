@@ -20,7 +20,7 @@ extra:
       link: 'https://github.com/SAFE-Stack'
     - type: 'twitter'
       link: 'https://twitter.com/safe_stack'
-    - type: globe
+    - type: 'globe'
       link: https://safe-stack.github.io/
 
 pages:
