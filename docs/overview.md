@@ -5,6 +5,8 @@ The SAFE acronym is made up of four separate components:
 * **F**able for running F# in the web browser
 * **E**lmish for client-side user interfaces
 
+![](img/safe-1.png)
+
 ## [Saturn](https://saturnframework.github.io/docs/)
 The [Giraffe](https://github.com/giraffe-fsharp/Giraffe) framework provides an F#-friendly, flexible pipeline for creating server-side web applications, built on top of ASP .NET Core - a high performance, rock-solid web server. The Saturn library builds on top of this solid foundation, and provides a set of *optional* abstractions which make configuring web applications and constructing complex routes extremely easy to achieve.
 

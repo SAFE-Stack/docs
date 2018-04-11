@@ -1,3 +1,1 @@
-# Feedback & Testimonials
-
 Please feel free to submit a PR to add testimonials to this page!
