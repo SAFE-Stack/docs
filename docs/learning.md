@@ -2,8 +2,6 @@ This section contains useful repositories that allow you to learn more about the
 
 ## Tutorials
 
-### [Client Server communication in SAFE](client-server.md)
-
 ### [SAFE Dojo](https://github.com/CompositionalIT/SAFE-Dojo/) 
 This dojo is a guided set of tasks designed to give you hands-on experience with the client and server components of the SAFE stack. You'll create server-side routes, client side UI and shared validation logic as you create a mashup application to provide details on UK locations.
 
