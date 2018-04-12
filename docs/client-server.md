@@ -30,26 +30,28 @@ You can also share code using the same mechanism. This is extremely useful for e
 Fable will translate your functions into native Javascript, and will even translate many calls to the .NET BCL into javascript! You can read more about this [on the Fable website](http://fable.io/docs/compatibility.html).
 
 ## Sharing Data
-Sharing data can be achieved in two main ways in SAFE: through **raw HTTP methods**, such as GET and POST etc., or via the **Fable.Remoting** package.
+Sharing data can be achieved in two main ways in SAFE: through the [Saturn](https://saturnframework.github.io/docs/) API directly, or via the [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) library.
 
-### Sharing using raw HTTP
-Sharing data using raw HTTP methods is very simple. Start by creating a function in your server that returns some data:
+### Sharing data with Saturn
+Sharing data using Saturn is very simple. Start by creating a function in your server that returns some data:
 
 ```fsharp
 let loadCustomersFromDb() =
     [ { Name = "Joe Bloggs" } ]
 ```
 Next, create a method which returns the data as JSON within Giraffe's HTTP context.
+
 ```fsharp
 /// Returns the results of loadCustomersFromDb as JSON.
 let getCustomers next ctx =
     json (loadCustomersFromDb()) next ctx
 ```
+
 You can opt to combine both of the above functions into one, depending on your preferences, but it's often good practice to separate your data access from serving data in HTTP endpoints.
 
-Also note the `next` and `ctx` arguments. These are used by Giraffe as part of its HTTP pipeline and are required by the `json` function.
+Also note the `next` and `ctx` arguments. These are used by Giraffe as part of its [HTTP pipeline](https://github.com/giraffe-fsharp/Giraffe/blob/master/DOCUMENTATION.md#fundamentals) and are required by the `json` function.
 
-Now expose the api method using Saturn's `scope` construct and add the scope to your overall application scope:
+Now expose the api method using [Saturn's](https://saturnframework.github.io/docs/api/scope/) `scope` construct and add the scope to your overall application scope:
 ```fsharp
 let myApis = scope {
     get "api/customers/" getCustomers
@@ -81,7 +83,7 @@ If you are using the dotnet SAFE Template, this will automatically be done for y
 ### Sharing data using Fable.Remoting
 As an alternative to raw HTTP, you can also use the [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) library, which provides an RPC-style mechanism for calling server endpoints.
 
-In our case, instead of creating a `scope { }` on the server and using `fetch` on the client, you create a simple protocol which contains methods exposed by the server:
+In our case, instead of creating a `scope { }` on the server and using `fetch` on the client, you create a simple *protocol* which contains methods exposed by the server:
 
 ```fsharp
 type ICustomer = {
