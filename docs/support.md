@@ -14,4 +14,4 @@ Lambda Factory is a consulting company specializing in designing and building co
 The SAFE stack was written largely by the community as open source projects, such as Saturn, Giraffe, Fable and Elmish (as well as the alternative elements within the stack). All those teams are always happy to contribute and help out.
 
 ## Social
-You can also reach out to the SAFE team on @safe_stack or on the regular F# channels on Slack: either the official F# Foundation or on the Functional Programming Slack. We'll be expanding this over time. 
+You can also reach out to the SAFE team on [@safe_stack](https://twitter.com/safe_stack) or on the regular F# channels on Slack: either the official [F# Foundation Slack](https://fsharp.slack.com/messages/C04C6V0JH/?) or on the [Functional Programming Slack](https://functionalprogramming.slack.com/messages/C045LHLTH/). We'll be expanding this over time. 
