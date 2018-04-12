@@ -16,7 +16,7 @@ Reference this file to your server project. You can now reference those types in
 <Project Sdk="Microsoft.NET.Sdk">
     ...
     <ItemGroup>
-    <Compile Include="../Shared/Shared.fs" />
+        <Compile Include="../Shared/Shared.fs" />
     </ItemGroup>
     ...
 </Project>
