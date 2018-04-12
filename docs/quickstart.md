@@ -23,3 +23,5 @@ You'll also want an IDE to create F# applications. We recommend one of the follo
 5. Enter `build.cmd run` (Windows) or `./build.sh run` (Linux / OSX)
 
 Congratulations! After a short delay, you'll be presented with a SAFE application running in your browser!
+
+Tip: Take a look at the [template options](https://github.com/SAFE-Stack/SAFE-template#template-options). There are many predefined options to choose from, like server technology or client/server communication technology.
