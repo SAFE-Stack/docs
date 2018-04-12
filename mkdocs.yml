@@ -28,6 +28,8 @@ pages:
 - Introduction: 'intro.md'
 - SAFE Stack Overview : 'overview.md'
 - Quick Start: 'quickstart.md'
-- Learning Resources: 'learning.md'
+- Learn about SAFE:
+  - 'Client Server communication' : 'client-server.md'
+  - 'Learning Resources': 'learning.md'
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'
