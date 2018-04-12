@@ -79,5 +79,32 @@ By default, serialization between Fable and Giraffe **is not compatible**. In or
 If you are using the dotnet SAFE Template, this will automatically be done for you - see the `config` function in `Server.fs`.
 
 ### Sharing data using Fable.Remoting
+As an alternative to raw HTTP, you can also use the [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) library, which provides an RPC-style mechanism for calling server endpoints.
+
+In our case, instead of creating a `scope { }` on the server and using `fetch` on the client, you create a simple protocol which contains methods exposed by the server:
+
+```fsharp
+type ICustomer = {
+    customers : unit -> Async<Customer array>
+}
+
+let server : ICustomer = {
+    customers = fun () -> async { return loadCustomersFromDb() }
+}
+```
+On the client, you need only create a proxy for the protocol and then can call methods on it directly.
+
+```fsharp
+async {
+    let server = Proxy.remoting<ICustomer> {()}
+    let! customers = server.customers()
+    /// ...
+}
+```
+
+Notice here, there is no need to create routes, or worry about HTTP verbs, or even involve yourself with the Giraffe pipeline.
 
 ### When should I use raw HTTP vs Fable Remoting?
+Fable Remoting provides an excellent way to quickly get up and running with the SAFE stack. You can rapidly create contracts between client / server and have guaranteed contracts between both client and server. If you're using a "closed" app without exposing an API to other consumers, and do not need close control of the HTTP channel, consider using Fable.Remoting.
+
+The raw HTTP model with `scope { }` requires you to construct routes manually and does not guarantee that the client and endpoint have the same contract (you have to specify it on both sides yourself), but gives you total control over the routing and verbs used. If you have a public API that is exposed not just to your own application but to third-parties, or you need more fine grained control over your routes and data, you should stick with this approach.
