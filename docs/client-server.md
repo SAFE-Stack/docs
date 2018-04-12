@@ -54,14 +54,14 @@ Also note the `next` and `ctx` arguments. These are used by Giraffe as part of i
 Now expose the api method using [Saturn's](https://saturnframework.github.io/docs/api/scope/) `scope` construct and add the scope to your overall application scope:
 ```fsharp
 let myApis = scope {
-    get "api/customers/" getCustomers
+    get "/api/customers/" getCustomers
 }
 ```
 
 For simple endpoints you may elect to embed the API call directly in the scope (and use partial application to omit the `next` and `ctx` arguments):
 ```fsharp
 let myApis = scope {
-    get "/customers/" (json (loadCustomersFromDb()))
+    get "/api/customers/" (json (loadCustomersFromDb()))
 }
 ```
 
