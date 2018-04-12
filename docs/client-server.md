@@ -1,18 +1,17 @@
 One of SAFE's best features is the ability to share **data**, **types** and **code** across client and server. This page illustrates the different ways this can be achieved.
 
 ## Sharing Types
-Sharing your domain types and contracts between client and server is extremely simple. Thanks to Fable's excellent F# transpilation into Javascript, you can use all standard F# language features such as Records, Tuples and Discriminated Unions without worry.
-
-To share types across both your client and server project:
-
-* Create a file in your repository called e.g `Shared.fs`.
+Sharing your domain types and contracts between client and server is extremely simple. Thanks to Fable's excellent F# transpilation into Javascript, you can use all standard F# language features such as Records, Tuples and Discriminated Unions without worry. To share types across both your client and server project, first create a file in your repository called e.g `Shared.fs`.
 ![](img\client-server-01.png)
-* Create types in the file as needed e.g
+
+Then, create types in the file as needed e.g
 
 ```fsharp
 type Customer = { Name : string }
 ```
-* Reference this file to your server project. You can now reference those types in the server.
+
+Reference this file to your server project. You can now reference those types in the server.
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
     ...
@@ -22,7 +21,8 @@ type Customer = { Name : string }
     ...
 </Project>
 ```
-* Reference this file to your client project (as above). You can now reference those types in the client; types will be compiled into Javascript types and seamlessly translated for you.
+
+Finally, reference this file to your client project (as above). You can now reference those types in the client; types will be compiled into Javascript types and seamlessly translated for you.
 
 ## Sharing Code
 You can also share code using the same mechanism. This is extremely useful for e.g shared validation or business logic that needs to occur on both client and server.
@@ -33,24 +33,23 @@ Fable will translate your functions into native Javascript, and will even transl
 Sharing data can be achieved in two main ways in SAFE: through **raw HTTP methods**, such as GET and POST etc., or via the **Fable.Remoting** package.
 
 ### Sharing using raw HTTP
-Sharing data using raw HTTP methods is very simple:
+Sharing data using raw HTTP methods is very simple. Start by creating a function in your server that returns some data:
 
-* Create a function in your server that returns some data.
 ```fsharp
 let loadCustomersFromDb() =
     [ { Name = "Joe Bloggs" } ]
 ```
-* Create a method which returns the data as JSON within Giraffe's HTTP context.
+Next, create a method which returns the data as JSON within Giraffe's HTTP context.
 ```fsharp
-/// Returns the returns of loadCustomersFromDb as JSON.
+/// Returns the results of loadCustomersFromDb as JSON.
 let getCustomers next ctx =
     json (loadCustomersFromDb()) next ctx
 ```
-You can opt to combine both functions above into one, depending on your preferences. It's often good practice to separate your data access from serving data in HTTP endpoints, as shown here.
+You can opt to combine both of the above functions into one, depending on your preferences, but it's often good practice to separate your data access from serving data in HTTP endpoints.
 
 Also note the `next` and `ctx` arguments. These are used by Giraffe as part of its HTTP pipeline and are required by the `json` function.
 
-* Expose the api method using Saturn's `scope` construct and add the scope to your overall application scope:
+Now expose the api method using Saturn's `scope` construct and add the scope to your overall application scope:
 ```fsharp
 let myApis = scope {
     get "api/customers/" getCustomers
@@ -64,7 +63,7 @@ let myApis = scope {
 }
 ```
 
-* Call the endpoint from your client application.
+Finally, call the endpoint from your client application.
 ```fsharp
 promise {    
     let! customers = Fetch.fetchAs<Customer array> (sprintf "api/customers") []
@@ -73,6 +72,11 @@ promise {
 ```
 
 Note the use of the `promise { }` computation expression. This functions like `async { }` blocks that you already know, whilst the `fetchAs` function automatically deserializes the JSON back into a `Customer` array.
+
+#### Turning on Fable's JSON Converter
+By default, serialization between Fable and Giraffe **is not compatible**. In order to fix this, you must replace the JSON converter in Giraffe with Fable's own `IJsonSerializer`.
+
+If you are using the dotnet SAFE Template, this will automatically be done for you - see the `config` function in `Server.fs`.
 
 ### Sharing data using Fable.Remoting
 
