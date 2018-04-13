@@ -7,7 +7,7 @@ This dojo is a guided set of tasks designed to give you hands-on experience with
 
 The dojo takes around 90 minutes to complete if you have never worked with the stack before.
 
-## Samples
+## SAFE Samples
 The following example repositories (and more!) can be found in the official [SAFE Stack](https://github.com/SAFE-Stack) organisational GitHub page.
 
 ### [SAFE Bookstore](https://github.com/SAFE-Stack/SAFE-BookStore) 
@@ -24,3 +24,9 @@ This application is a real-time chat application built on SAFE that uses the [AK
 
 ### [SAFE Nightwatch](https://github.com/SAFE-Stack/SAFE-Nightwatch)
 This application is a sample mobile application using the [React Native](https://facebook.github.io/react-native/) library, built on top of the SAFE stack. React Native permits a very similar programming when writing SAFE applications as browser applications, so the experience should be very familiar to you.
+
+## Videos
+
+* [SAFE apps with F# web stack](https://skillsmatter.com/skillscasts/11308-safe-apps-with-f-web-stack) at F# Exchange 2018 (Tomasz Heimowski)
+
+## Other Resources

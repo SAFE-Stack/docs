@@ -2,7 +2,7 @@ The [SAFE Template](https://github.com/SAFE-Stack/SAFE-template) is a [dotnet CL
 
 The template gets you up and running with 3 core components of the stack:
 
-* [Saturn](https://saturnframework.github.io/docs/), [Giraffe](https://github.com/giraffe-fsharp/Giraffe) or [Suave](https://suave.io/).
+* [Saturn](https://saturnframework.github.io/docs/), [Giraffe](https://github.com/giraffe-fsharp/Giraffe) or [Suave](https://suave.io/)
 * [Fable](http://fable.io/)
 * [Elmish](https://fable-elmish.github.io/elmish/)
 
@@ -30,7 +30,7 @@ Where `<server>` is one of:
 
 Usage: `dotnet new SAFE --Fulma <template>`
 
-Where `template` is one of:
+Where `<template>` is one of:
 
 * `none`: don't add Fulma bindings at all
 * `basic`: adds Fulma basic template
