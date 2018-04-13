@@ -1,4 +1,3 @@
-## What is Hot Module Replacement?
 Hot Module Replacement (HMR) allows to update the UI of an application while it is running, without a full reload. In SAFE stack apps, this can dramatically speed up the development for web and mobile GUIs, since there is no need to "stop" and "reload" and application. Instead, you can make changes to your views and have them immediately update in the browser, without the need to restart the application.
 
 ## How does it work?
