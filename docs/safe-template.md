@@ -6,7 +6,7 @@ The template gets you up and running with 3 core components of the stack:
 * [Fable](http://fable.io/)
 * [Elmish](https://fable-elmish.github.io/elmish/)
 
-*Currently, the template does not include any Azure / other Cloud integration except Docker deployment. Refer to the [SAFE-Bookstore](https://github.com/SAFE-Stack/SAFE-BookStore) repository for an example that uses Azure Table Storage.*
+*Currently, the template does not include any Azure / other Cloud integration except Docker deployment. Refer to the [SAFE-Bookstore](https://github.com/SAFE-Stack/SAFE-BookStore) repository for an example that uses Azure Table Storage. We're working on improving this to include standard Azure dependencies and other deployment mechanisms.*
 
 ## Using the template
 Refer to the [Quick Start guide](quickstart.md#create-your-first-safe-app) to see basic guidance on how to use the template.
