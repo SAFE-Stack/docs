@@ -21,6 +21,8 @@ Fable is an F# to JavaScript compiler powered by Babel, designed to produce read
 ## [Elmish](https://fable-elmish.github.io/elmish/)
 The Elmish model allows you to construct user interfaces running in the browser using a functional programming model. Modelled on the Elm application model, Elmish uses the Model-View-Update paradigm to allow you to write applications that are simple to reason about. Elmish sits on top of the [React](https://reactjs.org/) framework.
 
+Please also feel free to read this [blog series](https://compositional-it.com/blog/2017/09-22-safe-release/index.html) on the Compositional IT website for more details on the history of SAFE.
+
 ## Are there alternative components in the SAFE stack?
 Yes, absolutely. The above components are what we recommended as the default SAFE stack, but you can of course replace the components with alternatives as you see fit. Here are some examples:
 
