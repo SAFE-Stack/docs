@@ -6,8 +6,6 @@ React's bundle code will be downloaded asynchronously and when then download com
 
 In the JavaScript ecosystem this is also as known as "isomorphic app" or "universal app".
 
-In SAFE stack Server-Side Rendering can be done with [fable-react](https://github.com/fable-compiler/fable-react).
-
 ### Why using SSR?
 
 #### Pros
@@ -20,3 +18,12 @@ In SAFE stack Server-Side Rendering can be done with [fable-react](https://githu
 * Some development constraints. Browser-specific code needs compiler directives to be ignored when running on the server.
 * Build and deployment processes will become more complicated.
 * More server-side load.
+
+## Server-Side Rendering in SAFE stack
+
+In SAFE stack Server-Side Rendering can be done with [fable-react](https://github.com/fable-compiler/fable-react). It's approach is a little different from those you might have seen in the JavaScript ecosysten, it is a pure F# approach. You can render your [Elmish](https://github.com/fable-elmish/elmish) views directly on .NET Core, with all benefits of the .NET Core runtime.
+
+## Further reading
+
+* For more details can be found in the [SSR tutorial](https://github.com/fable-compiler/fable-react/blob/master/docs/server-side-rendering.md)
+* The [SAFE-BookStore](https://github.com/SAFE-Stack/SAFE-BookStore) sample project uses SSR
