@@ -1,7 +1,7 @@
 ## What is SAFE?
 The SAFE stack is an **open-source, free, flexible** end-to-end, **functional-first** stack for **cloud-ready web applications** that emphasizes **type-safe programming**.
 
-The SAFE stack allows you to **develop client/server web applications almost entirely in [F#](https://www.microsoft.com/net/learn/languages/fsharp/)**, without needing to compromise and shoehorn your codebase into an object-oriented framework or library, and without needing you to be an expert in CSS or HTML to create compelling, rich client-side web applications.
+The SAFE stack allows you to **develop web applications** almost entirely in [F#](https://www.microsoft.com/net/learn/languages/fsharp/), without needing to compromise and shoehorn your codebase into an object-oriented framework or library, and without needing you to be an expert in CSS or HTML to create compelling, rich client-side web applications.
 
 The SAFE stack is made up of four components:
 
