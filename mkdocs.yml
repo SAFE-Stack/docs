@@ -33,6 +33,7 @@ pages:
   - 'SAFE Stack Overview' : 'overview.md'
   - 'Client Server communication' : 'client-server.md'
   - 'Server Side rendering' : 'server-side-rendering.md'
+  - 'Hot Module Replacment' : 'hot-module-replacement.md'
   - 'Learning Resources': 'learning.md'
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'
