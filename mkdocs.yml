@@ -26,7 +26,9 @@ extra:
 pages:
 - Home: 'index.md'
 - Introduction: 'intro.md'
-- Quick Start: 'quickstart.md'
+- Getting Started:
+  - 'Quick Start': 'quickstart.md'
+  - 'The SAFE template': 'safe-template.md'
 - Learn about SAFE:
   - 'SAFE Stack Overview' : 'overview.md'
   - 'Client Server communication' : 'client-server.md'

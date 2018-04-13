@@ -18,12 +18,10 @@ You'll also want an IDE to create F# applications. We recommend one of the follo
 ## Create your first SAFE app
 1. Create a new directory on your machine
 2. Open a command prompt
-3. Enter `dotnet new -i SAFE.Template` to install the [SAFE project template](https://github.com/SAFE-Stack/SAFE-template) (you only need to do this once!)
+3. Enter `dotnet new -i SAFE.Template` to install the [SAFE project template](safe-template.md) (you only need to do this once!)
 4. Enter `dotnet new SAFE -lang F#` to create a new SAFE project
 5. Enter `build.cmd run` (Windows) or `./build.sh run` (Linux / OSX)
 
-Congratulations! After a short delay, you'll be presented with a SAFE application running in your browser! 
+Congratulations! After a short delay, you'll be presented with a basic SAFE application running in your browser! The app will by default run in "development mode", which means it automatically watches your project for changes. Whenever you save a file in the client project it will refresh the browser **automatically**; if you save a file in the server project it will restart the server in the background.
 
-The app is already running in development mode and watches your project for changes. Whenever you save a file in the client project it will refresh the browser automatically. If you save a file in the server project it will restart the server in the background.
-
-Tip: Take a look at the [template options](https://github.com/SAFE-Stack/SAFE-template#template-options). There are many predefined options to choose from, like server technology or client/server communication technology.
+Tip: Take a look at the [template options](safe-template.md#template-options). There are several ways to customise the default application, including server technology and client/server communication technology.
