@@ -32,8 +32,8 @@ Usage: `dotnet new SAFE --Fulma <template>`
 
 Where `<template>` is one of:
 
-* `none`: don't add Fulma bindings at all
-* `basic`: adds Fulma basic template
+* `none`: don't add Fulma bindings at all **(default)**.
+* `basic`: adds Fulma basic template.
 * `admin`: adds Fulma with the ['Admin'](https://dansup.github.io/bulma-templates/templates/admin.html) Bulma template.
 * `cover`: adds Fulma with the ['Cover'](https://dansup.github.io/bulma-templates/templates/cover.html) Bulma template.
 * `hero`: adds Fulma with the ['Hero'](https://dansup.github.io/bulma-templates/templates/hero.html) Bulma template.
