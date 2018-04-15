@@ -31,3 +31,5 @@ This application is a sample mobile application using the [React Native](https:/
 * [Modern app development with Fable and React Native](https://www.youtube.com/watch?v=fmaPeUBWZuM) at NDC Oslo 2017 (Steffen Forkmann)
 
 ## Other Resources
+
+* [The Hanselminutes podcast: F# and the functional SAFE Stack](https://www.hanselminutes.com/624/f-and-the-functional-safe-stack-with-krzysztof-cielak) with Krzysztof Cieslak
