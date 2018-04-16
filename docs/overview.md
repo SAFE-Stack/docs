@@ -1,25 +1,29 @@
+## SAFE Stack components
+
 The SAFE acronym is made up of four separate components:
 
-* **S**aturn for back-end services in F#
-* **A**zure as a hosting platform plus associated platform services
-* **F**able for running F# in the web browser
-* **E**lmish for client-side user interfaces
+* [**S**aturn](#saturn) for back-end services in F#
+* [**A**zure](#microsoft-azure) as a hosting platform plus associated platform services
+* [**F**able](#fable) for running F# in the web browser
+* [**E**lmish](#elmish) for client-side user interfaces
 
 ![](img/safe-1.png)
 
-## [Saturn](https://saturnframework.github.io/docs/)
-The [Giraffe](https://github.com/giraffe-fsharp/Giraffe) framework provides an F#-friendly, flexible pipeline for creating server-side web applications, built on top of ASP .NET Core - a high performance, rock-solid web server. The Saturn library builds on top of this solid foundation, and provides a set of *optional* abstractions which make configuring web applications and constructing complex routes extremely easy to achieve.
+### [Saturn](safe-saturn.md)
+The Saturn library builds on top of the solid foundation of both the F#-friendly [Giraffe](https://github.com/giraffe-fsharp/Giraffe) and the high performance, rock-solid [ASP .NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.1) web server to provide a set of optional abstractions which make configuring web applications and constructing complex routes extremely easy to achieve.
 
-Both Saturn and Giraffe can host RESTful API endpoints, or drive static websites, or server-generated content, all inside an easy-to-learn functional programming model.
+Saturn can host RESTful API endpoints, drive static websites or server-generated content, all inside an easy-to-learn functional programming model.
 
-## [Microsoft Azure](https://azure.microsoft.com/en-gb/overview/what-is-azure/)
+### [Microsoft Azure](safe-azure.md)
 Azure is a comprehensive set of cloud services that developers and IT professionals use to build, deploy and manage applications through a global network of data centres. Integrated tools, DevOps and a marketplace support you in efficiently building anything from simple mobile apps to Internet-scale solutions.
 
-## [Fable](http://fable.io/)
+### [Fable](safe-fable.md)
 Fable is an F# to JavaScript compiler powered by Babel, designed to produce readable and standard code. Fable allows you to create applications for the browser written entirely in F#, whilst also allowing you to interact with native Javascript as needed.
 
-## [Elmish](https://fable-elmish.github.io/elmish/)
+### [Elmish](safe-elmish.md)
 The Elmish model allows you to construct user interfaces running in the browser using a functional programming model. Modelled on the Elm application model, Elmish uses the Model-View-Update paradigm to allow you to write applications that are simple to reason about. Elmish sits on top of the [React](https://reactjs.org/) framework.
+
+## Further reading
 
 Please also feel free to read this [blog series](https://compositional-it.com/blog/2017/09-22-safe-release/index.html) on the Compositional IT website for more details on the history of SAFE.
 
