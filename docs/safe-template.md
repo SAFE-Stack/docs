@@ -9,7 +9,7 @@ The template gets you up and running with 3 core components of the stack:
 *Currently, the template does not include any Azure / other Cloud integration except Docker deployment. Refer to the [SAFE-Bookstore](https://github.com/SAFE-Stack/SAFE-BookStore) repository for an example that uses Azure Table Storage. We're working on improving this to include standard Azure dependencies and other deployment mechanisms.*
 
 ## Using the template
-Refer to the [Quick Start guide](quickstart.md#create-your-first-safe-app) to see basic guidance on how to use the template.
+Refer to the [Quick Start guide](quickstart.md#create-your-first-safe-app) to see basic guidance on how to install and use the template.
 
 ## Template options
 The template provides the ability to customise the created application. You can see template version and available options by running  `dotnet new SAFE --help`.
@@ -21,7 +21,7 @@ Usage: `dotnet new SAFE --Server <server>`
 
 Where `<server>` is one of:
 
-* `saturn`: Creates a SAFE app running on Saturn on top of Giraffe **(recommended)**.
+* `saturn`: Creates a SAFE app running on Saturn on top of Giraffe **(default)**.
 * `giraffe`: Creates a SAFE app running on Giraffe only.
 * `suave`: Creates a SAFE app running on Suave.
 
@@ -57,5 +57,5 @@ Usage: `dotnet new SAFE --NPM`
 
 ## Examples
 * Create a SAFE application using all defaults: `dotnet new SAFE -lang F#`
-* Create a SAFE application using Saturn with Fable Remoting: `dotnet new SAFE -lang F# --Server saturn --Remoting`
-* Create a SAFE application using Giraffe with Fulma: `dotnet new SAFE -lang F# --Server giraffe --Fulma landing`
+* Create a SAFE application using giraffe with Fable Remoting: `dotnet new SAFE -lang F# --Server giraffe --Remoting`
+* Create a SAFE application using Suave with Fulma: `dotnet new SAFE -lang F# --Server suave --Fulma landing`
