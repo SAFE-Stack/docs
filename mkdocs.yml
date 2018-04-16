@@ -31,9 +31,15 @@ pages:
   - 'The SAFE template': 'safe-template.md'
 - Learn about SAFE:
   - 'SAFE Stack Overview' : 'overview.md'
-  - 'Client Server communication' : 'client-server.md'
-  - 'Server Side rendering' : 'server-side-rendering.md'
-  - 'Hot Module Replacement' : 'hot-module-replacement.md'
+  - Components of SAFE:
+    - 'Learn about Saturn' : 'safe-saturn.md'
+    - 'Learn about Azure' : 'safe-azure.md'
+    - 'Learn about Fable' : 'safe-fable.md'
+    - 'Learn about Elmish' : 'safe-elmish.md'
+  - Features of SAFE:
+    - 'Client Server communication' : 'feature-client-server.md'
+    - 'Server Side Rendering' : 'feature-ssr.md'
+    - 'Hot Module Replacement' : 'feature-hmr.md'
   - 'Learning Resources': 'learning.md'
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'

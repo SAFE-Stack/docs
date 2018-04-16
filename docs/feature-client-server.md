@@ -1,4 +1,4 @@
-One of SAFE's best features is the ability to share **data**, **types** and **code** across client and server. This page illustrates the different ways this can be achieved.
+One of the most powerful features of SAFE is the ability to seamlessly share **data**, **types** and **code** across client and server.
 
 ## Sharing Types
 Sharing your domain types and contracts between client and server is extremely simple. Thanks to Fable's excellent F# transpilation into Javascript, you can use all standard F# language features such as Records, Tuples and Discriminated Unions without worry. To share types across both your client and server project, first create a file in your repository called e.g `Shared.fs`.
