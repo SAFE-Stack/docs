@@ -19,4 +19,4 @@ It also integrates with SAFE to allow seamless sharing of types and functions, s
 
 ![](img/saturn-1.png)
 
-Learn more about Saturn [here](https://saturnframework.github.io/docs/)
+Learn more about Saturn [here](https://saturnframework.github.io/docs/).
