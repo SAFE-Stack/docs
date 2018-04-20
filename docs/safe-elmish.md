@@ -1,10 +1,14 @@
 # [Elmish](https://fable-elmish.github.io/elmish/) in SAFE
 
-# Elmish
-Elm-like abstractions for F# applications targeting Fable.  
+## What is Elmish?
 
-Elmish implements core abstractions that can be used to build applications following the [model-view-update](https://www.elm-tutorial.org/en/02-elm-arch/cover.html) Architecture made famous by Elm. 
+Elmish is a set of simple abstractions for writing user interfaces in F# applications in a functional style following the [model-view-update](https://www.elm-tutorial.org/en/02-elm-arch/cover.html) architecture made famous by [Elm](http://elm-lang.org/). The Elmish library is not coupled to any specific view engine, but is intended for use in conjuction with a DOM/renderer such as React/ReactNative or VirtualDOM.
 
-The Elmish library however does not model any "view" and is intended for use in conjuction with a DOM/renderer, like React/ReactNative or VirtualDOM.  
+## How does Elmish integrate with SAFE?
+Elmish provides the ability to more easily create user interfaces in the browser on top of [Fable](safe-fable) so that you don't have to write applications that are tightly coupled to HTML using e.g. JQuery or similar. The [SAFE Stack templates](safe-template) comes pre-bundled with the [Elmish React](https://fable-elmish.github.io/react/) module, which (as the name suggests) uses the [React](https://reactjs.org/) library to handle the heavy lifting of modifyng the DOM in an efficient way. This allow us to use the pure functional style of the MVU pattern whilst still retaining the ability to have a highly performant user interface.
 
-Learn about Elmish [here](https://fable-elmish.github.io/elmish/)
+This conceptual diagram illustrates how your F# is run in the browser in a SAFE app.
+
+![](img/elmish-1.png)
+
+Learn more about Elmish [here](https://fable-elmish.github.io/elmish/).
