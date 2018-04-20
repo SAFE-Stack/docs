@@ -4,7 +4,9 @@ Hot Module Replacement (HMR) allows to update the UI of an application while it 
 In case of web development, the [webpack](https://webpack.js.org/) development server will automatically refresh the changed parts of your [elmish](https://github.com/fable-elmish/elmish) views whenever you save a file. Alternatively, in the case of mobile app development, this is achieved through [React Native](https://facebook.github.io/react-native/)'s own bundler.
 
 ## Why does it work so well with SAFE?
-Since SAFE uses the Model-View-Update architecture with immutable models, the application state only changes when a message is processed; this fits the HMR model very nicely.
+Since SAFE uses the Model-View-Update architecture with immutable models, the application state only changes when a message is processed; this fits the HMR model very nicely. Here's an example of HMR in action to change the input of a textbox to automatically convert the input to upper case.
+
+![](https://user-images.githubusercontent.com/1781813/39061043-5aa3737e-44c3-11e8-9789-029b285f180c.gif)
 
 ## Further reading
 * [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) via webpack
