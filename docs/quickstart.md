@@ -18,7 +18,7 @@ You'll also want an IDE to create F# applications. We recommend one of the follo
 ## Create your first SAFE app
 1. Create a new directory on your machine
 2. Open a command prompt
-3. Enter `dotnet new -i SAFE.Template` to install the [SAFE project template](safe-template.md) (you only need to do this once!)
+3. Enter `dotnet new -i SAFE.Template` to install the [SAFE project template](safe-template.md)
 4. Enter `dotnet new SAFE -lang F#` to create a new SAFE project
 5. Enter `build.cmd run` (Windows) or `./build.sh run` (Linux / OSX)
 
