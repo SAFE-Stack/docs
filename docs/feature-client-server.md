@@ -1,6 +1,7 @@
 One of the most powerful features of SAFE is the ability to seamlessly share **data**, **types** and **code** across client and server.
 
 ## Sharing Types
+
 Sharing your domain types and contracts between client and server is extremely simple. Thanks to Fable's excellent F# transpilation into Javascript, you can use all standard F# language features such as Records, Tuples and Discriminated Unions without worry. To share types across both your client and server project, first create a file in your repository called e.g `Shared.fs`.
 ![](img\client-server-01.png)
 
@@ -25,9 +26,12 @@ Reference this file to your server project. You can now reference those types in
 Finally, reference this file to your client project (as above). You can now reference those types in the client; types will be compiled into Javascript types and seamlessly translated for you.
 
 ## Sharing Code
+
 You can also share code using the same mechanism. This is extremely useful for e.g shared validation or business logic that needs to occur on both client and server.
 
-Fable will translate your functions into native Javascript, and will even translate many calls to the .NET BCL into javascript! You can read more about this [on the Fable website](http://fable.io/docs/compatibility.html).
+Fable will translate your functions into native Javascript, and will even translate many calls to the .NET base class library into corresponding Javascript! This allows you to compile your domain model and domain logic to many many different targets, ASP.NET Core (in Saturn), Azure Functions, Javascript that runs in the browser and Javascript that runs on mobile devices with [React Native](https://facebook.github.io/react-native/). With .NET Core can even target things like the Raspberry Pi.
+
+You can read more about this [on the Fable website](http://fable.io/docs/compatibility.html).
 
 ## Sharing Data
 Sharing data can be achieved in two main ways in SAFE: through the [Saturn](https://saturnframework.github.io/docs/) API directly, or via the [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) library.
