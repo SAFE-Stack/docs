@@ -30,6 +30,7 @@ Please also feel free to read this [blog series](https://compositional-it.com/bl
 ## Are there alternative components in the SAFE stack?
 Yes, absolutely. The above components are what we recommended as the default SAFE stack, but you can of course replace the components with alternatives as you see fit. Here are some examples:
 
+* [Giraffe](https://github.com/giraffe-fsharp/Giraffe) is a programming model designed for F# that runs on ASP .NET Core. As Saturn runs on top of Giraffe, you automatically get full access to it, but nonetheless it is entirely possible to write applications solely in Giraffe.
 * [Suave](https://suave.io/) is a complete web server and programming model designed for F# that is similar to that of Giraffe.
 * [Freya](https://freya.io/) is an alternative F#-first web stack which has a pluggable runtime model which allows it to be hosted in a variety of web servers including ASP .NET Core.
 * [AWS](https://aws.amazon.com/) is Amazon's cloud compute offering, providing a large number of services available globally.
