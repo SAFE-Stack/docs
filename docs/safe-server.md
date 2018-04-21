@@ -9,7 +9,7 @@ The [SAFE template](safe-template) comes with three alternative server technolog
 ![](img/safe-server-1.png)
 
 ## Why Saturn?
-** Saturn is now the default, and recommended, web server in SAFE**.
+** Saturn is the default, and recommended, web server in SAFE**.
 
 Saturn (and Giraffe) runs on top of ASP .NET Core, which comes with an extremely high-performance server that is fully supported by Microsoft, has a huge community of developers and has excellent integration into cloud services such as Microsoft Azure and Amazon Web Services.
 
