@@ -36,6 +36,7 @@ pages:
     - 'Learn about Azure' : 'safe-azure.md'
     - 'Learn about Fable' : 'safe-fable.md'
     - 'Learn about Elmish' : 'safe-elmish.md'
+    - 'Choosing your web server' : 'safe-server.md'
   - Features of SAFE:
     - 'Client Server communication' : 'feature-client-server.md'
     - 'Server Side Rendering' : 'feature-ssr.md'
