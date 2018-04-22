@@ -77,12 +77,12 @@ promise {
 }
 ```
 
-Note the use of the `promise { }` computation expression. This functions like `async { }` blocks that you already know, whilst the `fetchAs` function automatically deserializes the JSON back into a `Customer` array.
+Note the use of the `promise { }` computation expression. This behaves similarly to `async { }` blocks that you might already know, whilst the `fetchAs` function automatically deserializes the JSON back into a `Customer` array.
 
 #### Turning on Fable's JSON Converter
 By default, serialization between Fable and Giraffe **is not compatible**. In order to fix this, you must replace the JSON converter in Giraffe with Fable's own `IJsonSerializer`.
 
-If you are using the dotnet SAFE Template, this will automatically be done for you - see the [`config`](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/src/Server/ServerSaturn.fs#L40L44) function in `Server.fs`.
+If you are using the [SAFE Template](safe-template), this will automatically be done for you - see the [`config`](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/src/Server/ServerSaturn.fs#L40L44) function in `Server.fs`.
 
 ### Sharing data using Fable.Remoting
 As an alternative to raw HTTP, you can also use the [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) library, which provides an RPC-style mechanism for calling server endpoints.
