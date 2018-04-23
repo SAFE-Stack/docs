@@ -9,18 +9,18 @@ The SAFE acronym is made up of four separate components:
 
 ![](img/safe-1.png)
 
-### [Saturn](safe-saturn.md)
+### [Saturn](component-saturn.md)
 The Saturn library builds on top of the solid foundation of both the F#-friendly [Giraffe](https://github.com/giraffe-fsharp/Giraffe) and the high performance, rock-solid [ASP .NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.1) web server to provide a set of optional abstractions which make configuring web applications and constructing complex routes extremely easy to achieve.
 
 Saturn can host RESTful API endpoints, drive static websites or server-generated content, all inside an easy-to-learn functional programming model.
 
-### [Microsoft Azure](safe-azure.md)
+### [Microsoft Azure](component-azure.md)
 Azure is a comprehensive set of cloud services that developers and IT professionals use to build, deploy and manage applications through a global network of data centres. Integrated tools, DevOps and a marketplace support you in efficiently building anything from simple mobile apps to Internet-scale solutions.
 
-### [Fable](safe-fable.md)
+### [Fable](component-fable.md)
 Fable is an F# to JavaScript compiler powered by Babel, designed to produce readable and standard code. Fable allows you to create applications for the browser written entirely in F#, whilst also allowing you to interact with native Javascript as needed.
 
-### [Elmish](safe-elmish.md)
+### [Elmish](component-elmish.md)
 The Elmish model allows you to construct user interfaces running in the browser using a functional programming model. Modelled on the Elm application model, Elmish uses the Model-View-Update paradigm to allow you to write applications that are simple to reason about. Elmish sits on top of the [React](https://reactjs.org/) framework.
 
 ## Further reading

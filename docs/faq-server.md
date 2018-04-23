@@ -17,7 +17,7 @@ The diagram below illustrates some of the differences and similarities of the th
 | | Saturn | Giraffe | Suave |
 |-|:-:|:-:|:-:|
 | ASP .NET compatible? | Yes | Yes | No |
-| F#-first | Yes | Yes | Yes |
+| F#-first? | Yes | Yes | Yes |
 | Core Abstractions | scope { } and controller { } | HttpHandler | WebPart
 
 ## Why Saturn?

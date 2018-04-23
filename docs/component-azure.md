@@ -10,7 +10,7 @@ Azure provides a number of flexible services for SAFE applications, including (b
 
 ### Hosting Services
 
-Azure comes with several ready-made hosting services, including App Service, which enables seamless hosting of web applications, including ASP .NET Core applications (which [Saturn](safe-saturn.md) is built on top of). In addition, Azure supports a number of managed [hosting services](https://azure.microsoft.com/en-us/services/container-instances/) for [Docker](https://azure.microsoft.com/en-us/services/app-service/containers/) and [Kubernetes](https://azure.microsoft.com/en-us/services/container-service/), which work fantastically well with SAFE.
+Azure comes with several ready-made hosting services, including [App Service](https://azure.microsoft.com/en-us/services/app-service/), which enables seamless hosting of web applications, including ASP .NET Core applications (which [Saturn](component-saturn.md) is built on top of). In addition, Azure supports a number of managed [hosting services](https://azure.microsoft.com/en-us/services/container-instances/) for [Docker](https://azure.microsoft.com/en-us/services/app-service/containers/) and [Kubernetes](https://azure.microsoft.com/en-us/services/container-service/), which work fantastically well with SAFE.
 
 ### Platform Services
 

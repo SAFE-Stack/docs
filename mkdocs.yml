@@ -26,21 +26,23 @@ extra:
 pages:
 - Home: 'index.md'
 - Introduction: 'intro.md'
-- Getting Started:
-  - 'Quick Start': 'quickstart.md'
-  - 'The SAFE template': 'safe-template.md'
-- Learn about SAFE:
-  - 'SAFE Stack Overview' : 'overview.md'
-  - Components of SAFE:
-    - 'Learn about Saturn' : 'safe-saturn.md'
-    - 'Learn about Azure' : 'safe-azure.md'
-    - 'Learn about Fable' : 'safe-fable.md'
-    - 'Learn about Elmish' : 'safe-elmish.md'
-    - 'Choosing your web server' : 'safe-server.md'
-  - Features of SAFE:
-    - 'Client Server communication' : 'feature-client-server.md'
-    - 'Server Side Rendering' : 'feature-ssr.md'
-    - 'Hot Module Replacement' : 'feature-hmr.md'
-  - 'Learning Resources': 'learning.md'
+- Quick Start: 'quickstart.md'
+- 'SAFE Stack Overview' : 'overview.md'
+- Components of SAFE:
+  - 'Learn about Saturn' : 'component-saturn.md'
+  - 'Learn about Azure' : 'component-azure.md'
+  - 'Learn about Fable' : 'component-fable.md'
+  - 'Learn about Elmish' : 'component-elmish.md'
+- Features of SAFE:
+  - 'Client/Server communication' : 'feature-clientserver.md'
+  - 'Server Side Rendering' : 'feature-ssr.md'
+  - 'Hot Module Replacement' : 'feature-hmr.md'
+  - The SAFE Template:
+    - 'SAFE Template overview': 'template-overview.md'
+    - 'FAKE script': 'template-fake.md'
+- FAQs:
+  - 'Choosing your web server' : 'faq-server.md'
+  - 'Moving from dev to prod' : 'faq-build.md'
+- 'Learning Resources': 'learning.md'
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'

@@ -29,7 +29,13 @@ Finally, reference this file to your client project (as above). You can now refe
 
 You can also share code using the same mechanism. This is extremely useful for e.g shared validation or business logic that needs to occur on both client and server.
 
-Fable will translate your functions into native Javascript, and will even translate many calls to the .NET base class library into corresponding Javascript! This allows you to compile your domain model and domain logic to many many different targets, ASP.NET Core (in Saturn), Azure Functions, Javascript that runs in the browser and Javascript that runs on mobile devices with [React Native](https://facebook.github.io/react-native/). With .NET Core can even target things like the Raspberry Pi.
+Fable will translate your functions into native Javascript, and will even translate many calls to the .NET base class library into corresponding Javascript! This allows you to compile your domain model and domain logic to many many different targets including:
+
+* ASP.NET Core (via Saturn)
+* Azure Functions
+* Javascript that runs in the browser
+* Javascript that runs on mobile devices with [React Native](https://facebook.github.io/react-native/).
+* Raspberry Pi (via .NET Core)
 
 You can read more about this [on the Fable website](http://fable.io/docs/compatibility.html).
 
@@ -111,13 +117,15 @@ async {
 Notice here, there is no need to create routes, or worry about HTTP verbs, or even involve yourself with the Giraffe pipeline.
 
 ### When should I use raw HTTP vs Fable Remoting?
-Fable Remoting provides an excellent way to quickly get up and running with the SAFE stack. You can rapidly create contracts between client / server and have guaranteed contracts between both client and server. Remoting also forces all traffic as HTTP POSTs, which cannot be cached by the browser. If you're using a "closed" app without exposing an API to other consumers, and do not need close control of the HTTP channel, consider using Fable.Remoting.
+Fable Remoting provides an excellent way to quickly get up and running with the SAFE stack. You can rapidly create contracts between client / server and have guaranteed contracts between both client and server. However, note that Fable Remoting is not designed for use as an "open" API for consumption by multiple client. It also forces all HTTP traffic to be delivered as a POST, which cannot be cached by the browser. If you're using a "closed" app without exposing an API to other consumers, and do not need close control of the HTTP channel, consider using Fable.Remoting.
 
-The raw HTTP model with `scope { }` requires you to construct routes manually and does not guarantee that the client and endpoint have the same contract (you have to specify it on both sides yourself), but gives you total control over the routing and verbs used. If you have a public API that is exposed not just to your own application but to third-parties, or you need more fine grained control over your routes and data, you should stick with this approach.
+Alternatively, the raw HTTP model provided by Saturn with `scope { }` requires you to construct routes manually and does not guarantee that the client and endpoint have the same contract (you have to specify the same type on both sides yourself). However, Saturn gives you total control over the routing and verbs used. If you have a public API that is exposed not just to your own application but to third-parties, or you need more fine grained control over your routes and data, you should use this approach.
+
+Alternatively, consider using a combination of both Remoting and Saturn endpoints - Remoting for those that are used "internally" by your application, and Saturn for those exposed to external callers.
 
 | | Fable.Remoting | Raw HTTP |
-|-|-|-|
-| Client / Server | Very simple | Simple |
-| Open API | No | Yes |
-| HTTP Verbs | POST only | All |
-| Pipeline Control | Limited | Full |
+|-|:-:|:-:|
+| Client / Server support | Very easy | Easy |
+| "Open" API? | No | Yes |
+| HTTP Verbs? | POST | Fully Configurable |
+| Pipeline Control? | Limited | Full |
