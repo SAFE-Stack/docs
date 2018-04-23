@@ -12,7 +12,7 @@ The diagram below illustrates some of the differences and similarities of the th
 
 ![](img/safe-server-1.png)
 
- This is also shown in the table below. The core abstractions of Giraffe and Suave - the HTTP Handler and WebPart - are effectively the same thing. Saturn, which lives "on top" of Giraffe, provides a set of new, higher-level abstractions which delegate down to Giraffe's HTTP Handler.
+ This is also shown in the table below. Both Giraffe's HTTP Handler and  and Suave's WebPart are very similar abstractions; this allows a simple migration path between either server. Meanwhile Saturn, which lives "on top" of Giraffe, provides a set of new higher-level abstractions which delegate down to Giraffe's HTTP Handler.
 
 | | Saturn | Giraffe | Suave |
 |-|:-:|:-:|:-:|
