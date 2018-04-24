@@ -41,7 +41,7 @@ Where `<template>` is one of:
 * `login`: adds Fulma with the ['Login'](https://dansup.github.io/bulma-templates/templates/login.html) Bulma template.
 
 ### Fable.Remoting
-*Configures the SAFE app to use [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) to the template. See [here](client-server#sharing-data) for an overview of Fable Remoting and the alternatives for sharing data between client and server.*
+*Configures the SAFE app to use [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) to the template. See [here](feature-clientserver.md#sharing-data) for an overview of Fable Remoting and the alternatives for sharing data between client and server.*
 
 Usage: `dotnet new SAFE --Remoting`
 
