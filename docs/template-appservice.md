@@ -5,14 +5,11 @@ The Azure App Service allows you to quickly build, deploy, and scale enterprise-
 
 It comes in a number of pricing plans, including a free option and has options for scale-up, scale-out, turn-key authentication as well as powerful monitoring capabilities. It is compatible with virtual any runtime, and includes excellent support for both .NET Framework and Core.
 
-## Deployment steps
+## Deployment Steps
 In order to deploy your SAFE application to the App Service, you must have first created an [Azure Account](template-azure-registration/#creating-an-azure-account), selected a [Subscription ID](template-azure-registration/#selecting-the-subscription) and created an associated [App Registration](template-azure-registration/#creating-an-app-registration).
 
-## Deploying through FAKE
-
 ### Custom FAKE build tasks
-
-The Azure variant of the SAFE template adds the following extra build stages.
+The Azure variant of the SAFE template adds the following extra build stages:
 
 1. **Bundle** - Runs after the standard Build step. It combines the outputs of the Client and Server application into a single folder.
 1. **ArmTemplate** - Deploys an Azure Resource Manager template containing an entire environment as required by the SAFE application.

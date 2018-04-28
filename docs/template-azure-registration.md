@@ -2,7 +2,7 @@ In order to deploy applications to Azure from the FAKE script created by the FAK
 
 ## Creating an Azure Account
 
-You'll need to register for an Azure account. This can be achieved quickly and easily at https://azure.microsoft.com. New users are afforded a number of services for free for an entire year, including Azure SQL, Storage and VMs etc.
+You'll need to register for an Azure account. This can be achieved quickly and easily at [https://azure.microsoft.com](https://azure.microsoft.com). New users are afforded a number of services for free for an entire year, including Azure SQL, Storage and VMs etc.
 
 ## Selecting the Subscription
 Once you have created your account, you'll need to select an Azure Subscription to deploy your SAFE applications into.
@@ -29,7 +29,7 @@ You'll now need to create an "App Registration" in your Azure Active Directory. 
 1. Choose **Settings** from the top menu.
 1. Choose **Required Permissions** from the Settings blade.
 1. Choose **Add** from the top menu of the Required Permissions blade.
-1. Choose **Select an API** from th Add API Access blade.
+1. Choose **Select an API** from the Add API Access blade.
 1. Choose **Windows Azure Service Management API** and hit **Select**.
 1. Check **Access Azure Service Management as organization users (preview)** and hit **Select**.
 1. Hit **Done** from the Add API Access blade.
