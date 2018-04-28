@@ -46,7 +46,7 @@ Finally, you will be prompted sign into Azure using your normal user account. Af
 
 ![](img/deploy-appservice-7.png)
 
-### Viewing the deployed SAFE application
+## Viewing the deployed SAFE application
 Once the deployment is complete, you can log into the Azure Portal and see your environment being created.
 
 1. Log into the Azure Portal.
