@@ -1,11 +1,10 @@
-In order to deploy applications to Azure from the FAKE script created by the FAKE template, you first need to create an Azure account and create an App Registration which allows remote deployments as a one-off task. This section explains how to do this.
+In order to deploy applications to Azure from the FAKE script created by the SAFE template, you first need to create an Azure account and create an App Registration which allows remote deployments as a one-off task. This section explains how to do this.
 
 ## Creating an Azure Account
-
 You'll need to register for an Azure account. This can be achieved quickly and easily at [https://azure.microsoft.com](https://azure.microsoft.com). New users are afforded a number of services for free for an entire year, including Azure SQL, Storage and VMs etc.
 
 ## Selecting the Subscription
-Once you have created your account, you'll need to select an Azure Subscription to deploy your SAFE applications into.
+Once you have created your account, you'll need to make a note of the Azure Subscription ID that you will deploy your SAFE applications into.
 
 1. Log in to your [Azure Portal](https://portal.azure.com).
 1. Select All Services on the left-menu menu and locate **Subscriptions** in the blade on the right.
@@ -14,7 +13,7 @@ Once you have created your account, you'll need to select an Azure Subscription 
 ![](img/deploy-appservice-2.png)
 
 ### Creating an App Registration
-You'll now need to create an "App Registration" in your Azure Active Directory. This registration allows you to deploy an entire environment directly into Azure, complete with the deployed application, directly from a FAKE script.
+You now need to create an "App Registration" in your Azure Active Directory. This registration allows you to deploy an entire environment directly into Azure, complete with the deployed application, directly from a FAKE script.
 
 1. Navigate to the **Azure Active Directory** blade in the Portal.
 1. Select **App registrations** from the menu in the blade.

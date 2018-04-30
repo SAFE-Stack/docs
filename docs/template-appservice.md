@@ -3,7 +3,7 @@ The SAFE template has the ability to deploy to Azure's [App Service](https://azu
 ## What is Azure App Service?
 The Azure App Service allows you to quickly build, deploy, and scale enterprise-grade web, mobile, and API apps running on any platform whilst meeting rigorous performance, scalability, security and compliance requirements using a fully-managed platform to perform infrastructure maintenance.
 
-It comes in a number of pricing plans, including a free option and has options for scale-up, scale-out, turn-key authentication as well as powerful monitoring capabilities. It is compatible with virtual any runtime, and includes excellent support for both .NET Framework and Core.
+It comes in a number of pricing plans, including a free option and has options for scale-up, scale-out, turn-key authentication as well as powerful monitoring capabilities. It is compatible with many runtimes and includes excellent support for both .NET Framework and .NET Core.
 
 ## Deployment Steps
 In order to deploy your SAFE application to the App Service, you must have first created an [Azure Account](template-azure-registration/#creating-an-azure-account), selected a [Subscription ID](template-azure-registration/#selecting-the-subscription) and created an associated [App Registration](template-azure-registration/#creating-an-app-registration).
@@ -18,12 +18,12 @@ The Azure variant of the SAFE template adds the following extra build stages:
 ### Build arguments
 Deploying your application through FAKE is relatively simple. Use the following command:
 ```
-    build appservice
-        subscriptionId=<subId>
-        clientId=<clientId>
-        environment=<environment> (optional)
-        location=<location>       (optional)
-        pricingTier=<pricingTier> (optional)
+build appservice
+    subscriptionId=<subId>
+    clientId=<clientId>
+    environment=<environment> (optional)
+    location=<location>       (optional)
+    pricingTier=<pricingTier> (optional)
 ```
 where:
 
@@ -32,6 +32,8 @@ where:
 * `environment` is an optional environment name that will be appended to all Azure resources created, which allows you to create entire dev / test environments quickly and easily. This defaults to a random GUID.
 * `location` is the Azure data center location you wish to use. There are currently over 30 different data centers worldwide. This defaults to `westeurope`; the full list can be viewed [here](https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/09/19/azure-data-centers-and-regions/). The location must be supplied in lower case and without spaces.
 * `pricingTier` is the pricing tier of the app service that hosts your SAFE app. This defaults to F1 (free); the full list can be viewed [here](https://azure.microsoft.com/en-us/pricing/details/app-service/).
+
+Note that you can also modify the FAKE script and embed both the `subscriptionId` and `clientId` values directly in the script and commit into source control. This is completely safe to do as the Client ID is not sufficient on its own to authenticate into Azure (see below).
 
 ### Interactive deployment
 When running the build script, you will need to interactively authenticate with Azure in order to deploy the ARM template. During the FAKE script, you will see the following midway through the build cycle:
@@ -46,6 +48,9 @@ Finally, you will be prompted sign into Azure using your normal user account. Af
 
 ![](img/deploy-appservice-7.png)
 
+### Creating a fully automated deployment
+You can also elect to implement a fully automated (non-interactive) deployment model, ideal for Continuous Deployment (CD) scenarios through tools such as AppVeyor and Visual Studio Team Services, using an ["Web App / API"-style Application Registration](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal). In this model, you supply the Tenant ID, Client ID and Application Secret into the FAKE script to deploy your ARM resources; these identities should normally be secured and supplied into your FAKE script as arguments rather than committed into source control.
+
 ## Viewing the deployed SAFE application
 Once the deployment is complete, you can log into the Azure Portal and see your environment being created.
 
@@ -55,6 +60,5 @@ Once the deployment is complete, you can log into the Azure Portal and see your 
 1. Hit Browse from the new App Service blade that appears.
 ![](img/deploy-appservice-8.png)
 1. Your application will be shown in the browser running on a url following the convention `https://safe-<environment>-web.azurewebsites.net/`.
-
 
 
