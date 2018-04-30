@@ -16,6 +16,6 @@ Fable's "JavaScript" side is normally hosted within the context of [webpack](htt
 
 Using webpack also provides many advantages - for example, we as developers can control how JS is rendered through standard tools that exist in the JS ecosystem, whilst also using features such as [Hot Module replacement](feature-hmr) and Source Maps.
 
-Creating a webpack config file isn't the easiest thing in the world, so the [SAFE Template](template-overview) already has one pre-built that contains the most standard features to get you up and running immediately.
+Creating a webpack config file isn't the easiest thing in the world, so the [SAFE Template](template-overview) already has one pre-built that contains the basics to get you up and running immediately.
 
 Learn more about Fable [here](http://fable.io/).

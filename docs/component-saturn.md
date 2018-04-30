@@ -2,7 +2,7 @@
 Saturn is a web development library written in F# which allows you to easily create both server-side MVC applications as well as web APIs. It runs on top of two other components:
 
 * [Giraffe](https://github.com/dustinmoris/Giraffe), an F#-specific library for writing functional-first web applications.
-* Microsoft's [ASP.NET Core](https://www.asp.net/core/overview/aspnet-vnext).
+* Microsoft's [ASP .NET Core](https://www.asp.net/core/overview/aspnet-vnext).
 
 Saturn, via Giraffe, provides very good integration with other ASP.NET Core components such as authentication.
 
