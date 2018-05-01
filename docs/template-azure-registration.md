@@ -3,7 +3,8 @@ In order to deploy applications to Azure from the FAKE script created by the SAF
 ## Creating an Azure Account
 You'll need to register for an Azure account. This can be achieved quickly and easily at [https://azure.microsoft.com](https://azure.microsoft.com). New users are afforded a number of services for free for an entire year, including Azure SQL, Storage and VMs etc.
 
-## Selecting the Subscription
+## Selecting a Subscription
+
 Once you have created your account, you'll need to make a note of the Azure Subscription ID that you will deploy your SAFE applications into.
 
 1. Log in to your [Azure Portal](https://portal.azure.com).
@@ -13,6 +14,7 @@ Once you have created your account, you'll need to make a note of the Azure Subs
 ![](img/deploy-appservice-2.png)
 
 ### Creating an App Registration
+
 You now need to create an "App Registration" in your Azure Active Directory. This registration allows you to deploy an entire environment directly into Azure, complete with the deployed application, directly from a FAKE script.
 
 1. Navigate to the **Azure Active Directory** blade in the Portal.
