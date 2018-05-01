@@ -70,4 +70,4 @@ Once the deployment is complete, you can log into the Azure Portal and see your 
 ![](img/deploy-appservice-8.png)
 1. Your application will be shown in the browser running on a url following the convention `https://safe-<environment>-web.azurewebsites.net/`.
 
-
+You can also [deploy to a Docker Container](#template-docker.md).
