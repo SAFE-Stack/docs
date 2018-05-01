@@ -34,12 +34,16 @@ pages:
   - 'Learn about Fable' : 'component-fable.md'
   - 'Learn about Elmish' : 'component-elmish.md'
 - Features of SAFE:
-  - 'Client/Server communication' : 'feature-clientserver.md'
-  - 'Server Side Rendering' : 'feature-ssr.md'
-  - 'Hot Module Replacement' : 'feature-hmr.md'
   - The SAFE Template:
     - 'SAFE Template overview': 'template-overview.md'
     - 'FAKE script': 'template-fake.md'
+    - Deployment Options:
+      - 'Deploy to Docker': 'template-docker.md'
+      - 'Deploy to App Service': 'template-appservice.md'
+      - 'Registering with Azure': 'template-azure-registration.md'
+  - 'Client/Server communication' : 'feature-clientserver.md'
+  - 'Server Side Rendering' : 'feature-ssr.md'
+  - 'Hot Module Replacement' : 'feature-hmr.md'
 - FAQs:
   - 'Choosing your web server' : 'faq-server.md'
   - 'Moving from dev to prod' : 'faq-build.md'
