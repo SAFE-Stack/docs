@@ -39,6 +39,7 @@ pages:
   - Deployment Options:
     - 'Deploy to Docker': 'template-docker.md'
     - 'Deploy to App Service': 'template-appservice.md'
+    - 'Application Insights Integration': 'template-azure-ai.md'
     - 'Registering with Azure': 'template-azure-registration.md'
 - Features of SAFE:
   - 'Client/Server communication' : 'feature-clientserver.md'

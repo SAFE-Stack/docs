@@ -1,4 +1,4 @@
-The SAFE template has the ability to deploy to Azure's [App Service](https://azure.microsoft.com/en-us/services/app-service/) with minimum effort.
+The SAFE template has the ability to deploy to Azure's [App Service](https://azure.microsoft.com/en-us/services/app-service/) with minimum effort. This template mode will also create you an [Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) account, linked to your web application.
 
 ## What is Azure App Service?
 
@@ -18,7 +18,7 @@ The Azure variant of the SAFE template adds the following extra build stages:
 1. **ArmTemplate** - Deploys an Azure Resource Manager template containing an entire environment as required by the SAFE application.
 1. **AppService** - Zips up the bundled folder and deploys it into the created environment.
 
-*Note: There is a known issue that currently the FAKE script may sometimes fail the first time you run it with [this error](https://github.com/SAFE-Stack/SAFE-template/pull/65#issuecomment-385619990). If this occurs, simply open the FAKE script in your favourite editor, add a new line anywhere in the script, save and re-run. We're looking to fix this as soon as possible!*
+> There is a known issue that currently the FAKE script may sometimes fail the first time you run it with [this error](https://github.com/SAFE-Stack/SAFE-template/pull/65#issuecomment-385619990). If this occurs, simply open the FAKE script in your favourite editor, add a new line anywhere in the script, save and re-run. We're looking to fix this as soon as possible!
 
 ### Build arguments
 
