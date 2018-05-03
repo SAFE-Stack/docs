@@ -6,7 +6,7 @@ The template gets you up and running with the most common elements of the stack:
 * [Fable](http://fable.io/) for client-side F#
 * [Elmish](https://fable-elmish.github.io/elmish/) for web UI
 * [Fulma](https://mangelmaxime.github.io/Fulma/) for consistent web styling
-* [Docker](https://www.docker.com/) or [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) deployment models for hosting.
+* [Docker](template-docker.md) or [Azure App Service](template-appservice.md) deployment models for hosting.
 
 ## Using the template
 Refer to the [Quick Start guide](quickstart.md#create-your-first-safe-app) to see basic guidance on how to install and use the template.
@@ -53,7 +53,7 @@ Usage: `dotnet new SAFE --Deploy <hosting model>`
 Where `<hosting model>` is one of:
 
 * `docker`: Adds [FAKE](https://fake.build/) targets that bundles and build a Docker image. See [here](template-docker.md) for more details about Docker deployment.
-* `azure`: Adds [FAKE](https://fake.build/) targets and an [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) (ARM) template that allows deployment to the [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) plus an [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) instance. See [here](template-appservice.md) for more details about ARM deployment.
+* `azure`: Adds [FAKE](https://fake.build/) targets and an [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) (ARM) template that allows deployment to the [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) plus an [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) instance. See [here](template-appservice.md) for more details about Azure deployment.
 
 ### NPM
 *Configures the SAFE app to use NPM instead of default Yarn for JS package management.*

@@ -27,16 +27,16 @@ From here, you can even track further into any individual call. AI has many more
 
 ## How do SAFE apps integrate with AI?
 
-Although AI supports monitoring for both *client* and *server*, at the current time, the SAFE template only supports the server mode (although you can add support for client events yourself). This includes:
+Although AI supports monitoring for both client *and* server, at the current time, the SAFE template only supports the server mode (although you can add support for client events yourself). Server-side support includes:
 
 * Support in the bundled ARM template to create a free AI instance along with your web application.
 * Automatic configuration of your web application with connection details to the created AI instance.
-* Application support for activating AI in code.
+* Application support for activating AI in code for e.g. custom events and metrics.
 
-Both server runtimes supported by the SAFE template have come with AI integration out of the box.
+All server runtimes that are supported by the SAFE Template come with AI integration out of the box:
 
-### Support on Giraffe / Saturn
+### AI support on Giraffe / Saturn
 Giraffe uses the standard .NET Core Application Insights SDK in order to communicate with the AI service. It uses the standard AI middleware support for ASP .NET Core, which provides complete tracking of requests, dependencies, errors and live streaming.
 
-### Support on Suave
+### AI support on Suave
 Suave also uses the standard .NET Core Application Insights SDK in order to communicate with the AI service. However, as Suave does not run on top of ASP .NET Core, it uses a custom web part to intercept and track all requests, dependencies and exceptions on the server as well as live streaming. This web part is typically attached at the "top level" of your web application, surrounding the global WebPart in order to track all requests.
