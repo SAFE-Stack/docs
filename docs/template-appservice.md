@@ -55,6 +55,8 @@ Finally, you will be prompted sign into Azure using your normal user account. Af
 
 ![](img/deploy-appservice-7.png)
 
+> Note: If you're getting `FileNotFoundException` for `Microsoft.Rest.ClientRuntime.Azure`, try editing and rerunning FAKE script ([see details](https://github.com/SAFE-Stack/SAFE-template/pull/65#issuecomment-385621229)).
+
 ### Creating a fully automated deployment
 
 You can also elect to implement a fully-automated (non-interactive) deployment model, ideal for Continuous Deployment (CD) scenarios through tools such as AppVeyor and Visual Studio Team Services, using an [Azure Active Directory Application](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application). In this model, in addition to a SubscriptionID and Client ID, you also supply a Tenant ID and an Application Secret into the FAKE script to deploy your ARM resources; these identities should normally be secured and supplied into your FAKE script as arguments rather than committed into source control.
