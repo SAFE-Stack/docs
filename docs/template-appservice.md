@@ -15,10 +15,14 @@ In order to deploy your SAFE application to the App Service, you must have first
 The Azure variant of the SAFE template adds the following extra build stages:
 
 1. **Bundle** - Runs after the standard Build step. It combines the outputs of the Client and Server application into a single folder.
-1. **ArmTemplate** - Deploys an Azure Resource Manager template containing an entire environment as required by the SAFE application.
+1. **ArmTemplate** - Deploys an Azure Resource Manager (ARM) template containing an entire environment as required by the SAFE application.
 1. **AppService** - Zips up the bundled folder and deploys it into the created environment.
 
 > There is a known issue that currently the FAKE script may sometimes fail the first time you run it with [this error](https://github.com/SAFE-Stack/SAFE-template/pull/65#issuecomment-385619990). If this occurs, simply open the FAKE script in your favourite editor, add a new line anywhere in the script, save and re-run. We're looking to fix this as soon as possible!
+
+### What is an ARM template?
+
+An ARM template is a declarative JSON file which contains the details of the Azure resources you require in your environment. This might include a web application, database, VM and messaging service - essentially any service supported by Azure. ARM templates are smart, in that you can repeatedly deploy them over an existing environment and only the newly added elements in the template will be applied onto the environment - perfect for a CI / CD approach. This also allows you to create entire dev / test environments from scratch within just a few minutes. The ARM template that comes with the SAFE template includes everything you need for a complete deployment to Azure from a clean state.
 
 ### Build arguments
 
