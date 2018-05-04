@@ -4,7 +4,7 @@ The template gets you up and running with the most common elements of the stack:
 
 * [Saturn](https://saturnframework.github.io/docs/), [Giraffe](https://github.com/giraffe-fsharp/Giraffe) or [Suave](https://suave.io/) for your web server
 * [Fable](http://fable.io/) for client-side F#
-* [Elmish](https://fable-elmish.github.io/elmish/) for web UI
+* [Elmish](https://elmish.github.io/) for web UI
 * [Fulma](https://mangelmaxime.github.io/Fulma/) for consistent web styling
 * [Docker](template-docker.md) or [Azure App Service](template-appservice.md) deployment models for hosting.
 
