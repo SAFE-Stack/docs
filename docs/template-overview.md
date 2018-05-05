@@ -40,13 +40,13 @@ Where `<template>` is one of:
 * `landing`: adds Fulma with the ['Landing'](https://dansup.github.io/bulma-templates/templates/landing.html) Bulma template.
 * `login`: adds Fulma with the ['Login'](https://dansup.github.io/bulma-templates/templates/login.html) Bulma template.
 
-### Fable.Remoting
-*Configures the SAFE app to use [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) to the template. See [here](feature-clientserver.md) for an overview of Fable Remoting and the alternatives for sharing data between client and server.*
+### Remoting
+*Configures the SAFE app to use [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) to the template. If this argument is not supplied, client / server communication will be handled through the standard routing and serialization mechanism of the server. See [here](feature-clientserver.md) for an overview of Fable Remoting and the alternatives for sharing data between client and server.*
 
 Usage: `dotnet new SAFE --Remoting`
 
-### Deployment
-*Configures the SAFE app to elements needed for deploying to one of two different hosting models.*
+### Deploy
+*Optionally configures the SAFE app to elements needed for deploying to one of two different hosting models. If this argument is not supplied, no explicit support for any hosting model will be provided.*
 
 Usage: `dotnet new SAFE --Deploy <hosting model>`
 
