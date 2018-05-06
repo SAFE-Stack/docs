@@ -10,6 +10,9 @@ The dojo takes around 90 minutes to complete if you have never worked with the s
 ## SAFE Samples
 The following example repositories (and more!) can be found in the official [SAFE Stack](https://github.com/SAFE-Stack) organisational GitHub page.
 
+### [SAFE Todo List](https://github.com/Zaid-Ajaj/SAFE-TodoList)
+The simplest Todo app: a client-server application written entirely in F# using Elmish on the client, Suave on the server and Fable.Remoting for type-safe communication between the two.
+
 ### [SAFE Bookstore](https://github.com/SAFE-Stack/SAFE-BookStore) 
 This sample demonstrates many of the useful features of a larger SAFE application, including login authentication using JWT tokens, automated deployment via Docker and SEO support with urls for pages. It also includes an example of using Azure Storage tables as a persistence store.
 
@@ -33,3 +36,5 @@ This application is a sample mobile application using the [React Native](https:/
 ## Other Resources
 
 * [The Hanselminutes podcast: F# and the functional SAFE Stack](https://www.hanselminutes.com/624/f-and-the-functional-safe-stack-with-krzysztof-cielak) with Krzysztof Cieslak
+* [Introducing Fable.Remoting: Automated Type-Safe Client-Server Communication for Fable Apps](https://medium.com/@zaid.naom/introducing-fable-remoting-automated-type-safe-client-server-communication-for-fable-apps-e567454d594c)
+* [Learning about the F# SAFE stack - Suave.io, Azure, Fable, Elmish](https://www.hanselman.com/blog/LearningAboutTheFSAFEStackSuaveioAzureFableElmish.aspx) High level introduction to the SAFE stack by Scott Hanselman
