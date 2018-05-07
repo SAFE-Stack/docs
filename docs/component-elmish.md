@@ -11,4 +11,4 @@ This conceptual diagram illustrates how your F# is run in the browser in a SAFE 
 
 ![](img/elmish-1.png)
 
-Learn more about Elmish [here](https://fable-elmish.github.io/elmish/).
+Learn more about Elmish [here](https://elmish.github.io/elmish/).
