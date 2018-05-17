@@ -17,7 +17,7 @@ The template provides the ability to customise the created application. You can 
 ### Server
 *Configures the SAFE app to use one of three different back-end hosting platforms.*
 
-Usage: `dotnet new SAFE --Server <server>`
+Usage: `dotnet new SAFE --server <server>`
 
 Where `<server>` is one of:
 
@@ -25,42 +25,49 @@ Where `<server>` is one of:
 * `giraffe`: Creates a SAFE app running on Giraffe only.
 * `suave`: Creates a SAFE app running on Suave.
 
-### Fulma
-*Configures the SAFE app to apply [Fulma](https://mangelmaxime.github.io/Fulma) bindings to the UI template.*
+### Layout
+*Configures the SAFE app to apply a CSS Framework to the UI template. Currently supports just [Fulma](https://mangelmaxime.github.io/Fulma) bindings*
 
-Usage: `dotnet new SAFE --Fulma <template>`
+Usage: `dotnet new SAFE --layout <layout>`
 
-Where `<template>` is one of:
+Where `<layout>` is one of:
 
-* `none`: don't add Fulma bindings at all **(default)**.
-* `basic`: adds Fulma basic template.
-* `admin`: adds Fulma with the ['Admin'](https://dansup.github.io/bulma-templates/templates/admin.html) Bulma template.
-* `cover`: adds Fulma with the ['Cover'](https://dansup.github.io/bulma-templates/templates/cover.html) Bulma template.
-* `hero`: adds Fulma with the ['Hero'](https://dansup.github.io/bulma-templates/templates/hero.html) Bulma template.
-* `landing`: adds Fulma with the ['Landing'](https://dansup.github.io/bulma-templates/templates/landing.html) Bulma template.
-* `login`: adds Fulma with the ['Login'](https://dansup.github.io/bulma-templates/templates/login.html) Bulma template.
+* `none`: don't add any CSS framework.
+* `fulma-basic`: adds Fulma basic template **(default)**.
+* `fulma-admin`: adds Fulma with the ['Admin'](https://dansup.github.io/bulma-templates/templates/admin.html) Bulma template.
+* `fulma-cover`: adds Fulma with the ['Cover'](https://dansup.github.io/bulma-templates/templates/cover.html) Bulma template.
+* `fulma-hero`: adds Fulma with the ['Hero'](https://dansup.github.io/bulma-templates/templates/hero.html) Bulma template.
+* `fulma-landing`: adds Fulma with the ['Landing'](https://dansup.github.io/bulma-templates/templates/landing.html) Bulma template.
+* `fulma-login`: adds Fulma with the ['Login'](https://dansup.github.io/bulma-templates/templates/login.html) Bulma template.
 
 ### Remoting
 *Configures the SAFE app to use [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) to the template. If this argument is not supplied, client / server communication will be handled through the standard routing and serialization mechanism of the server. See [here](feature-clientserver.md) for an overview of Fable Remoting and the alternatives for sharing data between client and server.*
 
-Usage: `dotnet new SAFE --Remoting`
+Usage: `dotnet new SAFE --remoting`
 
 ### Deploy
 *Optionally configures the SAFE app to elements needed for deploying to one of two different hosting models. If this argument is not supplied, no explicit support for any hosting model will be provided.*
 
-Usage: `dotnet new SAFE --Deploy <hosting model>`
+Usage: `dotnet new SAFE --deploy <hosting model>`
 
 Where `<hosting model>` is one of:
 
+* `none`: don't add FAKE targets to deploy **(default)**.
 * `docker`: Adds [FAKE](https://fake.build/) targets that bundles and build a Docker image. See [here](template-docker.md) for more details about Docker deployment.
 * `azure`: Adds [FAKE](https://fake.build/) targets and an [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) (ARM) template that allows deployment to the [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) plus an [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) instance. See [here](template-appservice.md) for more details about Azure deployment.
 
-### NPM
-*Configures the SAFE app to use NPM instead of default Yarn for JS package management.*
+### JS Deps
+*Configures the SAFE app to use either Yarn or NPM for JS package management.*
 
-Usage: `dotnet new SAFE --NPM`
+Usage: `dotnet new SAFE --js-deps <package manager>`
+
+Where `<package manager>` is one of:
+
+* `yarn`: uses [Yarn](https://yarnpkg.com/) for JS package management  **(default)**.
+* `npm`: uses [NPM](https://www.npmjs.com/) for JS package management.
+
 
 ## Examples
 * Create a SAFE application using all defaults: `dotnet new SAFE -lang F#`
-* Create a SAFE application using giraffe with Fable Remoting: `dotnet new SAFE -lang F# --Server giraffe --Remoting`
-* Create a SAFE application using Suave with Fulma: `dotnet new SAFE -lang F# --Server suave --Fulma landing`
+* Create a SAFE application using giraffe with Fable Remoting: `dotnet new SAFE -lang F# --server giraffe --remoting`
+* Create a SAFE application using Suave with Fulma: `dotnet new SAFE -lang F# --server suave --layout fulma-landing`

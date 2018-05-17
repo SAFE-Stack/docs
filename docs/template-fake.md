@@ -10,7 +10,7 @@ This target is a standard build procedure, consisting of following steps:
 1. **InstallClient** - in this step, either NPM or Yarn is invoked (based on which option was chosen when generating project) and it installs all Client dependencies defined in `package.json`. The step also performs `dotnet restore` to fetch NuGet-based packages used by front-end.
 1. **Build** - for server side `dotnet build` command is invoked, and for client side a special `dotnet-fable` CLI tool using `dotnet fable webpack` command with `-p` flag to compile Client project to a single JavaScript bundle file.
 
-*Note: Extra build steps will be included if you specified the [`--Deploy docker`](template-docker) or [`--Deploy azure`](template-appservice) flag when creating your project.*
+*Note: Extra build steps will be included if you specified the [`--deploy docker`](template-docker) or [`--deploy azure`](template-appservice) flag when creating your project.*
 
 ## **"Run"** target
 
