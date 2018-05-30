@@ -18,7 +18,7 @@ The diagram below illustrates some of the differences and similarities of the th
 |-|:-:|:-:|:-:|
 | ASP .NET compatible? | Yes | Yes | No |
 | F#-first? | Yes | Yes | Yes |
-| Core Abstractions | scope { } and controller { } | HttpHandler | WebPart
+| Core Abstractions | scope, controller and HttpHandler | HttpHandler | WebPart
 
 ## Why Saturn?
 ** Saturn is the default and recommended web server in SAFE**.
