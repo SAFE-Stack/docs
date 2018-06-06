@@ -68,6 +68,6 @@ Where `<package manager>` is one of:
 
 
 ## Examples
-* Create a SAFE application using all defaults: `dotnet new SAFE -lang F#`
-* Create a SAFE application using giraffe with Fable Remoting: `dotnet new SAFE -lang F# --server giraffe --remoting`
-* Create a SAFE application using Suave with Fulma: `dotnet new SAFE -lang F# --server suave --layout fulma-landing`
+* Create a SAFE application using all defaults: `dotnet new SAFE`
+* Create a SAFE application using giraffe with Fable Remoting: `dotnet new SAFE --server giraffe --remoting`
+* Create a SAFE application using Suave with Fulma: `dotnet new SAFE --server suave --layout fulma-landing`
