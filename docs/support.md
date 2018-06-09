@@ -10,7 +10,7 @@ Compositional IT are experts in designing functional-first, cloud-ready systems,
 
 Lambda Factory is a consulting company specializing in designing and building complex systems using Functional Programming languages such as F#, Elm and Elixir. It also offers help with introducing functional programming and open source driven development to the organization, as well as trainings, workshops and mentoring. Founded by open source contributor and well-known member of F# Community, Lambda Factory has been committed to supporting F# Community and helping it grow.
 
-## [Lambda Factory](http://lambdafactory.io/)
+## [Fuzzy Cloud](https://fuzzycloud.in/)
 <img src="../img/fuzzycloud.png" style="height: 100px;"/>
 
 Fuzzy Cloud is a fast-growing team of highly skilled and passionate IT professionals who can deliver services that help you speed up innovation and maximize efficiency. Our services are dynamic, scalable, resilient and responsive enabling rapid growth and high value for our clients. We take a highly collaborative approach to align our services with your business goals. We provide consulting in area like Cloud, Cross Platform mobile development, Machine Learning etc using Languages like F#, Python, Dart and few others.
