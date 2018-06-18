@@ -2,7 +2,7 @@ The [SAFE Template](https://github.com/SAFE-Stack/SAFE-template) is a [dotnet CL
 
 The template gets you up and running with the most common elements of the stack:
 
-* [Saturn](https://saturnframework.github.io/docs/), [Giraffe](https://github.com/giraffe-fsharp/Giraffe) or [Suave](https://suave.io/) for your web server
+* [Saturn](https://saturnframework.github.io/docs/) or [Giraffe](https://github.com/giraffe-fsharp/Giraffe)
 * [Fable](http://fable.io/) for client-side F#
 * [Elmish](https://elmish.github.io/) for web UI
 * [Fulma](https://mangelmaxime.github.io/Fulma/) for consistent web styling
@@ -23,7 +23,6 @@ Where `<server>` is one of:
 
 * `saturn`: Creates a SAFE app running on Saturn on top of Giraffe **(default)**.
 * `giraffe`: Creates a SAFE app running on Giraffe only.
-* `suave`: Creates a SAFE app running on Suave.
 
 ### Layout
 *Configures the SAFE app to apply a CSS Framework to the UI template. Currently supports just [Fulma](https://mangelmaxime.github.io/Fulma) bindings*
@@ -69,5 +68,5 @@ Where `<package manager>` is one of:
 
 ## Examples
 * Create a SAFE application using all defaults: `dotnet new SAFE`
-* Create a SAFE application using giraffe with Fable Remoting: `dotnet new SAFE --server giraffe --remoting`
-* Create a SAFE application using Suave with Fulma: `dotnet new SAFE --server suave --layout fulma-landing`
+* Create a SAFE application using Giraffe with Fable Remoting: `dotnet new SAFE --server giraffe --remoting`
+* Create a SAFE application using Giraffe with Fulma: `dotnet new SAFE --server giraffe --layout fulma-landing`

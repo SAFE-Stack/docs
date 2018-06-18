@@ -49,5 +49,6 @@ pages:
   - 'Choosing your web server' : 'faq-server.md'
   - 'Moving from dev to prod' : 'faq-build.md'
 - 'Learning Resources': 'learning.md'
+- News: 'news.md'
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'
