@@ -5,7 +5,7 @@ The SAFE template is geared up towards a streamlined development process. Firstl
 
 The development process uses *two web servers* running in tandem:
 
-* The "back-end" .NET web server which hosts your API endpoints and other server-generated content. This uses Kestrel on ASP .NET out of the box (although you can opt for [other options]()),
+* The "back-end" .NET web server which hosts your API endpoints and other server-generated content. This uses Kestrel on ASP .NET out of the box (although you can opt for [other options](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers)).
 * A "front-end" web server which hosts your Fable application. The SAFE template uses the [Webpack Dev Server](https://github.com/webpack/webpack-dev-server) for this.
 
 ![](img\faq-build-1.png)
