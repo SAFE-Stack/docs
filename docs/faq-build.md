@@ -5,9 +5,7 @@ The SAFE template is geared up towards a streamlined development process. Firstl
 
 The development process uses *two web servers* running in tandem:
 
-* The "back-end" .NET web server which hosts your API endpoints and other server-generated content.
-    * For **[Saturn](component-saturn)** or **Giraffe**, this uses Kestrel on ASP .NET out of the box (although you can opt for [other options]()),
-    * **Suave** uses its own built-in HTTP server.
+* The "back-end" .NET web server which hosts your API endpoints and other server-generated content. This uses Kestrel on ASP .NET out of the box (although you can opt for [other options]()),
 * A "front-end" web server which hosts your Fable application. The SAFE template uses the [Webpack Dev Server](https://github.com/webpack/webpack-dev-server) for this.
 
 ![](img\faq-build-1.png)
