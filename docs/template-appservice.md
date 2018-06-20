@@ -28,12 +28,12 @@ An ARM template is a declarative JSON file which contains the details of the Azu
 
 Deploying your application through FAKE is relatively simple. Use the following command:
 ```
-build appservice
-    subscriptionId=<subId>
-    clientId=<clientId>
-    environment=<environment> (optional)
-    location=<location>       (optional)
-    pricingTier=<pricingTier> (optional)
+fake run build.fsx --target appservice
+    -e subscriptionId=<subId>
+    -e clientId=<clientId>
+    -e environment=<environment> (optional)
+    -e location=<location>       (optional)
+    -e pricingTier=<pricingTier> (optional)
 ```
 where:
 
