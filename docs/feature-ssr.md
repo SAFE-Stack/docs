@@ -1,5 +1,5 @@
 Server-Side Rendering (SSR) means that some parts of your application code can run on both the server and the client.
-For [React](https://reactjs.org/) this means that you can render your components directly to HTML on the server side (usually via a [node.js server](https://nodejs.org/en/)), which allows for better search engine optimization (SEO) and gives a faster initial response, especially on mobile devices.
+For [React](https://reactjs.org/) this means that you can render your components directly to HTML on the server side (e.g. via a [node.js server](https://nodejs.org/en/)), which allows for better search engine optimization (SEO) and gives a faster initial response, especially on mobile devices.
 
 The browser typically receives a static HTML site and starts updating the UI immediately;
 React's bundle code will be downloaded asynchronously and when it completes, the client-side JavaScript will take over via [React's hydrate](https://reactjs.org/docs/react-dom.html#hydrate) functionality. In the JavaScript ecosystem this is also as known as an "isomorphic" or "universal" app.
