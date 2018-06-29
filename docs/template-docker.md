@@ -28,7 +28,7 @@ Create a file called `release.cmd` with the following content and configure your
     @echo off
     cls
 
-    fake run build.fsx --target Deploy "DockerLoginServer=docker.io" "DockerImageName=****" "DockerUser=****" "DockerPassword=***" %*
+    fake build --target Deploy "DockerLoginServer=docker.io" "DockerImageName=****" "DockerUser=****" "DockerPassword=***" %*
 
 Don't worry the file is already in `.gitignore` so your password will not be commited.
 

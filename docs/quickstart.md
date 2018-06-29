@@ -21,7 +21,7 @@ You'll also want an IDE to create F# applications. We recommend one of the follo
 2. Open a command prompt
 3. Enter `dotnet new -i SAFE.Template` to install the [SAFE project template](template-overview.md)
 4. Enter `dotnet new SAFE` to create a new SAFE project
-5. Enter `fake run build.fsx --target run` to build and run the app
+5. Enter `fake build --target run` to build and run the app
 
 Congratulations - after a short delay, you'll be presented with a basic SAFE application running in your browser! The application will by default run in "development mode", which means it automatically watch your project for changes; whenever you save a file in the client project it will refresh the browser **automatically**; if you save a file in the server project it will also restart the server in the background.
 
