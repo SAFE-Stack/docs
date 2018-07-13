@@ -3,15 +3,22 @@ The SAFE template has the ability to easily create a [Docker](https://www.docker
 ## Custom FAKE build tasks
 
 1. **Bundle** - all necessary artifacts for both Server and Client are collected for following `Docker` target.
-1. **Docker** - based on present `Dockerfile`, docker image is built and tagged using `dockerUser` and `dockerImageName` values from the script. 
+1. **Docker** - based on present `Dockerfile`, docker image is built and tagged using `dockerUser` and `dockerImageName` values from the script.
+
+> Note: Before running the `Docker` target, make sure to modify the default `dockerUser` and `dockerImageName` values in script.
+
+## Testing docker image locally
+
+1. Make sure you have docker installed and created the template with `--deploy docker` option
+1. Run `fake build --target docker`
+1. Run `docker run -d -it -p 8085:8085 {dockerUser}/{dockerImageName}`
+1. Navigate to `{dockerHost}:8085` url
 
 ## Docker image
 
 The image is based on [microsoft/dotnet:runtime](https://hub.docker.com/r/microsoft/dotnet/).
 Entrypoint for the image is `dotnet Server.dll` (with `/Server` working directory).
 To allow incoming traffic, port 8085 is exposed.
-
-> Note: Before running the `Docker` target, make sure to modify the default `dockerUser` and `dockerImageName` values in script.
 
 ## Release to Azure App Service
 
