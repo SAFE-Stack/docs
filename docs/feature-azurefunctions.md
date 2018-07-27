@@ -9,7 +9,7 @@ With Functions-As-A-Service (FAAS) you can focus on building your business logic
 For SAFE apps we see various use cases for FAAS:
 
 * Running recurring jobs to create statistics or maintenance actions via timer triggers
-* Running jobs that can be done async like sending email 
+* Running jobs that can be processed async like sending email 
 * Command processing in CQRS apps via message queues or HTTP triggers
 
 
