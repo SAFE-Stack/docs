@@ -15,7 +15,15 @@ For SAFE apps we see various use cases for FAAS:
 
 ## Editing Functions in the Azure Portal
 
-The [Azure Portal](https://portal.azure.com) allows you to create and edit Functions and their source code via an online editor. While it seem very convenient, this should only be used for testing and prototyping. In SAFE-Stack you usually benefit from reusing your domain model at various places [see Client/Server](feature-clientserver.md) - so we recommend to use "precompiled Azure Functions" as described below.
+The [Azure Portal](https://portal.azure.com) allows you to create and edit Functions and their source code via an online editor. 
+
+For a short test go to the portal, click New button and search for Function App. Click through the wizard to create a new Function App. Open the app when it's created, add a new function. Pick Timer as scenario and F# as language.
+
+Replace the contents of function.json and run.fsx with files from 1-portal-timer folder.
+
+Observe the logs to see that the function runs every minute and outputs the message about the meetup duration.
+
+While it seem very convenient, this should only be used for testing and prototyping. In SAFE-Stack you usually benefit from reusing your domain model at various places [see Client/Server](feature-clientserver.md) - so we recommend to use "precompiled Azure Functions" as described below.
 
 ## Deployment
 
