@@ -26,10 +26,19 @@ Observe the logs to see that the function runs every minute and outputs the mess
 While it seem very convenient, this should only be used for testing and prototyping. In SAFE-Stack you usually benefit from reusing your domain model at various places [see Client/Server](feature-clientserver.md) - so we recommend to use "precompiled Azure Functions" as described below.
 
 ## Deployment
+In SAFE-Stack scenarios we recommend all deployments should be automated. Here, we discuss two options for deploying your functions apps into Azure.
 
-In SAFE-Stack scenarios we recommend all deployments should be automated. In the case of Function Apps the excellent [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools) can be used. If you use core tools version 2 then the following should be added to your build/deploy script:
+### Azure Functions Core Tools
+In the case of Function Apps the excellent [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools) can be used. If you use core tools version 2 then the following should be added to your build/deploy script:
 
     dotnet publish -c Release
     func azure functionapp publish [FunctionApp Name]
 
 This will compile your Function App in release mode and push it to the Azure portal.
+
+In the case of a CI server etc., you will need to install the Functions Core Tools on the server and once per functions app log into the CI machine and explicitly authenticate it manually (see the Functions Core Tools docs).
+
+### HTTPS Upload
+Since Azure Functions sits on top of Azure App Service, the same mechanisms for deployment there also exist here. In this case, you can use the exact same HTTPS upload capabilities of the App Service to upload a zip of your functions app into your Functions app. The standard SAFE Template can generate this for you for the core SAFE application as part of the FAKE script; the exact same mechanism can be utilised for your functions app.
+
+As per the standard App Service, HTTPS upload uses a user/pass supplied in the header of the zip which is PUT into the functions app. This user / pass can be taken from the App Service in the Azure Portal directly, or extracted during deployment of your ARM template (as per the FAKE script does for the App Service).
