@@ -17,13 +17,40 @@ For SAFE apps we see various use cases for FAAS:
 
 The [Azure Portal](https://portal.azure.com) allows you to create and edit Functions and their source code via an online editor. 
 
-For a short test go to the portal, click New button and search for Function App. Click through the wizard to create a new Function App. Open the app when it's created, add a new function. Pick Timer as scenario and F# as language.
+For a short test go to the portal, click the "New" button and search for "Function App". Click through the wizard to create a new Function App. Open the app when it's created and add a new function. Pick "Timer" as scenario and F# as language.
 
-Replace the contents of function.json and run.fsx with files from 1-portal-timer folder.
+Replace the contents of function.json with:
 
-Observe the logs to see that the function runs every minute and outputs the message about the meetup duration.
+    {
+    "bindings": [
+        {
+        "name": "myTimer",
+        "type": "timerTrigger",
+        "direction": "in",
+        "schedule": "0 * * * * *"
+        }
+    ],
+    "disabled": false
+    }
 
-While it seem very convenient, this should only be used for testing and prototyping. In SAFE-Stack you usually benefit from reusing your domain model at various places [see Client/Server](feature-clientserver.md) - so we recommend to use "precompiled Azure Functions" as described below.
+and replace the run.fsx with the following F# code:
+
+    open System
+
+    let minutesSince (d: DateTime) =
+    (DateTime.Now - d).TotalMinutes
+
+    let run(myTimer: TimerInfo, log: TraceWriter) =
+    let meetupStart = new DateTime(2017, 11, 8, 19, 0, 0)
+
+    minutesSince meetupStart
+    |> int
+    |> sprintf "Our meetup has been running for %d minutes"
+    |> log.Info
+
+Now observe the logs to see that the function runs every minute and outputs the message about the meetup duration.
+
+While it seems very convenient, the online editor should only be used for testing and prototyping. In SAFE-Stack you usually benefit from reusing your domain model at various places [see Client/Server](feature-clientserver.md) - so we recommend to use "precompiled Azure Functions" as described below.
 
 ## Deployment
 In SAFE-Stack scenarios we recommend all deployments should be automated. Here, we discuss two options for deploying your functions apps into Azure.
