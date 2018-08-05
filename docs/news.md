@@ -1,5 +1,10 @@
 # News and Announcements
 ## 2018
+### 5th August
+We're pleased to see that the Suave team have clarified their license and explicitly removed the dependency on the Logary package. However, our decision to remove Suave from the SAFE stack remains: **Suave no longer forms a part of the strategic goals of the SAFE project**, and our server-side focus remains on improving the experience for both Giraffe and Saturn.
+
+We nonetheless wish the Suave project, team and contributors the best of luck for the future.
+
 ### 18th June
 Due to the unclear future regarding the licensing of Suave and its dependencies, the SAFE team have today made the unamimous decision to **remove Suave as a recommended option on the SAFE stack**. We will no longer provide guidance on integrating Suave with the SAFE stack, nor will we maintain existing capabilities for it in SAFE tooling.
 
