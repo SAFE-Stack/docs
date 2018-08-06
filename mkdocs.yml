@@ -43,6 +43,7 @@ pages:
     - 'Registering with Azure': 'template-azure-registration.md'
 - Features of SAFE:
   - 'Client/Server communication' : 'feature-clientserver.md'
+  - 'Elmish on the server': 'elmish-bridge.md'
   - 'Server Side Rendering' : 'feature-ssr.md'
   - 'Hot Module Replacement' : 'feature-hmr.md'
   - 'Working with Azure functions' : 'feature-azurefunctions.md'
