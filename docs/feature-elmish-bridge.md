@@ -58,8 +58,8 @@ Head over to [Elmish.Bridge](https://github.com/Nhowka/Elmish.Bridge) to learn m
 
 # Things to consider
 
-It is worth noting that the server state has the lifespan equal to the that of the process under which the server instance is running, this means if the server application restarts then the state is gone for good: as of now there is no built-in persistence for the state.   
+It is worth noting that the server state has the lifespan equal to the that of the process under which the server instance is running, this means if the server application restarts then the state is reset: as of now there is no built-in persistence for the state.   
 
 Also, the server state is local to the server instance, if you run multiple web servers, they won't be sharing the same server state by default. 
 
-One solution for this is to use a shared [Redis](https://redis.io/) instance/cluster where the server instances would cache their states on updates and retrieve states during startup.   
+One solution for this is to use a shared [Redis](https://redis.io/) instance/cluster or similar tech where the server instances would cache their states on updates and retrieve states during startup.   
