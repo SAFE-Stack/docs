@@ -116,16 +116,23 @@ async {
 
 Notice here, there is no need to create routes, or worry about HTTP verbs, or even involve yourself with the Giraffe pipeline.
 
-### When should I use raw HTTP vs Fable Remoting?
+## Sharing State
+With the addition of the [Elmish.Bridge](feature-elmish-bridge) library, it's now possible to maintain a stateful server and send notifications to clients to maintain state.
+
+## Which technology should I use?
 Fable Remoting provides an excellent way to quickly get up and running with the SAFE stack. You can rapidly create contracts between client / server and have guaranteed contracts between both client and server. However, note that Fable Remoting is not designed for use as an "open" API for consumption by multiple client. It also forces all HTTP traffic to be delivered as a POST, which cannot be cached by the browser. If you're using a "closed" app without exposing an API to other consumers, and do not need close control of the HTTP channel, consider using Fable.Remoting.
 
 Alternatively, the raw HTTP model provided by Saturn with `scope { }` requires you to construct routes manually and does not guarantee that the client and endpoint have the same contract (you have to specify the same type on both sides yourself). However, Saturn gives you total control over the routing and verbs used. If you have a public API that is exposed not just to your own application but to third-parties, or you need more fine grained control over your routes and data, you should use this approach.
 
+Lastly, Elmish Bridge provides an alternative way of modelling client/server communication. Unlike Fable Remoting, Elmish Bridge provides the same Elmish model on the server as well as the client, as well as the ability to send notificatiosn from the server back to the client via websockets.
+
 Alternatively, consider using a combination of both Remoting and Saturn endpoints - Remoting for those that are used "internally" by your application, and Saturn for those exposed to external callers.
 
-| | Fable.Remoting | Raw HTTP |
-|-|:-:|:-:|
-| Client / Server support | Very easy | Easy |
-| "Open" API? | No | Yes |
-| HTTP Verbs? | POST | Fully Configurable |
-| Pipeline Control? | Limited | Full |
+| | Fable.Remoting | Raw HTTP | Elmish.Bridge |
+|-|:-:|:-:|:-:|
+| Client / Server support | Very easy | Easy | Very Easy |
+| State model | Stateless | Stateless | Stateful |
+| "Open" API? | No | Yes | No |
+| HTTP Verbs? | POST | Fully Configurable | None |
+| Push messages? | No | No | Yes |
+| Pipeline Control? | Limited | Full | Limited |
