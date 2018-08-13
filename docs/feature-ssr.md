@@ -18,7 +18,7 @@ React's bundle code will be downloaded asynchronously and when it completes, the
 * Increased server-side load.
 
 ## SSR on SAFE
-In SAFE, SSR can be done using [fable-react](https://github.com/fable-compiler/fable-react). Its approach is a little different from those you might have seen in the JavaScript ecosystem, as it takes a purely F# approach: you render your [Elmish](https://github.com/fable-elmish/elmish) views directly on .NET Core, with all the benefits of the .NET Core runtime.
+In SAFE, SSR can be done using [fable-react](https://github.com/fable-compiler/fable-react). Its approach is a little different from those you might have seen in the JavaScript ecosystem, as it takes a purely F# approach: you render your [Elmish](https://github.com/elmish/elmish) views directly on .NET Core, with all the benefits of the .NET Core runtime.
 
 ## Further reading
 
