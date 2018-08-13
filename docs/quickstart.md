@@ -32,4 +32,4 @@ Take a look at the [template options](template-overview.md#template-options). Th
 
 ## Troubleshooting
 
-* **fake not found** - If you fail to execute `fake` from command line after installing it as a global tool, you might need to add it to your `PATH` manually: (e.g. `export PATH="$HOME/.dotnet/tools:$PATH”` on unix) - [related GitHub issue](https://github.com/dotnet/cli/issues/9321)
+* **fake not found** - If you fail to execute `fake` from command line after installing it as a global tool, you might need to add it to your `PATH` manually: (e.g. `export PATH="$HOME/.dotnet/tools:$PATH"` on unix) - [related GitHub issue](https://github.com/dotnet/cli/issues/9321)
