@@ -3,7 +3,7 @@ One of the most powerful features of SAFE is the ability to seamlessly share **d
 ## Sharing Types
 
 Sharing your domain types and contracts between client and server is extremely simple. Thanks to Fable's excellent F# transpilation into Javascript, you can use all standard F# language features such as Records, Tuples and Discriminated Unions without worry. To share types across both your client and server project, first create a file in your repository called e.g `Shared.fs`.
-![](img\client-server-01.png)
+![](img/client-server-01.png)
 
 Then, create types in the file as needed e.g
 

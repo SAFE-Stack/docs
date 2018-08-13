@@ -8,7 +8,7 @@ The development process uses *two web servers* running in tandem:
 * The "back-end" .NET web server which hosts your API endpoints and other server-generated content. This uses Kestrel on ASP .NET out of the box (although you can opt for [other options](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers)).
 * A "front-end" web server which hosts your Fable application. The SAFE template uses the [Webpack Dev Server](https://github.com/webpack/webpack-dev-server) for this.
 
-![](img\faq-build-1.png)
+![](img/faq-build-1.png)
 
 The backend build makes use of `dotnet watch` to allow you to make changes to your server-side application and have the server automatically restart with the latest changes. Since your back-end applications will typically be stateless, this permits a rapid development workflow.
 
@@ -22,7 +22,7 @@ In a production environment, you won't typically use the webpack dev server. Ins
 
 Both the [Azure](template-appservice) and [Docker](template-docker) configuration options will do this automatically.
 
-![](img\faq-build-2.png)
+![](img/faq-build-2.png)
 
 ### Client asset hosting alternatives
 
