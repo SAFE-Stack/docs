@@ -23,7 +23,7 @@ extra:
     - type: 'globe'
       link: https://safe-stack.github.io/
 
-pages:
+nav:
 - Home: 'index.md'
 - Introduction: 'intro.md'
 - Quick Start: 'quickstart.md'
