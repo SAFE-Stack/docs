@@ -15,7 +15,7 @@ Refer to the [Quick Start guide](quickstart.md#create-your-first-safe-app) to se
 The template provides the ability to customise the created application. You can see template version and available options by running  `dotnet new SAFE --help`.
 
 ### Server
-*Configures the SAFE app to use one of three different back-end hosting platforms.*
+*Configures the SAFE app to use one of two different back-end hosting platforms.*
 
 Usage: `dotnet new SAFE --server <server>`
 
