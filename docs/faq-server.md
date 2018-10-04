@@ -1,6 +1,6 @@
 ## Server-side options in SAFE
 
-The [SAFE template](safe-template.md) comes with two alternative web server technologies out of the box:
+The [SAFE template](template-overview.md) comes with two alternative web server technologies out of the box:
 
 * **Saturn** - A simple, flexible F# abstraction layer that runs on top of Giraffe that enables both MVC- and Web API-style services. 
 * **Giraffe** - A flexible F# framework for creating web-enabled applications. Giraffe runs on top of ASP .NET Core and the Kestrel server.
