@@ -68,6 +68,17 @@ Where `<communication model>` is one of:
 * `none`: don't add any additional libraries for client-server communication **(default)**
 * `remoting`: add [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) to the template.
 
+### Pattern
+
+*Configures Client app to use one of available patterns. Currently supports only either default Elmish architecture with Commands or simple (no Commands) Elmish Architecture with conjunction with [Fable.Reaction](https://dbrattli.github.io/Fable.Reaction/) library for Reactive programming*
+
+Usage: `dotnet new SAFE --pattern <pattern model>`
+
+Where `<pattern model>` is one of:
+
+* `default`: use standard Elmish architecture with Commands **(default)**
+* `reaction`: use simple Elmish architecture without Commands + [Fable.Reaction](https://dbrattli.github.io/Fable.Reaction/) for reactive pattern
+
 ### Deploy
 
 *Optionally configures the SAFE app to elements needed for deploying to one of two different hosting models. If this argument is not supplied, no explicit support for any hosting model will be provided.*
