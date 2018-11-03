@@ -8,7 +8,7 @@ Sharing your domain types and contracts between client and server is extremely s
 Then, create types in the file as needed e.g
 
 ```fsharp
-type Customer = { Name : string }
+type Customer = { Id : int; Name : string }
 ```
 
 Reference this file to your server project. You can now reference those types in the server.
@@ -47,7 +47,7 @@ Sharing data using Saturn is very simple. Start by creating a function in your s
 
 ```fsharp
 let loadCustomersFromDb() =
-    [ { Name = "Joe Bloggs" } ]
+    [ { Id = 1; Name = "Joe Bloggs" } ]
 ```
 Next, create a method which returns the data as JSON within Giraffe's HTTP context.
 
@@ -78,7 +78,7 @@ let myApis = scope {
 Finally, call the endpoint from your client application.
 ```fsharp
 promise {    
-    let! customers = Fetch.fetchAs<Customer array> (sprintf "api/customers") []
+    let! customers = Fetch.fetchAs<Customer list> (sprintf "api/customers") []
     // do more with customers here...
 }
 ```
@@ -90,37 +90,62 @@ By default, serialization between Fable and Giraffe **is not compatible**. In or
 
 If you are using the [SAFE Template](safe-template), this will automatically be done for you - see the [`config`](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/src/Server/ServerSaturn.fs#L40L44) function in `Server.fs`.
 
-### Sharing data using Fable.Remoting
-As an alternative to raw HTTP, you can also use the [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) library, which provides an RPC-style mechanism for calling server endpoints.
+### Data communication using Fable.Remoting
+Alongside raw HTTP, you can also use [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting), *remoting* for short,  which provides an RPC-style mechanism for calling server endpoints. Remoting lets you define you client-server interactions as a record type, this type is commonly referred to as the *protocol* or *contract* that is shared between the server and the client. 
 
-In our case, instead of creating a `scope { }` on the server and using `fetch` on the client, you create a simple *protocol* which contains methods exposed by the server:
-
+Each field of the record is either of type `Async<T>` or a function that returns `Async<T>`, for example:
 ```fsharp
-type ICustomer = {
-    customers : unit -> Async<Customer array>
-}
-
-let server : ICustomer = {
-    customers = fun () -> async { return loadCustomersFromDb() }
+type ICustomerApi = {
+    getCustomers : unit -> Async<Customer list>
+    findCustomerByName : string -> Async<Customer option>
 }
 ```
-On the client, you need only create a proxy for the protocol and then can call methods on it directly.
+The supported types used within the protocol can be any F# type: primitive values (int, string, DateTime, etc.), records, options, discrimincated unions, choice, result, maps, lists, arrays, tuples or any combination of them. 
+
+On the server you would implement the protocol:
+```fs
+let getCustomers() = 
+    async {
+        return [
+            { Id = 1; Name = "John Doe" }
+            { Id = 2; Name = "Jane Smith" }
+        ]
+    }
+
+let findCustomerByName (name: string) = 
+    async {
+        let! allCustomers = getCustomers()
+        return allCustomers |> List.tryFind (fun c -> c.Name = name)
+    }
+
+
+let customerApi : ICustomerApi = {
+    getCustomers = getCustomers
+    findCustomerByName = findCustomerByName
+} 
+```
+After [exposing a HttpHandler](https://zaid-ajaj.github.io/Fable.Remoting/src/saturn.html) from `customerApi` you can start calling the API from the client. 
 
 ```fsharp
+module Server = 
+    let api : ICustomerApi = 
+        Remoting.createApi()
+        |> Remoting.buildProxy<ICustomerApi>
+
 async {
-    let server = Proxy.remoting<ICustomer> {()}
-    let! customers = server.customers()
-    /// ...
+    let! customers = server.getCustomers()
+    for customer in customers do
+        printfn "#%d => %s" customer.Id customer.Name
 }
 ```
 
-Notice here, there is no need to create routes, or worry about HTTP verbs, or even involve yourself with the Giraffe pipeline.
+Notice here, there is no need to create routes, JSON serialization, worry about HTTP verbs, or even involve yourself with the Giraffe pipeline. If you open your browser network tab, you can inspect what remoting is doing behind the scenes with [raw http communication](https://zaid-ajaj.github.io/Fable.Remoting/src/raw-http.html). 
 
 ## Sharing State
 With the addition of the [Elmish.Bridge](feature-elmish-bridge.md) library, it's now possible to maintain a stateful server and send notifications to clients to maintain state.
 
 ## Which technology should I use?
-Fable Remoting provides an excellent way to quickly get up and running with the SAFE stack. You can rapidly create contracts between client / server and have guaranteed contracts between both client and server. However, note that Fable Remoting is not designed for use as an "open" API for consumption by multiple client. It also forces all HTTP traffic to be delivered as a POST, which cannot be cached by the browser. If you're using a "closed" app without exposing an API to other consumers, and do not need close control of the HTTP channel, consider using Fable.Remoting.
+Fable Remoting provides an excellent way to quickly get up and running with the SAFE stack. You can rapidly create contracts and have guaranteed type-safety between both client and server. Considor using remoting for rapid prototyping, since JSON serialization and Http routing is handled by the library, you only think of your client-server code in terms of types and stateless functions. If you need full control over the HTTP channel for returning specific status codes, using custom HTTP verbs or working with headers, then remoting is probably not for you. 
 
 Alternatively, the raw HTTP model provided by Saturn with `scope { }` requires you to construct routes manually and does not guarantee that the client and endpoint have the same contract (you have to specify the same type on both sides yourself). However, Saturn gives you total control over the routing and verbs used. If you have a public API that is exposed not just to your own application but to third-parties, or you need more fine grained control over your routes and data, you should use this approach.
 
@@ -132,7 +157,7 @@ Alternatively, consider using a combination of both Remoting and Saturn endpoint
 |-|:-:|:-:|:-:|
 | Client / Server support | Very easy | Easy | Very Easy |
 | State model | Stateless | Stateless | Stateful |
-| "Open" API? | No | Yes | No |
-| HTTP Verbs? | POST | Fully Configurable | None |
+| "Open" API? | YES | Yes | No |
+| HTTP Verbs? | POST and GET | Fully Configurable | None |
 | Push messages? | No | No | Yes |
 | Pipeline Control? | Limited | Full | Limited |
