@@ -149,7 +149,7 @@ Fable Remoting provides an excellent way to quickly get up and running with the 
 
 Alternatively, the raw HTTP model provided by Saturn with `scope { }` requires you to construct routes manually and does not guarantee that the client and endpoint have the same contract (you have to specify the same type on both sides yourself). However, Saturn gives you total control over the routing and verbs used. If you have a public API that is exposed not just to your own application but to third-parties, or you need more fine grained control over your routes and data, you should use this approach.
 
-Lastly, Elmish Bridge provides an alternative way of modelling client/server communication. Unlike Fable Remoting, Elmish Bridge provides the same Elmish model on the server as well as the client, as well as the ability to send notificatiosn from the server back to the client via websockets.
+Lastly, Elmish Bridge provides an alternative way of modelling client/server communication. Unlike Fable Remoting, Elmish Bridge provides the same Elmish model on the server as well as the client, as well as the ability to send notifications from the server back to connected clients via websockets. However, the Bridge model is inherently stateful, which means that a server restart could impact state management across all connected clients.
 
 Alternatively, consider using a combination of both Remoting and Saturn endpoints - Remoting for those that are used "internally" by your application, and Saturn for those exposed to external callers.
 
@@ -157,7 +157,7 @@ Alternatively, consider using a combination of both Remoting and Saturn endpoint
 |-|:-:|:-:|:-:|
 | Client / Server support | Very easy | Easy | Very Easy |
 | State model | Stateless | Stateless | Stateful |
-| "Open" API? | YES | Yes | No |
-| HTTP Verbs? | POST and GET | Fully Configurable | None |
+| "Open" API? | Yes | Yes | No |
+| HTTP Verbs? | POST, GET | Fully Configurable | None |
 | Push messages? | No | No | Yes |
 | Pipeline Control? | Limited | Full | Limited |
