@@ -38,13 +38,10 @@ let customerApi : ICustomerApi = {
 After [exposing an HttpHandler](https://zaid-ajaj.github.io/Fable.Remoting/src/saturn.html) from `customerApi` you can start calling the API from the client. 
 
 ```fsharp
-module Server = 
-    let api : ICustomerApi = 
-        Remoting.createApi()
-        |> Remoting.buildProxy<ICustomerApi>
+let api = Remoting.createApi() |> Remoting.buildProxy<ICustomerApi>
 
 async {
-    let! customers = server.getCustomers()
+    let! customers = api.getCustomers()
     for customer in customers do
         printfn "#%d => %s" customer.Id customer.Name
 }
