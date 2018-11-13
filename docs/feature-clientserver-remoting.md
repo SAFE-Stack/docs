@@ -47,4 +47,4 @@ async {
 }
 ```
 
-Notice here, there is no need to configure routes or JSON serialization, worry about HTTP verbs, or even involve yourself with the Giraffe pipeline. If you open your browser network tab, you can easily [inspect] (https://zaid-ajaj.github.io/Fable.Remoting/src/raw-http.html) what remoting is doing behind the scenes. 
+Notice here, there is no need to configure routes or JSON serialization, worry about HTTP verbs, or even involve yourself with the Giraffe pipeline. If you open your browser network tab, you can easily [inspect](https://zaid-ajaj.github.io/Fable.Remoting/src/raw-http.html) what remoting is doing behind the scenes. 
