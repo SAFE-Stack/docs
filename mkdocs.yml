@@ -42,8 +42,13 @@ nav:
     - Application Insights Integration: 'template-azure-ai.md'
     - Registering with Azure: 'template-azure-registration.md'
 - Features of SAFE:
-  - Client/Server communication : 'feature-clientserver.md'
-  - Elmish on the server : 'feature-elmish-bridge.md'
+  - Client / Server Sharing:
+    - Sharing Overview : 'feature-clientserver.md'
+    - Sharing Types and Code : 'feature-clientserver-basics.md'
+    - Messaging using HTTP : 'feature-clientserver-http.md'
+    - Messaging with Protocols : 'feature-clientserver-remoting.md'
+    - Stateful Messaging through Bridge : 'feature-clientserver-bridge.md'
+    - Serialization in SAFE : 'feature-clientserver-serialization.md'
   - Server Side Rendering : 'feature-ssr.md'
   - Hot Module Replacement : 'feature-hmr.md'
   - Working with Azure functions : 'feature-azurefunctions.md'
