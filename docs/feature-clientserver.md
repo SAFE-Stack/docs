@@ -6,11 +6,10 @@ The basics of code sharing across client and server include:
 * Sharing **types**. Useful for contracts between client and server, as well as to share a common domain
 * Sharing **behaviour**. In other words, functions that perform e.g. shared validation or similar.
 
-These areas is explained in more detail [here](feature-clientserver-basics.md).
+These two core areas are explained in more detail [here](feature-clientserver-basics.md).
 
 ## Sending messages between client and server
-
-There are several technologies availabile for client / server communications in SAFE applications. Each has their own strengths and weaknesses:
+In addition to types and messages, there are several technologies availabile in SAFE that allow you to send messages from client to server (and from server to client). Each has their own strengths and weaknesses:
 
 * [Raw HTTP](feature-clientserver-http.md) using Saturn's routing capabilities.
 * [Contracts / protocols](feature-clientserver-remoting.md) via Fable Remoting.
