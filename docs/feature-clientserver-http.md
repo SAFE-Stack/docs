@@ -19,7 +19,7 @@ You can opt to combine both of the above functions into one, depending on your p
 
 Also note the `next` and `ctx` arguments. These are used by Giraffe as part of its [HTTP pipeline](https://github.com/giraffe-fsharp/Giraffe/blob/master/DOCUMENTATION.md#fundamentals) and are required by the `json` function (Note you can also use `Successful.Ok` instead of `json`, which will offer XML serialization as well).
 
-## 2. Expose data through Saturn.
+## 2. Expose data through Saturn
 Now expose the api method using [Saturn's](https://saturnframework.github.io/docs/api/scope/) `router` construct and add it to your overall application scope:
 ```fsharp
 let myApis = router {
@@ -34,7 +34,7 @@ let myApis = router {
 }
 ```
 
-## 3. Consume the endpoint from the client.
+## 3. Consume the endpoint from the client
 Finally, call the endpoint from your client application.
 ```fsharp
 promise {    

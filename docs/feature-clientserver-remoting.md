@@ -1,7 +1,7 @@
 # Data sharing with Fable.Remoting
 Alongside raw HTTP, you can also use [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting), which provides an RPC-style mechanism for calling server endpoints. With Remoting, you don't need to worry about the details of serialization or of how to consume the endpoint - instead, remoting lets you define you client-server interactions as a shared *type* that is commonly referred to as a *protocol* or *contract*.
 
-## 1. Defining a protocol
+## 1. Define a protocol
 Each field of the record is either of type `Async<T>` or a function that returns `Async<T>`, for example:
 ```fsharp
 type ICustomerApi = {
@@ -11,7 +11,7 @@ type ICustomerApi = {
 ```
 The supported types used within the protocol can be any F# type: primitive values (int, string, DateTime, etc.), records, options, discrimincated unions or collections etc.
 
-## 2. Implementing a protocol on the server
+## 2. Implement the protocol on the server
 On the server you would implement the protocol as follows:
 ```fsharp
 let getCustomers() =
@@ -31,9 +31,10 @@ let findCustomerByName (name: string) =
 let customerApi : ICustomerApi = {
     getCustomers = getCustomers
     findCustomerByName = findCustomerByName
-} 
+}
+```
 
-## 3. Consuming a protocol on the client```
+## 3. Consume the protocol on the client
 After [exposing an HttpHandler](https://zaid-ajaj.github.io/Fable.Remoting/src/saturn.html) from `customerApi` you can start calling the API from the client. 
 
 ```fsharp
