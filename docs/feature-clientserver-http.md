@@ -1,6 +1,6 @@
 # Client Server communication over HTTP
 Communicating over raw HTTP using Saturn has three main steps.
-## 1. Source your data
+## 1. Load your data
 Start by creating a function in your server that returns some data:
 
 ```fsharp
