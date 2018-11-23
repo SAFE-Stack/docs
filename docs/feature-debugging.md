@@ -3,8 +3,10 @@ A powerful features of the SAFE Stack is that it supports combined client / serv
 As of v0.38 of the SAFE Template, new SAFE applications come pre-configured with build, launch and debugging support in VS Code.
 
 ## Prerequisites
-1. **Install [Google Chrome](https://www.google.com/chrome/)**: Enables for client-side debugging.
-1. **Install the [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** extension for Chrome: Provides improved debugging support in Chrome with Elmish.
+1. **Install** [Google Chrome](https://www.google.com/chrome/): Enables client-side debugging.
+1. **Configure Chrome** with the following extensions:
+    * [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Provides improved debugging support in Chrome with Elmish and access to Redux debugging.
+    * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related): Provides access to React debugging in Chrome.
 1. **Configure VS Code** with the following extensions:
     * [Ionide](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp): Provides F# support to Code.
     * [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp): Provides .NET Core debugging support.
@@ -13,11 +15,12 @@ As of v0.38 of the SAFE Template, new SAFE applications come pre-configured with
 ## Launching and debugging a SAFE application in VS Code
 The SAFE template allows you to launch a SAFE Stack application with both client and server debugging enabled automatically.
 
-1. Create a new SAFE application using the [SAFE template](template-overview)
+1. Create a new SAFE application using the [SAFE template](template-overview.md)
 1. Open VS Code in the folder containing your application
-1. Go to the Debug pane (`CTRL + Shift + D`)
+1. Go to the Debug pane (`CTRL + Shift + D`) 
  
     <center><img src="../img/feature-debugging-1.png" style="height: 400px;"/></center>
+> **Note**: Depending on your configuration, the Debug pane may be pinned to the left- or right-hand-side of VS Code.
 
 1. Ensure that **Debug SAFE App** is selected as the launch configuration
 1. Hit `F5` to launch the application, or hit the green play button in the launch configuration panel
@@ -57,13 +60,9 @@ Here you can see a breakpoint that has been hit in the `update` method of the sa
 <center><img src="../img/feature-debugging-4.png" style="height: 200px;"/></center>
 
 ### Viewing debug output
-Debug output from Chrome will automatically be sent to the integrated Debug Console. This is especially useful for Elmish applications, as you can interrogate message and model updates directly in the IDE.
+Debug output from Chrome will automatically be sent to the integrated Debug Console. This is especially useful for Elmish applications, as you can view Elmish messages and model updates directly in the IDE.
 
 <center><img src="../img/feature-debugging-6.png" style="height: 200px;"/></center>
-
-> Note: If you observe error messages regarding `SocketProtocolError` (see below), you can eliminate them by installing the Redux Dev Tools in the launched Chrome instance, as mentioned earlier. However, these errors can also safely be ignored. 
-
-<center><img src="../img/feature-debugging-5.png" style="height: 175px;"/></center>
 
 ## Restarting your application
 In the standard launch mode seen above, hot module reloading is enabled on the client, so changes that are made to your Fable application will occur immediately.
@@ -74,10 +73,27 @@ However, in order to support debugging, watch mode is not enabled on the server;
 The SAFE template comes with several other modes of operation for debugging:
 
 ### Full watch mode
-You can elect to use "watch" mode on both client *and* server by choosing the **Watch SAFE app** option from the Debug Launcher. Here, changes to any server file will automatically initiate a restart of it. However, whilst you will still be able to debug the client, in this mode there is no capability for server-side debugging.
+If you prefer to use "watch" mode on both client *and* server, choose the **Watch SAFE app** option from the Debug Launcher. Here, changes to any server file will automatically initiate a restart of it. However, whilst you will still be able to debug the client, in this mode there is no capability for server-side debugging.
 
 ### Debug Server or Client only
-You can elect to launch and debug only the client or server in isolation. This may be useful if you are running the other component separately e.g. through FAKE, the `dotnet` command line tool directly or via Visual Studio. You can initiate this by choosing either **Debug Client** or **Debug Server** as required.
+You can also launch and debug either the client or server in isolation. This may be useful if you are running the other component separately e.g. through FAKE, the `dotnet` command line tool directly or via Visual Studio. You can initiate this by choosing either **Debug Client** or **Debug Server** as required.
 
 ### Build Server
 You can initiate a restore and rebuild of the server by hitting `CTRL + SHIFT + B` and selecting **Build Server** from the drop-down.
+
+## Known Issues
+
+### Node Process remains after stopping the debugger
+VS Code does not always kill the dotnet process when you stop the debugger, leaving it running as a "zombie". In such a case, you will have to explicitly kill the process otherwise it will hold onto
+port 8080 and prevent you starting new instances. Tracked [here](https://github.com/SAFE-Stack/SAFE-template/issues/191).
+
+### Chrome opens to a blank window
+* Occasionally, VS Code will open Chrome before the Client has started. In this case, you will be presented with a blank screen until the client starts.
+* Depending on the order in which compilation occurs, VS Code may launch the web browser before the server has started. If this occurs, you may need to refresh the browser once the server is fully initialised.
+
+### SocketProtocolError in Debug Console
+You may see the following `SocketProtocolError` message in the Debug Console once you have started your SAFE application. Whilst these messages can be safely ignored, you can eliminate them by installing the Redux Dev Tools in the launched Chrome instance as described earlier.
+
+> `WebSocket connection to 'ws://localhost:8000/socketcluster/' failed: Error during WebSocket handshake: Unexpected response code: 404`
+
+<center><img src="../img/feature-debugging-5.png" style="height: 175px;"/></center>
