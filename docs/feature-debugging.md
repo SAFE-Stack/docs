@@ -84,7 +84,7 @@ You can initiate a restore and rebuild of the server by hitting `CTRL + SHIFT + 
 ## Known Issues
 
 ### Node Process remains after stopping the debugger
-VS Code does not always kill the dotnet process when you stop the debugger, leaving it running as a "zombie". In such a case, you will have to explicitly kill the process otherwise it will hold onto
+VS Code does not kill the Fable dotnet process when you stop the debugger, leaving it running as a "zombie". In such a case, you will have to explicitly kill the process otherwise it will hold onto
 port 8080 and prevent you starting new instances. Tracked [here](https://github.com/SAFE-Stack/SAFE-template/issues/191).
 
 ### Chrome opens to a blank window
