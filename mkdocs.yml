@@ -49,6 +49,7 @@ nav:
     - Messaging with Protocols : 'feature-clientserver-remoting.md'
     - Stateful Messaging through Bridge : 'feature-clientserver-bridge.md'
     - Serialization in SAFE : 'feature-clientserver-serialization.md'
+  - Full Stack Debugging: 'feature-debugging.md'
   - Server Side Rendering : 'feature-ssr.md'
   - Hot Module Replacement : 'feature-hmr.md'
   - Working with Azure functions : 'feature-azurefunctions.md'
