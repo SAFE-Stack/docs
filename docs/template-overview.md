@@ -100,4 +100,4 @@ Usage: `dotnet new SAFE --js-deps <package manager>`
 Where `<package manager>` is one of:
 
 * `yarn`: uses [Yarn](https://yarnpkg.com/) for JS package management  **(default)**.
-* `npm`: uses [NPM](https://www.npmjs.com/) for JS package management.
+* `npm`: uses [NPM](https://www.npmjs.com/) for JS package management. If you use NPM, you'll also need [NPX](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) to run scripts.
