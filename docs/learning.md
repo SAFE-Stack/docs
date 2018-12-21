@@ -13,6 +13,9 @@ The following example repositories (and more!) can be found in the official [SAF
 ### [SAFE Todo List](https://github.com/Zaid-Ajaj/SAFE-TodoList)
 The simplest Todo app: a client-server application written entirely in F# using Elmish on the client. Remoting for type-safe communication between the two.
 
+### [tabula-rasa](https://github.com/Zaid-Ajaj/tabula-rasa)
+A minimalistic real-worldish blog engine written entirely in F#. Specifically made as a learning resource when building apps with the SAFE stack. This application features many concerns of large apps such as logging, database access, secured remoting, web sockets and much more. 
+
 ### [SAFE Bookstore](https://github.com/SAFE-Stack/SAFE-BookStore) 
 This sample demonstrates many of the useful features of a larger SAFE application, including login authentication using JWT tokens, automated deployment via Docker and SEO support with urls for pages. It also includes an example of using Azure Storage tables as a persistence store.
 
