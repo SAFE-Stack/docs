@@ -6,7 +6,9 @@ You'll need to install the following pre-requisites in order to build SAFE appli
 
 * The [.NET Core SDK 2.1](https://www.microsoft.com/net/download/).
 * [FAKE 5](https://fake.build/) installed as a [global tool](https://fake.build/fake-gettingstarted.html#Install-FAKE) - recommended version is FAKE >= 5.10
-* The [Yarn](https://yarnpkg.com/lang/en/docs/install/) or [NPM](template-overview.md#js-deps) package manager. 
+* A Javascript package manager, either
+	* [Yarn](https://yarnpkg.com/lang/en/docs/install/) - recommended version is Yarn >= 1.10.1, or
+	* [NPM](template-overview.md#js-deps)
 * [Node 8.x](https://nodejs.org/en/download/) installed for the front end components.
 * If you're running on OSX or Linux, you'll also need to install [Mono](https://www.mono-project.com/docs/getting-started/install/).
 
