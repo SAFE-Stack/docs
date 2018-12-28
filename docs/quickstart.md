@@ -31,5 +31,4 @@ Congratulations - after a short delay, you'll be presented with a basic SAFE app
 Take a look at the [template options](template-overview.md#template-options.md). There are several ways to customise the default application, such as server and client/server communication technologies.
 
 ## Troubleshooting
-
-* **fake not found** - If you fail to execute `fake` from command line after installing it as a global tool, you might need to add it to your `PATH` manually: (e.g. `export PATH="$HOME/.dotnet/tools:$PATH"` on unix) - [related GitHub issue](https://github.com/dotnet/cli/issues/9321)
+Still have issues getting started? Check out the [troubleshooting](faq-troubleshooting.md) page.
