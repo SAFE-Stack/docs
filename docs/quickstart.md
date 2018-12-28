@@ -35,6 +35,6 @@ Take a look at the [template options](template-overview.md#template-options.md).
 * **fake not found** - If you fail to execute `fake` from command line after installing it as a global tool, you might need to add it to your `PATH` manually: (e.g. `export PATH="$HOME/.dotnet/tools:$PATH"` on unix) - [related GitHub issue](https://github.com/dotnet/cli/issues/9321)
 
 * You see 
-`WebSocket connection to 'ws://localhost:8000/socketcluster/' failed` in the Chrome dev tools console. You can safely ignore this error but to make it go away you may need to install the following two Chrome extensions. (See also [Full Stack Debugging prerequisites](https://safe-stack.github.io/docs/feature-debugging/#prerequisites) )
+`WebSocket connection to 'ws://localhost:8000/socketcluster/' failed` in the Chrome dev tools console. You can safely ignore this error, but to make it go away you may need to install the following two Chrome extensions. (See also [Full Stack Debugging prerequisites](https://safe-stack.github.io/docs/feature-debugging/#prerequisites) )
     * [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Provides improved debugging support in Chrome with Elmish and access to Redux debugging.
     * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related): Provides access to React debugging in Chrome.
