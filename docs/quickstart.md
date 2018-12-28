@@ -33,3 +33,7 @@ Take a look at the [template options](template-overview.md#template-options.md).
 ## Troubleshooting
 
 * **fake not found** - If you fail to execute `fake` from command line after installing it as a global tool, you might need to add it to your `PATH` manually: (e.g. `export PATH="$HOME/.dotnet/tools:$PATH"` on unix) - [related GitHub issue](https://github.com/dotnet/cli/issues/9321)
+
+* You see 
+`WebSocket connection to 'ws://localhost:8000/socketcluster/' failed` in the Chrome dev tools console. 
+    * To make this error go away,  you may need to install the [Full Stack Debugging prequisites for Chrome](https://safe-stack.github.io/docs/feature-debugging/#prerequisites). Otherwise, you can safely ignore this error.
