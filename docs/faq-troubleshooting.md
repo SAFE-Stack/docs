@@ -4,11 +4,13 @@ If you fail to execute `fake` from command line after installing it as a global 
 
 ## Diagnostics
 ### SocketProtocolError in Debug Console
-You may see the following `SocketProtocolError` message in the Debug Console once you have started your SAFE application. Whilst these messages can be safely ignored, you can eliminate them by installing the Redux Dev Tools in the launched Chrome instance as described earlier.
+You may see the following `SocketProtocolError` message in the Debug Console once you have started your SAFE application.
 
 > `WebSocket connection to 'ws://localhost:8000/socketcluster/' failed: Error during WebSocket handshake: Unexpected response code: 404`
 
 <center><img src="../img/feature-debugging-5.png" style="height: 175px;"/></center>
+
+Whilst these messages can be safely ignored, you can eliminate them by installing **Redux Dev Tools** in the launched Chrome instance as described in the debugging [prerequisites](feature-debugging.md#prerequisites) section.
 
 ## Debugging in VS Code
 ### Node Process remains after stopping the debugger
