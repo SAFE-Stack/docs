@@ -6,7 +6,7 @@ If you are familiar with GCP and already have `gcloud` configured all you need t
 
 ```
 dotnet new SAFE --deploy gcp-appengine
-fake run build.fsx -t Deploy
+fake build -t Deploy
 gcloud app browse
 ```
 
