@@ -6,7 +6,7 @@ The template gets you up and running with the most common elements of the stack:
 * [Fable](http://fable.io/) for client-side F#
 * [Elmish](https://elmish.github.io/) for web UI
 * [Fulma](https://mangelmaxime.github.io/Fulma/) for consistent web styling
-* [Docker](template-docker.md) or [Azure App Service](template-appservice.md) deployment models for hosting.
+* [Docker](template-docker.md), [Azure App Service](template-appservice.md) or [Google Cloud AppEngine](template-gcp-appengine.md) deployment models for hosting.
 
 ## Using the template
 
@@ -90,6 +90,7 @@ Where `<hosting model>` is one of:
 * `none`: don't add FAKE targets to deploy **(default)**.
 * `docker`: Adds [FAKE](https://fake.build/) targets that bundles and build a Docker image. See [here](template-docker.md) for more details about Docker deployment.
 * `azure`: Adds [FAKE](https://fake.build/) targets and an [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) (ARM) template that allows deployment to the [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) plus an [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) instance. See [here](template-appservice.md) for more details about Azure deployment.
+* `gcp-appengine`: Adds [FAKE](https://fake.build/) targets to deploy to [Google Cloud AppEngine](https://cloud.google.com/appengine/).
 
 ### JS Deps
 
