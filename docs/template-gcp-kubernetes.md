@@ -5,11 +5,14 @@ The SAFE template has the ability to deploy to [Kubernetes Engine](https://cloud
 If you are familiar with GCP and already have `gcloud` and `kubectl` configured and an existing kubernetes cluster all you need to do to get started is running these commands:
 
 ```
+git init
+git add .
+git commit -m "Initial commit"
 dotnet new SAFE --deploy gcp-kubernetes
 fake build -t Deploy -e SAFE_CLUSTER=<kubernetes cluster>
 ```
 
-To get the exposed IP you need to run the following command:
+You must be in a git folder for it to work, it also assumes you have a default zone configured. To get the exposed IP you need to run the following command:
 
 ```
 kubectl get service safe-template
@@ -25,9 +28,17 @@ Covering Kubernetes and Kubernetes Engine in greater detail is too large of a to
 
 ## Deployment steps
 
-Before you can deploy your AppEngine app you need to create a [Google Cloud Platform account](template-google-cloud.md#creating-an-account), [set up the `gcloud` CLI tool]((template-google-cloud.md#setup-gcloud-cli-tool)) and [enable billing](template-google-cloud.md#enable-billing). The kubernetes deploy also rely on Google Cloud Container Registry, and you also need to authenticate with the registry. How that is done is described here: [https://cloud.google.com/container-registry/docs/advanced-authentication](https://cloud.google.com/container-registry/docs/advanced-authentication).
+Before you can deploy your Kubernetes Engine app you need to create a [Google Cloud Platform account](template-google-cloud.md#creating-an-account), [set up the `gcloud` CLI tool](template-google-cloud.md#setup-gcloud-cli-tool) and [enable billing](template-google-cloud.md#enable-billing). The kubernetes deploy also rely on Google Cloud Container Registry, and you also need to authenticate with the registry. How that is done is described here: [https://cloud.google.com/container-registry/docs/advanced-authentication](https://cloud.google.com/container-registry/docs/advanced-authentication).
 
 ### Creating your cluster and installing kubectl
+
+To make some of the commands easier we first [set a default zone](https://cloud.google.com/compute/docs/gcloud-compute/#set_default_zone_and_region_in_your_local_client) that will be used by the `gcloud` command, both here and from the build script.
+
+```
+gcloud config set compute/zone europe-west1-b 
+```
+
+You can change the zone to a zone closer to where you live, [https://cloud.google.com/compute/docs/regions-zones/](https://cloud.google.com/compute/docs/regions-zones/).
 
 Next up you need to create your kubernetes cluster. To create a cluster where the nodes are using of the free tier computing resources you can use this command:
 
