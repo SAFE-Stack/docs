@@ -4,6 +4,7 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/de-DE/NET-User-Group-Dresden/events/256717140/) | User Group | Jan 22 2019 | Dresden, Germany | [Compositional IT](https://compositional-it.com) | Free
 | [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/FSharping/events/257156925/) | User Group | Jan 23 2019 | Prague, Czech Republic | [Compositional IT](https://compositional-it.com) | Free
+| [Web development with SAFE Stack](https://fby.by/#talk_MikhailSmal) | Conference | Jan 26 2019 | Minsk, Belarus | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 | [Hacking F# in JS ecosystem](https://fosdem.org/2019/schedule/event/dotnet_fsharp_js_ecosystem/) | Conference | Feb 2 2019 | Brussels, Belgium | [Krzysztof Cieslak](https://twitter.com/k_cieslak) | Free
 | [Reinventing MVC pattern for web programming with F#](https://fosdem.org/2019/schedule/event/dotnet_fsharp_reinventing_mvc/) | Conference | Feb 2 2019 | Brussels, Belgium | [Krzysztof Cieslak](https://twitter.com/k_cieslak) | Free
 | [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/FSharpOsnabruck/events/257131027/) | User Group | Feb 12 2019 | Osnabrück, Germany | [Compositional IT](https://compositional-it.com) | Free
