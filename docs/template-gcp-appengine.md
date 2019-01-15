@@ -2,10 +2,12 @@ The SAFE template has the ability to deploy to [AppEngine](https://cloud.google.
 
 ## Quickstart
 
-If you are familiar with GCP and already have `gcloud` configured all you need to do to get started is:
+First make sure you have `gcloud` cli tool [configured](template-google-cloud.md#setup-gcloud-cli-tool).
+If you are already familiar with GCP and have `gcloud` in place, all you need to do to get started is:
 
 ```
 dotnet new SAFE --deploy gcp-appengine
+gcloud app create
 fake build -t Deploy
 gcloud app browse
 ```
@@ -18,7 +20,7 @@ Pricing for AppEngine depends on the size of and the number of machines you use.
 
 ## Deployment steps
 
-Before you can deploy your AppEngine app you need to create a [Google Cloud Platform account](template-google-cloud.md#creating-an-account), [set up the `gcloud` CLI tool]((template-google-cloud.md#setup-gcloud-cli-tool)) and [enable billing](template-google-cloud.md#enable-billing).
+Before you can deploy your AppEngine app you need to create a [Google Cloud Platform account](template-google-cloud.md#creating-an-account), [set up the `gcloud` CLI tool](template-google-cloud.md#setup-gcloud-cli-tool) and [enable billing](template-google-cloud.md#enable-billing).
 
 ### Custom FAKE build tasks
 
