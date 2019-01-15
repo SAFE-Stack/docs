@@ -39,8 +39,10 @@ nav:
   - Deployment Options:
     - Deploy to Docker: 'template-docker.md'
     - Deploy to App Service: 'template-appservice.md'
+    - Deploy to Google Cloud AppEngine: 'template-gcp-appengine.md'
     - Application Insights Integration: 'template-azure-ai.md'
     - Registering with Azure: 'template-azure-registration.md'
+    - Registering with Google Cloud: 'template-google-cloud.md'
 - Features of SAFE:
   - Client / Server Sharing:
     - Sharing Overview : 'feature-clientserver.md'

@@ -20,7 +20,8 @@ It's important to note that the webpack dev server is configured to automaticall
 ## Running SAFE applications in production
 In a production environment, you won't typically use the webpack dev server. Instead, it's more common to use webpack as a one-off compiler step to create your bundled javascript from your Fable app (plus dependencies), and then deploy this along with your back-end web server which also hosts that content directly. For example, you can use Saturn to host the static content required by the application e.g. HTML, JS and CSS files etc. as well as your back-end APIs. This fits very well with standard CI / CD processes, as a build step in your FAKE script or VSTS / AppVeyor / Travis step etc.
 
-Both the [Azure](template-appservice.md) and [Docker](template-docker.md) configuration options will do this automatically.
+
+All [deployments options](template-overview.md#deploy) do this automatically.
 
 ![](img/faq-build-2.png)
 
