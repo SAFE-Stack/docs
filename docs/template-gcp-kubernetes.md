@@ -5,14 +5,11 @@ The SAFE template has the ability to deploy to [Kubernetes Engine](https://cloud
 If you are familiar with GCP and already have `gcloud` and `kubectl` configured and an existing kubernetes cluster all you need to do to get started is running these commands:
 
 ```
-git init
-git add .
-git commit -m "Initial commit"
 dotnet new SAFE --deploy gcp-kubernetes
 fake build -t Deploy -e SAFE_CLUSTER=<kubernetes cluster>
 ```
 
-You must be in a git folder for it to work, it also assumes you have a default zone configured. To get the exposed IP you need to run the following command:
+The quickstart assumes you have a default zone configured. To get the exposed IP you need to run the following command:
 
 ```
 kubectl get service safe-template
@@ -77,6 +74,19 @@ No hostname is created during the deploy, and no reverse proxy is configured eit
 ```
 kubectl get service safe-template
 ```
+
+## Gotchas
+
+When you deploy a container to a kubernetes cluster using the container name and tag you might not get an updated version of the contaienr if you use the same tag. The easiest way to change the tag using the default template is to change the `getDockerTag` function in `build.fsx`. One common way to create the tag is to use the git sha, given that you use git. To do so you can change the `getDockerTag` to something like below:
+
+```
+let getDockerTag projectName =
+    let gitHash = Information.getCurrentHash()
+    let projectId = getGcloudProject()
+    sprintf "gcr.io/%s/%s:%s" projectId projectName gitHash
+```
+
+to be sure you get a new docker tag you have to make a commit.
 
 ## Things to consider
 
