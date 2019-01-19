@@ -6,10 +6,10 @@ If you are familiar with GCP and already have `gcloud` and `kubectl` configured 
 
 ```
 dotnet new SAFE --deploy gcp-kubernetes
-fake build -t Deploy -e SAFE_CLUSTER=<kubernetes cluster>
+fake build -t Deploy
 ```
 
-The quickstart assumes you have a default zone configured. To get the exposed IP you need to run the following command:
+The quickstart assumes you have a default zone configured, and it will deploy to a cluster named `safe-cluster`. To change the cluster add `-e SAFE_CLUSTER=<kubernetes cluster>` to the `fake` command. To get the exposed IP you need to run the following command:
 
 ```
 kubectl get service safe-template
