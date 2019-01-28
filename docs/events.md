@@ -2,19 +2,28 @@
 
 | Title | Type | Date | Location | Who | Cost |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/de-DE/NET-User-Group-Dresden/events/256717140/) | User Group | Jan 22 2019 | Dresden, Germany | [Compositional IT](https://compositional-it.com) | Free
-| [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/FSharping/events/257156925/) | User Group | Jan 23 2019 | Prague, Czech Republic | [Compositional IT](https://compositional-it.com) | Free
-| [Web development with SAFE Stack](https://fby.by/#talk_MikhailSmal) | Conference | Jan 26 2019 | Minsk, Belarus | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 | [Hacking F# in JS ecosystem](https://fosdem.org/2019/schedule/event/dotnet_fsharp_js_ecosystem/) | Conference | Feb 2 2019 | Brussels, Belgium | [Krzysztof Cieslak](https://twitter.com/k_cieslak) | Free
 | [Reinventing MVC pattern for web programming with F#](https://fosdem.org/2019/schedule/event/dotnet_fsharp_reinventing_mvc/) | Conference | Feb 2 2019 | Brussels, Belgium | [Krzysztof Cieslak](https://twitter.com/k_cieslak) | Free
 | [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/FSharpOsnabruck/events/257131027/) | User Group | Feb 12 2019 | Osnabrück, Germany | [Compositional IT](https://compositional-it.com) | Free
+| [SAFE Stack: Current State](https://skillsmatter.com/conferences/10869-f-sharp-exchange-2019/) | Conference | April 4-5 2019 | London, UK | [Tomasz Heimowski](https://theimowski.com) | Paid
+| [Workshop: Up and Running with the SAFE Stack](https://skillsmatter.com/conferences/10869-f-sharp-exchange-2019/) | Conference | April 4-5 2019 | London, UK | [Compositional IT](https://compositional-it.com) | Paid
 
 # Past events
+
+## 2019
+
+| Title | Type | Date | Location | Who | Cost |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/de-DE/NET-User-Group-Dresden/events/256717140/) | User Group | Jan 22 2019 | Dresden, Germany | [Compositional IT](https://compositional-it.com) | Free
+| [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/FSharping/events/257156925/) | User Group | Jan 23 2019 | Prague, Czech Republic | [Compositional IT](https://compositional-it.com) | Free
+| [Web development with SAFE Stack](https://fby.by/#talk_MikhailSmal) | Conference | Jan 26 2019 | Minsk, Belarus | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 
 ## 2018
 
 | Title | Type | Date | Location | Who | Cost |
 |:-:|:-:|:-:|:-:|:-:|:-:|
+| [SAFE apps with F# web stack](http://www.lambdadays.org/lambdadays2018/tomasz-heimowski) | Conference | Feb 23 2018 | Kraków, Poland | [Tomasz Heimowski](http://theimowski.com) | Paid
+| [SAFE apps with F# web stack](https://skillsmatter.com/skillscasts/11308-safe-apps-with-f-web-stack) | Conference | April 5 2018 | London, UK | [Tomasz Heimowski](http://theimowski.com) | Paid
 | [SAFE Stack Workshop](https://www.meetup.com/FSharpBristol/events/252393795/) | User Group | Aug 22 2018 | Bristol, UK | [Compositional IT](https://compositional-it.com) | Free
 | [SAFE apps with F# web stack](http://devsharp.pl/) | Conference | Sep 21 2018 | Gdańsk, Poland | [Tomasz Heimowski](http://theimowski.com) | Free
 | [SAFE Stack: Functional Web Programming in .NET](https://www.dddeastanglia.com/Session/Details/2179) | Conference | Sep 22 2018 | Cambridge, UK | [Compositional IT](https://compositional-it.com) | Free
