@@ -13,9 +13,11 @@ You may see the following `SocketProtocolError` message in the Debug Console onc
 Whilst these messages can be safely ignored, you can eliminate them by installing **Redux Dev Tools** in the launched Chrome instance as described in the debugging [prerequisites](feature-debugging.md#prerequisites) section.
 
 ## Debugging in VS Code
-### Node Process remains after stopping the debugger
-VS Code does not kill the Fable dotnet process when you stop the debugger, leaving it running as a "zombie". In such a case, you will have to explicitly kill the process otherwise it will hold onto
-port 8080 and prevent you starting new instances. Tracked [here](https://github.com/SAFE-Stack/SAFE-template/issues/191).
+### Node Process does not stop after stopping the debugger
+VS Code does not kill the Fable process when you stop the debugger, leaving it running as a "zombie". In such a case, you will have to explicitly kill the process otherwise it will hold onto
+port 8080 and prevent you starting new instances. This should be easily doable by sending Ctrl+C in the Terminal window in VS Code for `Watch Client` task. Tracked [here](https://github.com/SAFE-Stack/SAFE-template/issues/191).
+
+![asf](../img/faq-troubleshoot-debugging.png)
 
 ### Chrome opens to a blank window
 * Occasionally, VS Code will open Chrome before the Client has started. In this case, you will be presented with a blank screen until the client starts.
