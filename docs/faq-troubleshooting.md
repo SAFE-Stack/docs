@@ -22,7 +22,7 @@ Whilst these messages can be safely ignored, you can eliminate them by installin
 VS Code does not kill the Fable process when you stop the debugger, leaving it running as a "zombie". In such a case, you will have to explicitly kill the process otherwise it will hold onto
 port 8080 and prevent you starting new instances. This should be easily doable by sending Ctrl+C in the Terminal window in VS Code for `Watch Client` task. Tracked [here](https://github.com/SAFE-Stack/SAFE-template/issues/191).
 
-![asf](../img/faq-troubleshoot-debugging.png)
+<center><img src="../img/faq-troubleshoot-debugging.png" style="height: 175px;"/></center>
 
 ### Chrome opens to a blank window
 
