@@ -24,6 +24,10 @@ To allow incoming traffic, port 8085 is exposed.
 
 The following part shows how to set up automatic deployment to [Microsoft Azure](https://azure.microsoft.com).
 
+Currently, SAFE template doesn't contain additional FAKE build targets to deploy a Docker image directly to Azure, so you'll need to grab (and possibly adjust) **additional FAKE "Deploy" target** from [SAFE BookStore](https://github.com/SAFE-Stack/SAFE-BookStore/blob/master/build.fsx) build script.
+
+Following steps assume you've added the necessary build script fragments from SAFE BookStore.
+
 ### Docker Hub
 
 Create a new [Docker Hub](https://hub.docker.com) account and a new public repository on Docker Hub.
