@@ -32,6 +32,8 @@ That's it. VS Code will now automatically:
 * Start both client and server
 * Attach debuggers for both the client and server simultaneously!
 
+> **Note**: When you stop debugging, you also need to kill the associated `Watch Client` task - see [details](faq-troubleshooting.md#node-process-remains-after-stopping-the-debugger).
+
 ## The VS Code debugger
 This section explains the basics of debugging SAFE applications with VS Code. Refer to [here](https://code.visualstudio.com/docs/editor/debugging) to learn more about the VS Code debugger.
 
