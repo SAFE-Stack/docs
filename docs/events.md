@@ -7,6 +7,8 @@
 | [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/FSharpOsnabruck/events/257131027/) | User Group | Feb 12 2019 | Osnabrück, Germany | [Compositional IT](https://compositional-it.com) | Free
 | [SAFE Stack: Current State](https://skillsmatter.com/conferences/10869-f-sharp-exchange-2019/) | Conference | April 4-5 2019 | London, UK | [Tomasz Heimowski](https://theimowski.com) | Paid
 | [Workshop: Up and Running with the SAFE Stack](https://skillsmatter.com/conferences/10869-f-sharp-exchange-2019/) | Conference | April 4-5 2019 | London, UK | [Compositional IT](https://compositional-it.com) | Paid
+| [Workshop: SAFE Web development with F#](https://devdays.lt/safe-web/) | Conference | May 14 2019 | Vilnius, Lithuania | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
+| [Write Your Own Domain Specific Language with F#](https://devdays.lt/mikhail-smal/) | Conference | May 15-16 2019 | Vilnius, Lithuania | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 
 # Past events
 
