@@ -5,7 +5,7 @@ The template gets you up and running with the most common elements of the stack:
 * [Saturn](https://saturnframework.github.io/docs/) or [Giraffe](https://github.com/giraffe-fsharp/Giraffe)
 * [Fable](http://fable.io/) for client-side F#
 * [Elmish](https://elmish.github.io/) for web UI
-* [Fulma](https://mangelmaxime.github.io/Fulma/) for consistent web styling
+* [Fulma](https://fulma.github.io/Fulma/) for consistent web styling
 * [Docker](template-docker.md), [Azure App Service](template-appservice.md), [Google Cloud AppEngine](template-gcp-appengine.md) or [Google Cloud Kubernetes Engine](template-gcp-kubernetes.md) deployment models for hosting.
 
 ## Using the template
@@ -43,7 +43,7 @@ Where `<server>` is one of:
 
 ### Layout
 
-*Configures the SAFE app to apply a CSS Framework to the UI template. Currently supports just [Fulma](https://mangelmaxime.github.io/Fulma) bindings*
+*Configures the SAFE app to apply a CSS Framework to the UI template. Currently supports just [Fulma](https://fulma.github.io/Fulma) bindings*
 
 Usage: `dotnet new SAFE --layout <layout>`
 
