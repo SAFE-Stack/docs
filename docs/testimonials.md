@@ -9,3 +9,11 @@ We at [msu solutions GmbH](https://msu-solutions.de/) are big fans of SAFE stack
 
 Since the release of SAFE, we see that all these important technologies are now bundled and tested under one big umbrella. 
 Especially the commercial support for SAFE is very important for us and our customers.
+
+## Goswin Rothenthal
+
+> It just works!
+
+The docs are very detailed and helpful. I got the template up and running on a public URL on Azure within one hour. Without any issues.
+Even though I am new to dotnet core and Azure.
+
