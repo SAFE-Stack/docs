@@ -6,7 +6,7 @@ You'll need to install the following pre-requisites in order to build SAFE appli
 
 * [dotnet SDK](https://dotnet.microsoft.com/download) (>= 2.2)
 * [FAKE](https://fake.build/) (>= 5.12) installed as global tool (`dotnet tool install -g fake-cli`)
-* (optional) [Paket](https://fsprojects.github.io/Paket) (>= 5.196) installed as global tool (`dotnet tool install -g paket`)
+* (optional) [Paket](https://fsprojects.github.io/Paket) (>= 5.196), can also be installed as global tool (`dotnet tool install -g paket`)
 * [node.js](https://nodejs.org/) (>= 8.0)
 * [yarn](https://yarnpkg.com/) (>= 1.10.1) or [npm](https://www.npmjs.com/)
 
