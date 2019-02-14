@@ -4,7 +4,7 @@ This page provides some basic guidance on getting up and running with your first
 
 You'll need to install the following pre-requisites in order to build SAFE applications
 
-* The [.NET Core SDK 2.1](https://www.microsoft.com/net/download/)
+* The [.NET Core SDK 2.2](https://www.microsoft.com/net/download/)
 * [FAKE 5](https://fake.build/) installed as a [global tool](https://fake.build/fake-gettingstarted.html#Install-FAKE) (recommended version >= 5.10)
 * A Javascript package manager, one of:
 	* [Yarn](https://yarnpkg.com/lang/en/docs/install/) (recommended version >= 1.10.1)
