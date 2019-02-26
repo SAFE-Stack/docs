@@ -2,7 +2,7 @@ Using F# on both client and server is at the core of the SAFE stack, as it simpl
 
 However, building a client and a server app requires a fundamentally different way of thinking. On the server side we build [stateless APIs in Saturn](component-saturn) that map HTTP requests to internal functionality, whereas on the frontend we use the Elmish model, implementing the [model-view-update pattern](component-elmish): a stateful pattern that lets us think about the application state as it evolves while the application running. 
 
-Even though we use the same language across platforms, applying different these two different programming models forces us to switch our way of thinking back and forth when writing code for the client and for the server. This is where the [Elmish.Bridge](https://github.com/Nhowka/Elmish.Bridge) library comes into play: it brings the Elmish programming model *to the server* and unifies the way we write the application as a whole.
+Even though we use the same language across platforms, applying these two different programming models forces us to switch our way of thinking back and forth when writing code for the client and for the server. This is where the [Elmish.Bridge](https://github.com/Nhowka/Elmish.Bridge) library comes into play: it brings the Elmish programming model *to the server* and unifies the way we write the application as a whole.
 
 ## How does Elmish work on the server?
 Think of Elmish on the server as the model-view-update pattern but *without the view part*. Instead, you only need to implement `init` and `update` functions to manage the *server* state as it evolves while the server is running.
