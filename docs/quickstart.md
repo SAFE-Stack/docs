@@ -6,9 +6,11 @@ You'll need to install the following pre-requisites in order to build SAFE appli
 
 * The [.NET Core SDK 2.2](https://www.microsoft.com/net/download/)
 * [FAKE](https://fake.build/) (>= 5.12) installed as global tool (`dotnet tool install -g fake-cli`)
-* (optional) [Paket](https://fsprojects.github.io/Paket) (>= 5.196), can also be installed as global tool (`dotnet tool install -g paket`)
+* [Paket](https://fsprojects.github.io/Paket) (optional\*)
 * [node.js](https://nodejs.org/) (>= 8.0)
 * [yarn](https://yarnpkg.com/) (>= 1.10.1) or [npm](https://www.npmjs.com/)
+
+\* You don't need Paket if you just want to try out SAFE. However it you need to edit NuGet dependencies you can [read docs](https://fsprojects.github.io/Paket/getting-started.html) on how to get started with Paket.
 
 ## Install an F# code editor
 
