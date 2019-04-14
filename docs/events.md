@@ -2,10 +2,7 @@
 
 | Title | Type | Date | Location | Who | Cost |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| [SAFE web development with F#](https://www.facebook.com/VeeamGeekHub/photos/a.2473007759384902/2472996959385982/?type=1&theater) | User Group | Mar 28 2019 | Prague, Czech Republic | [Mikhail Smal](https://twitter.com/mvsmal) | Free
-| [SAFE Stack: Current State](https://skillsmatter.com/conferences/10869-f-sharp-exchange-2019/) | Conference | April 4-5 2019 | London, UK | [Tomasz Heimowski](https://theimowski.com) | Paid
-| [Workshop: Up and Running with the SAFE Stack](https://skillsmatter.com/conferences/10869-f-sharp-exchange-2019/) | Conference | April 4-5 2019 | London, UK | [Compositional IT](https://compositional-it.com) | Paid
-| [The Pit of Success with SAFE Stack](https://dnug.berlin/dnugbb/?event=safe-stack-the-pit-of-success-for-functional-web-programming) | User Group | April 11 2019 | Berlin, Germany | [Isaac Abraham](https://twitter.com/isaac_abraham) | Free
+| [Workshop: Hands on with F#](https://spartakiade.org/) | Conference workshop | April 27 2019 | Berlin, Germany | [Isaac Abraham](https://twitter.com/isaac_abraham) | Free
 | [Workshop: SAFE Web development with F#](https://devdays.lt/safe-web/) | Conference | May 14 2019 | Vilnius, Lithuania | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 | [Write Your Own Domain Specific Language with F#](https://devdays.lt/mikhail-smal/) | Conference | May 15-16 2019 | Vilnius, Lithuania | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 | [Write Your Own Domain Specific Language with F#](https://ndcoslo.com/talk/write-your-own-domain-specific-language-with-f/) | Conference | Jun 18 2019 | Oslo, Norway | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
@@ -22,6 +19,10 @@
 | [Hacking F# in JS ecosystem](https://fosdem.org/2019/schedule/event/dotnet_fsharp_js_ecosystem/) | Conference | Feb 2 2019 | Brussels, Belgium | [Krzysztof Cieslak](https://twitter.com/k_cieslak) | Free
 | [Reinventing MVC pattern for web programming with F#](https://fosdem.org/2019/schedule/event/dotnet_fsharp_reinventing_mvc/) | Conference | Feb 2 2019 | Brussels, Belgium | [Krzysztof Cieslak](https://twitter.com/k_cieslak) | Free
 | [SAFE Stack - The Pit of Success for Functional Web Programming](https://www.meetup.com/FSharpOsnabruck/events/257131027/) | User Group | Feb 12 2019 | Osnabrück, Germany | [Compositional IT](https://compositional-it.com) | Free
+| [SAFE web development with F#](https://www.facebook.com/VeeamGeekHub/photos/a.2473007759384902/2472996959385982/?type=1&theater) | User Group | Mar 28 2019 | Prague, Czech Republic | [Mikhail Smal](https://twitter.com/mvsmal) | Free
+| [SAFE Stack: Current State](https://skillsmatter.com/conferences/10869-f-sharp-exchange-2019/) | Conference | April 4-5 2019 | London, UK | [Tomasz Heimowski](https://theimowski.com) | Paid
+| [Workshop: Up and Running with the SAFE Stack](https://skillsmatter.com/conferences/10869-f-sharp-exchange-2019/) | Conference | April 4-5 2019 | London, UK | [Compositional IT](https://compositional-it.com) | Paid
+| [The Pit of Success with SAFE Stack](https://dnug.berlin/dnugbb/?event=safe-stack-the-pit-of-success-for-functional-web-programming) | User Group | April 11 2019 | Berlin, Germany | [Isaac Abraham](https://twitter.com/isaac_abraham) | Free
 
 ## 2018
 
