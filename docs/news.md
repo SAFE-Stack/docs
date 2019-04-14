@@ -1,4 +1,19 @@
 # News and Announcements
+## 2019
+### 5th April
+We're delighted to announce the release of v1.0 of the SAFE Stack! It's been an exciting year or so for the stack as the stack has evolved and matured. We now have what we feel is a stable and feature-rich stack that achieves the original goals of SAFE, plus a number of optional libraries that people can take advantage of.
+
+With the release of v1, you can now do the following:
+
+* Create a fully working, full-stack web application in F# using the SAFE template in just a few seconds and have it running on your machine from clean in less than a minute.
+* Choose flexible hosting options, including Azure App Service, Google Cloud Platform and Docker.
+* Host with multiple server models including Saturn and Giraffe.
+* Have simultaneous client and server-side debugging sessions in VS Code.
+
+You can upgrade the SAFE Stack template via the dotnet CLI: `dotnet new -i SAFE.Template` to get the latest and greatest version, or `dotnet new -i SAFE.Template::1.0` to pin to v1.0.
+
+We're looking forward to continuing to evolve the SAFE Stack in the coming months. We have a lot of great ideas for the future, and will be publishing our vNext roadmap in the coming weeks. As always, we're interested in your feedback and ideas, so please reach out to us via the [support](support.md) page.
+
 ## 2018
 ### 5th August
 We're pleased to see that the Suave team have clarified their license and explicitly removed the dependency on the Logary package. However, our decision to remove Suave from the SAFE stack remains: **Suave no longer forms a part of the strategic goals of the SAFE project**, and our server-side focus remains on improving the experience for both Giraffe and Saturn.
