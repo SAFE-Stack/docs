@@ -41,6 +41,7 @@ nav:
     - Deploy to App Service: 'template-appservice.md'
     - Deploy to Google Cloud AppEngine: 'template-gcp-appengine.md'
     - Deploy to Google Cloud Kubernetes Engine: 'template-gcp-kubernetes.md'
+    - Deploy to Heroku: 'template-heroku.md'
     - Application Insights Integration: 'template-azure-ai.md'
     - Registering with Azure: 'template-azure-registration.md'
     - Registering with Google Cloud: 'template-google-cloud.md'
