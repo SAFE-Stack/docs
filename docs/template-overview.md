@@ -6,7 +6,7 @@ The template gets you up and running with the most common elements of the stack:
 * [Fable](http://fable.io/) for client-side F#
 * [Elmish](https://elmish.github.io/) for web UI
 * [Fulma](https://fulma.github.io/Fulma/) for consistent web styling
-* [Docker](template-docker.md), [Azure App Service](template-appservice.md), [Google Cloud AppEngine](template-gcp-appengine.md) or [Google Cloud Kubernetes Engine](template-gcp-kubernetes.md) deployment models for hosting.
+* [Docker](template-docker.md), [Azure App Service](template-appservice.md), [Google Cloud AppEngine](template-gcp-appengine.md), [Google Cloud Kubernetes Engine](template-gcp-kubernetes.md) or [Heroku](template-heroku.md) deployment models for hosting.
 
 ## Using the template
 
@@ -14,15 +14,15 @@ Refer to the [Quick Start guide](quickstart.md#create-your-first-safe-app) to se
 
 ## Examples
 
-* Create a SAFE application using all defaults: 
+* Create a SAFE application using all defaults:
 
 `dotnet new SAFE`
 
-* Create a SAFE application using Giraffe with Fable Remoting: 
+* Create a SAFE application using Giraffe with Fable Remoting:
 
 `dotnet new SAFE --server giraffe --communication remoting`
 
-* Create a SAFE application using Giraffe with Fulma ['Landing'](https://dansup.github.io/bulma-templates/templates/landing.html): 
+* Create a SAFE application using Giraffe with Fulma ['Landing'](https://dansup.github.io/bulma-templates/templates/landing.html):
 
 `dotnet new SAFE --server giraffe --layout fulma-landing`
 
@@ -92,6 +92,7 @@ Where `<hosting model>` is one of:
 * `azure`: Adds [FAKE](https://fake.build/) targets and an [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) (ARM) template that allows deployment to the [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) plus an [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) instance. See [here](template-appservice.md) for more details about Azure deployment.
 * `gcp-appengine`: Adds [FAKE](https://fake.build/) targets to deploy to [Google Cloud AppEngine](https://cloud.google.com/appengine/).
 * `gcp-kubernetes`: Adds [FAKE](https://fake.build/) targets to deploy to [Google Cloud Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
+* `heroku`: Adds [FAKE](https://fake.build/) targets to deploy to [Heroku](https://heroku.com/).
 
 ### JS Deps
 
