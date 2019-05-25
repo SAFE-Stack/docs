@@ -10,7 +10,7 @@ You'll need to install the following pre-requisites in order to build SAFE appli
 * [node.js](https://nodejs.org/) (>= 8.0)
 * [yarn](https://yarnpkg.com/) (>= 1.10.1) or [npm](https://www.npmjs.com/)
 
-\* You don't need Paket if you just want to try out SAFE. However it you need to edit NuGet dependencies you can [read docs](https://fsprojects.github.io/Paket/getting-started.html) on how to get started with Paket.
+\* You don't need Paket if you just want to try out SAFE. However if you need to edit NuGet dependencies you can [read docs](https://fsprojects.github.io/Paket/getting-started.html) on how to get started with Paket.
 
 ## Install an F# code editor
 
@@ -28,7 +28,7 @@ You'll also want an IDE to create F# applications. We recommend one of the follo
 4. Enter `dotnet new SAFE` to create a new SAFE project
 5. Enter `fake build --target run` to build and run the app
 
-Congratulations - after a short delay, you'll be presented with a basic SAFE application running in your browser! The application will by default run in "development mode", which means it automatically watch your project for changes; whenever you save a file in the client project it will refresh the browser **automatically**; if you save a file in the server project it will also restart the server in the background.
+Congratulations - after a short delay, you'll be presented with a basic SAFE application running in your browser! The application will by default run in "development mode", which means it automatically watches your project for changes; whenever you save a file in the client project it will refresh the browser **automatically**; if you save a file in the server project it will also restart the server in the background.
 
 Take a look at the [template options](template-overview.md#template-options). There are several ways to customise the default application, such as server and client/server communication technologies.
 
