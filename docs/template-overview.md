@@ -51,11 +51,11 @@ Where `<layout>` is one of:
 
 * `none`: don't add any CSS framework.
 * `fulma-basic`: adds Fulma basic template **(default)**.
-* `fulma-admin`: adds Fulma with the ['Admin'](https://dansup.github.io/bulma-templates/templates/admin.html) Bulma template.
-* `fulma-cover`: adds Fulma with the ['Cover'](https://dansup.github.io/bulma-templates/templates/cover.html) Bulma template.
-* `fulma-hero`: adds Fulma with the ['Hero'](https://dansup.github.io/bulma-templates/templates/hero.html) Bulma template.
-* `fulma-landing`: adds Fulma with the ['Landing'](https://dansup.github.io/bulma-templates/templates/landing.html) Bulma template.
-* `fulma-login`: adds Fulma with the ['Login'](https://dansup.github.io/bulma-templates/templates/login.html) Bulma template.
+* `fulma-admin`: adds Fulma with the ['Admin'](https://bulmatemplates.github.io/bulma-templates/templates/admin.html) Bulma template.
+* `fulma-cover`: adds Fulma with the ['Cover'](https://bulmatemplates.github.io/bulma-templates/templates/cover.html) Bulma template.
+* `fulma-hero`: adds Fulma with the ['Hero'](https://bulmatemplates.github.io/bulma-templates/templates/hero.html) Bulma template.
+* `fulma-landing`: adds Fulma with the ['Landing'](https://bulmatemplates.github.io/bulma-templates/templates/landing.html) Bulma template.
+* `fulma-login`: adds Fulma with the ['Login'](https://bulmatemplates.github.io/bulma-templates/templates/login.html) Bulma template.
 
 ### Communication
 
