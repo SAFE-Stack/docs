@@ -1,6 +1,6 @@
 Using F# on both client and server is at the core of the SAFE stack, as it simplifies the way we think about building web applications by using the same language, idioms and in many cases sharing our code and domain models.
 
-However, building a client and a server app requires a fundamentally different way of thinking. On the server side we build [stateless APIs in Saturn](component-saturn) that map HTTP requests to internal functionality, whereas on the frontend we use the Elmish model, implementing the [model-view-update pattern](component-elmish): a stateful pattern that lets us think about the application state as it evolves while the application running. 
+However, building a client and a server app requires a fundamentally different way of thinking. On the server side we build [stateless APIs in Saturn](component-saturn) that map HTTP requests to internal functionality, whereas on the frontend we use the Elmish model, implementing the [model-view-update pattern](component-elmish): a stateful pattern that lets us think about the application state as it evolves while the application running.
 
 Even though we use the same language across platforms, applying these two different programming models forces us to switch our way of thinking back and forth when writing code for the client and for the server. This is where the [Elmish.Bridge](https://github.com/Nhowka/Elmish.Bridge) library comes into play: it brings the Elmish programming model *to the server* and unifies the way we write the application as a whole.
 
@@ -15,30 +15,29 @@ Think of Elmish on the server as the model-view-update pattern but *without the 
 Let's see a simple example of how this might work in practice:
 
 ```fsharp
-// Client-side 
-let update msg state = 
-    match msg with 
-    | LoadUsers -> 
+// Client-side
+let update msg state =
+    match msg with
+    | LoadUsers ->
         // send the message to the server
-        Bridge.Send(ServerMsg.LoadUsers)
-        state, Cmd.none
+        state, Cmd.bridgeSend ServerMsg.LoadUsers
     | UsersLoaded users ->
         // receive message from the server
         let nextState = { state with Users = users }
         nextState, Cmd.none
 
 // Server-side
-let update clientDispatch msg state = 
-    match msg with 
+let update clientDispatch msg state =
+    match msg with
     | ServerMsg.LoadUsers ->
-        let loadUsersCmd = 
-            Cmd.ofAsync 
+        let loadUsersCmd =
+            Cmd.ofAsync
                 getUsersFromDb    // unit -> Async<User list>
                 ()                // input arg = unit
                 UsersLoadedFromDb // User list -> ServerMsg
                 DoNothing         // ServerMsg
         state, loadUsersCmd
-                     
+
     | ServerMsg.UsersLoadedFromDbSuccess users ->
         // answer the current connected client with data
         clientDispatch (ClientMsg.UsersLoaded users)
@@ -48,7 +47,7 @@ let update clientDispatch msg state =
         state, Cmd.none
 ```
 
-The above example mimics what would have been a `GET` request to the server to get user data from database. However, now the client sends a fire-and-forget message to the server to load users, and at some point the server messages the current client back with the results. Notice that the server could have decided to do other things than just messaging the client back: for example, it could have broadcasted the same message to other clients updating their local state of the users.  
+The above example mimics what would have been a `GET` request to the server to get user data from database. However, now the client sends a fire-and-forget message to the server to load users, and at some point the server messages the current client back with the results. Notice that the server could have decided to do other things than just messaging the client back: for example, it could have broadcasted the same message to other clients updating their local state of the users.
 
 ## When to use Elmish.Bridge
 There are many scenarios where it makes sense to use Elmish.Bridge:
@@ -70,4 +69,4 @@ As of now there is no built-in persistence for the state, but you can implement 
 In addition Elmish.Bridge does not use standard HTTP verbs for communication, but rather websockets. Therefore, it is not a suitable technology for an open web server that can serve requests from other sources than Elmish.Bridge clients.
 
 ## Learn more about Elmish.Bridge
-Head over to [Elmish.Bridge](https://github.com/Nhowka/Elmish.Bridge) to learn more. 
+Head over to [Elmish.Bridge](https://github.com/Nhowka/Elmish.Bridge) to learn more.

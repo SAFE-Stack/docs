@@ -59,7 +59,7 @@ Where `<layout>` is one of:
 
 ### Communication
 
-*Configures the SAFE app to use one of available means of communication between client and server. Currently supports only [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting). If this argument is not supplied, client / server communication will be handled through the standard routing and serialization mechanism of the server. See [here](feature-clientserver.md) for an overview of Fable Remoting and the alternatives for sharing data between client and server.*
+*Configures the SAFE app to use one of available means of communication between client and server. Currently supports [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) and [Elmish.Bridge](https://github.com/Nhowka/Elmish.Bridge). If this argument is not supplied, client / server communication will be handled through the standard routing and serialization mechanism of the server. See [here](feature-clientserver.md) for an overview of Fable.Remoting, Elmish.Bridge and the alternatives for sharing data between client and server.*
 
 Usage: `dotnet new SAFE --communication <communication model>`
 
@@ -67,6 +67,7 @@ Where `<communication model>` is one of:
 
 * `none`: don't add any additional libraries for client-server communication **(default)**
 * `remoting`: add [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) to the template.
+* `bridge`: add [Elmish.Bridge](https://github.com/Nhowka/Elmish.Bridge) to the template.
 
 ### Pattern
 
