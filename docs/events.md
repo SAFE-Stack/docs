@@ -4,6 +4,7 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | [Full Stack Web in F#](https://dotnetsummit.by/) | Conference | June 8 2019 | Minsk, Belarus | [Tomasz Heimowski](https://theimowski.com) | Paid
 | [Write Your Own Domain Specific Language with F#](https://ndcoslo.com/talk/write-your-own-domain-specific-language-with-f/) | Conference | Jun 18 2019 | Oslo, Norway | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
+| [Full Stack Web in F#](https://oredev.org) | Conference | November 6-8 2019 | Malmö, Sweden | [Tomasz Heimowski](https://theimowski.com) | Paid
 
 # Past events
 
