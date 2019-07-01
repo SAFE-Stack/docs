@@ -17,3 +17,8 @@ Especially the commercial support for SAFE is very important for us and our cust
 The docs are very detailed and helpful. I got the template up and running on a public URL on Azure within one hour. Without any issues.
 Even though I am new to dotnet core and Azure.
 
+## Demetrix
+
+> SAFE was the perfect place to start our biological design and data management platform
+
+[Demetrix](https://demetrixbio.com/) uses F# for DNA design and data management in our research pipeline.   Our data systems are built on top of SAFE and it was a great experience for both veteran F# developers and people new to the environment.  I would start with SAFE again in a heartbeat for a new project.  We shared [some of our experiences](https://github.com/demetrixbio/presentations/blob/master/OpenFSharp2018/OpenFSharpDemetrix.pdf) at Open F# 2018.
