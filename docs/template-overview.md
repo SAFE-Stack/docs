@@ -78,7 +78,8 @@ Usage: `dotnet new SAFE --pattern <pattern model>`
 Where `<pattern model>` is one of:
 
 * `default`: use standard Elmish architecture with Commands **(default)**
-* `reaction`: use simple Elmish architecture without Commands + [Fable.Reaction](https://dbrattli.github.io/Reaction/) for reactive pattern
+* `streams`: use simple Elmish architecture without Commands + [Elmish.Streams](https://elmish-streams.readthedocs.io/) for reactive pattern
+* `reaction`: obsolete - use `streams` (Fable.Reaction rebranded to Elmish.Streams)
 
 ### Deploy
 
