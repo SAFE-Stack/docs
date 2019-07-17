@@ -2,8 +2,6 @@
 
 | Title | Type | Date | Location | Who | Cost |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| [Full Stack Web in F#](https://dotnetsummit.by/) | Conference | June 8 2019 | Minsk, Belarus | [Tomasz Heimowski](https://theimowski.com) | Paid
-| [Write Your Own Domain Specific Language with F#](https://ndcoslo.com/talk/write-your-own-domain-specific-language-with-f/) | Conference | Jun 18 2019 | Oslo, Norway | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 | [Full Stack Web in F#](https://oredev.org) | Conference | November 6-8 2019 | Malmö, Sweden | [Tomasz Heimowski](https://theimowski.com) | Paid
 
 # Past events
@@ -25,6 +23,8 @@
 | [Workshop: Hands on with F#](https://spartakiade.org/) | Conference workshop | April 27 2019 | Berlin, Germany | [Isaac Abraham](https://twitter.com/isaac_abraham) | Free
 | [Workshop: SAFE Web development with F#](https://devdays.lt/safe-web/) | Conference | May 14 2019 | Vilnius, Lithuania | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 | [Write Your Own Domain Specific Language with F#](https://devdays.lt/mikhail-smal/) | Conference | May 15-16 2019 | Vilnius, Lithuania | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
+| [Full Stack Web in F#](https://dotnetsummit.by/) | Conference | June 8 2019 | Minsk, Belarus | [Tomasz Heimowski](https://theimowski.com) | Paid
+| [Write Your Own Domain Specific Language with F#](https://ndcoslo.com/talk/write-your-own-domain-specific-language-with-f/) | Conference | Jun 18 2019 | Oslo, Norway | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 
 ## 2018
 
