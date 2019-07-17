@@ -2,6 +2,7 @@
 
 | Title | Type | Date | Location | Who | Cost |
 |:-:|:-:|:-:|:-:|:-:|:-:|
+| [FableConf](http://fable.io/fableconf) | Conference | Sep 6-7 2019 | Antwerp, Belgium | | Paid
 | [Full Stack Web in F#](https://oredev.org) | Conference | November 6-8 2019 | Malmö, Sweden | [Tomasz Heimowski](https://theimowski.com) | Paid
 
 # Past events
