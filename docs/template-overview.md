@@ -71,7 +71,7 @@ Where `<communication model>` is one of:
 
 ### Pattern
 
-*Configures Client app to use one of available patterns. Currently supports only either default Elmish architecture with Commands or simple (no Commands) Elmish Architecture in conjunction with [Fable.Reaction](https://dbrattli.github.io/Reaction/) library for Reactive programming*
+*Configures Client app to use one of available patterns. Currently supports only either default Elmish architecture with Commands or simple (no Commands) Elmish Architecture in conjunction with [Elmish.Streams](https://elmish-streams.readthedocs.io/) library for reactive programming*
 
 Usage: `dotnet new SAFE --pattern <pattern model>`
 
@@ -79,7 +79,6 @@ Where `<pattern model>` is one of:
 
 * `default`: use standard Elmish architecture with Commands **(default)**
 * `streams`: use simple Elmish architecture without Commands + [Elmish.Streams](https://elmish-streams.readthedocs.io/) for reactive pattern
-* `reaction`: obsolete - use `streams` (Fable.Reaction rebranded to Elmish.Streams)
 
 ### Deploy
 
