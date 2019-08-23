@@ -22,7 +22,7 @@ Refer to the [Quick Start guide](quickstart.md#create-your-first-safe-app) to se
 
 `dotnet new SAFE --server giraffe --communication remoting`
 
-* Create a SAFE application using Giraffe with Fulma ['Landing'](https://dansup.github.io/bulma-templates/templates/landing.html):
+* Create a SAFE application using Giraffe with Fulma ['Landing'](https://bulmatemplates.github.io/bulma-templates/templates/landing.html):
 
 `dotnet new SAFE --server giraffe --layout fulma-landing`
 
