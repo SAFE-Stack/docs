@@ -70,3 +70,10 @@ Decode.fromString customerDecoder """{ "id": 67, "customerName": "Joe Bloggs" }"
 ```
 
 If decoding fails on any field, an error case will be returned.
+
+### Handling "unit" calls
+You may design API methods that return `unit` i.e. they have no result. In such a case, you must currently do one of the following:
+
+1. Return some non-unit type e.g. `boolean` or `int` etc. and simply ignore it on the client response.
+2. Set the result type on the client as `obj` (or even `_` - the F# compiler will infer `obj` for you). This will be correctly handled
+by Thoth and passed as a null object which can be safely ignored.
