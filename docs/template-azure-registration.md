@@ -47,8 +47,8 @@ There are two ways of authenticating; the first (which we show here) is to use a
 
 ![](img/deploy-azure-register-8.png)
 
-5. Hit **Done** from the Add API Access blade.
-1. Choose **Authentication** from the Manage group on the left menu.
+5. Hit **Add permissions** from the **Request API Permissions** blade.
+1. Choose **Authentication** from the **Manage group** on the left menu.
 1. Ensure that **Treat application as a public client** is set to **Yes**.
 
 ![](img/deploy-azure-register-9.png)
@@ -57,9 +57,12 @@ There are two ways of authenticating; the first (which we show here) is to use a
 
 ### Copy configuration data
 
+1. Click **Overview** on the left menu
 1. Make a note of the **Application (client) ID** on the blade.
 1. Make a note of the **Directory (tenant) ID** on the blade.
 
 ![](img/deploy-azure-register-10.png)
 
 Congratulations - you're now ready to use the SAFE FAKE template to perform remote deployments.
+
+Continue with [Deploy to App Service](template-appservice.md)

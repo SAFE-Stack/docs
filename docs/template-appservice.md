@@ -8,7 +8,11 @@ It comes in a number of pricing plans, including a free option and has options f
 
 ## Deployment Steps
 
-In order to deploy your SAFE application to the App Service, you must have first created an [Azure Account](template-azure-registration.md#creating-an-azure-account), selected a [Subscription ID](template-azure-registration.md#selecting-a-subscription) and created an associated [App Registration](template-azure-registration.md#creating-an-app-registration).
+In order to deploy your SAFE application to the App Service, **you must first do the following**:
+
+1. Create an [Azure Account](template-azure-registration.md#creating-an-azure-account).
+1. Get the [Subscription ID](template-azure-registration.md#selecting-a-subscription) from the account.
+1. Create an associated [App Registration](template-azure-registration.md#creating-an-app-registration).
 
 ### Custom FAKE build tasks
 

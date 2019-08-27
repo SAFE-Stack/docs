@@ -22,3 +22,7 @@ When you have installed `gcloud` you need to authenticate and also set the defau
 Google cloud give new users $300 to spend on cloud computing over a 12 month period from when you sign up. In addition to that you also get some free computing resources every month so you can test new things. However, you still need to enable billing and add a credit card to verify who you are. Read more about the [Google Cloud Platform Free Tier](https://cloud.google.com/free/).
 
 As mentioned, you still need to add a credit card to your billing account and this is the way to go about it. Go to [Billing](https://console.cloud.google.com/billing) and create a billing account, you might have your free credits here already. When the billing account is created go back to the [Home dashboard](https://console.cloud.google.com/home/dashboard) and then select `Billing` again in the menu. The reason for this is that you first created a billing account that can be used in many projects, but now you also need to link your project to that billing account. On the billing page just click `Link a billing account` and link your project to the newly created billing account.
+
+
+
+Continue with [Deploy to Google Cloud AppEngine](template-gcp-appengine.md) or   [Deploy to Google Cloud Kubernetes Engine](template-gcp-kubernetes.md)
