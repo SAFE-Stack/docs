@@ -73,4 +73,4 @@ Now you should be able to reach the website on your `.azurewebsites.net` url.
 
 Now everything is set up. By creating new entries in [RELEASE_NOTES.md] and a new run of `release.cmd` the website should update automatically.
 
-Alternatively, you can use the [ARM delpoy option](template-appservice.md) to do automatic deployment to the Azure App Service platform.
+Alternatively, you can use the [ARM deploy option](template-appservice.md) to do automatic deployment to the Azure App Service platform.
