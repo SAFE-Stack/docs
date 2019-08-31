@@ -25,15 +25,4 @@ This target is a standard build procedure, consisting of following steps:
 
 *Note: Extra build steps will be included if you specified the [`--deploy docker`](template-docker.md) or [`--deploy azure`](template-appservice.md) flag when creating your project.*
 
-For specific buid parameters, go to one of the **Deployment Options** pages:
-
-* [`Deploy to Docker`](template-docker.md)
-* [`Registering with Azure`](template-azure-registration.md)
-    * [`Deploy to App Service`](template-appservice.md)
-* [`Registering with Google Cloud`](template-google-cloud.md)
-    * [`Deploy to Google Cloud AppEngine`](template-gcp-appengine.md)
-    * [`Deploy to Google Cloud Kubernetes Engine`](template-gcp-kubernetes.md)
-* [`Deploy to Heroku`](template-heroku.md)
-* [`Deploy to IIS`](template-iis.md)
-* [`Application Insights Integration`](template-azure-ai.md)
-
+For specific build parameters, go to one of the **Deployment Options** pages in the menu.
