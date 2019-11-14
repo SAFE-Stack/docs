@@ -93,6 +93,7 @@ Where `<hosting model>` is one of:
 * `azure`: Adds [FAKE](https://fake.build/) targets and an [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) (ARM) template that allows deployment to the [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) plus an [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) instance. See [here](template-appservice.md) for more details about Azure deployment.
 * `gcp-appengine`: Adds [FAKE](https://fake.build/) targets to deploy to [Google Cloud AppEngine](https://cloud.google.com/appengine/).
 * `gcp-kubernetes`: Adds [FAKE](https://fake.build/) targets to deploy to [Google Cloud Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
+* `iis`: Adds [FAKE](https://fake.build/) targets and client paths normalization to easily publish the application to [IIS](https://www.iis.net/).
 * `heroku`: Adds [FAKE](https://fake.build/) targets to deploy to [Heroku](https://heroku.com/).
 
 ### JS Deps
