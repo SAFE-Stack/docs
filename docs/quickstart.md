@@ -4,7 +4,7 @@ This page provides some basic guidance on getting up and running with your first
 
 You'll need to install the following pre-requisites in order to build SAFE applications
 
-* The [.NET Core SDK 2.2](https://www.microsoft.com/net/download/)
+* The [.NET Core SDK 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 * [FAKE](https://fake.build/) (>= 5.12) installed as global tool (`dotnet tool install -g fake-cli`)
 * [Paket](https://fsprojects.github.io/Paket) installed as global tool (`dotnet tool install paket --add-source https://www.myget.org/F/paket-netcore-as-tool/api/v3/index.json -g`) (optional\*)
 * [node.js](https://nodejs.org/) (>= 8.0)
@@ -17,7 +17,7 @@ You'll need to install the following pre-requisites in order to build SAFE appli
 You'll also want an IDE to create F# applications. We recommend one of the following great IDEs.
 
 * [VS Code](https://code.visualstudio.com/) + [Ionide](https://github.com/ionide/ionide-vscode-fsharp) extension (support for [Full Stack Debugging](feature-debugging.md))
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/)
+* [Visual Studio 2019](https://www.visualstudio.com/downloads/)
 * [Jetbrains Rider](https://www.jetbrains.com/rider/)
 
 ## Create your first SAFE app
