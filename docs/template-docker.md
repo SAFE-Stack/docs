@@ -55,7 +55,7 @@ Configure the Web App to point to the docker repository and select image with ta
 
 ![](img/dockersetup.png)
 
-"WebHook Url" to trigger new deployment after new image comes in your Docker Hub repo. Is available in `Settings/Container Settings` of your deployed app
+"WebHook Url" to trigger new deployment after new image comes into your Docker Hub repo. Is available in `Settings/Container Settings` of your deployed app
 
 ![](img/dockerwebhook.png)
 
