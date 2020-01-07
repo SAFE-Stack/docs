@@ -51,7 +51,7 @@ This will build the server and client, run all test, put the app into a docker c
 ### Azure Portal
 
 Go to the [Azure Portal](https://portal.azure.com) and create a new "Web App for Containers".
-Configure the Web App to point to the docker repository and select image with tag.
+Configure the Web App to point to the docker public repository and type in an image and tag.
 
 ![](img/dockersetup.png)
 
