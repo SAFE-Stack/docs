@@ -51,13 +51,15 @@ This will build the server and client, run all test, put the app into a docker c
 ### Azure Portal
 
 Go to the [Azure Portal](https://portal.azure.com) and create a new "Web App for Containers".
-Configure the Web App to point to the docker repo and select `latest` channel of the container.
+Configure the Web App to point to the docker public repository and type in an image and tag.
 
-![Docker setup](https://user-images.githubusercontent.com/57396/31279587-e06001d0-aaa9-11e7-9b4b-a3e8278a6419.png)
+![](img/dockersetup.png)
 
-Also look for the "WebHook Url" on the portal, copy that url and set it as new trigger in your Docker Hub repo.
+Also look for the "Webhook Url" on the portal (It is available in `Settings/Container Settings` of your deployed app), copy that url and set it as new trigger in your Docker Hub repo.
 
-*Note that entering a Startup File is not necessary.*
+![](img/dockerwebhook.png)
+
+*Note that startup command is not necessary.*
 
 The `Dockerfile` used to create the docker image exposes port 8085 for the Giraffe server application. This port needs to be mapped to port 80 within the Azure App Service for the application to receive http traffic.
 
@@ -67,7 +69,7 @@ Presently this can only be done using the Azure CLI. You can do this easily in A
 
 The above command is effectively the same as running `docker run -p 80:8085 <image name>`.
 
-Now you should be able to reach the website on your `.azurewebsites.net` url.
+Now you should be able to reach the website on your `yourapp.azurewebsites.net` url.
 
 ### Further releases
 
