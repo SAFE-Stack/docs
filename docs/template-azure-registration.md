@@ -23,9 +23,9 @@ You now need to create an "App Registration" in your Azure Active Directory. Thi
 ![](img/deploy-appservice-3.png)
 1. Enter the **Name** of your application as any name e.g **SAFE Deploy**
 1. Set the **Application type** as **Native**.
-1. Set the Redirect URI as any URI e.g `http://safe-stack.github.io/`
+1. Set the Redirect URI as any URI e.g `http://localhost`
 1. Hit Create.
-1. Make a note of the **Application ID** on the blade.
+1. Make a note of the **Application (client) ID** and the **Directory (tenant) ID** on the blade.
 ![](img/deploy-appservice-4.png)
 1. Choose **Settings** from the top menu.
 1. Choose **Required Permissions** from the Settings blade.
@@ -34,5 +34,7 @@ You now need to create an "App Registration" in your Azure Active Directory. Thi
 1. Choose **Windows Azure Service Management API** and hit **Select**.
 1. Check **Access Azure Service Management as organization users (preview)** and hit **Select**.
 1. Hit **Done** from the Add API Access blade.
+1. Go back to the app registration page and select the **Manifest** from the right hand menu.
+1. Find the **allowPublicClient** json setting, and set its value to **true**
 
 Congratulations - you're now ready to use the SAFE FAKE template to perform remote deployments.

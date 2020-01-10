@@ -8,7 +8,7 @@ It comes in a number of pricing plans, including a free option and has options f
 
 ## Deployment Steps
 
-In order to deploy your SAFE application to the App Service, you must have first created an [Azure Account](template-azure-registration.md#creating-an-azure-account), selected a [Subscription ID](template-azure-registration.md#selecting-a-subscription) and created an associated [App Registration](template-azure-registration.md#creating-an-app-registration).
+In order to deploy your SAFE application to the App Service, you must have first created an [Azure Account](template-azure-registration.md#creating-an-azure-account), selected a [Subscription ID](template-azure-registration.md#selecting-a-subscription) and created an associated [App Registration](template-azure-registration.md#creating-an-app-registration), and have created your solution using the azure [deployment setting](template-overview.md#Deploy)
 
 ### Custom FAKE build tasks
 
@@ -31,6 +31,7 @@ Deploying your application through FAKE is relatively simple. Use the following 
 fake build --target appservice
     -e subscriptionId=<subId>
     -e clientId=<clientId>
+    -e tenantId=<tenantId>
     -e environment=<environment> (optional)
     -e location=<location>       (optional)
     -e pricingTier=<pricingTier> (optional)
@@ -38,7 +39,8 @@ fake build --target appservice
 where:
 
 * `subscriptionId` is an Azure Subscription ID.
-* `clientId` is the Application ID of an Azure App Registration.
+* `clientId` is the 'Application (client) ID' of an Azure App Registration.
+* `tenantId` is the 'Directory (tenant) ID' of an Azure App Registration.
 * `environment` is an optional environment name that will be appended to all Azure resources created, which allows you to create entire dev / test environments quickly and easily. This defaults to a random GUID.
 * `location` is the Azure data center location you wish to use. There are currently over 30 different data centers worldwide. This defaults to `westeurope`; the full list can be viewed [here](https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/09/19/azure-data-centers-and-regions/). The location must be supplied in lower case and without spaces.
 * `pricingTier` is the pricing tier of the app service that hosts your SAFE app. This defaults to F1 (free); the full list can be viewed [here](https://azure.microsoft.com/en-us/pricing/details/app-service/).
