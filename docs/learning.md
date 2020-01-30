@@ -33,7 +33,7 @@ This application is a sample mobile application using the [React Native](https:/
 
 ## Videos
 
-* [SAFE apps with F# web stack](https://skillsmatter.com/skillscasts/11308-safe-apps-with-f-web-stack) at F# Exchange 2018 (Tomasz Heimowski)
+* [SAFE apps with F# web stack](https://www.youtube.com/watch?v=LBekZt8QB4w) at Lambda Days 2018 (Tomasz Heimowski)
 * [Modern app development with Fable and React Native](https://www.youtube.com/watch?v=fmaPeUBWZuM) at NDC Oslo 2017 (Steffen Forkmann)
 * [Reinventing MVC pattern for F# web development](https://t.co/HI7v60ZWCz) at NDC Oslo 2018 (Krzysztof Cieslak)
 
