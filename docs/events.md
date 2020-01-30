@@ -2,8 +2,6 @@
 
 | Title | Type | Date | Location | Who | Cost |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| [Hands-on with SAFE Stack](http://cadiz.lambda.world/) | Conference | Oct 17-18 2019 | Cádiz, Spain | [Tomasz Heimowski](https://theimowski.com) | Paid
-| [Full Stack Web in F#](https://oredev.org) | Conference | November 6-8 2019 | Malmö, Sweden | [Tomasz Heimowski](https://theimowski.com) | Paid
 
 # Past events
 
@@ -28,6 +26,8 @@
 | [Write Your Own Domain Specific Language with F#](https://ndcoslo.com/talk/write-your-own-domain-specific-language-with-f/) | Conference | Jun 18 2019 | Oslo, Norway | [Mikhail Smal](https://twitter.com/mvsmal) | Paid
 | [FableConf](http://fable.io/fableconf) | Conference | Sep 6-7 2019 | Antwerp, Belgium | | Paid
 | [Functional Web Programming with the SAFE Stack](https://www.eventbrite.co.uk/e/functional-web-programming-with-the-safe-stack-tickets-63553242459) | Training | Sep 12-13 2019 | London, UK | [Isaac Abraham](https://twitter.com/isaac_abraham) / [Compositional IT](https://compositional-it.com/) | Paid
+| [Hands-on with SAFE Stack](http://cadiz.lambda.world/) | Conference | Oct 17-18 2019 | Cádiz, Spain | [Tomasz Heimowski](https://theimowski.com) | Paid
+| [Full Stack Web in F#](https://oredev.org) | Conference | November 6-8 2019 | Malmö, Sweden | [Tomasz Heimowski](https://theimowski.com) | Paid
 
 ## 2018
 
