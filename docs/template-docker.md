@@ -10,7 +10,7 @@ The SAFE template has the ability to easily create a [Docker](https://www.docker
 ## Testing docker image locally
 
 1. Make sure you have docker installed and created the template with `--deploy docker` option
-1. Run `fake build --target docker`
+1. Run `dotnet fake build --target docker`
 1. Run `docker run -d -it -p 8085:8085 {dockerUser}/{dockerImageName}`
 1. Navigate to `{dockerHost}:8085` url
 
@@ -39,7 +39,7 @@ Create a file called `release.cmd` with the following content and configure your
     @echo off
     cls
 
-    fake build --target Deploy "DockerLoginServer=docker.io" "DockerImageName=****" "DockerUser=****" "DockerPassword=***" %*
+    dotnet fake build --target Deploy "DockerLoginServer=docker.io" "DockerImageName=****" "DockerUser=****" "DockerPassword=***" %*
 
 Don't worry the file is already in `.gitignore` so your password will not be commited.
 

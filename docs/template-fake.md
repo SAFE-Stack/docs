@@ -4,7 +4,7 @@ Generated FAKE script consist of two primary build targets, used for different p
 
 ## **"Run"** target
 
-Enter `fake build --target run` to build and run the app
+Enter `dotnet fake build --target run` to build and run the app
 
 This target is used for development purposes, and provides a great live-reload experience. It consists of following steps:
 

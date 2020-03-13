@@ -8,7 +8,7 @@ If you are already familiar with GCP and have `gcloud` in place, all you need to
 ```
 dotnet new SAFE --deploy gcp-appengine
 gcloud app create
-fake build -t Deploy
+dotnet fake build -t Deploy
 gcloud app browse
 ```
 

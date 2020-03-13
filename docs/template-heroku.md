@@ -18,8 +18,8 @@ After installing Heroku CLI and authenticating, the template makes the process o
 
 ```
 dotnet new SAFE --deploy heroku
-fake build -t Configure <optional app:create arguments>
-fake build -t Deploy
+dotnet fake build -t Configure <optional app:create arguments>
+dotnet fake build -t Deploy
 ```
 
 After these steps if everything went right, the project should open on the browser.
