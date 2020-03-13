@@ -28,7 +28,7 @@ An ARM template is a declarative JSON file which contains the details of the Azu
 
 Deploying your application through FAKE is relatively simple. Use the following command:
 ```
-fake build --target appservice
+dotnet fake build --target appservice
     -e subscriptionId=<subId>
     -e clientId=<clientId>
     -e tenantId=<tenantId>
