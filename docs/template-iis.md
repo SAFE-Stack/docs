@@ -9,7 +9,7 @@ dotnet new SAFE --deploy iis
 The template will include a custom FAKE build target called `Bundle` to package your application and make it ready for deployment, run this target using:
 
 ```
-fake build --target bundle
+dotnet fake build --target bundle
 ```
 
 When the target finishes running succesfully, you will have a new `deploy` directory with this structure:
