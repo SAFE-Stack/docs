@@ -8,7 +8,7 @@ Enter `dotnet fake build --target run` to build and run the app
 
 This target is used for development purposes, and provides a great live-reload experience. It consists of following steps:
 
-1. **InstallClient** - same as above in `Build` chain,
+1. **InstallClient** - same as below in `Build` chain,
 1. **RestoreServer** - `dotnet restore` is invoked for Server to fetch all necessary packages (note `dotnet build` is skipped here),
 1. **Run** - most interesting part; in this step 3 separate actions are performed in parallel:
     1. `dotnet watch run` for Server side - compiles, runs Server and watches for changes in Server source files. Whenever a change in any source file is detected, Server is automatically stopped, recompiled and rerun in the background,
