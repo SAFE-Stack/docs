@@ -1,4 +1,4 @@
-# [Saturn](https://saturnframework.github.io/docs/) in SAFE
+# [Saturn](https://saturnframework.org/explanations/overview.html) in SAFE
 Saturn is a web development library written in F# which allows you to easily create both server-side MVC applications as well as web APIs. It runs on top of two other components:
 
 * [Giraffe](https://github.com/dustinmoris/Giraffe), an F#-specific library for writing functional-first web applications.
@@ -19,4 +19,4 @@ It also integrates with SAFE to allow seamless sharing of types and functions, s
 
 ![](img/saturn-1.png)
 
-Learn more about Saturn [here](https://saturnframework.github.io/docs/).
+Learn more about Saturn [here](https://saturnframework.org/explanations/overview.html).
