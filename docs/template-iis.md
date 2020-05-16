@@ -69,7 +69,7 @@ to this:
 because otherwise the HttpPlatformHandler will not be able to figure out where the application exactly is. 
 
 ### Add Application (applies to Giraffe and Saturn)
-Now that the application pool is setup, we can our application to it. When Adding an application, you give it an ailias, and a physical path. In our case, because this is the only application in the application pool, lets just name it `SafeApp` and the physical path of the application is the *Server* directory of the bundled deployment directory:
+Now that the application pool is setup, we can add our application to it. When Adding an application, you give it an ailias, and a physical path. In our case, because this is the only application in the application pool, lets just name it `SafeApp` and the physical path of the application is the *Server* directory of the bundled deployment directory:
 
 ```bash
 {template root}
