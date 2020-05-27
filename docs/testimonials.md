@@ -22,3 +22,17 @@ Even though I am new to dotnet core and Azure.
 > SAFE was the perfect place to start our biological design and data management platform
 
 [Demetrix](https://demetrixbio.com/) uses F# for DNA design and data management in our research pipeline.   Our data systems are built on top of SAFE and it was a great experience for both veteran F# developers and people new to the environment.  I would start with SAFE again in a heartbeat for a new project.  We shared [some of our experiences](https://github.com/demetrixbio/presentations/blob/master/OpenFSharp2018/OpenFSharpDemetrix.pdf) at Open F# 2018.
+
+## Microdesk
+
+> Spoil your customers with F# and the SAFE stack!
+
+Porting a production web app from TypeScript/React to use the SAFE stack turned out to be a huge win.  Sharing F# models on the front and back-end allows you to leverage the excellent F# compiler and type system when designing and refactoring your codebase.  Using a type provider (in our case, SQLProvider) extends this coverage to your database as well.  This means that changes to _any_ part of your application will be picked up by the compiler which will essentially guide you to every relevant place in the source code that needs to be updated.  This is so effective that once you experience it, you will never want to be without it.  
+
+On the front end, the Elmish pattern, which may look intimidating at first glance, is actually quite fun and intuitive to write.  More importantly, it guides you into the "pit of success" by making you write _highly testable_ "pure functions" that outline your UI state transitions (in your `update` function).  Putting all state transitions in one place becomes a breath of fresh air because it eliminates the spaghetti code that can happen in MVVM view models of even modest complexity.  Do you have a complex "sort" that needs to be handled in your `update`?  You can easily write a unit test in F# that passes in the relevant command input for that.  No mocking is required because it will be a pure function!  
+If you still feel leery of the Elmish pattern, you are free to use React Hooks API or any other pattern you prefer.  There are also many excellent external libraries - i.e. Feliz - that allow you to optionally use the Elmish pattern on only certain pages, among other things.  
+
+Worried about getting stuck?  Don't worry because the F# community will practially crawl all over themselves to be the first to answer you question. There are also options for professional consultation as well.  The community support is amazing!
+The SAFE stack is designed to be as turn-key as possible, but there are also plenty of opportunities to customize the stack as you see fit.  
+
+Overall, the SAFE stack has allowed me to completely spoil a very damanding customer with timely, bug-free deliverables. 
