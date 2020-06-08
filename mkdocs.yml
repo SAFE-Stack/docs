@@ -16,11 +16,11 @@ theme:
 
 extra:
   social:
-    - icon: 'github'
-      link: 'https://github.com/SAFE-Stack'
-    - icon: 'twitter'
-      link: 'https://twitter.com/safe_stack'
-    - icon: 'globe'
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/SAFE-Stack
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/safe_stack
+    - icon: fontawesome/solid/globe
       link: https://safe-stack.github.io/
 
 nav:
