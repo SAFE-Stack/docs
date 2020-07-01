@@ -57,6 +57,9 @@ Where `<layout>` is one of:
 * `fulma-landing`: adds Fulma with the ['Landing'](https://bulmatemplates.github.io/bulma-templates/templates/landing.html) Bulma template.
 * `fulma-login`: adds Fulma with the ['Login'](https://bulmatemplates.github.io/bulma-templates/templates/login.html) Bulma template.
 
+If you want to use [Feliz](https://github.com/Zaid-Ajaj/Feliz) and [Feliz.Bulma](https://github.com/Dzoukr/Feliz.Bulma) as an alternative html DSL 
+you can also try the [SAFE.Simplified](https://github.com/Zaid-Ajaj/SAFE.Simplified) template.
+
 ### Communication
 
 *Configures the SAFE app to use one of available means of communication between client and server. Currently supports [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) and [Elmish.Bridge](https://github.com/Nhowka/Elmish.Bridge). If this argument is not supplied, client / server communication will be handled through the standard routing and serialization mechanism of the server. See [here](feature-clientserver.md) for an overview of Fable.Remoting, Elmish.Bridge and the alternatives for sharing data between client and server.*
