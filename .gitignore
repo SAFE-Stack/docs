@@ -1,2 +1,4 @@
 site/
 *.orig
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
