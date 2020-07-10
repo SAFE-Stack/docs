@@ -1,4 +1,4 @@
-# How do I migrate to Paket?
+# How do I migrate to Paket from NuGet?
 Paket is a fully featured package manager that acts as an alternative to the NuGet package manager.
 
 It can help you reference libraries from NuGet, Git repositories or Http resources.
@@ -34,6 +34,6 @@ Run this command to move existing references to Paket from your packages.config 
 dotnet paket convert-from-nuget
 ```
 
-If you are working in Visual Studio, you will need to add to your Solution the paket.lock and any paket.references files created in your project directories during the last step if you wish to see them in the Explorer window.
+If you are working in Visual Studio, you will need to add to your Solution both the paket.lock file created in your base directory and any paket.references files created in your project directories during the last step if you wish to see them in the Explorer window.
 
 For a more detailed explanation of this process see the official [migration guide.](https://fsprojects.github.io/Paket/convert-from-nuget-tutorial.html)

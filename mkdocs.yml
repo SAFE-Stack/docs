@@ -65,7 +65,7 @@ nav:
   - Creating New Recipes: 'recipes/template.md'
   - Bulma: 'recipes/bulma.md'
   - Feliz: 'recipes/feliz.md'
-  - Migrate to Paket: 'recipes/migrate-to-paket.md'
+  - Migrate to Paket from NuGet: 'recipes/migrate-to-paket.md'
 - FAQs:
   - Choosing your web server : 'faq-server.md'
   - Moving from dev to prod : 'faq-build.md'
