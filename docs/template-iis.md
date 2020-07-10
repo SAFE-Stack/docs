@@ -128,12 +128,12 @@ Now click `OK` and your Suave app should be up and running:
 ### Client developement considorations (applies to Giraffe and Saturn)
 
 When hosting inside IIS, your application will most likely run inside a virtual path like in the above example. This means that requests made using fetch will not work by default:
-```fs
+```fsharp
 // will not work
 fetchAs<Customer list> "/api/customers" 
 ```
 To solve this, the template includes a module `ServerPath` with a function to normalize the routes, so instead of the above you would have:
-```fs
+```fsharp
 // this works
 fetchAs<Customer list> (ServerPath.normalize "/api/customers")
 ```
