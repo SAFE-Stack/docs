@@ -62,12 +62,12 @@ nav:
   - Hot Module Replacement : 'feature-hmr.md'
   - Working with Azure functions : 'feature-azurefunctions.md'
 - How do I...:
-  - Create a new Recipe?: 'recipes/template.md'
+  - Create a new Recipe: 'recipes/template.md'
   - Hosting:
-    - Add Client/Server bundles?: 'recipes/hosting/test.md'
+    - Bundle my SAFE app: 'recipes/hosting/bundle-app.md'
   - UI:
-    - Add Bulma?: 'recipes/ui/bulma.md'
-    - Add Feliz?: 'recipes/ui/feliz.md'
+    - Add Bulma: 'recipes/ui/add-bulma.md'
+    - Add Feliz: 'recipes/ui/add-feliz.md'
 - FAQs:
   - Choosing your web server : 'faq-server.md'
   - Moving from dev to prod : 'faq-build.md'
