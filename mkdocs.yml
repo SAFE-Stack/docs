@@ -58,6 +58,10 @@ nav:
   - Server Side Rendering : 'feature-ssr.md'
   - Hot Module Replacement : 'feature-hmr.md'
   - Working with Azure functions : 'feature-azurefunctions.md'
+- Recipes:
+  - Creating New Recipes: 'recipes/template.md'
+  - Bulma: 'recipes/bulma.md'
+  - Feliz: 'recipes/feliz.md'
 - FAQs:
   - Choosing your web server : 'faq-server.md'
   - Moving from dev to prod : 'faq-build.md'
