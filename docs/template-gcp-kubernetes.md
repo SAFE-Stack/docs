@@ -79,7 +79,7 @@ kubectl get service safe-template
 
 When you deploy a container to a kubernetes cluster using the container name and tag you might not get an updated version of the contaienr if you use the same tag. The easiest way to change the tag using the default template is to change the `getDockerTag` function in `build.fsx`. One common way to create the tag is to use the git sha, given that you use git. To do so you can change the `getDockerTag` to something like below:
 
-```
+```fsharp
 let getDockerTag projectName =
     let gitHash = Information.getCurrentHash()
     let projectId = getGcloudProject()
