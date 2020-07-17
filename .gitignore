@@ -1,6 +1,3 @@
 site/
 *.orig
-.vs/ProjectSettings.json
-.vs/slnx.sqlite
-.vs/VSWorkspaceState.json
-.vs/SAFE docs/v16/.suo
+.vs/
