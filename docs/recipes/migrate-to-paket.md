@@ -27,6 +27,21 @@ dotnet tool install paket
 dotnet tool restore
 ```
 
+This will add three types of file to your solution, all of which should be commited to source control:
+
+- paket.dependencies 
+
+    This will be at the solution root and contains the top level list of dependencies for your project. It is also used to specify any rules such as where they should be downloaded from and which versions etc.
+
+- paket.lock
+
+    This will also be at the solution root and contains the concrete resolution of all direct and transitive dependencies. 
+
+- paket.references 
+
+    There will be one of these in each project directory. It simply specifies which packages the project requires.
+
+
 ### How do I migrate my existing Nuget references?
 
 Run this command to move existing references to Paket from your packages.config or .fsproj file:
