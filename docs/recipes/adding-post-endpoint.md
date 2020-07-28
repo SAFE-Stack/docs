@@ -18,10 +18,8 @@ This router itself is an expression which allows us to build up a list of endpoi
 We can add POST endpoints which take any number and type of arguments which are parsed from the URL.
 
 ```fsharp
-let messageHandler next ctx = task { return! text "A response" next ctx }
-let messageIntHandler intArg next ctx  = task {
-    return! text (sprintf "Response %i" intArg) next ctx
-}
+let messageHandler = text "A response"
+let messageIntHandler intArg = text (sprintf "Response %i" intArg) 
 
 let webApp =
     router {
@@ -34,6 +32,7 @@ When retrieving the request body, we can bind it to a model using an ASP .NET  h
 
 ```fsharp
 open Microsoft.AspNetCore.Http
+open FSharp.Control.Tasks.V2
 
 type Model =
  { Name : string
