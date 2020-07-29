@@ -3,8 +3,8 @@
 
 ### Using Feliz
 1. [Add Feliz to your project](#TODO:_INSERT_LINK)
-2. Insert `open Feliz` at the top of your `.fs` file.
-3. Start using Feliz in your code.
+1. Insert `open Feliz` at the top of your `.fs` file.
+1. Start using Feliz in your code.
 
 ```fsharp
 Html.button [
