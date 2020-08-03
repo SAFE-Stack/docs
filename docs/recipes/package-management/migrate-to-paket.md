@@ -31,4 +31,4 @@ For a more detailed explanation of this process see the official [migration guid
 
 > In the case where you have added a nuget project to a solution which is already using paket, run this command with the option `--force`.
 
-> If you are working in Visual Studio, if you wish to see them in the Explorer window you will need to add to your Solution both the paket.lock file created in your base directory and any paket.references files created in your project directories during the last step.
+> If you are working in Visual Studio and wish to see your Paket files in the Solution Explorer, you will need to add both the paket.lock and any paket.references files created in your project directories during the last step to your solution.
