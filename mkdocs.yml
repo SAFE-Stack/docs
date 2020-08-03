@@ -61,11 +61,15 @@ nav:
   - Server Side Rendering : 'feature-ssr.md'
   - Hot Module Replacement : 'feature-hmr.md'
   - Working with Azure functions : 'feature-azurefunctions.md'
-- Recipes:
-  - Creating New Recipes: 'recipes/template.md'
-  - Bulma: 'recipes/bulma.md'
-  - Feliz: 'recipes/feliz.md'
-  - Migrate to Paket from NuGet: 'recipes/migrate-to-paket.md'
+- How do I...:
+  - Create a new Recipe: 'recipes/template.md'
+  - Hosting:
+    - Bundle my SAFE app: 'recipes/hosting/bundle-app.md'
+  - UI:
+    - Add Bulma: 'recipes/ui/add-bulma.md'
+    - Add Feliz: 'recipes/ui/add-feliz.md'
+  - Package Management:
+    - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
 - FAQs:
   - Choosing your web server : 'faq-server.md'
   - Moving from dev to prod : 'faq-build.md'
