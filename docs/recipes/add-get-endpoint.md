@@ -13,7 +13,7 @@ let app =
 
 This router itself is an expression which allows us to build up a list of endpoints.
 
-We can add GET endpoints which take any number and type of arguments which are parsed from the URL.
+We can add GET endpoints which take any number and type of arguments that can be parsed from the URL.
 
 ```fsharp
 open FSharp.Control.Tasks.V2
