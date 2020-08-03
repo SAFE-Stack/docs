@@ -15,7 +15,7 @@ let app =
 
 This router itself is an expression which allows us to build up a list of endpoints.
 
-We can add POST endpoints which take any number and type of arguments that are parsed from the URL.
+We can add POST endpoints which take any number and type of arguments that can be parsed from the URL.
 
 ```fsharp
 let messageHandler = text "A response"
