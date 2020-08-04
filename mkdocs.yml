@@ -69,6 +69,7 @@ nav:
     - Add Bulma: 'recipes/ui/add-bulma.md'
     - Add Feliz: 'recipes/ui/add-feliz.md'
   - Package Management:
+    - Add an NPM package to the Client: 'recipes/package-management/add-npm-package-to-client.md'
     - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
 - FAQs:
   - Choosing your web server : 'faq-server.md'
