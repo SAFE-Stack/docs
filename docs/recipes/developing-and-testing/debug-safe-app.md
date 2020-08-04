@@ -65,7 +65,7 @@ npm run start
 
 Set the server as your Startup project, either using the drop-down menu at the top of the IDE or by right clicking on the project itself and selecting **Set as Startup Project**. 
 
-Select the profile that you with to launch from the drop-down at the top of the IDE.
+Select the profile that you set up earlier and wish to launch from the drop-down at the top of the IDE.
 
 Either press the Play button at the top of the IDE or hit F5 on your keyboard to start the Server debugging and launch a browser pointing at the website.
 
