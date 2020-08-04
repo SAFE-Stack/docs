@@ -81,3 +81,7 @@ you just run
 yarn install
 yarn run start
 ```
+
+## **I'm using VS Code**
+
+VS Code allows you to take advantage of [full stack debugging](../../../feature-debugging), so you can seamlessly step through both Client and Server code in a single session.
