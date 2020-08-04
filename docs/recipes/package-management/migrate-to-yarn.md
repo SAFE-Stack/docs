@@ -2,7 +2,7 @@
 
 [Yarn](https://yarnpkg.com/) is an alternative Javascript package manager created by Facebook. 
 
-When it was released it provided several features which were absent from NPM such as [offline caching](https://yarnpkg.com/features/offline-cache) and deterministic dependency resolution. 
+When it was first released it provided several features which were absent from NPM at the time such as [offline caching](https://yarnpkg.com/features/offline-cache) and [deterministic dependency resolution](https://classic.yarnpkg.com/blog/2016/11/24/lockfiles-for-all/). 
 
 Today however, NPM has largely gained feature parity with Yarn, although they still do things slightly differently and therefore many people prefer one over the other.
 
