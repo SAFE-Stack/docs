@@ -15,7 +15,7 @@ type ITodosApi =
 
 ### On the server
 #### 1. Write implementation
-Create a function implements the back-end service that you require. Use standard functions to read from databases or other external sources as requirsed.
+Create a function implements the back-end service that you require. Use standard functions to read from databases or other external sources as required.
 ```fsharp
 let loadCustomer customerId = async {
     return Some { Name = "My Customer" }
@@ -62,7 +62,7 @@ This recipe shows how to create a GET endpoint on the server and consume it on t
 
 ### On the Server
 #### 1. Write implementation
-Create a function implements the back-end service that you require. Use standard functions to read from databases or other external sources as requirsed.
+Create a function implements the back-end service that you require. Use standard functions to read from databases or other external sources as required.
 ```fsharp
 open Saturn
 open FSharp.Control.Tasks
@@ -86,7 +86,7 @@ let webApp = router {
 }
 ```
 
-> Note the use of `getf` rather than `get`. If do not need any parameters, just use `get`. See [here](https://saturnframework.org/reference/Saturn/saturn-router-routerbuilder.html) for reference docs on the use of the Saturn router.
+> Note the use of `getf` rather than `get`. If you do not need any parameters, just use `get`. See [here](https://saturnframework.org/reference/Saturn/saturn-router-routerbuilder.html) for reference docs on the use of the Saturn router.
 
 #### 3. Test the endpoint (optional)
 Test out your endpoint using e.g. web browser / Postman / REST Client for VS Code etc.

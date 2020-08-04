@@ -1,5 +1,5 @@
-# How do I load data from server to client in MVU?
-This recipe shows what steps you need to take to store new data on the client using the MVU pattern, which is typically read from the Server. You will learn the steps required to update the model, update and view functions to handle a button click which requests data from the server and handles the response.
+# How do I load data from server to client using MVU?
+This recipe demonstrates the steps you need to take to store new data on the client using the MVU pattern, which is typically read from the Server. You will learn the steps required to modify the model, update and view functions to handle a button click which requests data from the server and handles the response.
 
 ## In Shared
 #### 1. Create shared domain
@@ -62,4 +62,4 @@ let update msg model =
         { model with TheCustomer = Some c }, Cmd.none
 ```
 
-> The code to fire off the message to the server differs depending on the client / server communication you are using and normally whether you are reading or writing data. See [here](read-data.md) for more information.
+> The code required to send a message to the server differs depending on the client / server communication you are using and whether you are reading or writing data. See [here](read-data.md) for more information.
