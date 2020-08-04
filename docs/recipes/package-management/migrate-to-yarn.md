@@ -36,7 +36,7 @@ For more details on migration see the [official docs](https://classic.yarnpkg.co
 
 Now that you have switched to using Yarn, you will need to modify the way in which the client application is built and launched.
 
-The way in which you do this depends on whether you have started with the minimal or full template, as the latter uses FAKE to manage its build process.
+The way in which you do this depends on whether you have started with the minimal or full template, as the latter uses [FAKE](https://fake.build/) to manage its build process.
 
 ### Launching the application from the minimal template
 
