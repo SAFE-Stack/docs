@@ -66,8 +66,9 @@ nav:
   - Hosting:
     - Bundle my SAFE app: 'recipes/hosting/bundle-app.md'
   - Client / Server:
-    - Load data with MVU: 'recipes/client-server/working-with-mvu.md'
-    - Read data from the server: 'recipes/client-server/read-data.md'
+    - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
+    - Getting data from the server: 'recipes/client-server/messaging.md'
+    - Posting data to the server: 'recipes/client-server/messaging-post.md'
   - UI:
     - Add Bulma: 'recipes/ui/add-bulma.md'
     - Add Feliz: 'recipes/ui/add-feliz.md'

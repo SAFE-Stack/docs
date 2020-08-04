@@ -1,5 +1,5 @@
-# How do I read data from the server in a SAFE app?
-This recipe shows how to create an endpoint on the server and hook up it up to the client. This recipe assumes that you have also followed [this](working-with-mvu.md) recipe and have an understanding of MVU messaging. This recipe only shows how to wire up the client and server.
+# How do I send and receive data?
+This recipe shows how to create an endpoint on the server and hook up it up to the client. This recipe assumes that you have also followed [this](mvu-roundtrip.md) recipe and have an understanding of MVU messaging. This recipe only shows how to wire up the client and server.
 
 ## **I'm using the standard template** (Fable Remoting)
 [Fable Remoting](https://zaid-ajaj.github.io/Fable.Remoting/) is a library which allows you to create client/ server messaging without any need to think about HTTP verbs or serialization etc.
@@ -47,7 +47,7 @@ let loadCustomer customerId =
 
 > Note the final value supplied, `CustomerLoaded`. This is the `Msg` case that will be sent into the
 > Elmish loop *once the call returns*, with the returned data. It should take in a value that
-> matches the type returned by the Server e.g. `CustomerLoaded of Customer option`. See [here](working-with-mvu.md)
+> matches the type returned by the Server e.g. `CustomerLoaded of Customer option`. See [here](mvu-roundtrip.md)
 > for more information.
 
 This can now be called from within your `update` function e.g.
@@ -103,7 +103,7 @@ let loadCustomer customerId =
 
 > Note the final value supplied, `CustomerLoaded`. This is the `Msg` case that will be sent into the
 > Elmish loop *once the call returns*, with the returned data. It should take in a value that
-> matches the type returned by the Server e.g. `CustomerLoaded of Customer`. See [here](working-with-mvu.md)
+> matches the type returned by the Server e.g. `CustomerLoaded of Customer`. See [here](mvu-roundtrip.md)
 > for more information.
 
 An alternative (and slightly more succinct) way of writing this is:

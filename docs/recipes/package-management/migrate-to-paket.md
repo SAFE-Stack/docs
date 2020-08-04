@@ -10,7 +10,7 @@ You can find out more at the [Paket website.](https://fsprojects.github.io/Paket
 
 ---
 
-### How do I install Paket?
+## How do I install Paket?
 
 1. Install the Paket dotnet tool.
 
@@ -42,7 +42,7 @@ This will add three types of file to your solution, all of which should be commi
     There will be one of these in each project directory. It simply specifies which packages the project requires.
 
 
-### How do I migrate my existing Nuget references?
+## How do I migrate my existing Nuget references?
 
 Run this command to move existing references to Paket from your packages.config or .fsproj file:
 ```
