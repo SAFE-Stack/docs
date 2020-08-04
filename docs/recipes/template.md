@@ -22,4 +22,4 @@ Write clear instructions on how to get to the desired outcome. The step-by-step 
 
 If you have a step in this section that is relevant to some other recipe we have here in the docs, such as adding a package to a SAFE app, link it to that relevant page.
 
-[See here for an example recipe.](../bulma)
+[See here for an example recipe.](./ui/add-bulma.md)
