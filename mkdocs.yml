@@ -70,7 +70,7 @@ nav:
     - Add Feliz: 'recipes/ui/add-feliz.md'
   - Package Management:
     - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
-    - Add NuGet package to Server: 'recipes/package-management/add-nuget-package-to-server.md'
+    - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
 - FAQs:
   - Choosing your web server : 'faq-server.md'
   - Moving from dev to prod : 'faq-build.md'
