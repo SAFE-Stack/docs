@@ -65,6 +65,8 @@ nav:
   - Create a new Recipe: 'recipes/template.md'
   - Hosting:
     - Bundle my SAFE app: 'recipes/hosting/bundle-app.md'
+  - Client / server communication:
+    - Add a GET endpoint: 'recipes/client-server-communication/add-get-endpoint.md'
   - UI:
     - Add Bulma: 'recipes/ui/add-bulma.md'
     - Add Feliz: 'recipes/ui/add-feliz.md'
