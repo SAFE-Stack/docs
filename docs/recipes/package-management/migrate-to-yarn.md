@@ -44,21 +44,7 @@ The way in which you do this depends on whether you have started with the minima
 
 2.) Run the command 
 ```powershell
-yarn webpack-dev-server
-```
-
-3.) Navigate to the **Server** project directory and run
-```powershell
-dotnet run
-```
-
-### Launching the application from the minimal template
-
-1.) Navigate to the **Client** project directory
-
-2.) Run the command 
-```powershell
-yarn webpack -p
+yarn run start
 ```
 
 3.) Navigate to the **Server** project directory and run
@@ -120,7 +106,7 @@ with
 Target.create "InstallClient" (fun _ -> yarn "install --frozen-lockfile" clientPath)
 ```
 
-3.) Replace
+4.) Replace
 ```fsharp
 Target.create "Bundle" (fun _ ->
     dotnet (sprintf "publish -c Release -o \"%s\"" deployDir) serverPath
@@ -135,7 +121,7 @@ Target.create "Bundle" (fun _ ->
 )
 ```
 
-4.) Replace
+5.) Replace
 ```fsharp
 Target.create "Run" (fun _ ->
     dotnet "build" sharedPath
@@ -158,7 +144,7 @@ Target.create "Run" (fun _ ->
 )
 ```
 
-4.) Finally, replace
+6.) Finally, replace
 ```fsharp
 Target.create "RunTests" (fun _ ->
     dotnet "build" sharedTestsPath
