@@ -54,7 +54,6 @@ Navigate to the **Client** project directory and run
 ```powershell
 npm install
 ```
-
 followed by
 
 ```powershell
@@ -72,11 +71,14 @@ Either press the Play button at the top of the IDE or hit F5 on your keyboard to
 ## **I'm using the standard template with Visual Studio**
 
 If you are using the standard template, the process is mostly the same. The only difference is that instead of running
+
 ```powershell
 npm install
 npm run start
 ```
+
 you just run
+
 ```powershell
 yarn install
 yarn run start
