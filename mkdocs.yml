@@ -70,6 +70,7 @@ nav:
     - Add Feliz: 'recipes/ui/add-feliz.md'
   - Package Management:
     - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
+    - Migrate to Yarn from NPM: 'recipes/package-management/migrate-to-yarn.md'
 - FAQs:
   - Choosing your web server : 'faq-server.md'
   - Moving from dev to prod : 'faq-build.md'
