@@ -6,9 +6,9 @@ Whenever changes are made to code, they are immediately reflected in the running
 
 The specific way that this is achieved depends on the nature of the application.
 
-In a SAFE app we have two distinct components, the Client and the Server.
-
 ---
+
+In a SAFE app we have two distinct components, the Client and the Server.
 
 Whether you are using the minimal or standard SAFE template, there is nothing more you need to do in order to get started with hot reload.
 
