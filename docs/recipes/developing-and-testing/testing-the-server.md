@@ -4,7 +4,7 @@ Testing your Server application in a SAFE app is just the same as in any other d
 
 This includes all of the usual suspects such as [NUnit](https://nunit.org/), [XUnit](https://xunit.net/), [FSUnit](https://fsprojects.github.io/FsUnit/), [Expecto](https://github.com/haf/expecto), [FSCheck](https://fscheck.github.io/FsCheck/), [AutoFixture](https://github.com/AutoFixture/AutoFixture) etc.
 
-In this guide we will look at using Expecto, as this is included with the standard SAFE template.
+In this guide we will look at using **Expecto**, as this is included with the standard SAFE template.
 
 ## **I'm using the standard template**
 
