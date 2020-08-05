@@ -52,7 +52,7 @@ Open your ServerTests.fsproj file and add the following element:
 </PropertyGroup>
 ```
 
-####2. Discover tests
+####3. Discover tests
 
 To allow your tests to be discovered, you will need to decorate them with a `[<Tests>]` attribute.
 
@@ -72,7 +72,7 @@ let server = testList "Server" [
 ]
 ```
 
-####3. Run tests
+####4. Run tests
 
 There are now two ways to run these tests.
 
