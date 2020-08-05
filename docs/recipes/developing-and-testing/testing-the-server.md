@@ -172,4 +172,4 @@ and
 dotnet add package YoloDev.Expecto.TestSdk
 ```
 
-You can now add `[<Test>]` attributes to your tests to allow them to be discovered and run them using the dotnet tooling in the same way as explained earlier for the standard template.
+You can now add `[<Test>]` attributes to your tests so that they can be discovered, and then run them using the dotnet tooling in the same way as explained earlier for the standard template.
