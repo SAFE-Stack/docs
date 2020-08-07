@@ -16,12 +16,14 @@ Whether you are using the minimal or standard SAFE template, there is nothing mo
 
 If you deploy your application and then make a change in the Client, after a moment it will be reflected in the browser without a full re-deployment.
 
-This achieved using the [hot module replacement](../../../feature-hmr) functionality provided by [webpack](https://webpack.js.org/).
+This achieved using the [hot module replacement](https://webpack.js.org/guides/hot-module-replacement/) functionality provided by [webpack](https://webpack.js.org/).
+
+
 
 ### Server reloading
 
 Server reloading isn't _quite_ as fully automated.
 
-If you make a change in the Server code and save your work, the project _will_ automatically rebuild and deploy itself. Once this is complete however you will need to refresh your browser to see any visual changes.
+If you make a change in the Server code and save your work, the project _will_ automatically rebuild and launch itself. Once this is complete however you will need to refresh your browser to see any visual changes.
 
 > If you are using the minimal template, you need to make sure you launch the Server using `dotnet watch run` rather than just `dotnet run`. The standard template takes care of this step for you using its FAKE build script.
