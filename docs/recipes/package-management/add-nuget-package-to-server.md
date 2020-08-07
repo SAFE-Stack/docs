@@ -1,7 +1,7 @@
 # How do I add a Nuget package to the Server?
-You will add nuget package to the server to give the server more capabilities. You can download a wide variety of packages from [the official NuGet site](https://nuget.org/).
+You can add nuget packages to the server to give it more capabilities. You can download a wide variety of packages from [the official NuGet site](https://nuget.org/).
 
-In this example we will add the add the [FsToolkit ErrorHandling package](https://www.nuget.org/packages/FsToolkit.ErrorHandling/) package to the Server.
+In this example we will add the add the [FsToolkit ErrorHandling package](https://www.nuget.org/packages/FsToolkit.ErrorHandling/) package.
 
 ---
 
