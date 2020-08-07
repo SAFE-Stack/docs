@@ -131,6 +131,10 @@ Add the following entry to the `scripts` element in the Client project's `packag
 "test:live": "webpack-dev-server --config webpack.tests.config.js"
 ```
 
+####9. Build the Tests
+
+Build the Client.Test project.
+
 ####9. Launch the test website
 
 Navigate to the Client project and run the command
