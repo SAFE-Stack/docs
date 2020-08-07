@@ -72,9 +72,10 @@ nav:
   - UI:
     - Add Bulma: 'recipes/ui/add-bulma.md'
     - Add Feliz: 'recipes/ui/add-feliz.md'
-  - Package Managesment:
-    - Add a Nuget package to the Client: 'recipes/package-management/add-nuget-package-to-client.md'
+  - Package Management:
+    - Add an NPM package to the Client: 'recipes/package-management/add-npm-package-to-client.md'
     - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
+    - Add a Nuget package to the Client: 'recipes/package-management/add-nuget-package-to-client.md'
     - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
   - Developing and Testing:
     - Testing the Server: 'recipes/developing-and-testing/testing-the-server.md'
