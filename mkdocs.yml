@@ -77,6 +77,7 @@ nav:
     - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
     - Add a Nuget package to the Client: 'recipes/package-management/add-nuget-package-to-client.md'
     - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
+    - Migrate to Yarn from NPM: 'recipes/package-management/migrate-to-yarn.md'
   - Developing and Testing:
     - Testing the Server: 'recipes/developing-and-testing/testing-the-server.md'
 - FAQs:
