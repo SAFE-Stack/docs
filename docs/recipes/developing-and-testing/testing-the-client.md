@@ -41,13 +41,15 @@ If you are using the minimal template, you will need to first configure a test p
 
 ####1. Add a test project
 
-At the root level of your solution, create a create a **.Net Core** console app called **Client.Tests** and then delete the Program.fs module that it comes with.
+At the root level of your solution, create a create a **.Net Standard** library called **Client.Test** and then delete the Library.fs module that it comes with.
 
 ####2. Reference the Client project
 
-Add a reference from the Client.Tests project to the Client project.
+- Add a reference from the Client.Tests project to the Client project.
 
 <img src="../../../img/client-ref.png"/>
+
+- Save All changes in the solution
 
 ####3. Add Mocha
 
@@ -58,9 +60,9 @@ dotnet add package Fable.Mocha
 ```
 ####4. Add a test
 
-Add a module called Client.Tests.fs to your test project. Add the following code to the module:
+Add a module called Client.Test.fs to your test project. Add the following code to the module:
 ```fsharp
-module Client.Tests
+module Client.Test
 
 open Fable.Mocha
 open Index
@@ -132,6 +134,11 @@ Add the following entry to the `scripts` element in the Client project's `packag
 ####9. Launch the test website
 
 Navigate to the Client project and run the command
+
+```powershell
+npm install
+```
+followed by
 ```powershell
 npm run test:live
 ```
