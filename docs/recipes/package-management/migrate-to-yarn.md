@@ -10,19 +10,22 @@ The SAFE template uses NPM out of the box, but it is easy to migrate to Yarn if 
 
 ## Switching to Yarn
 
-1.) You will need to [install Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable) on your machine. 
+####1. Install Yarn
+
+You will need to [install Yarn](https://classic.yarnpkg.com/en/docs/install) on your machine. 
 
 > Please note: Version 2 of Yarn is [not currently supported](https://github.com/SAFE-Stack/SAFE-template/issues/329).
 
-2.) Navigate to the **Client** directory and simply run the command:
+####2. Migrate from NPM
+
+Navigate to the **Client** directory and simply run the command:
 ```powershell
 yarn
 ```
-This will read your existing NPM package.json file and create a [yarn.lock](https://classic.yarnpkg.com/en/docs/yarn-lock) file in the project directory.
 
-> If you are using Visual Studio you will need to include the lock file in your project if you wish to see it in the Solution explorer.
+####3. Sync package versions
 
-3.) If you want to make sure that Yarn is using the same package versions that NPM had in its lock file, run
+If you want to make sure that Yarn is using the same package versions that NPM had in its lock file, run
 
 ```powershell
 yarn import
@@ -40,129 +43,41 @@ The way in which you do this depends on whether you have started with the minima
 
 ### Launching the application from the minimal template
 
-1.) Navigate to the **Client** project directory
+####1. Start the Client
 
-2.) Run the command 
+Navigate to the **Client** project directory and run the command 
 ```powershell
 yarn run start
 ```
 
-3.) Navigate to the **Server** project directory and run
+####2. Start the Server
+
+Navigate to the **Server** project directory and run
 ```powershell
 dotnet run
 ```
 
 ### Launching the application from the full template
 
-1.) Open the build.fsx file that is in the root of the solution directory.
+####1. Update FAKE build script
 
-2.) Replace 
+Open the build.fsx file that is in the root of the solution directory and replace all instances of "npm" with "yarn" (both in strings _and_ in value names).
+
+####2. Update install args
+
+Replace
 ```fsharp
-let npm args workingDir =
-    let npmPath =
-        match ProcessUtils.tryFindFileOnPath "npm" with
-        | Some path -> path
-        | None ->
-            "npm was not found in path. Please install it and make sure it's available from your path. " +
-            "See https://safe-stack.github.io/docs/quickstart/#install-pre-requisites for more info"
-            |> failwith
-
-    let arguments = args |> String.split ' ' |> Arguments.OfArgs
-
-    Command.RawCommand (npmPath, arguments)
-    |> CreateProcess.fromCommand
-    |> CreateProcess.withWorkingDirectory workingDir
-    |> CreateProcess.ensureExitCode
-    |> Proc.run
-    |> ignore
-```
-with
-```fsharp
-let yarn args workingDir =
-    let yarnPath =
-        match ProcessUtils.tryFindFileOnPath "yarn" with
-        | Some path -> path
-        | None ->
-            "yarn was not found in path. Please install it and make sure it's available from your path. " +
-            "See https://safe-stack.github.io/docs/quickstart/#install-pre-requisites for more info"
-            |> failwith
-
-        let arguments = args |> String.split ' ' |> Arguments.OfArgs
-
-        Command.RawCommand (yarnPath, arguments)
-        |> CreateProcess.fromCommand
-        |> CreateProcess.withWorkingDirectory workingDir
-        |> CreateProcess.ensureExitCode
-        |> Proc.run
-        |> ignore
-```
-
-3.) Replace
-```fsharp
-Target.create "InstallClient" (fun _ -> npm "install" clientPath)
+Target.create "InstallClient" (fun _ -> yarn "install" clientPath)
 ```
 with
 ```fsharp
 Target.create "InstallClient" (fun _ -> yarn "install --frozen-lockfile" clientPath)
 ```
 
-4.) Replace
-```fsharp
-Target.create "Bundle" (fun _ ->
-    dotnet (sprintf "publish -c Release -o \"%s\"" deployDir) serverPath
-    npm "run build" clientPath
-)
-```
-with
-```fsharp
-Target.create "Bundle" (fun _ ->
-    dotnet (sprintf "publish -c Release -o \"%s\"" deployDir) serverPath
-    yarn "run build" clientPath
-)
-```
+####3. Launch the application
 
-5.) Replace
-```fsharp
-Target.create "Run" (fun _ ->
-    dotnet "build" sharedPath
-    [ async { dotnet "watch run" serverPath }
-      async { npm "run start" clientPath } ]
-    |> Async.Parallel
-    |> Async.RunSynchronously
-    |> ignore
-)
+At the root of your solution you can now just run 
+```powershell
+dotnet fake build -t run
 ```
-with
-```fsharp
-Target.create "Run" (fun _ ->
-    dotnet "build" sharedPath
-    [ async { dotnet "watch run" serverPath }
-      async { yarn "run start" clientPath } ]
-    |> Async.Parallel
-    |> Async.RunSynchronously
-    |> ignore
-)
-```
-
-6.) Finally, replace
-```fsharp
-Target.create "RunTests" (fun _ ->
-    dotnet "build" sharedTestsPath
-    [ async { dotnet "watch run" serverTestsPath }
-      async { npm "run test:live" clientPath } ]
-    |> Async.Parallel
-    |> Async.RunSynchronously
-    |> ignore
-)
-```
-with
-```fsharp
-Target.create "RunTests" (fun _ ->
-    dotnet "build" sharedTestsPath
-    [ async { dotnet "watch run" serverTestsPath }
-      async { yarn "run test:live" clientPath } ]
-    |> Async.Parallel
-    |> Async.RunSynchronously
-    |> ignore
-)
-```
+as usual to launch both the Client and Server at the same time.
