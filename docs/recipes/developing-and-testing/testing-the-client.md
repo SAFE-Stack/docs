@@ -133,7 +133,7 @@ Add the following entry to the `scripts` element in the Client project's `packag
 
 ####9. Build the Tests
 
-Build the Client.Test project.
+Save the solution and build the Client.Test project.
 
 ####9. Launch the test website
 
