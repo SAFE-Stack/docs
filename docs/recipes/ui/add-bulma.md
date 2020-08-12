@@ -8,8 +8,8 @@
 By adding either of these to your SAFE project alongside the [Bulma stylesheet or the Bulma NPM package](https://bulma.io/documentation/overview/start/), you can take full advantage of Bulma.
 
 ### Using Fulma
-1. [Add the Fulma NuGet package](#TODO:_INSERT_LINK) to your project
-1. [Add Bulma to your project](#TODO:_INSERT_LINK) (as a stylesheet or the npm package)
+1. [Add the Fulma NuGet package](../package-management/add-nuget-package-to-client.md) to your project
+1. [Add Bulma NPM package to your project](../package-management/add-npm-package-to-client.md) (as a stylesheet or the npm package)
 1. Insert `open Fulma` at the top of your `.fs` files
 1. Start using Fulma components in your code.
 
