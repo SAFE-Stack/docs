@@ -49,6 +49,7 @@ The following steps will vary depending on whether you’re using the standard t
         ],
     },
     ```
+Here's what your webpack config file should look like in the end: [webpack.config.js](https://gist.github.com/functionalprogrammer/df7f02e43d6c0f49b6ed75893b551f3a)
 
 ## I am Using the Minimal Template
 1. Navigate to the `src/Client` folder and open the `webpack.config.js` file.
@@ -72,6 +73,8 @@ The following steps will vary depending on whether you’re using the standard t
         ],
     }
     ```
+   
+Here's what your webpack config file should look like in the end: [webpack.config.js](https://gist.github.com/functionalprogrammer/948f5c8f7293dd486c2bf2445c2d6b7c)
 
 ## There you have it!
 You can now take advantage of Sass by writing to the `Style.scss` file.
