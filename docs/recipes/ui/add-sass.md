@@ -8,6 +8,7 @@ Whether you’re using the standard template or the minimal, you will need to in
 2. [style-loader](https://www.npmjs.com/package/style-loader) – Inject CSS into the DOM.
 3. [sass](https://www.npmjs.com/package/sass) – A pure JavaScript implementation of  Sass.
 4. [sass-loader](https://www.npmjs.com/package/sass-loader) – Loads a Sass/SCSS file and compiles it to CSS.
+5. [mini-css-extract-plugin](https://www.npmjs.com/package/mini-css-extract-plugin) - Extracts CSS into separate files.
 
 > [Click here](../package-management/add-npm-package-to-client.md) to see the recipe for adding NPM packages to client.
 
@@ -19,62 +20,81 @@ The following steps will vary depending on whether you’re using the standard t
 - - - -
 
 ## I am Using the Standard Template
-1. Navigate to the `src/Client` folder and open the `webpack.config.js` file.
-2. Find the `CONFIG` module and add the following variable if it doesn’t already exist.
-    ```javascript
-    sassEntry: './style.scss',
-    ```
-4. Find the `entry` field in the  `module.exports` object at the bottom of the file, and replace it with the following:
-    ```javascript
-    entry: isProduction ? {
-       app: [resolve(CONFIG.fsharpEntry), resolve(CONFIG.sassEntry)]
-    } : {
-        app: resolve(CONFIG.fsharpEntry),
-        style: resolve(CONFIG.sassEntry)
-    },
-    ```
-3. Next up, see the `module` field of the same `module.exports` object. You will see that it has a field named `rules`, which is a list of objects. Add the following object to this list:
-    ```fsharp
-    {
-        test: /\.(sass|scss|css)$/,
-        use: [
-            isProduction
-                ? MiniCssExtractPlugin.loader
-                : 'style-loader',
-            'css-loader',
-            {
-              loader: 'sass-loader',
-              options: { implementation: require('sass') }
-            }
-        ],
-    },
-    ```
-Here's what your webpack config file should look like in the end: [webpack.config.js](https://gist.github.com/functionalprogrammer/df7f02e43d6c0f49b6ed75893b551f3a)
+#### 1. Webpack Config
+Navigate to the `src/Client` folder and open the `webpack.config.js` file.
+#### 2. CONFIG.sassEntry
+Find the `CONFIG` module and add the following variable if it doesn’t already exist.
+```javascript
+sassEntry: './style.scss',
+```
+#### 3. Entry
+Find the `entry` field in the  `module.exports` object at the bottom of the file, and replace it with the following:
+```javascript
+entry: isProduction ? {
+    app: [resolve(CONFIG.fsharpEntry), resolve(CONFIG.sassEntry)]
+} : {
+    app: resolve(CONFIG.fsharpEntry),
+    style: resolve(CONFIG.sassEntry)
+},
+```
+#### 4. Plugins
+Then, find the `plugins` field of the same `module.export` object and and replace it with the following:
+```javascript
+plugins: isProduction ?
+   commonPlugins.concat([
+       new MiniCssExtractPlugin({ filename: 'style.[name].[hash].css' }),
+       new CopyWebpackPlugin([{ from: resolve(CONFIG.assetsDir) }]),
+   ])
+   : commonPlugins.concat([
+       new webpack.HotModuleReplacementPlugin(),
+   ]),
+```
+#### 5. Module
+Next up, see the `module` field of the same `module.exports` object. You will see that it has a field named `rules`, which is a list of objects. Add the following object to this list:
+```fsharp
+{
+    test: /\.(sass|scss|css)$/,
+    use: [
+        isProduction
+            ? MiniCssExtractPlugin.loader
+            : 'style-loader',
+        'css-loader',
+        {
+            loader: 'sass-loader',
+            options: { implementation: require('sass') }
+        }
+    ],
+},
+```
+Here's what your webpack config file should look like in the end: [webpack.config.js](https://gist.github.com/functionalprogrammer/948f5c8f7293dd486c2bf2445c2d6b7c)
 
 ## I am Using the Minimal Template
-1. Navigate to the `src/Client` folder and open the `webpack.config.js` file.
-2. Find the `entry` field in the  `module.exports` object at the bottom of the file, and replace it with the following:
-    ```javascript
-    entry: {
-        app: [
-            resolve('./Client.fsproj'), 
-            resolve('./style.sass'),
-        ]
-    }
-    ```
-3. Next up, see the `module` field of the same `module.exports` object. You will see that it has a field named `rules`, which is a list of objects. Add the following object to this list:
-    ```javascript
-    {
-        test: /\.(sass|scss|css)$/,
-        use: [
-            'style-loader',
-            'css-loader',
-            { loader: 'sass-loader' }
-        ],
-    }
-    ```
+#### 1. Webpack Config
+Navigate to the `src/Client` folder and open the `webpack.config.js` file.
+#### 2. Entry
+Find the `entry` field in the  `module.exports` object at the bottom of the file, and replace it with the following:
+```javascript
+entry: {
+    app: [
+        resolve('./Client.fsproj'), 
+        resolve('./style.scss'),
+    ]
+}
+```
+#### 3. Module
+Next up, see the `module` field of the same `module.exports` object. You will see that it has a field named `rules`, which is a list of objects. Add the following object to this list:
+```javascript
+{
+    test: /\.(sass|scss|css)$/,
+    use: [
+        'style-loader',
+        'css-loader',
+        { loader: 'sass-loader' }
+    ],
+}
+```
    
-Here's what your webpack config file should look like in the end: [webpack.config.js](https://gist.github.com/functionalprogrammer/948f5c8f7293dd486c2bf2445c2d6b7c)
+Here's what your webpack config file should look like in the end: [webpack.config.js](https://gist.github.com/functionalprogrammer/df7f02e43d6c0f49b6ed75893b551f3a)
 
 ## There you have it!
 You can now take advantage of Sass by writing to the `Style.scss` file.
