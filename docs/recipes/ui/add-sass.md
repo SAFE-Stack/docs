@@ -4,11 +4,13 @@ There are two different syntax options to use with Sass – the *indented syntax
 
 ## Prerequisites
 Whether you’re using the standard template or the minimal, you will need to install the following NPM packages to your solution:
+
 1. [css-loader](https://www.npmjs.com/package/css-loader) – Interprets `@import` and `url()` like `import`/`require()` and will resolve them
 2. [style-loader](https://www.npmjs.com/package/style-loader) – Inject CSS into the DOM.
 3. [sass](https://www.npmjs.com/package/sass) – A pure JavaScript implementation of  Sass.
 4. [sass-loader](https://www.npmjs.com/package/sass-loader) – Loads a Sass/SCSS file and compiles it to CSS.
-5. [mini-css-extract-plugin](https://www.npmjs.com/package/mini-css-extract-plugin) - Extracts CSS into separate files.
+
+Additionally, **if you're using the standard template** install [mini-css-extract-plugin](https://www.npmjs.com/package/mini-css-extract-plugin). This package extracts CSS into separate files and you will need it for bundling during production.
 
 > [Click here](../package-management/add-npm-package-to-client.md) to see the recipe for adding NPM packages to client.
 
