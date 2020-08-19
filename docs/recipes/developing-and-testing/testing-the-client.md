@@ -9,7 +9,7 @@ Furthermore, and code that is shared between the Client and Server must be test 
 The SAFE template uses a library called Fable.Mocha which allows us to run the same tests in both environments. It mirrors the Expecto API and works in much the same way.
 
 ## **I'm using the standard template**
-
+****
 If you are using the standard template then there is nothing more you need to do in order to start testing your Client.
 
 You will find a folder in the solution named **tests**. Inside this there is a project, **Client.Tests**, which contains a single script demonstrating how to use Mocha to test the TODO sample.
@@ -40,29 +40,31 @@ Once the build is complete and the website is running, navigate to `http://local
 If you are using the minimal template, you will need to first configure a test project as none are included.
 
 ####1. Add a test project
-
-At the root level of your solution, create a create a **.Net Standard** library called **Client.Test** and then delete the Library.fs module that it comes with.
-
-####2. Reference the Client project
-
-- Add a reference from the Client.Tests project to the Client project.
-
-<img src="../../../img/client-ref.png"/>
-
-- Save All changes in the solution
-
-####3. Add Mocha
-
-Navigate to the directory of the project that you just created and run the following command:
+In the `src` folder, create a create a **.Net Standard** library called **Client.Test**.
 
 ```powershell
-dotnet add package Fable.Mocha
+cd src
+dotnet new ClassLib -lang F# -o Client.Tests
 ```
-####4. Add a test
 
-Add a module called Client.Test.fs to your test project. Add the following code to the module:
+####2. Reference the Client project
+Reference the Client project from the Client.Tests project:
+
+```powershell
+dotnet add Client.Tests reference Client
+```
+
+####3. Add the Fable.Mocha package to Test project
+Run the following command:
+
+```powershell
+dotnet add Client.Tests package Mocha
+```
+
+####4. Add a test
+Delete the Library.fs file and replace it with a new file called `Tests.fs` to your test project. Add the following code to it:
 ```fsharp
-module Client.Test
+module Tests
 
 open Fable.Mocha
 open Index
@@ -104,17 +106,17 @@ Add a file called **index.html** to the root of the test project and add the fol
 
 - Add a new file to the **Client** project directory called **webpack.tests.config.js**.
 
-- Populate it with the contents of the [webpack config template](https://github.com/fable-compiler/webpack-config-template/blob/master/webpack.config.js).
+- Populate it with the contents of a Fable-compatible webpack config template [such as this](https://github.com/fable-compiler/webpack-config-template/blob/master/webpack.config.js).
 
 ####7. Update the test webpack config
 
 - Replace the `CONFIG` value in the webpack file you just created with the following:
 ```fsharp
 var CONFIG = {
-    indexHtmlTemplate: '../../Client.Test/index.html',
-    fsharpEntry: '../../Client.Test/Client.Test.fsproj',
-    outputDir: '../../Client.Test',
-    assetsDir: '../../Client.Test',
+    indexHtmlTemplate: '../Client.Tests/Index.html',
+    fsharpEntry: '../Client.Tests/Client.Tests.fsproj',
+    outputDir: '../Client.Tests',
+    assetsDir: '../Client.Tests',
     devServerPort: 8081,
     devServerProxy: undefined,
     babel: undefined
