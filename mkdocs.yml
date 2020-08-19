@@ -79,6 +79,8 @@ nav:
     - Add a Nuget package to the Client: 'recipes/package-management/add-nuget-package-to-client.md'
     - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
     - Migrate to Yarn from NPM: 'recipes/package-management/migrate-to-yarn.md'
+  - Developing and Testing:
+    - Using hot reload: 'recipes/developing-and-testing/using-hot-reload.md'
 - FAQs:
   - Choosing your web server : 'faq-server.md'
   - Moving from dev to prod : 'faq-build.md'
