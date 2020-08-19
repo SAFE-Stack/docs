@@ -1,23 +1,22 @@
-# How Do I Use CSS with SAFE?
+# How Do I Use stylesheets with SAFE?
+If you wish to use your own CSS or SASS stylesheets with SAFE apps, you can embed either them through webpack. The template already includes all required NPM packages you may need, so you will only need to configure webpack to reference your stylesheet and include in the outputs.
 
 ## Adding the Stylesheet
-Then, you will need to create an CSS file in the `src/Client` folder of your solution e.g `style.css`. You might also want the stylesheet to be “included” in the `Client.fsproj` file in order for it to be seen in the *solution view* of your IDE. This is not essential, but recommended.
+First, create a CSS file in the `src/Client` folder of your solution e.g `style.css`.
 
-- - - -
-> The following steps will vary depending on whether you’re using the standard template or the minimal one. Follow the steps that corresponds to the version of the SAFE template you’re using and ignore the rest.  
-- - - -
+> The same approach can be taken for `.scss` files.
 
-## I am Using the Standard Template
-### 1. Webpack Config
-Navigate to the `src/Client` folder and open the `webpack.config.js` file.
+## Configuring WebPack
 
-### 2. cssEntry
-Find the `cssEntry` variable inside the `CONFIG` module and replace it with the following:
+### I'm using the Standard Template
+#### 1. Link to the stylesheet
+
+Inside the `src/Client/webpack.config.js` file, add the following variable to the `CONFIG` module, which points to the style file you created previously.
 ```javascript
 cssEntry: './style.css',
 ```
 
-### 3. Entry
+#### 2. Embed CSS into outputs
  Find the `entry` field in the  `module.exports` object at the bottom of the file, and replace it with the following:
 ```javascript
 entry: isProduction ? {
@@ -28,24 +27,19 @@ entry: isProduction ? {
 },
 ```
 
-Here’s what your webpack config file should look like in the end:  [webpack.config.js](https://gist.github.com/functionalprogrammer/d089ea05760a92174880fb2dc0f9650e) 
+This combines the css and F# outputs into a single bundle for production, and separately for dev.
 
-## I am Using the Minimal Template
-### 1. Webpack Config
-Navigate to the `src/Client` folder and open the `webpack.config.js` file.
-
-### 2. Entry
+### I'm using the Minimal Template
+#### 1. Embed CSS into outputs
 Find the `entry` field in the  `module.exports` object at the bottom of the file, and replace it with the following:
 ```javascript
-entry: { 
+entry: {
     app: [
-        resolve('./Client.fsproj'), 
+        resolve('./Client.fsproj'),
         resolve('./style.css')
     ]
 },
 ```
-
-Here’s what your webpack config file should look like in the end:  [webpack.config.js](https://gist.github.com/functionalprogrammer/d24267f199741453005c800cd0e4df1d) 
 
 ## There you have it!
 You can now style your app by writing to the `style.css` file.
