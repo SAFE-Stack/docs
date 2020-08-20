@@ -19,7 +19,6 @@ Go ahead and replace this link with the link to the theme that you want to use, 
 ```
 
 ## I am Using the Minimal Template
-The minimal template will require a little more work since it doesn’t support Bulma out-of-the-box.
 
 #### 1. Find index.html
 Navigate to `src/Client` and open `index.html`.
