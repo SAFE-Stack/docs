@@ -3,7 +3,9 @@
 ```fsharp
 open Fable.FontAwesome
 
-Fa.i [ Fa.Solid.Star ] []
+Icon.icon [
+    Fa.i [ Fa.Solid.Star ] [ ]
+]
 ```
 This will display a solid star icon.
 
@@ -21,9 +23,4 @@ Open the `index.html` file that’s in `src/Client` and add the following line t
 ```
 
 #### All Done!
-Now you can use FontAwesome in your code:
-```fsharp
-open Fable.FontAwesome
-
-Fa.i [ Fa.Solid.Star ] []
-```
+Now you can use FontAwesome in your code
