@@ -4,11 +4,9 @@ This page provides some basic guidance on getting up and running with your first
 
 You'll need to install the following pre-requisites in order to build SAFE applications
 
-* The [.NET Core SDK 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+* The [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/)
 * [node.js](https://nodejs.org/) (>= 8.0)
-* [yarn](https://yarnpkg.com/) (>= 1.10.1\*\*) or [npm](https://www.npmjs.com/)
-
-\*\* Yarn v2 is [not yet supported](https://github.com/SAFE-Stack/SAFE-template/issues/329)
+* [npm](https://www.npmjs.com/)
 
 ## Install an F# code editor
 
