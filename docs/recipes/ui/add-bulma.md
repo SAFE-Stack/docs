@@ -1,4 +1,4 @@
-# Bulma Support on SAFE
+# How do I add Bulma to a SAFE project?
 
 [Bulma](https://bulma.io/documentation/) is a free open-source UI framework based on flex-box that helps you create modern and responsive layouts. When it comes to using Bulma as your front-end library on a SAFE Stack web application, you have two options.
 

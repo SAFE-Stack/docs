@@ -67,18 +67,23 @@ nav:
     - Bundle my SAFE app: 'recipes/hosting/bundle-app.md'
   - Client / Server:
     - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
-    - Getting data from the server: 'recipes/client-server/messaging.md'
-    - Posting data to the server: 'recipes/client-server/messaging-post.md'
+    - Get data from the server: 'recipes/client-server/messaging.md'
+    - Post data to the server: 'recipes/client-server/messaging-post.md'
   - UI:
-    - Add Bulma: 'recipes/ui/add-bulma.md'
-    - Add Feliz: 'recipes/ui/add-feliz.md'
-    - Add FontAwesome: 'recipes/ui/add-fontawesome.md'
+    - Add FontAwesome support: 'recipes/ui/add-fontawesome.md'
+    - Add Stylesheet support: 'recipes/ui/add-style.md'
+    - Add Bulma support: 'recipes/ui/add-bulma.md'
+    - Add Feliz support: 'recipes/ui/add-feliz.md'
   - Package Management:
     - Add an NPM package to the Client: 'recipes/package-management/add-npm-package-to-client.md'
     - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
     - Add a Nuget package to the Client: 'recipes/package-management/add-nuget-package-to-client.md'
     - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
     - Migrate to Yarn from NPM: 'recipes/package-management/migrate-to-yarn.md'
+  - Fable:
+    - Import a JavaScript module: 'recipes/fable/import-js-module.md'
+  - Developing and Testing:
+    - Using hot reload: 'recipes/developing-and-testing/using-hot-reload.md'
 - FAQs:
   - Choosing your web server : 'faq-server.md'
   - Moving from dev to prod : 'faq-build.md'

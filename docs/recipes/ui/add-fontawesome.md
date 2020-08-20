@@ -11,8 +11,8 @@ This will display a solid star icon.
 If you’re using the minimal template, there are a couple of things to do before you can start using FontAwesome.
 
 #### 1. The NuGet Package
-Add [Fable.FontAwesome.Free NuGet Package](https://www.nuget.org/packages/Fable.FontAwesome.Free/) to the Client project. 
-> See [How do I add a Nuget package to the Client?](../../package-management/add-nuget-package-to-client.md).
+Add [Fable.FontAwesome.Free NuGet Package](https://www.nuget.org/packages/Fable.FontAwesome.Free/) to the Client project.
+> See [How do I add a Nuget package to the Client?](../package-management/add-nuget-package-to-client.md).
 
 #### 2. The CDN Link
 Open the `index.html` file that’s in `src/Client` and add the following line to the `head` element:
