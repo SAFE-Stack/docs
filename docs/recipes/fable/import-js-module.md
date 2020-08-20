@@ -6,32 +6,29 @@ We will use the `react` module from the React NPM package as an example here bec
 
 ### Importing everything from a module
 
-In your client code, use the `ImportAll` attribute to import all items from a given module name. The `jsNative` is effectively a placeholder value. It's the attribute that's doing the actual work here.
+In your client code, use the `importAll` function to import all items from a given module name.
 
 ```fsharp
-open Fable.Core
+open Fable.Core.JsInterop
 
-[<ImportAll("react")>]
-let react : obj = jsNative
+let react : obj = importAll "react"
+
 ```
 
 Now you can access items contained in the module using the dynamic JS interop provided by Fable. This example just prints the version of React being used.
 
 ```fsharp
-open Fable.Core.JsInterop
-
 printfn "React version: %s" react?version
 ```
 
 ### Import one value from a module
 
-To import a single value use the `Import` attribute instead. You need to provide both the name of the value and the module name.
+To import a single value use the `import` function instead. You need to provide both the name of the value and the module name.
 
 ```fsharp
-open Fable.Core
+open Fable.Core.JsInterop
 
-[<Import("version", from="react")>]
-let reactVersion : string = jsNative
+let reactVersion : string = import "version" "react"
 ```
 
 Now you can use this value directly.
@@ -40,3 +37,6 @@ Now you can use this value directly.
 printfn "React version: %s" reactVersion
 ```
 
+### More information
+
+See the [Fable docs](https://fable.io/docs/communicate/js-from-fable.html) for more ways to import modules and use JavaScript from Fable.
