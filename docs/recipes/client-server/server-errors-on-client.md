@@ -1,6 +1,8 @@
 # How Do I Handle Server Errors on the Client?
 SAFE Stack makes it easy to handle Server errors on the Client. Though the way we make a call to the Server from the Client is different between the standard and the minimal template, the way we handle Server errors on the Client is the same in principle. However, there is a slight deviation in this recipe between the two versions of the template just to keep the steps accurate (e.g. the names of some functions).
 
+---
+
 #### 1. The Errors Field
 Find the `Model` type in `src/Client/Index.fs` and add it the following `Errors` field:
 ```fsharp
@@ -26,7 +28,7 @@ let model =
 ```
 
 #### 4. Handling the GotError Case
-Add the following line to the end of the pattern match inside the `update` function. Make sure it’s the last case of the match:
+Add the following line to the end of the pattern match inside the `update` function:
 ```fsharp
 | GotError er ->
     { model with Errors = er.Message :: model.Errors }, Cmd.none
@@ -61,13 +63,9 @@ let cmd = Cmd.OfPromise.either getHello () GotHello GotError
 
 
 ## Done!
-Now, if you get an exception from the Server, its message will be added to the `Errors` field of the `Model` type. Instead of throwing the error, you can now display a meaningful text to the user by making a pattern match on this field inside your `view` function like so:
+Now, if you get an exception from the Server, its message will be added to the `Errors` field of the `Model` type. Instead of throwing the error, you can now display a meaningful text to the user like so:
 ```fsharp
-yield! 
-    match model.Errors with
-    | [] -> []
-    | errorMessages -> 
-        [ for msg in errorMessages do 
-            p [] [ str msg ] ]
+[ for msg in errorMessages do
+    p [] [ str msg ]
+]
 ```
-
