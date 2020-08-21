@@ -59,6 +59,7 @@ nav:
     - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
     - Get data from the server: 'recipes/client-server/messaging.md'
     - Post data to the server: 'recipes/client-server/messaging-post.md'
+    - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
   - UI:
     - Add FontAwesome support: 'recipes/ui/add-fontawesome.md'
     - Add Stylesheet support: 'recipes/ui/add-style.md'
