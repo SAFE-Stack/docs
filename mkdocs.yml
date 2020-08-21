@@ -71,6 +71,7 @@ nav:
     - Add a Nuget package to the Client: 'recipes/package-management/add-nuget-package-to-client.md'
     - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
     - Migrate to Yarn from NPM: 'recipes/package-management/migrate-to-yarn.md'
+    - Sync NuGet and NPM Packages: 'recipes/package-management/sync-nuget-and-npm-packages.md'
   - Fable:
     - Import a JavaScript module: 'recipes/fable/import-js-module.md'
   - Developing and Testing:
