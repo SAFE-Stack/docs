@@ -1,8 +1,6 @@
 # How do I test the Server?
 
-Testing your Server application in a SAFE app is just the same as in any other dotnet app, and you can use the same tools and frameworks that you are familiar with.
-
-This includes all of the usual suspects such as [NUnit](https://nunit.org/), [XUnit](https://xunit.net/), [FSUnit](https://fsprojects.github.io/FsUnit/), [Expecto](https://github.com/haf/expecto), [FSCheck](https://fscheck.github.io/FsCheck/), [AutoFixture](https://github.com/AutoFixture/AutoFixture) etc.
+Testing your Server code in a SAFE app is just the same as in any other dotnet app, and you can use the same tools and frameworks that you are familiar with. These include all of the usual suspects such as [NUnit](https://nunit.org/), [XUnit](https://xunit.net/), [FSUnit](https://fsprojects.github.io/FsUnit/), [Expecto](https://github.com/haf/expecto), [FSCheck](https://fscheck.github.io/FsCheck/), [AutoFixture](https://github.com/AutoFixture/AutoFixture) etc.
 
 In this guide we will look at using **Expecto**, as this is included with the standard SAFE template.
 
@@ -10,9 +8,9 @@ In this guide we will look at using **Expecto**, as this is included with the st
 
 ### Using the Expecto runner
 
-If you are using the standard template then there is nothing more you need to do in order to get started testing your Server.
+If you are using the standard template, then there is nothing more you need to do in order to start testing your Server code.
 
-You will find a folder in the solution named **tests**. Inside this there is a project, **Server.Tests**, which contains a single script demonstrating how to use Expecto to test the TODO sample.
+You will find a folder in the solution named **tests**. Inside this, there is a project named **Server.Tests** that contains a single script demonstrating how to use Expecto to test the TODO sample.
 
 In order to run the tests, instead of starting your application using
 ```powershell
@@ -26,13 +24,13 @@ This will execute the tests and print the results into the console window.
 
 <img src="../../../img/expecto-results.png"/>
 
-> This method builds and runs the Client test project too, which can be slow. If you want to run the Server tests alone, you can simply navigate to the Server.Tests directory and execute the project using `dotnet run`.
+> This method builds and runs the Client test project too, which can be slow. If you want to run the Server tests alone, you can simply navigate to the Server.Tests directory and run the project using `dotnet run`.
 
 ### Using dotnet test or the Visual Studio Test runner 
 
-If you would like to use dotnet test from the command line or the test runner that comes with Visual Studio, there are a couple of extra steps to follow.
+If you would like to use dotnet tests from the command line or the test runner that comes with Visual Studio, there are a couple of extra steps to follow.
 
-####1. Install the Test Adapters
+#### 1. Install the Test Adapters
 
 Run the following commands at the root of your solution:
 ```powershell
@@ -42,7 +40,7 @@ dotnet paket add Microsoft.NET.Test.Sdk -p Server.Tests
 dotnet paket add YoloDev.Expecto.TestSdk -p Server.Tests
 ```
 
-####2. Disable EntryPoint generation
+#### 2. Disable EntryPoint generation
 
 Open your ServerTests.fsproj file and add the following element:
 
@@ -52,7 +50,7 @@ Open your ServerTests.fsproj file and add the following element:
 </PropertyGroup>
 ```
 
-####3. Discover tests
+#### 3. Discover tests
 
 To allow your tests to be discovered, you will need to decorate them with a `[<Tests>]` attribute.
 
@@ -72,7 +70,7 @@ let server = testList "Server" [
 ]
 ```
 
-####4. Run tests
+#### 4. Run tests
 
 There are now two ways to run these tests.
 
@@ -90,17 +88,17 @@ Alternatively, if you are using Visual Studio or VS Mac you can make use of the 
 
 If you are using the minimal template, you will need to first configure a test project as none are included.
 
-####1. Add a test project
+#### 1. Add a test project
 
 At the root level of your solution, create a create a **.Net Core** console app called **Server.Tests** and then delete the Program.fs module that it comes with.
 
-####2. Reference the Server project
+#### 2. Reference the Server project
 
 Add a reference from the Server.Tests project to the Server project.
 
 <img src="../../../img/server-ref.png"/>
 
-####3. Add Expecto
+#### 3. Add Expecto
 
 Navigate to the directory of the project that you just created and run the following command:
 
@@ -118,7 +116,7 @@ You can prevent this reoccuring by adding an entry to your test project file:
 </PropertyGroup>
 ```
 
-####4. Add something to test
+#### 4. Add something to test
 
 Update the Server.fs file in the Server project to extract the message logic from the router like so:
 ```fsharp
@@ -130,7 +128,7 @@ let webApp =
     }
 ```
 
-####5. Add a test
+#### 5. Add a test
 
 Add a module called Server.Tests.fs to your test project. Add the following code to the module:
 ``` fsharp
@@ -149,7 +147,7 @@ let server = testList "Server" [
 let main _ = runTests defaultConfig server
 ```
 
-####6. Run the test
+#### 6. Run the test
 
 Navigate to the Test project directory and execute it using
 ```powershell
@@ -160,7 +158,7 @@ This will print out the results in the console window
 
 <img src="../../../img/expecto-results.png"/>
 
-####7. Using dotnet test or the Visual Studio Test Explorer
+#### 7. Using dotnet test or the Visual Studio Test Explorer
 
 Navigate to the Test project directory and add the test runners using the following commands:
 
