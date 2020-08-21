@@ -7,10 +7,11 @@ You'll need to install the following pre-requisites in order to build SAFE appli
 * The [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/)
 * [node.js](https://nodejs.org/) (>= 8.0)
 * [npm](https://www.npmjs.com/)
+* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (optional - required for Azure deployments)
 
 ## Install an F# code editor
 
-You'll also want an IDE to create F# applications. We recommend one of the following great IDEs.
+You'll also want an IDE to create F# applications. We recommend one of the following great IDEs:
 
 * [VS Code](https://code.visualstudio.com/) + [Ionide](https://github.com/ionide/ionide-vscode-fsharp) extension (support for [Full Stack Debugging](feature-debugging.md))
 * [Visual Studio 2019](https://www.visualstudio.com/downloads/)

@@ -1,4 +1,10 @@
 # News and Announcements
+## 2020
+### 22nd August - SAFE v2 Launches!
+It's taken a while, but we're delighted to announce the launch of SAFE v2. The new template has been drastically slimmed down and provides a highly streamlined approach, whilst we've incorporated requested features such as testing support out of the box.
+
+We're looking forward to building on the new template with improved documentation, a set of easy-to-follow recipies for common tasks as well as new demos, exercises and a set of new wrappers around popular JS and React libraries.
+
 ## 2018
 ### 5th August
 We're pleased to see that the Suave team have clarified their license and explicitly removed the dependency on the Logary package. However, our decision to remove Suave from the SAFE stack remains: **Suave no longer forms a part of the strategic goals of the SAFE project**, and our server-side focus remains on improving the experience for both Giraffe and Saturn.
