@@ -2,7 +2,7 @@
 SAFE Stack makes it easy to handle Server errors on the Client. Though the way we make a call to the Server from the Client is different between the standard and the minimal template, the way we handle Server errors on the Client is the same in principle. However, there is a slight deviation in this recipe between the two versions of the template just to keep the steps accurate (e.g. the names of some functions).
 
 #### 1. The Errors Field
-Find the `Model` type in `src/Client/Client.fs` and add it the following `Errors` field:
+Find the `Model` type in `src/Client/Index.fs` and add it the following `Errors` field:
 ```fsharp
 type Model =
     { ... // the rest of the fields
