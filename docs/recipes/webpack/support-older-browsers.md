@@ -1,6 +1,6 @@
 # How Do I Add Support for Older Browsers?
 ## What Is A Polyfill?
-Simply put, a *polyfill* is a block of code that implements a feature on web browsers that do not support that feature. All we need to use polyfills where necessary is to tell [Babel](https://babeljs.io/) and [Fable](https://fable.io/) to do so in our webpack config file. You can find out more about polyfills [here](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill#:~:text=A%20polyfill%20is%20a%20piece,do%20not%20natively%20support%20it.).
+Simply put, a [polyfill](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill#:~:text=A%20polyfill%20is%20a%20piece,do%20not%20natively%20support%20it) is a block of code that implements a feature on web browsers that do not support that feature. All we need to use polyfills where necessary is to tell [Babel](https://babeljs.io/) and [Fable](https://fable.io/) to do so in our webpack config file.)
 
 > Note that the standard template uses polyfills by default, and **this recipe only applies to the minimal template**.
 
