@@ -2,9 +2,9 @@
 
 Testing on the client is a little different than on the server.
 
-This is because the code which is ultimately being executed in the browser is Javascript, once the F# that you write is translated by Fable, and so must be tested in a Javascript environment.
+This is because the code which is ultimately being executed in the browser is Javascript, translated from F# by Fable, and so it must be tested in a Javascript environment.
 
-Furthermore, and code that is shared between the Client and Server must be test in both a dotnet environment _and_ a Javascript environment.
+Furthermore, code that is shared between the Client and Server must be test in both a dotnet environment _and_ a Javascript environment.
 
 The SAFE template uses a library called Fable.Mocha which allows us to run the same tests in both environments. It mirrors the Expecto API and works in much the same way.
 
@@ -40,7 +40,7 @@ Once the build is complete and the website is running, navigate to `http://local
 If you are using the minimal template, you will need to first configure a test project as none are included.
 
 ####1. Add a test project
-In the `src` folder, create a create a **.Net Standard** library called **Client.Test**.
+In the `src` folder, create a create a **.Net Standard** library called **Client.Tests**.
 
 ```powershell
 cd src
