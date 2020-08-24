@@ -95,9 +95,9 @@ In the `src` folder, create a create a **.Net Core** library called **Server.Tes
 ```powershell
 cd src
 dotnet new console -lang F# -o Server.Tests
+cd ..
+dotnet sln add src/Server.Tests
 ```
-
-> If you are using the command line with Visual Studio, you will need to add the project to the solution so that it shows up in explorer.
 
 #### 2. Reference the Server project
 
