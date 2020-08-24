@@ -90,20 +90,27 @@ If you are using the minimal template, you will need to first configure a test p
 
 #### 1. Add a test project
 
-At the root level of your solution, create a create a **.Net Core** console app called **Server.Tests** and then delete the Program.fs module that it comes with.
+In the `src` folder, create a create a **.Net Core** library called **Server.Tests**.
+
+```powershell
+cd src
+dotnet new console -lang F# -o Server.Tests
+```
 
 #### 2. Reference the Server project
 
-Add a reference from the Server.Tests project to the Server project.
-
-<img src="../../../img/server-ref.png"/>
-
-#### 3. Add Expecto
-
-Navigate to the directory of the project that you just created and run the following command:
+Reference the Server project from the Server.Tests project:
 
 ```powershell
-dotnet add package Expecto
+dotnet add Server.Tests reference Server
+```
+
+#### 3. Add Expecto to the Test project
+
+Run the following command:
+
+```powershell
+dotnet add Server.Tests package Expecto
 ```
 
 You will see a warning that a Program.fs file might be generated which will need deleting, so do that if necessary.
@@ -130,7 +137,8 @@ let webApp =
 
 #### 5. Add a test
 
-Add a module called Server.Tests.fs to your test project. Add the following code to the module:
+Delete the Library.fs file in your test project and replace it with a new file called `Tests.fs`. Add the following code to it:
+
 ``` fsharp
 module Server.Tests
 
