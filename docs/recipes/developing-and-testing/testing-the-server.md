@@ -97,6 +97,8 @@ cd src
 dotnet new console -lang F# -o Server.Tests
 ```
 
+> If you are using the command line with Visual Studio, you will need to add the project to the solution so that it shows up in explorer.
+
 #### 2. Reference the Server project
 
 Reference the Server project from the Server.Tests project:
