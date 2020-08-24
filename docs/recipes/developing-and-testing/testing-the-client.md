@@ -45,9 +45,9 @@ In the `src` folder, create a create a **.Net Standard** library called **Client
 ```powershell
 cd src
 dotnet new ClassLib -lang F# -o Client.Tests
+cd ..
+dotnet sln add src/Client.Tests
 ```
-
-> If you are using the command line with Visual Studio, you will need to add the project to the solution so that it shows up in explorer.
 
 #### 2. Reference the Client project
 Reference the Client project from the Client.Tests project:
