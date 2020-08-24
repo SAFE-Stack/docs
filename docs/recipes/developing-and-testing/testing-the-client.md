@@ -16,7 +16,7 @@ You will find a folder in the solution named **tests**. Inside this there is a p
 
 >Note the compiler directive here which makes sure that the Shared tests are only included when executing in a Javascript (Fable) context. They are covered by Expecto under dotnet as you can see in **Server.Tests.fs**.
 
-####1. Launch the test server
+#### 1. Launch the test server
 
 In order to run the tests, instead of starting your application using
 ```powershell
@@ -27,7 +27,7 @@ you should instead use
 dotnet fake build -t runtests
 ```
 
-####2. View the results
+#### 2. View the results
 
 Once the build is complete and the website is running, navigate to `http://localhost:8081/` in a web browser. You should see a test results page that looks like this:
 
@@ -39,7 +39,7 @@ Once the build is complete and the website is running, navigate to `http://local
 
 If you are using the minimal template, you will need to first configure a test project as none are included.
 
-####1. Add a test project
+#### 1. Add a test project
 In the `src` folder, create a create a **.Net Standard** library called **Client.Tests**.
 
 ```powershell
@@ -47,21 +47,23 @@ cd src
 dotnet new ClassLib -lang F# -o Client.Tests
 ```
 
-####2. Reference the Client project
+> If you are using the command line with Visual Studio, you will need to add the project to the solution so that it shows up in explorer.
+
+#### 2. Reference the Client project
 Reference the Client project from the Client.Tests project:
 
 ```powershell
 dotnet add Client.Tests reference Client
 ```
 
-####3. Add the Fable.Mocha package to Test project
+#### 3. Add the Fable.Mocha package to Test project
 Run the following command:
 
 ```powershell
 dotnet add Client.Tests package Mocha
 ```
 
-####4. Add a test
+#### 4. Add a test
 Delete the Library.fs file and replace it with a new file called `Tests.fs` to your test project. Add the following code to it:
 ```fsharp
 module Tests
@@ -88,7 +90,7 @@ let all =
 let main _ = Mocha.runTests all
 ```
 
-####5. Add Test web page
+#### 5. Add Test web page
 
 Add a file called **index.html** to the root of the test project and add the following content to it:
 ```html
@@ -102,13 +104,13 @@ Add a file called **index.html** to the root of the test project and add the fol
 </html>
 ```
 
-####6. Add test webpack config
+#### 6. Add test webpack config
 
 - Add a new file to the **Client** project directory called **webpack.tests.config.js**.
 
 - Populate it with the contents of a Fable-compatible webpack config template [such as this](https://github.com/fable-compiler/webpack-config-template/blob/master/webpack.config.js).
 
-####7. Update the test webpack config
+#### 7. Update the test webpack config
 
 - Replace the `CONFIG` value in the webpack file you just created with the following:
 ```fsharp
@@ -125,7 +127,7 @@ var CONFIG = {
 
 - Remove all references and code from the webpack file that refers to MiniCssExtractPlugin or CONFIG.cssEntry.
 
-####8. Add launch command
+#### 8. Add launch command
 
 Add the following entry to the `scripts` element in the Client project's `package.json`file:
 
@@ -133,7 +135,7 @@ Add the following entry to the `scripts` element in the Client project's `packag
 "test:live": "webpack-dev-server --config webpack.tests.config.js"
 ```
 
-####9. Build the Tests
+#### 9. Build the Tests
 
 Save all changes and build the Client.Test project.
 
