@@ -115,7 +115,7 @@ Add a file called **index.html** to the root of the test project and add the fol
 - Replace the `CONFIG` value in the webpack file you just created with the following:
 ```fsharp
 var CONFIG = {
-    indexHtmlTemplate: '../Client.Tests/Index.html',
+    indexHtmlTemplate: '../Client.Tests/index.html',
     fsharpEntry: '../Client.Tests/Client.Tests.fsproj',
     outputDir: '../Client.Tests',
     assetsDir: '../Client.Tests',
