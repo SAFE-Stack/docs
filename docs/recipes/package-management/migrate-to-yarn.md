@@ -18,7 +18,7 @@ You will need to [install Yarn](https://classic.yarnpkg.com/en/docs/install) on 
 
 ####2. Migrate from NPM
 
-Navigate to the **Client** directory and simply run the command:
+Simply run the command:
 ```powershell
 yarn
 ```
@@ -45,14 +45,14 @@ The way in which you do this depends on whether you have started with the minima
 
 ####1. Start the Client
 
-Navigate to the **Client** project directory and run the command 
+Run the command 
 ```powershell
 yarn run start
 ```
 
 ####2. Start the Server
 
-Navigate to the **Server** project directory and run
+Navigate to the **Server** project directory and run:
 ```powershell
 dotnet run
 ```

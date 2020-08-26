@@ -5,14 +5,12 @@
 ## I am Using the Standard Template
 The standard template uses a CDN (Content Delivery Network) link to reference the [Bulma](https://bulma.io/) theme that it uses. Changing the theme then, is as simple as changing this link. Since the class names Bulma uses to style HTML elements remain the same, we don’t need to change anything else.
 
-#### 1. Find index.html
-Navigate to `src/Client` and open `index.html`.
-#### 2. Find the Link
-Find the line that references the Bulma stylesheet that’s used in the template through a CDN link. It will look like the following:
+#### 1. Find the Link
+In your `index.html`, find the line that references the Bulma stylesheet that’s used in the template through a CDN link. It will look like the following:
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 ```
-#### 3. Change the Link
+#### 2. Change the Link
 Go ahead and replace this link with the link to the theme that you want to use, which in my case is Nuclear:
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulmaswatch/0.8.1/nuclear/bulmaswatch.min.css">
@@ -20,14 +18,12 @@ Go ahead and replace this link with the link to the theme that you want to use, 
 
 ## I am Using the Minimal Template
 
-#### 1. Find index.html
-Navigate to `src/Client` and open `index.html`.
-#### 2. Add Link to CDN
-Add the following line anywhere between the opening and closing `head` tags:
+#### 1. Add Link to CDN
+In your `index.html`, add the following line anywhere between the opening and closing `head` tags:
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 ```
-#### 3. Add Fulma or Feliz.Bulma to the Solution
+#### 2. Add Fulma or Feliz.Bulma to the Solution
 Read [this recipe](../add-bulma) for the rest of the instructions instructions.
 
 ---

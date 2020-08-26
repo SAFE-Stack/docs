@@ -4,7 +4,7 @@ Though the SAFE template default for referencing a stylesheet is to use a CDN, i
 ---
 
 #### 1. Remove the CDN Reference
-Find the following line in `src/client/index.html` and delete it before moving on:
+Find the following line in `src/Client/index.html` and delete it before moving on:
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 ```
