@@ -50,9 +50,6 @@ Make the following modifications to the `babel-loader` object, which you can fin
     }
 },
 ```
-
----
-Your `webpack.config.js` file should look like [this](https://gist.github.com/functionalprogrammer/deb9ed69e9c0040635cdca6f0ce35ae2) in the end.
  
 ## Done!
 Babel will now use polyfills only where necessary to both enable your code to be run on older browsers and achieve optimal performance when they are not needed.
