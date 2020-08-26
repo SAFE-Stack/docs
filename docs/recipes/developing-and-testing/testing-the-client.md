@@ -33,7 +33,7 @@ Once the build is complete and the website is running, navigate to `http://local
 
 <img src="../../../img/mocha-results.png"/>
 
-> This command builds and runs the Server test project too. If you want to run the Client tests alone, you can simply navigate to the Client directory and launch the test server using `npm run test:live`, which executes a command stored in `package.json`.
+> This command builds and runs the Server test project too. If you want to run the Client tests alone, you can simply launch the test server using `npm run test:live`, which executes a command stored in `package.json`.
 
 ## **I'm using the minimal template**
 
@@ -106,7 +106,7 @@ Add a file called **index.html** to the root of the test project and add the fol
 
 #### 6. Add test webpack config
 
-- Add a new file to the **Client** project directory called **webpack.tests.config.js**.
+- Add a new file root directory called **webpack.tests.config.js**.
 
 - Populate it with the contents of a Fable-compatible webpack config template [such as this](https://github.com/fable-compiler/webpack-config-template/blob/master/webpack.config.js).
 
@@ -115,10 +115,10 @@ Add a file called **index.html** to the root of the test project and add the fol
 - Replace the `CONFIG` value in the webpack file you just created with the following:
 ```fsharp
 var CONFIG = {
-    indexHtmlTemplate: '../Client.Tests/index.html',
-    fsharpEntry: '../Client.Tests/Client.Tests.fsproj',
-    outputDir: '../Client.Tests',
-    assetsDir: '../Client.Tests',
+    indexHtmlTemplate: './src/Client.Tests/index.html',
+    fsharpEntry: './src/Client.Tests/Client.Tests.fsproj',
+    outputDir: './src/Client.Tests',
+    assetsDir: './src/Client.Tests',
     devServerPort: 8081,
     devServerProxy: undefined,
     babel: undefined
@@ -129,7 +129,7 @@ var CONFIG = {
 
 #### 8. Add launch command
 
-Add the following entry to the `scripts` element in the Client project's `package.json`file:
+Add the following entry to the `scripts` element in the Client project's `package.json` file:
 
 ```json
 "test:live": "webpack-dev-server --config webpack.tests.config.js"
@@ -141,7 +141,7 @@ Save all changes and build the Client.Test project.
 
 ####9. Launch the test website
 
-Navigate to the Client project and run the command
+Run the command
 
 ```powershell
 npm install
