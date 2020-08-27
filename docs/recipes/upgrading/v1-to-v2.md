@@ -64,7 +64,7 @@ to install all dependencies and generate a new lock file.
 
 - Open the `paket.references` files in the Server and Client projects (And any others you may have created) and remove the `Client` and `Server` groups from them, leaving package names simply listed at the root level.
 
-#### 6. Update the FAKE build script
+#### 6. Update FAKE build script
 
 - Open the build.fsx file at the root of the v1 solution.
 
@@ -72,8 +72,101 @@ to install all dependencies and generate a new lock file.
 
 > The v2 FAKE script includes targets which build its Client and Server Test projects. If you are not planning on importing the Test projects to the v1 project you are upgrading then you can remove these targets.
 
-> If you have used [Farmer](https://compositionalit.github.io/farmer/) to configure Azure in your v1 project, notice that there is an `Azure` target in the v2 build script which executes a basic Farmer deployment. You can replace this with your existing Farmer script and then run the deployment using
+- If you have used [Farmer](https://compositionalit.github.io/farmer/) to configure Azure in your v1 project, notice that there is an `Azure` target in the v2 build script which executes a basic Farmer deployment. You can replace this with your existing Farmer script. Otherwise, you will need to replace the name of the v2 project file with the name of your v1 project here, so that it deploys with the correct url and resource names. You can run the deployment using
 ```powershell
 dotnet fake build -t Azure
 ```
+
+
+#### 7. Update webpack config
+
+- Open the `webpack.config.js` file at the root of the solution.
+- Again, assuming you have not made any modifications to the build script that came with the v1 template, you can just replace the entire contents with that of the equivalent file in the v2 template.
+
+- If you wish to load CSS files, you will need to add the to the webpack file. Add the path to the `CONFIG` object like this
+```javascript
+cssEntry: './src/Client/style.scss',
+```
+where the path matches the location of your stylesheet.
+
+- In the `module.exports` object, replace
+```javascript
+entry: {
+        app: resolve(CONFIG.fsharpEntry)
+},
+```
+with 
+```javascript
+entry: isProduction ? {
+        app: [resolve(CONFIG.fsharpEntry), resolve(CONFIG.cssEntry)]
+} : {
+        app: resolve(CONFIG.fsharpEntry),
+        style: resolve(CONFIG.cssEntry)
+    },
+```
+
+#### 8. Switched to a project for Shared files
+
+The v1 template used shared files to allow code reuse between the Server and Client.
+
+The v2 template now has a dedicated project for shared content.
+
+- Add a new **.Net Standard** project to the solution by running
+```powershell
+cd src
+dotnet new ClassLib -lang F# -o Shared
+cd ..
+dotnet sln add src/Shared
+```
+
+- Remove the 'Library.fs' module and Add the **Shared.fs** module (And any other shared files you have been using) to the project.
+
+- Reference the Shared project from the Server and Client projects (and any others which need to access shared content) by running the commands
+
+```powershell
+dotnet add Client reference Shared
+dotnet add Server reference Shared
+```
+
+etc.
+
+#### 9. Update Saturn application
+
+- Open the `Server.fs` module at the root of the **Server** project.
+- Delete the following content:
+```fsharp
+let tryGetEnv key = 
+    match Environment.GetEnvironmentVariable key with
+    | x when String.IsNullOrWhiteSpace x -> None 
+    | x -> Some x
+
+let publicPath = Path.GetFullPath "../Client/public"
+
+let port =
+    "SERVER_PORT"
+    |> tryGetEnv |> Option.map uint16 |> Option.defaultValue 8085us
+```
+- In the Saturn `application` expression, replace
+```fsharp
+url ("http://0.0.0.0:" + port.ToString() + "/")
+```
+with
+```fsharp
+url "http://0.0.0.0:8085"
+```
+and
+```fsharp
+use_static publicPath
+```
+with
+```fsharp
+use_static "public"
+```
+
+## Done
+
+That should be everything you need to do.
+
+If you have problems loading your website, carefully check that you haven't missed out any javascript or nuget packages when overwriting the paket and package files. The console output will usually give you a good guide if this is the case.
+
 
