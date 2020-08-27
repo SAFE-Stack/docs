@@ -1,10 +1,14 @@
 # How do I use Giraffe instead of Saturn?
 
-If you would rather have a more traditional ASP .NET experience than [Saturn](https://saturnframework.org/explanations/overview.html) provides whilst still working in a functional way, you can easily remove it from the SAFE templates and interact with [Giraffe](https://github.com/giraffe-fsharp/Giraffe/blob/master/DOCUMENTATION.md#giraffe-documentation) directly.
+[Saturn](https://saturnframework.org/explanations/overview.html) is a functional alternative to MVC and Razor which sits on top of [Giraffe](https://github.com/giraffe-fsharp/Giraffe/blob/master/DOCUMENTATION.md#giraffe-documentation). Giraffe itself is a functional wrapper around the ASP .NET Core web framework, making it easier to work with when using F#.
+
+If you would rather have a more traditional ASP .NET experience than Saturn provides, you can easily remove it from the SAFE templates and interact with Giraffe directly.
 
 ## Bootstrapping the Application
 
-### 1. Open libraries
+#### 1. Open libraries
+
+Navigate to the **Server** module in the **Server** project.
 
 Remove
 ```fsharp
@@ -19,9 +23,9 @@ open Microsoft.Extensions.Hosting
 open Microsoft.AspNetCore.Hosting
 ```
 
-### 2. Replace application
+#### 2. Replace application
 
-We need to replace the Server's `application` computation expression with functions which set up the default host, the configure the application and register services.
+In the same module, we need to replace the Server's `application` computation expression with some functions which set up the default host, configure the application and register services.
 
 Remove this
 
