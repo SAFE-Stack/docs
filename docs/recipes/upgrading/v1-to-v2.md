@@ -36,8 +36,8 @@ Copy the contents of the equivalent file in the v2 template and overwrite the v1
 
 The v2 template no longer uses Yarn to manage javascript dependencies. It is easy to switch over to NPM. 
 
-- Delete the yarn.lock file at the root of the v1 solution
-- Open the package.json file in the same directory
+- Delete the `yarn.lock` file at the root of the v1 solution.
+- Open the `package.json` file in the same directory.
 - Replace its contents with the equivalent file from the v2 template.
 
 > If you have installed javascript packages in addition to those that come with the v1 template, you will need to make sure to continue to include them when you do this replacement.
@@ -48,4 +48,18 @@ npm install
 ```
 to install the packages and generate a package.lock file.
 
+#### 5. Update Paket dependencies
 
+- Open the `paket.dependencies` file in the root of the solution.
+- Replace its contents with the equivalent file from the v2 template.
+
+> If you have installed nuget packages in addition to those that come with the v1 template, you will need to make sure to continue to include them when you do this replacement. There are no longer groups for the Client and Server dependency graphs. Simply include them at the root level.
+
+- Delete the paket.lock file in the same directory.
+- Run 
+```fsharp
+dotnet paket install
+```
+to install all dependencies and generate a new lock file.
+
+- Open the `paket.references` files in the Server and Client projects (And any others you may have created) and remove the `Client` and `Server` groups from them, leaving package names simply listed at the root level.
