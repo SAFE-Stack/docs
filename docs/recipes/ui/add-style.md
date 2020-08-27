@@ -11,9 +11,9 @@ First, create a CSS file in the `src/Client` folder of your solution e.g `style.
 ### I'm using the Standard Template
 #### 1. Link to the stylesheet
 
-Inside the `src/Client/webpack.config.js` file, add the following variable to the `CONFIG` module, which points to the style file you created previously.
+Inside the `webpack.config.js` file, add the following variable to the `CONFIG` object, which points to the style file you created previously.
 ```javascript
-cssEntry: './style.css',
+cssEntry: './src/Client/style.css',
 ```
 
 #### 2. Embed CSS into outputs
@@ -35,8 +35,8 @@ Find the `entry` field in the  `module.exports` object at the bottom of the file
 ```javascript
 entry: {
     app: [
-        resolve('./Client.fsproj'),
-        resolve('./style.css')
+        resolve('./src/Client/Client.fsproj'),
+        resolve('./src/Client/style.css')
     ]
 },
 ```

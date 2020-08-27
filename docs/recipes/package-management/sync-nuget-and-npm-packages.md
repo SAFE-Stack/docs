@@ -12,7 +12,7 @@ dotnet tool install femto
 ```
 
 #### 2. Analyse Dependencies
-Navigate to `src/client` and run the following:
+In the root directory, run the following:
 ```powershell
 dotnet femto
 ```

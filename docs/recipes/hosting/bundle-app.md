@@ -18,7 +18,6 @@ If you created your SAFE app using the **minimal** option, you need to bundle up
 Execute the following commands:
 
 ```bash
-cd src\client
 npm run build
 ```
 
@@ -30,11 +29,11 @@ This will build the client project and copy all outputs into `/deploy/public`.
 Execute the following commands:
 
 ```bash
-cd src\server
-dotnet publish -c release -o ..\..\deploy\
+cd src/Server
+dotnet publish -c release -o ../../deploy
 ```
 
-This will bundle the server project and copy all outputs into the `/deploy/` folder.
+This will bundle the server project and copy all outputs into the `deploy` folder.
 
 ## 3. Test the bundle
 1. Navigate to the `deploy` folder at the root of your repository.
