@@ -83,7 +83,7 @@ dotnet fake build -t Azure
 - Open the `webpack.config.js` file at the root of the solution.
 - Again, assuming you have not made any modifications to the build script that came with the v1 template, you can just replace the entire contents with that of the equivalent file in the v2 template.
 
-- If you wish to load CSS files, you will need to add the to the webpack file. Add the path to the `CONFIG` object like this
+- If you wish to a CSS file, you will need to add it to the webpack file. Add the path to the `CONFIG` object like this
 ```javascript
 cssEntry: './src/Client/style.scss',
 ```
