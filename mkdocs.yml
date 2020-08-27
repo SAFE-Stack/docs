@@ -52,6 +52,7 @@ nav:
   - Hot Module Replacement : 'feature-hmr.md'
   - Working with Azure functions : 'feature-azurefunctions.md'
 - How do I...:
+  - Upgrade from V1 to V2 : 'recipes/upgrading/v1-to-v2.md'
   - Create a new Recipe: 'recipes/template.md'
   - Hosting:
     - Bundle my SAFE app: 'recipes/hosting/bundle-app.md'
