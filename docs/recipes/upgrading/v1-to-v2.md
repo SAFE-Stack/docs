@@ -57,7 +57,7 @@ to install the packages and generate a package.lock file.
 
 - Delete the paket.lock file in the same directory.
 - Run 
-```fsharp
+```powershell
 dotnet paket install
 ```
 to install all dependencies and generate a new lock file.
@@ -71,4 +71,9 @@ to install all dependencies and generate a new lock file.
 - Assuming you have not made any modifications to the build script that came with the v1 template, you can just replace the entire contents with that of the equivalent file in the v2 template.
 
 > The v2 FAKE script includes targets which build its Client and Server Test projects. If you are not planning on importing the Test projects to the v1 project you are upgrading then you can remove these targets.
+
+> If you have used [Farmer](https://compositionalit.github.io/farmer/) to configure Azure in your v1 project, notice that there is an `Azure` target in the v2 build script which executes a basic Farmer deployment. You can replace this with your existing Farmer script and then run the deployment using
+```powershell
+dotnet fake build -t Azure
+```
 
