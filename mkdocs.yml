@@ -53,6 +53,8 @@ nav:
   - Working with Azure functions : 'feature-azurefunctions.md'
 - How do I...:
   - Create a new Recipe: 'recipes/template.md'
+  - Build:
+    - Add a Build Script to the Project: 'recipes/build/add-build-script.md'
   - Hosting:
     - Bundle my SAFE app: 'recipes/hosting/bundle-app.md'
   - Client / Server:
