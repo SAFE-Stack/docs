@@ -63,3 +63,12 @@ dotnet paket install
 to install all dependencies and generate a new lock file.
 
 - Open the `paket.references` files in the Server and Client projects (And any others you may have created) and remove the `Client` and `Server` groups from them, leaving package names simply listed at the root level.
+
+#### 6. Update the FAKE build script
+
+- Open the build.fsx file at the root of the v1 solution.
+
+- Assuming you have not made any modifications to the build script that came with the v1 template, you can just replace the entire contents with that of the equivalent file in the v2 template.
+
+> The v2 FAKE script includes targets which build its Client and Server Test projects. If you are not planning on importing the Test projects to the v1 project you are upgrading then you can remove these targets.
+
