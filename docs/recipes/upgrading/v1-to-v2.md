@@ -34,4 +34,18 @@ Copy the contents of the equivalent file in the v2 template and overwrite the v1
 
 #### 4. Replace Yarn with NPM
 
+The v2 template no longer uses Yarn to manage javascript dependencies. It is easy to switch over to NPM. 
+
+- Delete the yarn.lock file at the root of the v1 solution
+- Open the package.json file in the same directory
+- Replace its contents with the equivalent file from the v2 template.
+
+> If you have installed javascript packages in addition to those that come with the v1 template, you will need to make sure to continue to include them when you do this replacement.
+
+- Run the command
+```powershell
+npm install
+```
+to install the packages and generate a package.lock file.
+
 
