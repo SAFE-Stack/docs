@@ -8,7 +8,7 @@ It comes in a number of pricing plans, including a free option and has options f
 
 ## Deployment Steps
 
-In order to deploy your SAFE application to the App Service, you must have first created an [Azure Account](template-azure-registration.md#creating-an-azure-account), selected a [Subscription ID](template-azure-registration.md#selecting-a-subscription) and created an associated [App Registration](template-azure-registration.md#creating-an-app-registration).
+In order to deploy your SAFE application to the App Service, you must have first created an [Azure Account](legacy-template-azure-registration.md#creating-an-azure-account), selected a [Subscription ID](legacy-template-azure-registration.md#selecting-a-subscription) and created an associated [App Registration](legacy-template-azure-registration.md#creating-an-app-registration).
 
 ### Custom FAKE build tasks
 
@@ -78,4 +78,4 @@ Once the deployment is complete, you can log into the Azure Portal and see your 
 ![](img/deploy-appservice-4.png)
 1. Your application will be shown in the browser running on a url following the convention `https://safe-<environment>-web.azurewebsites.net/`.
 
-You can also [deploy to a Docker Container](template-docker.md).
+You can also [deploy to a Docker Container](legacy-template-docker.md).

@@ -1,28 +1,53 @@
 The template uses [FAKE](https://fake.build/) to build the application.
 
-Generated FAKE script consist of two primary build targets, used for different purposes:
+Generated FAKE script contains a number of useful build targets:
 
 ## **"Run"** target
+```powershell
+dotnet fake build --target run
+```
 
-Enter `dotnet fake build --target run` to build and run the app
+This target is used for development purposes, and provides a great live-reload experience. It pulls down any dependencies required for both the client and server, before running both the client and server in a "watch" mode, so any changes you make on either side will be automatically applied without your needing to restart the application.
 
-This target is used for development purposes, and provides a great live-reload experience. It consists of following steps:
+> Navigating to `http://localhost:8080/` will load the application.
 
-1. **InstallClient** - same as below in `Build` chain,
-1. **RestoreServer** - `dotnet restore` is invoked for Server to fetch all necessary packages (note `dotnet build` is skipped here),
-1. **Run** - most interesting part; in this step 3 separate actions are performed in parallel:
-    1. `dotnet watch run` for Server side - compiles, runs Server and watches for changes in Server source files. Whenever a change in any source file is detected, Server is automatically stopped, recompiled and rerun in the background,
-    1. `dotnet fable webpack-dev-server` for Client side - compiles Client to JavaScript and runs [Webpack dev-server](https://github.com/webpack/webpack-dev-server) - this in turn recompiles and reloads the client application upon any source file change in Client project,
-    1. New process is started for `http://localhost:8080` to open the URL in default browser
+## **"Bundle"** target
+```powershell
+dotnet fake build
+```
 
-## **"Build"** target
+> As Bundle is the default target, you do not need to supply any arguments to FAKE.
 
-This target is a standard build procedure, consisting of following steps:
+This target is used to both build and package up your application in a production fashion, ready for deployment. It will restore all dependencies and build both the client and server in a production and release modes respectively, and correctly copy the outputs into the `deploy` folder in the root of the application. Once your build has completed, you can launch the entire application locally to test it as follows:
 
-1. **InstallDotNetCore** - here, a required version of dotnet core is read from `global.json` file and if not yet installed, the script downloads and performs the installation of desired dotnet core SDK.
-1. **InstallClient** - in this step, either NPM or Yarn is invoked (based on which option was chosen when generating project) and it installs all Client dependencies defined in `package.json`. The step also performs `dotnet restore` to fetch NuGet-based packages used by front-end.
-1. **Build** - for server side `dotnet build` command is invoked, and for client side a special `dotnet-fable` CLI tool using `dotnet fable webpack` command with `-p` flag to compile Client project to a single JavaScript bundle file. 
+```powershell
+cd deploy
+server
+```
 
-*Note: Extra build steps will be included if you specified the [`--deploy docker`](template-docker.md) or [`--deploy azure`](template-appservice.md) flag when creating your project.*
+> Navigating to `http://localhost:8085/` will load the application.
 
-For specific build parameters, go to one of the **Deployment Options** pages in the menu.
+## **"Azure"** target
+```powershell
+dotnet fake build --target azure
+```
+
+This target will deploy your application to Azure with a fully configured Application Insights instance. **You do not need to pre-create any resources in Azure** - the template will create every needed, using free SKUs so you can test without any costs.
+
+> You must already have an Azure account and will be prompted to log into it during the deployment process.
+
+This build step uses both the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) and [Farmer](https://compositionalit.github.io/farmer/) projects to create all resources in just a few lines of code.
+
+> The name of resources will be generated based on the folder in which you created the application. These may be incompatible with Azure naming rules, or may already be in use (Azure web applications must be globally unique) so you may have to modify the name of the webapp to pick one that is acceptable.
+
+## **"RunTests"** target
+```powershell
+dotnet fake build --target runtests
+```
+
+This target behaves similarly to the standard Run target, except that it launches the unit tests for both client and server.
+
+* The server tests will run immediately in the console, using watch mode to allow you to rapidly iterate on your tests.
+* The client tests run *in the browser*. Again, they use a watch mode so you can make changes to your client code and see the results in the browser.
+
+> Launch the client tests on `http://localhost:8081/`

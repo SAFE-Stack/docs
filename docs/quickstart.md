@@ -4,15 +4,14 @@ This page provides some basic guidance on getting up and running with your first
 
 You'll need to install the following pre-requisites in order to build SAFE applications
 
-* The [.NET Core SDK 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+* The [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/)
 * [node.js](https://nodejs.org/) (>= 8.0)
-* [yarn](https://yarnpkg.com/) (>= 1.10.1\*\*) or [npm](https://www.npmjs.com/)
-
-\*\* Yarn v2 is [not yet supported](https://github.com/SAFE-Stack/SAFE-template/issues/329)
+* [npm](https://www.npmjs.com/)
+* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (optional - required for Azure deployments)
 
 ## Install an F# code editor
 
-You'll also want an IDE to create F# applications. We recommend one of the following great IDEs.
+You'll also want an IDE to create F# applications. We recommend one of the following great IDEs:
 
 * [VS Code](https://code.visualstudio.com/) + [Ionide](https://github.com/ionide/ionide-vscode-fsharp) extension (support for [Full Stack Debugging](feature-debugging.md))
 * [Visual Studio 2019](https://www.visualstudio.com/downloads/)
