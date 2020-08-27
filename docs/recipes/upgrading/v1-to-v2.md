@@ -163,7 +163,7 @@ with
 use_static "public"
 ```
 
-## Done
+#### 10. Check that it runs
 
 That should be everything you need to do.
 
