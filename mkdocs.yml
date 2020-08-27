@@ -49,7 +49,7 @@ nav:
   - Hot Module Replacement : 'feature-hmr.md'
   - Working with Azure functions : 'feature-azurefunctions.md'
 - FAQs:
-  - Choosing your web server : 'faq-server.md'
+  - Moving from dev to prod : 'faq-build.md'
   - Troubleshooting : 'faq-troubleshooting.md'
 - Learning Resources: 'learning.md'
 - News: 'news.md'
