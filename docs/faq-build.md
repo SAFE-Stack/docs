@@ -1,4 +1,4 @@
-Support for moving from development to production with SAFE applications is included "out of the box" when using e.g. [Azure](template-appservice.md) or [Docker](template-docker.md) deployment options. Nonetheless, this page explains the key differences that you should be aware of between running SAFE applications in development and production.
+This page explains the key differences that you should be aware of between running SAFE applications in development and production.
 
 ## Developing SAFE applications
 The SAFE template is geared up towards a streamlined development process. Firstly, it contains a [FAKE build script](template-fake.md) which you can use this to quickly download dependencies, as well as build and run both the client and server on your machine.
@@ -20,8 +20,6 @@ It's important to note that the webpack dev server is configured to automaticall
 ## Running SAFE applications in production
 In a production environment, you won't typically use the webpack dev server. Instead, it's more common to use webpack as a one-off compiler step to create your bundled javascript from your Fable app (plus dependencies), and then deploy this along with your back-end web server which also hosts that content directly. For example, you can use Saturn to host the static content required by the application e.g. HTML, JS and CSS files etc. as well as your back-end APIs. This fits very well with standard CI / CD processes, as a build step in your FAKE script or VSTS / AppVeyor / Travis step etc.
 
-
-All [deployments options](template-overview.md#deploy) do this automatically.
 
 ![](img/faq-build-2.png)
 
