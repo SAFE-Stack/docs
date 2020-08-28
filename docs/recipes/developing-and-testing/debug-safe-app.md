@@ -181,8 +181,6 @@ VS Code integrates with the Chrome debugger, which means you can debug Client co
 
 > If you find that your breakpoints aren't being hit, try stopping the Client, disconnecting the debugger and re-launching them both.
 
-
-
 ### Full Stack Debugging
 
 If you are using VS Code, you can combine the Server and Client instructions shown above, allowing you to debug both the Client and Server at the same time.
