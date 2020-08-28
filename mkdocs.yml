@@ -80,6 +80,7 @@ nav:
     - Import a JavaScript module: 'recipes/fable/import-js-module.md'
   - Developing and Testing:
     - Using hot reload: 'recipes/developing-and-testing/using-hot-reload.md'
+    - Testing the Client: 'recipes/developing-and-testing/testing-the-client.md'
   - WebPack:
     - Support Older Browsers: 'recipes/webpack/support-older-browsers.md'
       
