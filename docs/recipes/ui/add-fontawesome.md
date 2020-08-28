@@ -17,7 +17,7 @@ Add [Fable.FontAwesome.Free NuGet Package](https://www.nuget.org/packages/Fable.
 > See [How do I add a Nuget package to the Client?](../package-management/add-nuget-package-to-client.md).
 
 #### 2. The CDN Link
-Open the `index.html` file that’s in `src/Client` and add the following line to the `head` element:
+Open the `index.html` file and add the following line to the `head` element:
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 ```
