@@ -54,7 +54,8 @@ nav:
 - How do I...:
   - Create a new Recipe: 'recipes/template.md'
   - Build:
-      - Remove the Use of FAKE: 'recipes/build/remove-fake.md'
+    - Remove the Use of FAKE: 'recipes/build/remove-fake.md'
+    - Add a Build Script to the Project: 'recipes/build/add-build-script.md'
   - Hosting:
     - Bundle my SAFE app: 'recipes/hosting/bundle-app.md'
   - Client / Server:
