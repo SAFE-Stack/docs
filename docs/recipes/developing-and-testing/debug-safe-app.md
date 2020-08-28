@@ -129,13 +129,13 @@ Navigate to `http://localhost:8080/` in your browser as usual to view the runnin
 
 ## Debugging the Client
 
-Although we write our client-side code using F#, it is being converted into Javascript at runtime by Fable.
+Although we write our client-side code using F#, it is being converted into Javascript at runtime by Fable and executed in the browser.
 
 However, we can still debug it via the magic of source mapping.
 
 ### I'm using Visual Studio
 
-If you are using Visual Studio, you cannot directly connect to the browser debugger. However, debug your client code using the browser's development tools.
+If you are using Visual Studio, you cannot directly connect to the browser debugger. You can, however, debug your client F# code using the browser's development tools.
 
 #### 1. Start the Client
 
