@@ -82,6 +82,11 @@ nav:
     - Import a JavaScript module: 'recipes/fable/import-js-module.md'
   - Developing and Testing:
     - Using hot reload: 'recipes/developing-and-testing/using-hot-reload.md'
+    - Testing the Client: 'recipes/developing-and-testing/testing-the-client.md'
+    - Testing the Server: 'recipes/developing-and-testing/testing-the-server.md'
+  - WebPack:
+    - Support Older Browsers: 'recipes/webpack/support-older-browsers.md'
+      
 - FAQs:
   - Choosing your web server : 'faq-server.md'
   - Troubleshooting : 'faq-troubleshooting.md'
@@ -90,3 +95,15 @@ nav:
 - Events: 'events.md'
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'
+- Legacy SAFE Template (v1):
+  - Overview: 'legacy-template-overview.md'
+  - Run and Build the app: 'legacy-template-fake.md'
+  - Deploy to Docker: 'legacy-template-docker.md'
+  - Deploy to App Service: 'legacy-template-appservice.md'
+  - Deploy to Google Cloud AppEngine: 'legacy-template-gcp-appengine.md'
+  - Deploy to Google Cloud Kubernetes Engine: 'legacy-template-gcp-kubernetes.md'
+  - Deploy to Heroku: 'legacy-template-heroku.md'
+  - Deploy to IIS: 'legacy-template-iis.md'
+  - Application Insights Integration: 'legacy-template-azure-ai.md'
+  - Registering with Azure: 'legacy-template-azure-registration.md'
+  - Registering with Google Cloud: 'legacy-template-google-cloud.md'
