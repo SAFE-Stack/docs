@@ -11,8 +11,9 @@ theme:
   name: 'material'
   custom_dir: 'theme'
   palette:
-    primary: 'orange'
-    accent: 'blue'
+    primary: 'light blue'
+    accent: 'indigo'
+  logo: img/safe_favicon.png
 
 markdown_extensions:
   - codehilite
