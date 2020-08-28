@@ -71,6 +71,8 @@ nav:
     - Use Different Bulma Themes: 'recipes/ui/use-different-bulma-themes.md'
     - Add Feliz support: 'recipes/ui/add-feliz.md'
     - Migrate from a CDN stylesheet to an NPM package: 'recipes/ui/cdn-to-npm.md'
+  - Server:
+    - Use Giraffe instead of Saturn: "recipes/server/saturn-to-giraffe.md"
   - Package Management:
     - Add an NPM package to the Client: 'recipes/package-management/add-npm-package-to-client.md'
     - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
