@@ -54,6 +54,7 @@ nav:
 - How do I...:
   - Create a new Recipe: 'recipes/template.md'
   - Build:
+    - Remove the Use of FAKE: 'recipes/build/remove-fake.md'
     - Add a Build Script to the Project: 'recipes/build/add-build-script.md'
   - Hosting:
     - Bundle my SAFE app: 'recipes/hosting/bundle-app.md'
@@ -71,6 +72,8 @@ nav:
     - Use Different Bulma Themes: 'recipes/ui/use-different-bulma-themes.md'
     - Add Feliz support: 'recipes/ui/add-feliz.md'
     - Migrate from a CDN stylesheet to an NPM package: 'recipes/ui/cdn-to-npm.md'
+  - Server:
+    - Use Giraffe instead of Saturn: "recipes/server/saturn-to-giraffe.md"
   - Package Management:
     - Add an NPM package to the Client: 'recipes/package-management/add-npm-package-to-client.md'
     - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
@@ -82,6 +85,8 @@ nav:
     - Import a JavaScript module: 'recipes/fable/import-js-module.md'
   - Developing and Testing:
     - Using hot reload: 'recipes/developing-and-testing/using-hot-reload.md'
+    - Testing the Client: 'recipes/developing-and-testing/testing-the-client.md'
+    - Testing the Server: 'recipes/developing-and-testing/testing-the-server.md'
   - WebPack:
     - Support Older Browsers: 'recipes/webpack/support-older-browsers.md'
       
