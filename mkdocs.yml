@@ -88,7 +88,7 @@ nav:
     - Sync NuGet and NPM Packages: 'recipes/package-management/sync-nuget-and-npm-packages.md'
 
 - FAQs:
-  - Choosing your web server : 'faq-server.md'
+  - Moving from dev to prod : 'faq-build.md'
   - Troubleshooting : 'faq-troubleshooting.md'
 - Learning Resources: 'learning.md'
 - News: 'news.md'
