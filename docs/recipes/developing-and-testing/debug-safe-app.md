@@ -131,7 +131,7 @@ Navigate to `http://localhost:8080/` in your browser as usual to view the runnin
 
 Although we write our client-side code using F#, it is being converted into Javascript at runtime by Fable.
 
-However, we can still debug it, via the magic of source mapping.
+However, we can still debug it via the magic of source mapping.
 
 ### I'm using Visual Studio
 
