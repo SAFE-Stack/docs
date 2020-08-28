@@ -2,7 +2,7 @@
 
 [Saturn](https://saturnframework.org/explanations/overview.html) is a functional alternative to MVC and Razor which sits on top of [Giraffe](https://github.com/giraffe-fsharp/Giraffe/blob/master/DOCUMENTATION.md#giraffe-documentation). Giraffe itself is a functional wrapper around the ASP .NET Core web framework, making it easier to work with when using F#.
 
-If you would rather have a more traditional ASP .NET experience than Saturn provides, you can easily remove it from the SAFE templates and interact with Giraffe directly.
+Since Saturn is built on top of Giraffe, migrating to using "raw" Giraffe is relatively simple to do.
 
 ## Bootstrapping the Application
 
@@ -45,7 +45,7 @@ let configureApp (app : IApplicationBuilder) =
     app
         .UseStaticFiles()
         .UseGiraffe webApp
-   
+
 let configureServices (services : IServiceCollection) =
     services
         .AddGiraffe() |> ignore
@@ -81,7 +81,7 @@ let webApp =
 
 with this
 ```fsharp
-let webApp = route Route.hello >=> json "Hello from SAFE!" 
+let webApp = route Route.hello >=> json "Hello from SAFE!"
 ```
 
 ## Other setup

@@ -8,7 +8,7 @@
 ## Paket
 Before moving on, we recommend migrating to [Paket](https://fsprojects.github.io/Paket/). In fact, **this is a prerequisite for this recipe**. It is possible to use FAKE without Paket by creating an executable instead of a script file, however this will not be covered in this recipe.
 
-If you’re *not* using Paket to handle your dependencies, go through the [Migrate to Paket](../../package-management/migrate-to-paket.md) recipe before continuing.
+If you’re *not* using Paket to handle your dependencies, go through the [Migrate to Paket](/recipes/package-management/migrate-to-paket.md) recipe before continuing.
 
 ---
 #### 1. The Build Dependencies

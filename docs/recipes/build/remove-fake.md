@@ -42,7 +42,7 @@ Navigate to `src/Server` inside a terminal and execute `dotnet run`.
 The app will now be running at `http://0.0.0.0:8080/`. Navigate to this address in a browser to see your app running.
 
 ## Bundling the App
-See [this guide](../hosting/bundle-app.md#2-im-using-the-minimal-template) to learn how to package a SAFE application for deployment to e.g. Azure.
+See [this guide](../build/bundle-app.md#2-im-using-the-minimal-template) to learn how to package a SAFE application for deployment to e.g. Azure.
 
 ---
 
