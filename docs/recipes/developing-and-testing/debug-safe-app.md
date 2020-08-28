@@ -135,7 +135,7 @@ However, we can still debug it, via the magic of source mapping.
 
 ### I'm using Visual Studio
 
-If you are using Visual Studio, you cannot directly connect to the browser debugger. However, you can still inspect and debug the F# using the browser debugging tools.
+If you are using Visual Studio, you cannot directly connect to the browser debugger. However, you can still inspect and debug your client code using the browser debugging tools.
 
 #### 1. Start the Client
 
