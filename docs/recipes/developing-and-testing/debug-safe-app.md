@@ -173,7 +173,7 @@ VS Code integrates with the Chrome debugger, which means you can debug Client co
 
 - Start the Client and Server in the same way as described above for Visual Studio.
 
-- Open the Command Palette using `Ctrl+Shift+P` and run `Debug: Open Link`. When prompted for a url, type `http://localhost:8080/`. This will launch a browser which is pointed at the URL connect the debugger to it.
+- Open the Command Palette using `Ctrl+Shift+P` and run `Debug: Open Link`. When prompted for a url, type `http://localhost:8080/`. This will launch a browser which is pointed at the URL and connect the debugger to it.
 
 > This command is only available in the July 2020 release of VS Code or later.
 
