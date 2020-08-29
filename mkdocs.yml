@@ -59,14 +59,14 @@ nav:
     - Add a build automation: 'recipes/build/add-build-script.md'
     - Package my SAFE app for deployment: 'recipes/build/bundle-app.md'
     - Support older browsers: 'recipes/build/support-older-browsers.md'
-    - Client / Server:
-      - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
-      - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
-      - Get data from the server: 'recipes/client-server/messaging.md'
-      - Post data to the server: 'recipes/client-server/messaging-post.md'
-      - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
-      - Share code between the client and the server: 'recipes/client-server/share-code.md'
-      - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
+  - Client / Server:
+    - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
+    - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
+    - Get data from the server: 'recipes/client-server/messaging.md'
+    - Post data to the server: 'recipes/client-server/messaging-post.md'
+    - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
+    - Share code between the client and the server: 'recipes/client-server/share-code.md'
+    - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
   - UI:
     - Add FontAwesome support: 'recipes/ui/add-fontawesome.md'
     - Add Stylesheet support: 'recipes/ui/add-style.md'
