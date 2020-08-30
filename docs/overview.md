@@ -34,3 +34,4 @@ Yes, absolutely. The above components are what we recommended as the default SAF
 * [Freya](https://github.com/xyncro/freya) is an alternative F#-first web stack which has a pluggable runtime model which allows it to be hosted in a variety of web servers including ASP .NET Core.
 * [AWS](https://aws.amazon.com/) is Amazon's cloud compute offering, providing a large number of services available globally.
 * [WebSharper](http://websharper.com/) is a complete end-to-end programming stack, comprising both server- and client-side components. It supports both F# and C# programming models.
+* [Falco](https://github.com/pimbrouwers/Falco) is a toolkit for building functional-first, fast and fault-tolerant web applications using F#. Built upon the high-performance primitives of ASP.NET Core and optimized for building HTTP applications quickly.
