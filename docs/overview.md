@@ -9,6 +9,17 @@ The SAFE acronym is made up of four separate components:
 
 ![](img/safe-1.png)
 
+```mermaid
+flowchart LR
+    subgraph Server[.NET Core Server]
+    Saturn
+    end
+    subgraph Client[JavaScript Client]
+    Elmish <--> Fable[Fable]
+    end
+    Server <--> Client
+```
+
 ### [Saturn](component-saturn.md)
 The Saturn library builds on top of the solid foundation of both the F#-friendly [Giraffe](https://github.com/giraffe-fsharp/Giraffe) and the high performance, rock-solid [ASP .NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.1) web server to provide a set of optional abstractions which make configuring web applications and constructing complex routes extremely easy to achieve.
 

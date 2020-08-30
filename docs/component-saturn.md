@@ -17,6 +17,21 @@ Saturn provides the ability to drive your SAFE applications from the server. It 
 
 It also integrates with SAFE to allow seamless sharing of types and functions, since Fable will convert most F# into JavaScript. In addition, you can seamless transport data between client and server using either the Fable.JSON or Fable.Remoting libraries, both of which have support for Saturn. You can read more about this [here](feature-clientserver.md).
 
-![](img/saturn-1.png)
+```mermaid
+flowchart TB
+    outputs>JSON, HTML etc.]
+    subgraph host[.NET Core Host]
+    saturn[Saturn - Routers, Controllers etc.]
+    giraffe[Giraffe - Core F# abstractions]
+    aspnet[ASP .NET Core - HTTP Context etc.]
+    kestrel[Kestrel - Web Server]
+    saturn --- giraffe --- aspnet --- kestrel
+    end
+    data[(Transactional Data e.g. SQL)]
+    content>Static Content e.g. HTML, CSS, Javascript]
+    outputs -- serves --- host
+    kestrel -- reads --- data
+    kestrel -- reads --- content
+```
 
 Learn more about Saturn [here](https://saturnframework.org/explanations/overview.html).
