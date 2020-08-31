@@ -58,7 +58,7 @@ type Storage (db : LiteDatabase) as this =
         else Error "Invalid todo"
 ```
 We have:
-- Added acconstructor argument to pass the database
+- Added a constructor argument to pass the database
 - Redefined `todos` to be a `LiteCollection`
 - Added initialization code into a `do` section. We only want to add the default records the first time
 we create the database.
