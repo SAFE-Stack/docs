@@ -8,7 +8,7 @@ All `FSharp` code is added to `Server/Server.fs` and is presented in order from 
 ### Using LiteDB.FSharp
 
 1. [Add the LiteDB.FSharp NuGet package to the solution](./../package-management/add-nuget-package-to-server.md).
-1. Open the `LiteDB` and `LiteDB.FSharp` in `Server.fs`
+1. Open `LiteDB` and `LiteDB.FSharp` in `Server.fs`
 ```fsharp
 open LiteDB.FSharp
 open LiteDB
@@ -57,15 +57,15 @@ type Storage (db : LiteDatabase) as this =
             Ok ()
         else Error "Invalid todo"
 ```
-
-- Added constructor argument to pass the database
-- Redefined `todos` to be `LiteCollection`
-- Added initialization code into a `do` section. We only want to add these the first time
-we create the database now.
-- Updates to `GetTodos` and `AddTodo` to use database
+We have:
+- Added acconstructor argument to pass the database
+- Redefined `todos` to be a `LiteCollection`
+- Added initialization code into a `do` section. We only want to add the default records the first time
+we create the database.
+- Updated `GetTodos` and `AddTodo` to use the database
 
 ### ITodosApi Instantiation
-1. Modify `todosApi` to use storage argument rather than global
+1. Modify `todosApi` to use a storage argument rather than the original global:
 ```fsharp
 let todosApi (storage : Storage) =
     { getTodos = fun () -> async { return storage.GetTodos() }
@@ -76,7 +76,7 @@ let todosApi (storage : Storage) =
             | Error e -> return failwith e
         } }
 ```
-- A minor piece of code tidying. After the database initialization was moved into the `Storage` type, this was the only
+- This is a minor piece of code tidying. After the database initialization was moved into the `Storage` type, this was the only
 reference left to the global `storage` function.
 
 ### Top-level Initialization
