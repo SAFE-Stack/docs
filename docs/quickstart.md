@@ -28,7 +28,7 @@ You'll also want an IDE to create F# applications. We recommend one of the follo
 
 Congratulations - after a short delay, you'll be presented with a basic SAFE application running in your browser! The application will by default run in "development mode", which means it automatically watches your project for changes; whenever you save a file in the client project it will refresh the browser **automatically**; if you save a file in the server project it will also restart the server in the background.
 
-Take a look at the [template options](template-overview.md#template-options). There are several ways to customise the default application, such as server and client/server communication technologies.
+The standard template creates an opinionated SAFE Stack app that contains everything you'll need to start developing, testing and deploying applications into Azure. Alternatively there is a "bare-bones" SAFE Stack app with minimal value-add features. Take a look at the [template options](template-overview.md#template-options) to see a side by side comparison of features available between the *standard* and *minimal* template.
 
 ## Troubleshooting
 Still have issues getting started? Check out the [troubleshooting](faq-troubleshooting.md) page.
