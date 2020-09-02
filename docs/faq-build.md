@@ -37,7 +37,7 @@ In a production environment, you won't typically use the webpack dev server. Ins
 ```mermaid
 flowchart BT
 subgraph dest[Web server e.g. https://contoso.com]
-saturn(Saturn)
+saturn(Saturn myapp.dll)
 db[(transactional data)]
 assets>static assets]
 saturn -- api/customers --- db
@@ -45,7 +45,7 @@ saturn -- bundle.js --- assets
 end
 
 subgraph src[CI/CD Server]
-exec(FAKE / Devops / Octopus etc.)
+exec>deployment script]
 webpack(webpack)
 dotnet(dotnet publish)
 source(F# source code)
