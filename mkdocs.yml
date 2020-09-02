@@ -76,6 +76,7 @@ nav:
     - Migrate from a CDN stylesheet to an NPM package: 'recipes/ui/cdn-to-npm.md'
   - Javascript:
     - Import a JavaScript module: 'recipes/javascript/import-js-module.md'
+    - Add Support for a Third Party React Library: 'recipes/javascript/third-party-react-package.md'
   - Dev / Test:
     - Use hot reload: 'recipes/developing-and-testing/using-hot-reload.md'
     - Testing the Client: 'recipes/developing-and-testing/testing-the-client.md'
