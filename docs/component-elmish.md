@@ -8,11 +8,9 @@ Elmish is a library for building single page applications in F# applications in 
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Update : Page request or UI event
-    Model --> View : render
-    Model --> Update : Current model
-    Update --> Model : Updated model
-    View --> [*] : HTML sent to Browser
+    [*] --> Update : Current model and Command
+    Update --> View : Updated model
+    View --> [*] : HTML rendered on page
 ```
 
 ## How does Elmish integrate with SAFE?
