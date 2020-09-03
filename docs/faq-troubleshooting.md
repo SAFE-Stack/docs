@@ -10,7 +10,7 @@ You may see the following `SocketProtocolError` message in the Debug Console onc
 
 <center><img src="../img/feature-debugging-5.png" style="height: 175px;"/></center>
 
-Whilst these messages can be safely ignored, you can eliminate them by installing **Redux Dev Tools** in the launched Chrome instance as described in the debugging [prerequisites](feature-debugging.md#prerequisites) section.
+Whilst these messages can be safely ignored, you can eliminate them by installing **Redux Dev Tools** in the launched Chrome instance as described in the debugging [prerequisites](recipes/developing-and-testing/debug-safe-app/#0-install-prerequisites) section.
 
 ## Debugging in VS Code
 
