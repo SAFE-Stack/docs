@@ -67,6 +67,8 @@ nav:
     - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
     - Share code between the client and the server: 'recipes/client-server/share-code.md'
     - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
+  - Data:
+    - Quickly add a database: 'recipes/storage/use-litedb.md'
   - UI:
     - Add FontAwesome support: 'recipes/ui/add-fontawesome.md'
     - Add Stylesheet support: 'recipes/ui/add-style.md'
