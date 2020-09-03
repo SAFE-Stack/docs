@@ -11,11 +11,22 @@ theme:
   name: 'material'
   custom_dir: 'theme'
   palette:
-    primary: 'orange'
-    accent: 'blue'
+    primary: 'light blue'
+    accent: 'indigo'
+  logo: img/safe_favicon.png
 
 markdown_extensions:
   - codehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_css:
+  - https://unpkg.com/mermaid@8.7.0/dist/mermaid.css
+extra_javascript:
+  - https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js
 
 extra:
   social:
@@ -59,14 +70,16 @@ nav:
     - Add a build automation: 'recipes/build/add-build-script.md'
     - Package my SAFE app for deployment: 'recipes/build/bundle-app.md'
     - Support older browsers: 'recipes/build/support-older-browsers.md'
-    - Client / Server:
-      - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
-      - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
-      - Get data from the server: 'recipes/client-server/messaging.md'
-      - Post data to the server: 'recipes/client-server/messaging-post.md'
-      - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
-      - Share code between the client and the server: 'recipes/client-server/share-code.md'
-      - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
+  - Client / Server:
+    - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
+    - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
+    - Get data from the server: 'recipes/client-server/messaging.md'
+    - Post data to the server: 'recipes/client-server/messaging-post.md'
+    - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
+    - Share code between the client and the server: 'recipes/client-server/share-code.md'
+    - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
+  - Data:
+    - Quickly add a database: 'recipes/storage/use-litedb.md'
   - UI:
     - Add FontAwesome support: 'recipes/ui/add-fontawesome.md'
     - Add Stylesheet support: 'recipes/ui/add-style.md'
@@ -89,7 +102,7 @@ nav:
     - Sync NuGet and NPM Packages: 'recipes/package-management/sync-nuget-and-npm-packages.md'
 
 - FAQs:
-  - Choosing your web server : 'faq-server.md'
+  - Moving from dev to prod : 'faq-build.md'
   - Troubleshooting : 'faq-troubleshooting.md'
 - Learning Resources: 'learning.md'
 - News: 'news.md'

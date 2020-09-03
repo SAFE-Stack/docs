@@ -60,7 +60,7 @@ dotnet add Client.Tests reference Client
 Run the following command:
 
 ```powershell
-dotnet add Client.Tests package Mocha
+dotnet add Client.Tests package Fable.Mocha
 ```
 
 #### 4. Add a test
