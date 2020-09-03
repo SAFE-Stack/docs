@@ -1,6 +1,6 @@
 # How Do I Use a Third Party React Package?
 
-To use a third party React package in a SAFE application, we need to write an F# wrapper around it. There are two ways for doing this – using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
+To use a third party React package in a SAFE application, you need to write an F# wrapper around it. There are two ways for doing this – using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
 
 ## Prerequisites
 
@@ -43,9 +43,11 @@ let numberFormat (props : Prop list) : ReactElement =
 
 #### 4. Use the Component
 
-With all these in place, you can use the imported React element like so:
+With all these in place, you can use the React element in your client like so:
 
 ```fsharp
+open NumberFormat
+
 div [] [
     numberFormat [
         Value model.Number
@@ -54,8 +56,6 @@ div [] [
     ]
 ]
 ```
-
-
 
 ## Using Feliz
 
@@ -68,13 +68,13 @@ If you don't already have [Feliz](https://www.nuget.org/packages/Feliz/) install
 Create a new file named `NumberFormat.fs` at the client just above `Index.fs`, remove its content and insert the following *open* statements at the beginning of the file.
 
 ```fsharp
-module NumberFormatFeliz
+module NumberFormat
 
 open Fable.Core.JsInterop
 open Feliz
 ```
 
-#### 3. Wrap the Package
+#### 3. Wrap the Component
 
 Insert the following line after the *open* statements. This esentially creates a wrapper around the default object/function of the `react-number-format` package.
 
@@ -82,7 +82,7 @@ Insert the following line after the *open* statements. This esentially creates a
 let numberFormat : obj = import "default" "react-number-format"
 ```
 
-#### 4. Add the Type
+#### 4. Abstract the Component
 
 Add the following type to the file. Each of the static members below corresponds to a prop for `react-number-format` [listed here](https://github.com/s-yadav/react-number-format#Props). **The last member is an exception to this** and it will instead allow us to call the React component. The `prop.custom` function creates a JavaScript prop from a key-value pair that we pass to it in the form of a tuple.
 
@@ -98,9 +98,11 @@ type NumberFormat =
 
 #### 5. Use the Component
 
-With all these in place, you can use the imported React element like so:
+With all these in place, you can use the React element in your client like so:
 
 ```fsharp
+open NumberFormat
+
 div [] [
     NumberFormat.input [
         NumberFormat.value model.Number
