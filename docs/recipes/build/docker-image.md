@@ -1,16 +1,21 @@
 # How do I build with docker?
 
-Using [Docker](https://www.docker.com/) makes it possible to deploy your application as a docker container or release an image on docker hub. This recipe walks you through creating a `Dockerfile` and automating the build and test process with [Docker Hub](https://hub.docker.com/). 
+Using [Docker](https://www.docker.com/) makes it possible to deploy your application as a docker container or release an image on docker hub. This recipe walks you through creating a `Dockerfile` and automating the build and test process with [Docker Hub](https://hub.docker.com/).
 
-## 1. Create a .dockerignore file
+#### 1. Create a .dockerignore file
 
 Create a `.dockerignore` file with the same contents as `.gitignore`
 
+##### Linux
 ```bash
 cp .gitignore .dockerignore
 ```
+##### Windows
+```bash
+copy .gitignore .dockerignore
+```
 
-Add the following lines to the `.dockerignore` file:
+Now, add the following lines to the `.dockerignore` file:
 
 ```
 .git
