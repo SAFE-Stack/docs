@@ -69,6 +69,7 @@ nav:
     - Add a build automation: 'recipes/build/add-build-script.md'
     - Package my SAFE app for deployment: 'recipes/build/bundle-app.md'
     - Support older browsers: 'recipes/build/support-older-browsers.md'
+    - Create a docker image: 'recipes/build/docker-image.md'
   - Client / Server:
     - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
     - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
