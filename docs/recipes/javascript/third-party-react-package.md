@@ -1,6 +1,6 @@
 # How Do I Use a Third Party React Package?
 
-To use a third party React package in a SAFE application, you need to write an F# wrapper around it. There are two ways for doing this – using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
+To use a third-party React library in a SAFE application, you need to write an F# wrapper around it. There are two ways for doing this – using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
 
 ## Prerequisites
 
@@ -8,9 +8,9 @@ This recipe uses [react-number-format NPM package](https://www.npmjs.com/package
 
 ## Using Fable.React
 
-#### 1. Create a New File
+#### 1. Create a new file
 
-Create a new file named `NumberFormat.fs` at the client just above `Index.fs`, remove its content and insert the following *open* statements at the beginning of the file.
+Create an empty file named `NumberFormat.fs` in the Client project above `Index.fs` and insert the following statements at the beginning of the file.
 
 ```fsharp
 module NumberFormat
@@ -21,19 +21,21 @@ open Fable.React
 ```
 
 #### 2. Define the Props
-
-Add the following discriminated union type after the *open* statements. In this recipe, we're using [the props listed here](https://github.com/s-yadav/react-number-format#Props) for `react-number-format`. One difference to not is that we're using PascalCase rather than camelCase.
+Props represent the props of the React component. In this recipe, we're using [the props listed here](https://github.com/s-yadav/react-number-format#Props) for `react-number-format`. We model them in Fable.React using a discriminated union.
 
 ```fsharp
 type Prop =
-    | Value of float option
-    | OnValueChange of ({| value: string; floatValue : float Option |} -> unit)
+    | Value of float
     | ThousandSeparator of char
+    | OnValueChange of ({| value: string; floatValue : float Option |} -> unit)
 ```
 
-#### 3. Write the Component
+> One difference to not is that we use **P**ascalCase rather than **c**amelCase.
+>
+> Note that we can model any props here, both simple values and "event handler"-style ones.
 
-Add the following function to the file. Note that the last argument passed into the `ofImport` function is a list of `ReactElements` to be used as children for the react component. In this case, we are passing an empty list since we are essentially generating an `input` HTML element that typically doesn't have children.
+#### 3. Write the Component
+Add the following function to the file. Note that the last argument passed into the `ofImport` function is a list of `ReactElements` to be used as *children* of the react component. In this case, we are passing an empty list since we are essentially generating an `input` HTML element that typically doesn't have children.
 
 ```fsharp
 let numberFormat (props : Prop list) : ReactElement =
@@ -42,18 +44,15 @@ let numberFormat (props : Prop list) : ReactElement =
 ```
 
 #### 4. Use the Component
-
 With all these in place, you can use the React element in your client like so:
 
 ```fsharp
 open NumberFormat
 
-div [] [
-    numberFormat [
-        Value model.Number
-        OnValueChange (fun x -> x.floatValue |> ValueChanged |> dispatch)
-        ThousandSeparator ','
-    ]
+numberFormat [
+    Value 123.
+    OnValueChange (fun x -> x.floatValue |> ValueChanged |> dispatch)
+    ThousandSeparator ','
 ]
 ```
 
@@ -92,7 +91,7 @@ type NumberFormat =
     static member inline onValueChange (data: {| value: string; floatValue : float Option |} -> unit) =
         prop.custom ("onValueChange", data)
     static member inline thousandSeparator (char: char) = prop.custom ("thousandSeparator", char)
-    
+
     static member inline input props = Interop.reactApi.createElement (numberFormat, createObj !!props)
 ```
 
