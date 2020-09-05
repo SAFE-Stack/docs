@@ -21,7 +21,7 @@ Now, add the following lines to the `.dockerignore` file:
 .git
 ```
 
-## 2. Create the dockerfile
+#### 2. Create the dockerfile
 
 Create a `Dockerfile` with the following contents:
 
@@ -48,7 +48,7 @@ ENTRYPOINT [ "dotnet", "Server.dll" ]
 
 This uses [multistage builds](https://docs.docker.com/develop/develop-images/multistage-build/) to keep the final image small.
 
-### Using the minimal template
+##### Using the minimal template?
 If you created your SAFE app using the **minimal** option, a [FAKE script](../../template-fake.md) is not included by default so you need to bundle up the client and server separately.
 
 Replace the line
@@ -64,21 +64,14 @@ RUN npm run build
 RUN cd src/Server && dotnet publish -c release -o ../../deploy
 ```
 
-## 3. Building and running with docker locally
+#### 3. Building and running with docker locally
 
 1. Build the image `docker build -t my-safe-app .`
 2. Run the container `docker run -it -p 8085:8085 my-safe-app`
 
-## 4. Automated builds
+> Because the build is done entirely in docker, Docker Hub [automated builds](https://docs.docker.com/docker-hub/builds/) can be setup to automatically build and push the docker image.
 
-Because the build is done entirely in docker, Docker Hub [automated builds](https://docs.docker.com/docker-hub/builds/) can be setup to automatically build and push the docker image.
-
-## 5. Automated tests
-
-Docker Hub can also run [automated tests](https://docs.docker.com/docker-hub/builds/automated-testing/) for you.
-
-### Testing the server
-
+#### 4. Testing the server
 Create a `docker-compose.server.test.yml` file with the following contents:
 
 ```yml
@@ -89,29 +82,15 @@ sut:
   command: cd tests/Server && dotnet run
 ```
 
-> If you added tests to the **minimal template** according to the [testing the server](../developing-and-testing/testing-the-server.md) recipe, change the command to `cd src/Server.Tests && dotnet run`
+If you added tests to the **minimal template** according to the [testing the server](../developing-and-testing/testing-the-server.md) recipe, change the command to `cd src/Server.Tests && dotnet run`
 
-### Testing the client
+> Docker Hub can also run [automated tests](https://docs.docker.com/docker-hub/builds/automated-testing/) for you.
 
-<!-- Create a `docker-compose.client.test.yml` file with the following contents:
+> The template is not currently setup for automating the client tests.
 
-```yml
-sut:
-  build:
-    context: .
-    target: build
-  command: dotnet fake build -t runtests
-```
+> Follow [the instructions to enable Autotest](https://docs.docker.com/docker-hub/builds/automated-testing/#enable-automated-tests-on-a-repository) on docker hub.
 
-> If you added tests to the **minimal template** according to the [testing the client](../developing-and-testing/testing-the-client.md) recipe, change the command to `cd src/Client.Tests && dotnet run` -->
-
-The template is not currently setup for automating the client tests.
-
-### Enable Autotest
-
-Follow [the instructions to enable Autotest](https://docs.docker.com/docker-hub/builds/automated-testing/#enable-automated-tests-on-a-repository) on docker hub.
-
-## 6. Making the docker build faster
+#### 5. Making the docker build faster
 
 > Not recommended for most applications
 
