@@ -67,7 +67,7 @@ nav:
   - Create a new Recipe: 'recipes/template.md'
   - Build:
     - Remove FAKE from my project: 'recipes/build/remove-fake.md'
-    - Add a build automation: 'recipes/build/add-build-script.md'
+    - Add build automation: 'recipes/build/add-build-script.md'
     - Package my SAFE app for deployment: 'recipes/build/bundle-app.md'
     - Support older browsers: 'recipes/build/support-older-browsers.md'
     - Create a docker image: 'recipes/build/docker-image.md'
