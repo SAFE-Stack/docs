@@ -51,7 +51,10 @@ open NumberFormat
 
 numberFormat [
     Value 123.
-    OnValueChange (fun x -> x.floatValue |> ValueChanged |> dispatch)
+    OnValueChange (fun x ->
+        match x.floatValue with
+        | None -> printfn "NO VALUE (%s)" x.value
+        | Some v -> printfn "SOME VALUE %f (%s)" v x.value)
     ThousandSeparator ','
 ]
 ```
@@ -59,12 +62,10 @@ numberFormat [
 ## Using Feliz
 
 #### 1. Add Feliz
-
 If you don't already have [Feliz](https://www.nuget.org/packages/Feliz/) installed, [add it to your client](../../ui/add-feliz).
 
 #### 2. Create a New File
-
-Create a new file named `NumberFormat.fs` at the client just above `Index.fs`, remove its content and insert the following *open* statements at the beginning of the file.
+Create an empty file named `NumberFormat.fs` in the Client project above `Index.fs` and insert the following statements at the beginning of the file.
 
 ```fsharp
 module NumberFormat
@@ -74,16 +75,16 @@ open Feliz
 ```
 
 #### 3. Wrap the Component
-
-Insert the following line after the *open* statements. This esentially creates a wrapper around the default object/function of the `react-number-format` package.
+Insert the following. This esentially creates a reference to the `react-number-format` package entry point.
 
 ```fsharp
 let numberFormat : obj = import "default" "react-number-format"
 ```
 
 #### 4. Abstract the Component
+Add the following type to the file. Each of the static members below corresponds to a prop for `react-number-format` [listed here](https://github.com/s-yadav/react-number-format#Props). The `prop.custom` function creates a JavaScript prop from a key-value pair that we pass to it in the form of a tuple.
 
-Add the following type to the file. Each of the static members below corresponds to a prop for `react-number-format` [listed here](https://github.com/s-yadav/react-number-format#Props). **The last member is an exception to this** and it will instead allow us to call the React component. The `prop.custom` function creates a JavaScript prop from a key-value pair that we pass to it in the form of a tuple.
+> **The `input` function is an exception to this**; it acts as the entry point for us to call the React component.
 
 ```fsharp
 type NumberFormat =
@@ -100,13 +101,12 @@ type NumberFormat =
 With all these in place, you can use the React element in your client like so:
 
 ```fsharp
-open NumberFormat
-
-div [] [
-    NumberFormat.input [
-        NumberFormat.value model.Number
-        NumberFormat.onValueChange (fun x -> x.floatValue |> ValueChanged |> dispatch)
-        NumberFormat.thousandSeparator ','
-    ]
+NumberFormat.input [
+    NumberFormat.value 123.
+    NumberFormat.onValueChange (fun x ->
+        match x.floatValue with
+        | None -> printfn "NO VALUE (%s)" x.value
+        | Some v -> printfn "SOME VALUE %f (%s)" v x.value)
+    NumberFormat.thousandSeparator ','
 ]
 ```
