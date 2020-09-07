@@ -58,7 +58,6 @@ nav:
     - Messaging with Protocols : 'feature-clientserver-remoting.md'
     - Stateful Messaging through Bridge : 'feature-clientserver-bridge.md'
     - Serialization in SAFE : 'feature-clientserver-serialization.md'
-  - Full Stack Debugging: 'feature-debugging.md'
   - Server Side Rendering : 'feature-ssr.md'
   - Hot Module Replacement : 'feature-hmr.md'
   - Working with Azure functions : 'feature-azurefunctions.md'
@@ -71,6 +70,11 @@ nav:
     - Package my SAFE app for deployment: 'recipes/build/bundle-app.md'
     - Support older browsers: 'recipes/build/support-older-browsers.md'
     - Create a docker image: 'recipes/build/docker-image.md'
+  - Dev / Test:
+    - Test the Client: 'recipes/developing-and-testing/testing-the-client.md'
+    - Test the Server: 'recipes/developing-and-testing/testing-the-server.md'
+    - Debug a SAFE app: 'recipes/developing-and-testing/debug-safe-app.md'
+    - Use hot reload: 'recipes/developing-and-testing/using-hot-reload.md'
   - Client / Server:
     - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
     - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
@@ -91,10 +95,6 @@ nav:
   - Javascript:
     - Import a JavaScript module: 'recipes/javascript/import-js-module.md'
     - Add Support for a Third Party React Library: 'recipes/javascript/third-party-react-package.md'
-  - Dev / Test:
-    - Use hot reload: 'recipes/developing-and-testing/using-hot-reload.md'
-    - Testing the Client: 'recipes/developing-and-testing/testing-the-client.md'
-    - Testing the Server: 'recipes/developing-and-testing/testing-the-server.md'
   - Package Management:
     - Add an NPM package to the Client: 'recipes/package-management/add-npm-package-to-client.md'
     - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
@@ -123,3 +123,4 @@ nav:
   - Application Insights Integration: 'legacy-template-azure-ai.md'
   - Registering with Azure: 'legacy-template-azure-registration.md'
   - Registering with Google Cloud: 'legacy-template-google-cloud.md'
+  - Full Stack Debugging: 'legacy-feature-debugging.md'

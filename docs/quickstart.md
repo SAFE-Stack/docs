@@ -13,7 +13,7 @@ You'll need to install the following pre-requisites in order to build SAFE appli
 
 You'll also want an IDE to create F# applications. We recommend one of the following great IDEs:
 
-* [VS Code](https://code.visualstudio.com/) + [Ionide](https://github.com/ionide/ionide-vscode-fsharp) extension (support for [Full Stack Debugging](feature-debugging.md))
+* [VS Code](https://code.visualstudio.com/) + [Ionide](https://github.com/ionide/ionide-vscode-fsharp) extension
 * [Visual Studio 2019](https://www.visualstudio.com/downloads/)
 * [Jetbrains Rider](https://www.jetbrains.com/rider/)
 
