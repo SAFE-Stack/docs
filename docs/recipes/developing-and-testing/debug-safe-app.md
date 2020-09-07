@@ -1,4 +1,4 @@
-#How do I debug a SAFE app?
+# How do I debug a SAFE app?
 
 ## I'm using Visual Studio
 In order to debug Server code from Visual Studio, we need set the correct URLs in the project's debug properties.
