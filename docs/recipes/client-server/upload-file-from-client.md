@@ -1,7 +1,5 @@
 # How do I upload a file from the client?
-[Fulma](https://fulma.github.io/Fulma/) and [Fable](https://fable.io/) make it quick and easy to upload files from the client. The standard template comes with Fulma support by default. However, if you’re using the minimal template, please [add Fulma to your client project](../../package-management/add-nuget-package-to-client) before continuing. Both the standard and the minimal template comes with Fable support by default.
-
-
+[Fable](https://fable.io/) makes it quick and easy to upload files from the client. Both the standard and the minimal template comes with Fable support by default.
 
 ---
 
@@ -17,7 +15,6 @@ open Fable.React.Props
 open Fable.FontAwesome
 open Fable.Core
 open Fable.Core.JsInterop
-open Fulma
 ```
 
 #### 2. JavaScript Interop
@@ -34,16 +31,11 @@ let createByteArray arrBuff : byte[] = jsNative
 Then, add the following. The `reader.onload` block will be executed once we select and confirm a file to be uploaded. Read [the FileReader docs](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) to find out more.
 
 ```fsharp
-let handleFileEvent dispatch onLoaded (fileEvent:Browser.Types.Event) =
+let handleFileEvent onLoad (fileEvent:Browser.Types.Event) =
     let files:Browser.Types.FileList = !!fileEvent.target?files
     if files.length > 0 then
         let reader = Browser.Dom.FileReader.Create()
-        reader.onload <- (fun uploadedEvent ->
-            let file = createByteArray reader.result
-            printfn "### File Length: %d" file.Length
-            dispatch (onLoaded file)
-        )
-        
+        reader.onload <- (fun _ -> createByteArray reader.result |> onLoad)
         reader.readAsArrayBuffer(files.[0])
 ```
 
@@ -57,30 +49,16 @@ let handleFileEvent dispatch onLoaded (fileEvent:Browser.Types.Event) =
 
 ##### I'm using the standard template
 
-Insert the following block of code at the end of `FileUpload.fs`. This creates the UI elements that will be used to upload the file.
+Insert the following block of code at the end of `FileUpload.fs`. This function will create a UI element to be used to upload files.
 
 ```fsharp
-let createFileUpload dispatch onLoaded =
-    div [] [
-        File.file [ File.HasName ] [
-            File.label [] [
-                File.input [ Props [
-                    OnChange (fun event -> handleFileEvent dispatch onLoaded event)
-                ]]
-                File.cta [] [
-                    File.icon [] [
-                        Icon.icon [] [
-                            Fa.i [ Fa.Solid.Upload ] []
-                        ]
-                    ]
-                    File.label [] [
-                        str "File Uploader"
-                    ]
-                ]
-                File.name [] [
-                    str "Select File"
-                ]
+let createFileUpload onLoad =
+    File.file [] [
+        File.label [] [
+            File.input [
+                Props [ OnChange (handleFileEvent onLoad) ]
             ]
+            File.cta [] [ str "Select File" ]
         ]
     ]
 ```
@@ -89,16 +67,13 @@ let createFileUpload dispatch onLoaded =
 
 ##### I'm using the minimal template
 
-Insert the following block of code at the end of `FileUpload.fs`. This creates the UI elements that will be used to upload the file.
+Insert the following block of code at the end of `FileUpload.fs`. This function will create a UI element to be used to upload files.
 
 ```fsharp
-let createFileUpload dispatch onLoaded =
-    div [] [
-        File.file [ File.HasName ] [
-            File.input [ Props [
-                OnChange (fun event -> handleFileEvent dispatch onLoaded event)
-            ]]
-        ]
+let createFileUpload onLoad =
+    input [
+        Type "file"
+        OnChange (handleFileEvent onLoad)
     ]
 ```
 
@@ -109,8 +84,6 @@ let createFileUpload dispatch onLoaded =
 Having followed all these steps, you can now use the `createFileUpload` function in `Index.fs` to create the UI element for uploading files. One thing to note is that `HandleFile` is a case of the discriminated union type `Msg` that's in `Index.fs`. You can use this message case to [send the file from the client to the server](http://localhost:8000/recipes/client-server/messaging-post/).
 
 ```fsharp
-FileUpload.createFileUpload
-    dispatch
-    HandleFile      
+FileUpload.createFileUpload (HandleFile >> dispatch)
 ```
 
