@@ -15,6 +15,7 @@ open Fable.React.Props
 open Fable.FontAwesome
 open Fable.Core
 open Fable.Core.JsInterop
+open Fulma // Only if using the standard template
 ```
 
 #### 2. JavaScript Interop
