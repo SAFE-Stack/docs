@@ -2,7 +2,7 @@
 
 There have been a number of changes between the first and second major versions of the SAFE template. This guide shows you how to upgrade your v1 project to v2.
 
-> If you haven't done so already then you will need to install the prequisites listed in the [Quick Start](https://safe-stack.github.io/docs/quickstart/) guide.
+> If you haven't done so already then you will need to install the prequisites listed in the [Quick Start](../../../quickstart) guide.
 
 ### Terminology for this Recipe:
 
