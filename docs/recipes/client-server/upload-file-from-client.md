@@ -15,7 +15,6 @@ open Fable.React.Props
 open Fable.FontAwesome
 open Fable.Core
 open Fable.Core.JsInterop
-open Fulma // Only if using the standard template
 ```
 
 #### 2. JavaScript Interop
@@ -50,9 +49,11 @@ let handleFileEvent onLoad (fileEvent:Browser.Types.Event) =
 
 ##### I'm using the standard template
 
-Insert the following block of code at the end of `FileUpload.fs`. This function will create a UI element to be used to upload files.
+Insert the following block of code at the end of `FileUpload.fs`. This function will create a UI element to be used to upload files. [Click here](https://bulma.io/documentation/form/file/) to find out more about Bulma's file input component.
 
 ```fsharp
+open Fulma
+
 let createFileUpload onLoad =
     File.file [] [
         File.label [] [
