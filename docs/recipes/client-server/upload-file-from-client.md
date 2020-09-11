@@ -17,16 +17,9 @@ open Fable.Core
 open Fable.Core.JsInterop
 ```
 
-#### 2. JavaScript Interop
 
-Insert the following lines after the *open* statements. This function will be used for JavaScript interop. [The Emit attribute](https://fable.io/docs/communicate/js-from-fable.html#Emit-when-F-is-not-enough) means that the calls to this function will be replaced by inlined JavaScript code.
 
-```fsharp
-[<Emit("new Uint8Array($0)")>]
-let createByteArray arrBuff : byte[] = jsNative
-```
-
-#### 3. File Event Handler
+#### 2. File Event Handler
 
 Then, add the following. The `reader.onload` block will be executed once we select and confirm a file to be uploaded. Read [the FileReader docs](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) to find out more.
 
@@ -35,13 +28,13 @@ let handleFileEvent onLoad (fileEvent:Browser.Types.Event) =
     let files:Browser.Types.FileList = !!fileEvent.target?files
     if files.length > 0 then
         let reader = Browser.Dom.FileReader.Create()
-        reader.onload <- (fun _ -> createByteArray reader.result |> onLoad)
+        reader.onload <- (fun _ -> reader.result |> unbox |> onLoad)
         reader.readAsArrayBuffer(files.[0])
 ```
 
 
 
-#### 4. Create the UI Element
+#### 3. Create the UI Element
 
 > This step varies depending on whether you're using the standard or the minimal template. Apply only the instructions under the appropriate heading.
 
@@ -81,9 +74,11 @@ let createFileUpload onLoad =
 
 ---
 
-#### 5. Use the UI Element
 
-Having followed all these steps, you can now use the `createFileUpload` function in `Index.fs` to create the UI element for uploading files. One thing to note is that `HandleFile` is a case of the discriminated union type `Msg` that's in `Index.fs`. You can use this message case to [send the file from the client to the server](http://localhost:8000/recipes/client-server/messaging-post/).
+
+#### 4. Use the UI Element
+
+Having followed all these steps, you can now use the `createFileUpload` function in `Index.fs` to create the UI element for uploading files. One thing to note is that `HandleFile` is a case of the discriminated union type `Msg` that's in `Index.fs`. You can use this message case to [send the file from the client to the server](../messaging-post/).
 
 ```fsharp
 FileUpload.createFileUpload (HandleFile >> dispatch)
