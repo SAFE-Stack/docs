@@ -22,7 +22,7 @@ This will add an entry to both the solution [paket.dependencies](https://fsproje
 
 ## **I'm using the minimal template** (NuGet)
 #### 1. Navigate to the **Server** project directory
-#### 2. Add the pacakge
+#### 2. Add the package
 Run the following command:
 
 ```bash
