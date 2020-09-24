@@ -3,6 +3,8 @@ Paket is a fully featured package manager that acts as an alternative to the NuG
 
 It can help you reference libraries from NuGet, Git repositories or Http resources. It also provides precise control over your dependencies, separating direct and transitive references and capturing the exact configuration with each commit. You can find out more at the [Paket website.](https://fsprojects.github.io/Paket/)
 
+>  Note that the standard template uses Paket by default. **This recipe only applies to the minimal template**.
+
 
 ---
 
