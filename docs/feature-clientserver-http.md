@@ -43,4 +43,4 @@ promise {
 }
 ```
 
-Note the use of the `promise { }` computation expression. This behaves similarly to `async { }` blocks that you might already know, whilst the `fetchAs` function retrieves data from the HTTP endpoint specified. The JSON is deserialized a `Customer` array using an automatically-generated "decoder" (see the section on [serialization](feature-clientserver-serialization) for more information).
+Note the use of the `promise { }` computation expression. This behaves similarly to `async { }` blocks that you might already know, whilst the `fetchAs` function retrieves data from the HTTP endpoint specified. The JSON is deserialized a `Customer` array using an automatically-generated "decoder" (see the section on [serialization](feature-clientserver-serialization.md) for more information).
