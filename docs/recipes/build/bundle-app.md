@@ -47,4 +47,4 @@ This will bundle the server project and copy all outputs into the `deploy` folde
 You should now see your SAFE application.
 
 ## Further reading
-See [this article](/faq-build) for more information on architectural concerns regarding more from dev to production and bundling SAFE Stack applications.
+See [this article](/docs/faq-build) for more information on architectural concerns regarding more from dev to production and bundling SAFE Stack applications.
