@@ -1,5 +1,5 @@
 # How do I add Feliz to a SAFE project?
-[Feliz](https://github.com/Zaid-Ajaj/Feliz) is a wrapper for the base Reach DSL library that emphasises consistency, lightweight formatting, discoverable attributes and full type-safety. It is quick and easy to add Feliz to your SAFE application and start using it.
+[Feliz](https://github.com/Zaid-Ajaj/Feliz) is a wrapper for the base [React](https://reactjs.org/) DSL library that emphasises consistency, lightweight formatting, discoverable attributes and full type-safety. It is quick and easy to add Feliz to your SAFE application and start using it.
 
 ### Using Feliz
 1. [Add Feliz to your project](./../package-management/add-nuget-package-to-client.md)
