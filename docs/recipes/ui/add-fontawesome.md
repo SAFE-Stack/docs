@@ -1,5 +1,5 @@
 # How Do I Use FontAwesome?
-[FontAwesome](https://fontawesome.com/) is the most popular icon set out there and will provide you a handful of free icons as well as a multitude of premium icons. The standard SAFE template has out-of-the-box support for FontAwesome. You can just start using it in your Client code like so:
+[FontAwesome](https://fontawesome.com/) is the most popular icon set out there and will provide you with a handful of free icons as well as a multitude of premium icons. The standard SAFE template has out-of-the-box support for FontAwesome. You can just start using it in your Client code like so:
 ```fsharp
 open Fable.FontAwesome
 

@@ -18,11 +18,11 @@ dotnet fake build
 
 > As Bundle is the default target, you do not need to supply any arguments to FAKE.
 
-This target is used to both build and package up your application in a production fashion, ready for deployment. It will restore all dependencies and build both the client and server in a production and release modes respectively, and correctly copy the outputs into the `deploy` folder in the root of the application. Once your build has completed, you can launch the entire application locally to test it as follows:
+This target is used to both build and package up your application in a production fashion, ready for deployment. It will restore all dependencies and build both the client and server in a production and release mode respectively, and correctly copy the outputs into the `deploy` folder in the root of the application. Once your build has completed, you can launch the entire application locally to test it as follows:
 
 ```powershell
 cd deploy
-server
+Server
 ```
 
 > Navigating to `http://localhost:8085/` will load the application.
@@ -32,7 +32,7 @@ server
 dotnet fake build --target azure
 ```
 
-This target will deploy your application to Azure with a fully configured Application Insights instance. **You do not need to pre-create any resources in Azure** - the template will create every needed, using free SKUs so you can test without any costs.
+This target will deploy your application to Azure with a fully configured Application Insights instance. **You do not need to pre-create any resources in Azure** - the template will create everything needed, using free SKUs so you can test without any costs.
 
 > You must already have an Azure account and will be prompted to log into it during the deployment process.
 

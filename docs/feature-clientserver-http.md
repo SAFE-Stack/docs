@@ -1,7 +1,7 @@
 # Client Server communication over HTTP
 Communicating over raw HTTP using Saturn has three main steps.
 ## 1. Load your data
-Start by creating a function in your server that returns some data:
+Start by creating a function on your server that returns some data:
 
 ```fsharp
 let loadCustomersFromDb() =
@@ -43,4 +43,4 @@ promise {
 }
 ```
 
-Note the use of the `promise { }` computation expression. This behaves similarly to `async { }` blocks that you might already know, whilst the `fetchAs` function retrieves data from the HTTP endpoint specified. The JSON is deserialized a `Customer` array using an automatically-generated "decoder" (see the section on [serialization](feature-clientserver-serialization.md) for more information).
+Note the use of the `promise { }` computation expression. This behaves similarly to `async { }` blocks that you might already know, whilst the `fetchAs` function retrieves data from the HTTP endpoint specified. The JSON is deserialized as a `Customer` array using an automatically-generated "decoder" (see the section on [serialization](feature-clientserver-serialization.md) for more information).

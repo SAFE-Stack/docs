@@ -8,7 +8,7 @@ In a SAFE app we have two distinct components, the Client and the Server. Whethe
 
 ## Client reloading
 If you deploy your application and then make a change in the Client, after a moment it will be reflected in the browser without a full re-deployment. Importantly, the state of your application will be retained across the deployment, so you can continue where you left off.
-This achieved using the [hot module replacement](https://webpack.js.org/guides/hot-module-replacement/) functionality provided by [webpack](https://webpack.js.org/).
+This is achieved using the [hot module replacement](https://webpack.js.org/guides/hot-module-replacement/) functionality provided by [webpack](https://webpack.js.org/).
 
 ### To Add Hot Module Replacement manually
 If your client project has been hand-rolled, or you simply wish to see how to add it from scratch:

@@ -1,5 +1,5 @@
 # How Do I Use stylesheets with SAFE?
-If you wish to use your own CSS or SASS stylesheets with SAFE apps, you can embed either them through webpack. The template already includes all required NPM packages you may need, so you will only need to configure webpack to reference your stylesheet and include in the outputs.
+If you wish to use your own CSS or SASS stylesheets with SAFE apps, you can embed either through webpack. The template already includes all required NPM packages you may need, so you will only need to configure webpack to reference your stylesheet and include in the outputs.
 
 ## Adding the Stylesheet
 First, create a CSS file in the `src/Client` folder of your solution e.g `style.css`.

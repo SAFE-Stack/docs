@@ -18,7 +18,7 @@ flowchart TB
 
 
 ### [Saturn](component-saturn.md)
-The Saturn library builds on top of the solid foundation of both the F#-friendly [Giraffe](https://github.com/giraffe-fsharp/Giraffe) and the high performance, rock-solid [ASP .NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.1) web server to provide a set of optional abstractions which make configuring web applications and constructing complex routes extremely easy to achieve.
+The Saturn library builds on top of the solid foundation of both the F#-friendly [Giraffe](https://github.com/giraffe-fsharp/Giraffe) and the high performance, rock-solid [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.1) web server to provide a set of optional abstractions which make configuring web applications and constructing complex routes extremely easy to achieve.
 
 Saturn can host RESTful API endpoints, drive static websites or server-generated content, all inside an easy-to-learn functional programming model.
 
@@ -38,8 +38,8 @@ Please also feel free to read this [blog series](https://compositional-it.com/bl
 ## Are there alternative components in the SAFE stack?
 Yes, absolutely. The above components are what we recommended as the default SAFE stack, but you can of course replace the components with alternatives as you see fit. Here are some alternative technologies which are also recommended by the SAFE team if the basic stack does not fit your needs:
 
-* [Giraffe](https://github.com/giraffe-fsharp/Giraffe) is a programming model designed for F# that runs on ASP .NET Core. As Saturn runs on top of Giraffe, you automatically get full access to it, but nonetheless it is entirely possible to write applications solely in Giraffe.
-* [Freya](https://github.com/xyncro/freya) is an alternative F#-first web stack which has a pluggable runtime model which allows it to be hosted in a variety of web servers including ASP .NET Core.
+* [Giraffe](https://github.com/giraffe-fsharp/Giraffe) is a programming model designed for F# that runs on ASP.NET Core. As Saturn runs on top of Giraffe, you automatically get full access to it, but nonetheless it is entirely possible to write applications solely in Giraffe.
+* [Freya](https://github.com/xyncro/freya) is an alternative F#-first web stack which has a pluggable runtime model which allows it to be hosted in a variety of web servers including ASP.NET Core.
 * [AWS](https://aws.amazon.com/) is Amazon's cloud compute offering, providing a large number of services available globally.
 * [WebSharper](http://websharper.com/) is a complete end-to-end programming stack, comprising both server- and client-side components. It supports both F# and C# programming models.
 * [Falco](https://github.com/pimbrouwers/Falco) is a toolkit for building functional-first, fast and fault-tolerant web applications using F#. Built upon the high-performance primitives of ASP.NET Core and optimized for building HTTP applications quickly.

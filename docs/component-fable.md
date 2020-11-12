@@ -2,7 +2,7 @@
 
 ## What is Fable?
 
-Fable is an F#-to-JavaScript (JS) compiler powered by [Babel](https://babeljs.io/), designed to produce readable and standard JS code. Fable brings all the power of F# to the JS ecosystem, with support for most of the F# core library as well the most commonly used .NET APIs.
+Fable is an F#-to-JavaScript (JS) compiler powered by [Babel](https://babeljs.io/), designed to produce readable and standard JS code. Fable brings all the power of F# to the JS ecosystem, with support for most of the F# core library as well as the most commonly used .NET APIs.
 
 ## How does Fable integrate with SAFE?
 Fable is much more than an F#-to-JS compiler - it also provides *rich* integration with the JS ecosystem which means that you can use JS libraries from F# (and vice versa) as well as make use of standard JS tools.

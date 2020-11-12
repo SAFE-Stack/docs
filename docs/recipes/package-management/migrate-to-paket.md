@@ -20,7 +20,7 @@ dotnet tool install paket
 dotnet tool restore
 ```
 
-This will add three types of file to your solution, all of which should be commited to source control:
+This will add three files to your solution, all of which should be committed to source control:
 
 - [paket.dependencies](https://fsprojects.github.io/Paket/dependencies-file.html): This will be at the solution root and contains the top level list of dependencies for your project. It is also used to specify any rules such as where they should be downloaded from and which versions etc.
 - [paket.lock](https://fsprojects.github.io/Paket/lock-file.html): This will also be at the solution root and contains the concrete resolution of all direct and transitive dependencies.

@@ -2,7 +2,7 @@
 This recipe shows how to create an endpoint on the server and hook up it up to the client. This recipe assumes that you have also followed [this](mvu-roundtrip.md) recipe and have an understanding of MVU messaging. This recipe only shows how to wire up the client and server.
 
 ## **I'm using the standard template** (Fable Remoting)
-[Fable Remoting](https://zaid-ajaj.github.io/Fable.Remoting/) is a library which allows you to create client/ server messaging without any need to think about HTTP verbs or serialization etc.
+[Fable Remoting](https://zaid-ajaj.github.io/Fable.Remoting/) is a library which allows you to create client/server messaging without any need to think about HTTP verbs or serialization etc.
 
 ### In Shared
 #### 1. Update contract
@@ -15,7 +15,7 @@ type ITodosApi =
 
 ### On the server
 #### 1. Write implementation
-Create a function implements the back-end service that you require. Use standard functions to read from databases or other external sources as required.
+Create a function that implements the back-end service that you require. Use standard functions to read from databases or other external sources as required.
 ```fsharp
 let loadCustomer customerId = async {
     return Some { Name = "My Customer" }
@@ -62,7 +62,7 @@ This recipe shows how to create a GET endpoint on the server and consume it on t
 
 ### On the Server
 #### 1. Write implementation
-Create a function implements the back-end service that you require. Use standard functions to read from databases or other external sources as required.
+Create a function that implements the back-end service that you require. Use standard functions to read from databases or other external sources as required.
 ```fsharp
 open Saturn
 open FSharp.Control.Tasks
