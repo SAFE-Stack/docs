@@ -35,7 +35,7 @@ dotnet tool restore
 
 #### 3. The Build Script
 Add an F# script file to the root folder of your solution named `build.fsx` and paste the following code into it.
-The script builds publishes the client and server appliations in their production / release modes, and copies the outputs of both into a `deploy` folder at the root of the repository.
+The script builds and publishes the client and server applications in their production / release modes, and copies the outputs of both into a `deploy` folder at the root of the repository.
 
 To learn more about targets and FAKE in general, see [Getting Started with FAKE](https://fake.build/fake-gettingstarted.html#Minimal-example).
 ```fsharp

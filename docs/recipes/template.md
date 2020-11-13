@@ -5,7 +5,7 @@ Follow the following pattern and headings and the guide below.
 1. **DO** focus on integration between different components in the SAFE Stack e.g. how to connect Fable apps to Saturn backend etc.
 1. **DO** focus on getting results quickly.
 1. **DO** consider both template versions e.g. make the recipe suitable for both "minimal" and "full" template options
-1. Do **NOT** reproduce reference documentation that from "source" technologies e.g. do **NOT** replicate documentation from Saturn or Fable sites.
+1. Do **NOT** reproduce reference documentation from "source" technologies e.g. do **NOT** replicate documentation from Saturn or Fable sites.
 1. **DO** link to reference documentation from source technologies.
 1. Do **NOT** create reference documentation in a recipe.
 1. **DO** use *simple* code snippets where appropriate.

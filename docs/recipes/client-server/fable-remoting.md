@@ -34,8 +34,8 @@ let myApi =
     { hello = fun () -> async { return "Hello from SAFE!" } }
 ```
 
-#### 5. Hook into ASP .NET
-We now need to "adapt" Fable Remoting into the ASP .NET pipeline by converting it into a Giraffe HTTP Handler. Don't worry - this is not hard. Find `webApp` in `Server.fs` and replace it with the following:
+#### 5. Hook into ASP.NET
+We now need to "adapt" Fable Remoting into the ASP.NET pipeline by converting it into a Giraffe HTTP Handler. Don't worry - this is not hard. Find `webApp` in `Server.fs` and replace it with the following:
 
 ```fsharp
 open Fable.Remoting.Server

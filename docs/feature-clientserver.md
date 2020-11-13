@@ -3,7 +3,7 @@ One of the most powerful features of SAFE is the ability to seamlessly share cod
 ## Sharing Basics
 The basics of code sharing across client and server include:
 
-* Sharing **types**. Useful for contracts between client and server, as well as to share a common domain
+* Sharing **types**. Useful for contracts between client and server, as well as to share a common domain.
 * Sharing **behaviour**. In other words, functions that perform e.g. shared validation or similar.
 
 These two core areas are explained in more detail [here](feature-clientserver-basics.md).

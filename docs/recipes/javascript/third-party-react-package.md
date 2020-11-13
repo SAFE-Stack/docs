@@ -4,7 +4,7 @@ To use a third-party React library in a SAFE application, you need to write an F
 
 ## Prerequisites
 
-This recipe uses [react-number-format NPM package](https://www.npmjs.com/package/react-number-format) for demonstration purposes. [Add it to your Client](../../package-management/add-npm-package-to-client) before continuing.
+This recipe uses the [react-number-format NPM package](https://www.npmjs.com/package/react-number-format) for demonstration purposes. [Add it to your Client](../../package-management/add-npm-package-to-client) before continuing.
 
 ## Using Fable.React
 
@@ -30,7 +30,7 @@ type Prop =
     | OnValueChange of ({| value: string; floatValue : float Option |} -> unit)
 ```
 
-> One difference to not is that we use **P**ascalCase rather than **c**amelCase.
+> One difference to note is that we use **P**ascalCase rather than **c**amelCase.
 >
 > Note that we can model any props here, both simple values and "event handler"-style ones.
 

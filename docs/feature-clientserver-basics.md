@@ -8,7 +8,7 @@ Then, create types in the file as needed e.g
 type Customer = { Id : int; Name : string }
 ```
 
-Reference this file to your server project. You can now reference those types in the server.
+Reference this file from your server project. You can now reference those types on the server.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -20,10 +20,10 @@ Reference this file to your server project. You can now reference those types in
 </Project>
 ```
 
-Finally, reference this file to your client project (as above). You can now reference those types in the client; Fable will automatically convert your F# types into Javascript in the background.
+Finally, reference this file in your client project (as above). You can now reference those types on the client; Fable will automatically convert your F# types into Javascript in the background.
 
 ## Sharing Behaviour
-You can also share code using the same mechanism as sharing types. This is extremely useful for e.g shared validation or business logic that needs to occur on both client and server.
+You can also share behaviour using the same mechanism at that for sharing types. This is extremely useful for e.g shared validation or business logic that needs to occur on both client and server.
 
 Fable will translate your functions into native Javascript, and will even translate many calls to the .NET base class library into corresponding Javascript! This allows you to compile your domain model and domain logic to many many different targets including:
 
