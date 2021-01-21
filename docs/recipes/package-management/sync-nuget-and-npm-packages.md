@@ -14,14 +14,22 @@ dotnet tool install femto
 #### 2. Analyse Dependencies
 In the root directory, run the following:
 ```powershell
+dotnet femto ./src/Client
+```
+
+alternatively, you can call femto directly from `./src/Client`:
+
+```powershell
+cd ./src/Client
 dotnet femto
 ```
+
 This will give you a report of discrepancies between the NuGet packages and the NPM packages for the project, as well as steps to take in order to resolve them.
 
 #### 3. Resolve Dependencies
 To sync your NPM dependencies with your NuGet dependencies, you can either manually follow the steps returned by *step 2*, or resolve them automatically using the following command:
 ```powershell
-dotnet femto --resolve
+dotnet femto ./src/Client --resolve
 ```
 
 ## Done!
