@@ -9,7 +9,7 @@ type ICustomerApi = {
     findCustomerByName : string -> Async<Customer option>
 }
 ```
-The supported types used within the protocol can be any F# type: primitive values (int, string, DateTime, etc.), records, options, discrimincated unions or collections etc.
+The supported types used within the protocol can be any F# type: primitive values (int, string, DateTime, etc.), records, options, discriminated unions or collections etc.
 
 ## 2. Implement the protocol on the server
 On the server you would implement the protocol as follows:
