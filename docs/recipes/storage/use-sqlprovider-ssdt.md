@@ -70,10 +70,8 @@ Next, we will use Azure Data Studio with the "SQL Database Projects" extension t
 ## Create a TodoRepository Using the new SSDT provider in SQLProvider
 
 ### Installing SQLProvider from NuGet
-Switching back to VSCode, we will install SQLProvider and System.Data.SqlClient to the Server project:
-- Open a new terminal
-- From the "SafeTodo" root folder: `dotnet paket add SQLProvider -p Server`
-- From the "SafeTodo" root folder: `dotnet paket add System.Data.SqlClient -p Server`
+- Install the `SQLProvider` NuGet package to the Server project
+- Install the `System.Data.SqlClient` NuGet package to the Server project
 
 ### Initialize Type Provider
 Next, we will wire up our type provider to generate database types based on the compiled .dacpac file.
