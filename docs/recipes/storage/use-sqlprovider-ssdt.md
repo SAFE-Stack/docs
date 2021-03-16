@@ -1,4 +1,4 @@
-# Using SQLProvider SSDT
+# Using SQLProvider SQL Server SSDT
 
 ## Creating a "SafeTodo" Database with Azure Data Studio
 
