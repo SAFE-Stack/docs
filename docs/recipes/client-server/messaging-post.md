@@ -47,7 +47,8 @@ This can now be called from within your `update` function e.g.
 ### On the Server
 #### 1. Write implementation
 Create a function that can extract the payload from the body of the request using Giraffe's built-in [model binding support](https://github.com/giraffe-fsharp/Giraffe/blob/master/DOCUMENTATION.md#model-binding):
-```
+
+```fsharp
 open FSharp.Control.Tasks
 open Giraffe
 open Microsoft.AspNetCore.Http
