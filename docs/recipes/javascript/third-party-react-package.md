@@ -1,7 +1,6 @@
 # How Do I Use a Third Party React Package Using Feliz?
 
-To use a third-party React library in a SAFE application, you need to write an F# wrapper around it. There are two ways for doing this – using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
-This recipe will show you the minimal setup needed to get going!
+With Feliz we're able to easily interact with third-party React libraries in a SAFE application.
 
 ## Prerequisites
 
