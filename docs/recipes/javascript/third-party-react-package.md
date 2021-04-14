@@ -1,4 +1,4 @@
-# How Do I Use a Third Party React Package Using Feliz?
+# How do I use a third party React package with Feliz?
 
 With Feliz we're able to easily interact with third-party React libraries in a SAFE application.
 
