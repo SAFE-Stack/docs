@@ -1,7 +1,7 @@
 # How Do I Use a Third Party React Package Using Feliz?
 
 To use a third-party React library in a SAFE application, you need to write an F# wrapper around it. There are two ways for doing this – using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
-This recipe will show you the minimum setup needed to get going!
+This recipe will show you the minimal setup needed to get going!
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@ This recipe uses the [react-d3-speedometer NPM package](https://www.npmjs.com/pa
 
 If you don't already have [Feliz](https://www.nuget.org/packages/Feliz/) installed, [add it to your client](../../ui/add-feliz).
 
-## Minimum
+## Setup
 
 In the Client project's `Index.fs` add the following snippets
 
