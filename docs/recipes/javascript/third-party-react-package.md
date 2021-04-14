@@ -25,12 +25,12 @@ Feliz.Interop.reactApi.createElement (importDefault "react-d3-speedometer", crea
 ])
 ```
 
-- `createElement` from `Feliz.ReactApi.IReactApi` takes the component you're wrapping in our case react-d3-speedometer th,e props for that component and creates a ReactComponent we can use in F#.
+- `createElement` from `Feliz.ReactApi.IReactApi` takes the component you're wrapping react-d3-speedometer, the props that component takes and creates a ReactComponent we can use in F#.
 - `importDefault` from ` Fable.Core.JsInterop` is giving us access to the component and is equivalent to 
 ```javascript 
 import defaultExport from "react-d3-speedometer"
 ```
-- `createObj` from `Fable.Core.JsInterop` takes a sequence of `string * obj` which is a prop name and value that the component takes, you can find the full prop list for react-d3-speedometer [here](https://www.npmjs.com/package/react-d3-speedometer).
+- `createObj` from `Fable.Core.JsInterop` takes a sequence of `string * obj` which is a prop name and value for the component, you can find the full prop list for react-d3-speedometer [here](https://www.npmjs.com/package/react-d3-speedometer).
 - Using `==>` (short hand for `prop.custom`) to transform the sequence into a javascript object 
 ```fsharp
 createObj [
