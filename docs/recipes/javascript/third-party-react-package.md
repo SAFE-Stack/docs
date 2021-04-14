@@ -31,7 +31,8 @@ Feliz.Interop.reactApi.createElement (importDefault "react-d3-speedometer", crea
 ```javascript 
 import defaultExport from "react-d3-speedometer"
 ```
-- createObj from `Fable.Core.JsInterop.createObj` takes a sequence of `string * obj` using the `==>` (this is short hand for `prop.custom`) to transform the sequence into a javascript object 
+- createObj from `Fable.Core.JsInterop.createObj` takes a sequence of `string * obj` which is the component prop name and prop value 
+- Using `==>` (short hand for `prop.custom`) to transform the sequence into a javascript object 
 ```fsharp
 createObj [
     "minValue" ==> 0
