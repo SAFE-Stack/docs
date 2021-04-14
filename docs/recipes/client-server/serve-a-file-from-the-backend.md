@@ -42,11 +42,12 @@ Although not perfect, the best solution for handling the file download is creati
 
 ```fsharp
 open Fable.Core.JsInterop
+open Shared
 
 let downloadFile () =
     let anchor = Browser.Dom.document.createElement "a"
     anchor?style <- "display: none"
-    anchor?href <- "/api/file"
+    anchor?href <- Route.file
     anchor?download <- "MyFile.xlsx"
     anchor.click()
     anchor.remove()
@@ -126,8 +127,8 @@ Since the `downloadFile` function is asynchronous, we can't just call it anywher
 ```fsharp
 type Msg =
     //...other cases
-    DownloadFile
-    FileDownloaded
+    | DownloadFile
+    | FileDownloaded
 ```
 
 ##### b. Handle these cases in the update function
