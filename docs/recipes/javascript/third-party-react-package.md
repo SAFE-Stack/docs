@@ -50,7 +50,7 @@ That is the bare minimum needed to get going!
 ## Next steps
 
 Once your component is working you may want to extract out the logic so that it can be used in multiple pages of your app.
-For a full detailed guide please visit this tutorial.
+A full detailed tutorial is in the works!
 
 ## How to handle different types of import statements 
 
