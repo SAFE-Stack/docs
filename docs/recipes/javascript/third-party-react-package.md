@@ -52,7 +52,15 @@ That is the bare minimum needed to get going!
 Once your component is working you may want to extract out the logic so that it can be used in multiple pages of your app.
 For a full detailed guide please visit this tutorial.
 
-## How to handle other types of import statements 
+## How to handle different types of import statements 
+
+### Default export
+```javascript
+import myDefault from 'module-name' // JS
+```
+```fsharp
+importDefault "module-name" // F#
+``` 
 
 ### Named export 
 ```javascript 
@@ -68,3 +76,4 @@ import * as myModule from 'module-name' // JS
 ```fsharp
 let myModule = importAll "module-name" // F#
 ``` 
+
