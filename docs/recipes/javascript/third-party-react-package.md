@@ -32,6 +32,12 @@ import ReactSpeedometer from "react-d3-speedometer"
 ```
 The reason for using `importDefault` is the documentation for the component uses a default export "ReactSpeedometer". Please find a list of common import statetments at the end of this recipe
 
+As a quick check to ensure that the library is being imported in and we have no typos you can console.log the following at the top of the view function 
+```fsharp
+Browser.Dom.console.log("REACT-D3-IMPORT", importDefault "react-d3-speedometer")
+```
+In the console window which can be reached right-clicking and selecting Insepct Element, you should see some output from the above log.
+
 - `createObj` from `Fable.Core.JsInterop` takes a sequence of `string * obj` which is a prop name and value for the component, you can find the full prop list for react-d3-speedometer [here](https://www.npmjs.com/package/react-d3-speedometer).
 - Using `==>` (short hand for `prop.custom`) to transform the sequence into a javascript object 
 ```fsharp
@@ -45,7 +51,7 @@ Is equivalent to
 { minValue: 0, maxValue: 10 }
 ```
 
-That is the bare minimum needed to get going!
+That's the bare minimum needed to get going!
 
 ## Next steps
 
