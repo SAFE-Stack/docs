@@ -32,7 +32,7 @@ import ReactSpeedometer from "react-d3-speedometer"
 ```
 The reason for using `importDefault` is the documentation for the component uses a default export "ReactSpeedometer". Please find a list of common import statetments at the end of this recipe
 
-As a quick check to ensure that the library is being imported in and we have no typos you can console.log the following at the top of the view function 
+As a quick check to ensure that the library is being imported and we have no typos you can `console.log` the following at the top within the view function 
 ```fsharp
 Browser.Dom.console.log("REACT-D3-IMPORT", importDefault "react-d3-speedometer")
 ```
