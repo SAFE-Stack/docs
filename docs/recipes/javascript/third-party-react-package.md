@@ -55,21 +55,41 @@ A full detailed tutorial is in the works!
 ## How to handle different types of import statements 
 
 ### Default export
+
+In most cases components use the default export syntax which is when the the component being exported from the module becomes available. For example, if the module being imported below looked something like:
 ```javascript
-import myDefault from 'module-name' // JS
+const foo = () => "hello"
+
+export default foo
+```
+We can use the below syntax to have access to the function `foo`.
+```javascript
+import foo from 'module-name' // JS
 ```
 ```fsharp
 importDefault "module-name" // F#
 ``` 
 
 ### Named export 
+
+In some cases components can use the named export syntax. In the below case "module-name" has an object/function/class that is called `bar`. By referncing it below it is brought into the current scope. 
+For example, if the module below contained something like:
 ```javascript 
-import { export1 } from "module-name" // JS
+export const bar (x,y) => x + y 
+```
+We can directly access the function with the below syntax 
+```javascript 
+import { bar } from "module-name" // JS
 ```
 ```fsharp
-import "export1" "module-name" // F#
+import "bar" "module-name" // F#
 ```
-### Entire modules contents 
+### Entire module contents 
+
+In rare cases you may have to import an entire module's contents and provide an alias in the below case we named it myModule. You can now use dot notation to access anything that is exported from module-name. For example, if the module being imported below includes an export to a function `doAllTheAmazingThings()` you could access it like:
+```javascript
+myModule.doAllTheAmazingThings()
+```
 ```javascript
 import * as myModule from 'module-name' // JS
 ```
