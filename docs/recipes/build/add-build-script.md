@@ -3,12 +3,12 @@
 ## FAKE
 [Fake](https://fake.build/) is a DSL for build tasks that is modular, extensible and easy to start with. Fake allows you to easily build, bundle, deploy your app and more by executing a single command.
 
-> The standard template comes [with a FAKE script](/template-fake) by default, and **this recipe only applies to the minimal template**.
+> The standard template comes [with a FAKE script](../../../template-fake) by default, and **this recipe only applies to the minimal template**.
 
 ## Paket
 Before moving on, we recommend migrating to [Paket](https://fsprojects.github.io/Paket/). In fact, **this is a prerequisite for this recipe**. It is possible to use FAKE without Paket by creating an executable instead of a script file, however this will not be covered in this recipe.
 
-If you’re *not* using Paket to handle your dependencies, go through the [Migrate to Paket](/recipes/package-management/migrate-to-paket.md) recipe before continuing.
+If you’re *not* using Paket to handle your dependencies, go through the [Migrate to Paket](../../package-management/migrate-to-paket) recipe before continuing.
 
 ---
 #### 1. The Build Dependencies
@@ -35,7 +35,7 @@ dotnet tool restore
 
 #### 3. The Build Script
 Add an F# script file to the root folder of your solution named `build.fsx` and paste the following code into it.
-The script builds publishes the client and server appliations in their production / release modes, and copies the outputs of both into a `deploy` folder at the root of the repository.
+The script builds and publishes the client and server applications in their production / release modes, and copies the outputs of both into a `deploy` folder at the root of the repository.
 
 To learn more about targets and FAKE in general, see [Getting Started with FAKE](https://fake.build/fake-gettingstarted.html#Minimal-example).
 ```fsharp

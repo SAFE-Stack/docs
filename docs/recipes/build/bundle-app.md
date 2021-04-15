@@ -1,6 +1,6 @@
 # How do I bundle my SAFE application?
 
-When developing your SAFE application, the local runtime experience uses WebPack to run client and redirects API calls to the server on a [different port](/faq-build). However, when you *deploy* your application, you'll need to run your Saturn server which will serve up statically-built client resources (HTML, JavaScript, CSS etc.).
+When developing your SAFE application, the local runtime experience uses WebPack to run the client and redirect API calls to the server on a [different port](/faq-build). However, when you *deploy* your application, you'll need to run your Saturn server which will serve up statically-built client resources (HTML, JavaScript, CSS etc.).
 
 ## I'm using the standard template
 
@@ -41,10 +41,10 @@ This will bundle the server project and copy all outputs into the `deploy` folde
 
 ## Testing the bundle
 1. Navigate to the `deploy` folder at the root of your repository.
-2. Run the `server.exe` application.
+2. Run the `Server.exe` application.
 3. Navigate in your browser to `http://localhost:8085`.
 
 You should now see your SAFE application.
 
 ## Further reading
-See [this article](/faq-build) for more information on architectural concerns regarding more from dev to production and bundling SAFE Stack applications.
+See [this article](/docs/faq-build) for more information on architectural concerns regarding the move from dev to production and bundling SAFE Stack applications.

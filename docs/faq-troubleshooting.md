@@ -29,7 +29,7 @@ port 8080 and prevent you starting new instances. This should be easily doable b
 
 ### JavaScript bundle size
 
-A project created from SAFE template might issue following warning from Webpack upon building the JavaScript bundle:
+A project created from SAFE template might issue the following warning from Webpack upon building the JavaScript bundle:
 
 ```
 WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.

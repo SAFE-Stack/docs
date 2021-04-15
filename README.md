@@ -1,6 +1,6 @@
 # Documentation for SAFE Stack.
 
-[![Build Status](https://travis-ci.org/SAFE-Stack/docs.svg?branch=master)](https://travis-ci.org/SAFE-Stack/docs)
+[![Build Status](https://api.travis-ci.com/SAFE-Stack/docs.svg?branch=master)](https://travis-ci.com/SAFE-Stack/docs)
 
 ### How to build
 

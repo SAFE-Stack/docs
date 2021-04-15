@@ -82,10 +82,12 @@ nav:
     - Post data to the server: 'recipes/client-server/messaging-post.md'
     - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
     - Share code between the client and the server: 'recipes/client-server/share-code.md'
-    - Use Giraffe instead of Saturn: 'recipes/client-server/saturn-to-giraffe.md'
+    - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
+    - Upload file from the client: "recipes/client-server/upload-file-from-client.md"
     - Serve a file from the back-end: 'recipes/client-server/serve-a-file-from-the-backend.md'
   - Data:
     - Quickly add a database: 'recipes/storage/use-litedb.md'
+    - Create a data module using SQLProvider SQL Server SSDT: 'recipes/storage/use-sqlprovider-ssdt.md'
   - UI:
     - Add FontAwesome support: 'recipes/ui/add-fontawesome.md'
     - Add Stylesheet support: 'recipes/ui/add-style.md'

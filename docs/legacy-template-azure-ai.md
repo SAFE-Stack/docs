@@ -33,4 +33,4 @@ Although Application Insights supports monitoring for both client *and* server, 
 * Automatic configuration of your web application with connection details to the created Application Insights instance.
 * Application support for activating Application Insights in code for e.g. custom events and metrics.
 
-AI integration is provided out-of-the-box in the template, since Giraffe uses the standard .NET Core Application Insights SDK in order to communicate with the Application Insights service. It uses the standard Application Insights middleware support for ASP .NET Core, which provides complete tracking of requests, dependencies, errors and live streaming.
+AI integration is provided out-of-the-box in the template, since Giraffe uses the standard .NET Core Application Insights SDK in order to communicate with the Application Insights service. It uses the standard Application Insights middleware support for ASP.NET Core, which provides complete tracking of requests, dependencies, errors and live streaming.

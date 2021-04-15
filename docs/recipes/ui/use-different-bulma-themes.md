@@ -24,7 +24,7 @@ In your `index.html`, add the following line anywhere between the opening and cl
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 ```
 #### 2. Add Fulma or Feliz.Bulma to the Solution
-Read [this recipe](../add-bulma) for the rest of the instructions instructions.
+Read [this recipe](../add-bulma) for the rest of the instructions.
 
 ---
 And that’s it. You should now see your app styled in accordance with the Bulma theme you’ve just switched to.
