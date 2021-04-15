@@ -83,6 +83,7 @@ nav:
     - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
     - Share code between the client and the server: 'recipes/client-server/share-code.md'
     - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
+    - Upload file from the client: "recipes/client-server/upload-file-from-client.md"
   - Data:
     - Quickly add a database: 'recipes/storage/use-litedb.md'
     - Create a data module using SQLProvider SQL Server SSDT: 'recipes/storage/use-sqlprovider-ssdt.md'
