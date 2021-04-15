@@ -1,7 +1,4 @@
-# How do I use a third party React package?
-
-To use a third-party React library in a SAFE application, you need to write an F# wrapper around it. There are two ways for doing this – using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
-
+To use a third-party React library in a SAFE application,  you need to write an F# wrapper around it. There are two ways for doing this - using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
 ## Prerequisites
 
 This recipe uses the [react-d3-speedometer NPM package](https://www.npmjs.com/package/react-d3-speedometer) for demonstration purposes. [Add it to your Client](../../package-management/add-npm-package-to-client) before continuing.
@@ -36,7 +33,7 @@ type Prop =
 > Note that we can model any props here, both simple values and "event handler"-style ones.
 
 #### 3. Write the Component
-Add the following function to the file. Note that the last argument passed into the `ofImport` function is a list of `ReactElements` to be used as *children* of the react component. In this case, we are passing an empty list since the component doesn't have children.
+Add the following function to the file. Note that the last argument passed into the `ofImport` function is a list of `ReactElements` to be used as children of the react component. In this case, we are passing an empty list since the component doesn't have children.
 
 ```fsharp
 let reactSpeedometer (props : Prop list) : ReactElement =
@@ -106,9 +103,10 @@ Is equivalent to
 
 That's the bare minimum needed to get going!
 
-#### Next steps
+#### Next steps for Feliz
 
 Once your component is working you may want to extract out the logic so that it can be used in multiple pages of your app.
 A full detailed tutorial is in the works!
+
 
 
