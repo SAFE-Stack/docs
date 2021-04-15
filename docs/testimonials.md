@@ -35,4 +35,28 @@ If you still feel leery of the Elmish pattern, you are free to use React Hooks A
 Worried about getting stuck?  Don't worry because the F# community will practially crawl all over themselves to be the first to answer you question. There are also options for professional consultation as well.  The community support is amazing!
 The SAFE stack is designed to be as turn-key as possible, but there are also plenty of opportunities to customize the stack as you see fit.  
 
-Overall, the SAFE stack has allowed me to completely spoil a very damanding customer with timely, bug-free deliverables. 
+Overall, the SAFE stack has allowed me to completely spoil a very demanding customer with timely, bug-free deliverables. 
+
+## Jake Witcher
+
+> I really appreciate the effort that went in to this!
+
+The F# SAFE stack documentation is incredibly well done. One of the best features is the learning resources page that includes GitHub repos of example projects.
+
+## Casper Bollen
+
+> Never did Computer Science
+
+The SAFE stack enables me to create full backend to frontend web apps in a matter of weeks!!
+
+## Leko Thomas
+
+> Recipes are concise solve only one problem and are composable
+
+I find SAFE stack recipes have so much value. Thank you! Please keep on doing it.
+
+## James Randall
+
+> After a year I still feel like F# with the SAFE stack is like high octane rocket fuel for developers.
+
+The F# community have created, and made very accessible, a fantastic set of tools that allow you to write F# end to end on the web and in a way that embraces the existing world.
