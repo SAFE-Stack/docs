@@ -9,7 +9,7 @@ npm install name-of-package
 
 This will download the package into the solution's **node_modules** folder. 
 
-You will also see a reference to the package in the Client's **package.json** file:
+You will also see a reference to the package in the Client's **package.json** file: 
 ```json
 "dependencies": {
     "name-of-package": "^1.0.0"
