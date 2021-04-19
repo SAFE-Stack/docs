@@ -36,7 +36,7 @@ This file lists any custom dotnet tools used.
 
 > **Important**! If you have installed extra dotnet tools,you will need to add them back in manually.
 
-#### 4. Replace Yarn with NPM
+#### 5. Replace Yarn with NPM
 The v2 template no longer uses Yarn to manage JavaScript dependencies, and instead uses NPM.
 
 * **Delete** the `yarn.lock` file.
@@ -50,7 +50,7 @@ If you *have* added any extra NPM packages, run this command to generate a new `
 npm install
 ```
 
-#### 5. Update Paket dependencies
+#### 6. Update Paket dependencies
 * **Overwrite** the `paket.dependencies` file in the root of the solution.
 * **Overwrite** the `paket.lock` file.
 * **Overwrite** all `paket.references` files.
@@ -67,7 +67,7 @@ dotnet paket install
 
 * If you *have* added any extra NuGet packages, this command will also generate a new `paket.lock` file.
 
-#### 6. Update FAKE build script
+#### 7. Update FAKE build script
 * **Overwrite** the `build.fsx` FAKE script.
 
 **Important** If you have made any modifications to the build script e.g. extra targets, you will need to add them back in manually.
@@ -76,14 +76,14 @@ dotnet paket install
 
 > The v2 FAKE script includes a target for Azure deployment using Farmer. If you are not using Azure deployments, you can safely delete this target.
 
-#### 7. Update webpack config
+#### 8. Update webpack config
 * **Overwrite** the `webpack.config.js` file.
 
 **Important** If you have made any modifications to the webpack file, you will need to apply them back in manually.
 
 * If you were using a CSS files, make sure to follow the [Stylesheet recipe](../ui/add-style.md) to add them back in.
 
-#### 8. Switch to a project for Shared files
+#### 9. Switch to a project for Shared files
 The v1 template used shared files to allow code reuse between the Server and Client. The v2 template now has a dedicated project for shared content.
 
 * Add a new **.Net Standard** project to the solution by running
@@ -104,7 +104,7 @@ dotnet add Client reference Shared
 dotnet add Server reference Shared
 ```
 
-#### 9. Update Saturn application
+#### 10. Update Saturn application
 
 * Open the `Server.fs` module at the root of the **Server** project (or whatever module contains your Saturn `application` expression).
 
@@ -132,7 +132,7 @@ url "http://0.0.0.0:8085"
 use_static "public"
 ```
 
-#### 10. Check that it runs
+#### 11. Check that it runs
 
 Run
 ```bash
