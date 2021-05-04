@@ -1,4 +1,4 @@
-A curated list of awesome React/JS tools the community have put together:
+A set of SAFE-ready wrappers around existing React and JS UI Components. Use [femto](https://github.com/Zaid-Ajaj/Femto) to install the packages so that the npm packages are also installed.
 
 ## React bindings
 
@@ -6,12 +6,15 @@ A curated list of awesome React/JS tools the community have put together:
 Fable bindings and helpers for React and React Native. [Get it!](https://www.nuget.org/packages/Fable.React/)
 
 ### [Feliz](https://zaid-ajaj.github.io/Feliz/)
-A fresh retake of the React API in Fable and a collection of high-quality components to build React applications in F#, optimized for happiness. [Get it!](https://www.nuget.org/packages/Feliz/))
+A fresh retake of the React API in Fable and a collection of high-quality components to build React applications in F#, optimized for happiness. [Get it!](https://www.nuget.org/packages/Feliz/)
 
 ## UI Frameworks
 
 ### [Feliz.MaterialUI](https://shmew.github.io/Feliz.MaterialUI/) 
 Feliz-style Fable bindings for [Material-UI](https://material-ui.com/). [Get it!](https://www.nuget.org/packages/Feliz.MaterialUI/)
+
+### [Feliz.Reactstrap](https://nojaf.com/fable-reactstrap/) 
+Fable binding for [reactstrap](https://reactstrap.github.io/). [Get it!](https://www.nuget.org/packages/Feliz.MaterialUI/)
 
 ### [Fable.MaterialUI](https://github.com/mvsmal/fable-material-ui)
 Fable bindings for [Material-UI](https://material-ui.com/). [Get it!]((https://www.nuget.org/packages/Fable.MaterialUI/))
@@ -29,13 +32,16 @@ Fulma provides a wrapper around [Bulma 0.9.0](https://bulma.io), an open source 
 Fable bindings for [Ant Design React components](https://ant.design/). [Get it!](https://www.nuget.org/packages/Fable.AntD/)
 
 ### [Fable.FontAwesome.Free](https://github.com/Fulma/Fulma/blob/master/src/Fable.FontAwesome/Fable.FontAwesome.fsproj)
-Bindings for the Free icons of Font Awesome, should be used with Fable.FontAwesome. [Get it!](https://www.nuget.org/packages/Fable.FontAwesome.Free/))
+Bindings for the Free icons of Font Awesome, should be used with Fable.FontAwesome. [Get it!](https://www.nuget.org/packages/Fable.FontAwesome.Free/)
 
 ### [Fable.FluentUI](https://github.com/JordanMarr/Fable.FluentUI)
 [FluentUI (React)](https://www.npmjs.com/package/@fluentui/react) to Fable bindings. [Get it!](https://www.nuget.org/packages/Fable.FluentUI/) 
 
+### [Fable.ReactGridSystem](https://github.com/Prolucid/fable-react-grid-system)
+[React Grid System](https://www.npmjs.com/package/react-grid-system) to Fable bindings. [Get it!](https://www.nuget.org/packages/Fable.ReactGridSystem/) 
 
-## Components 
+
+## UI Controls
 
 ### [Feliz.Popover](https://zaid-ajaj.github.io/Feliz/#/Components/Popover)
 Feliz-style Fable bindings for [react-popover](https://github.com/littlebits/react-popover). [Get it!](https://www.nuget.org/packages/Feliz.Popover/) 
@@ -49,6 +55,15 @@ Feliz-style Fable bindings for [react-kawaii](https://react-kawaii.vercel.app/) 
 ### [Feliz.SweetAlert](https://zaid-ajaj.github.io/Feliz/#/Misc/SweetAlert)
 Feliz-style Fable bindings for [sweetalert2 and sweetalert2-react-content](https://sweetalert2.github.io/) with Feliz style api for use within React applications. Implemented as both normal functions and Elmish commands, for maximum flexibility. [Get it!](https://www.nuget.org/packages/Feliz.SweetAlert/)
 
+### [Elmish.SweetAlert](https://zaid-ajaj.github.io/Elmish.SweetAlert/)
+[SweetAlert](https://sweetalert2.github.io/) integration for Fable, made with love to work in Elmish apps. [Get it!](https://www.nuget.org/packages/Elmish.SweetAlert/)
+
+### [Elmish.Toastr](https://zaid-ajaj.github.io/Elmish.Toastr/)
+Toastr integration with Fable, implemented as Elmish commands. [Get it!](https://www.nuget.org/packages/Elmish.Toastr/)
+
+### [Elmish.AnimatedTree](https://github.com/Zaid-Ajaj/Elmish.AnimatedTree)
+A fork and binding of [react-animated-tree](https://github.com/drcmda/react-animated-tree), adapted to properly work within Elmish applications. [Get it!](https://www.nuget.org/packages/Elmish.AnimatedTree/)
+
 ### Feliz.ReactHamburger
 Feliz-style Fable bindings for [hamburger-react](https://hamburger-react.netlify.app/). [Get it!](https://www.nuget.org/packages/Feliz.ReactHamburger/)
 
@@ -58,13 +73,13 @@ Feliz-style Fable bindings for [react-select](https://react-select.com/home). [G
 ### [Fable.React.Flatpickr](https://zaid-ajaj.github.io/Fable.React.Flatpickr/)
 Fable binding for [react-flatpickr](https://www.npmjs.com/package/react-flatpickr) that is ready to use within Elmish applications. [Get it!](https://www.nuget.org/packages/Fable.React.Flatpickr/)
 
-### [Feliz.Tippy]
+### Feliz.Tippy
 Feliz-style Fable bindings for [tippyjs-react](https://github.com/atomiks/tippyjs-react). [Get it!](https://www.nuget.org/packages/Feliz.Tippy/0.0.3-alpha)
 
-### [Feliz.ReactSpeedometer]
+### Feliz.ReactSpeedometer
 Feliz-style Fable bindings for [react-d3-speedometer](https://palerdot.in/react-d3-speedometer/). [Get it!](https://www.nuget.org/packages/Feliz.ReactSpeedometer/)
 
-### [Feliz.Draggable]
+### Feliz.Draggable
 Feliz-style Fable bindings for [react-draggable](https://www.npmjs.com/package/react-draggable). [Get it!](https://www.nuget.org/packages/Feliz.Draggable/0.0.1-alpha)
 
 ### [Fable.ReactKanban](https://github.com/uxsoft/Fable.ReactKanban)
@@ -73,12 +88,18 @@ Feliz-style Fable bindings for [react-draggable](https://www.npmjs.com/package/r
 ### [Fable.React.DrawingCanvas](https://github.com/davedawkins/Fable.React.DrawingCanvas)
 This is a Fable React wrapper for canvas that allows you to declare a drawing. [Get it!](https://www.nuget.org/packages/Fable.React.DrawingCanvas/)
 
+### [Fable.GroupingPanel](https://github.com/JordanMarr/Fable.GroupingPanel)
+An F# computation expression that groups Fable UI data into one or more collapsable panels. [Get it!](https://www.nuget.org/packages/Fable.GroupingPanel/)
+
 ## Data Visualisation
 
 ### Feliz.AgGrid
 Feliz-style Fable bindings for [ag-grid](https://www.ag-grid.com/). [Get it!](https://www.nuget.org/packages/Feliz.AgGrid/)
 
-### Feliz.Reactflow](https://tforkmann.github.io/Feliz.ReactFlow/#/exampleflow)
+### [Fable.ReactAgGrid](https://danpowergruppe.github.io/Fable.ReactAgGrid/)
+Fable bindings for [ag-grid](https://www.ag-grid.com/). [Get it!](https://www.nuget.org/packages/Fable.ReactAgGrid/)
+
+### [Feliz.Reactflow](https://tforkmann.github.io/Feliz.ReactFlow/#/exampleflow)
 Feliz-style Fable bindings for [react flow](https://reactflow.dev/). [Get it!](https://www.nuget.org/packages/Feliz.Markdown/)
 
 ## Maps 
