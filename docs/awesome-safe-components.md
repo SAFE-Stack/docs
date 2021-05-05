@@ -25,9 +25,6 @@ Fable bindings for [Material-UI](https://material-ui.com/). [Get it!]((https://w
 ### [Fulma](https://fulma.github.io/Fulma/)
 Fulma provides a wrapper around [Bulma 0.9.0](https://bulma.io), an open source CSS framework, for fable-react. [Get it!](https://www.nuget.org/packages/Fulma/)
 
-### [Feliz.AntDesign](https://zaid-ajaj.github.io/Feliz.AntDesign/)
-[AntDesign](https://ant.design/) bindings using Feliz syntax for a clean, discoverable and type-safe React components. [Get it!](https://www.nuget.org/packages/Feliz.AntDesign/)
-
 ### [Fable.AntD](https://github.com/uxsoft/Fable.AntD)
 Fable bindings for [Ant Design React components](https://ant.design/). [Get it!](https://www.nuget.org/packages/Fable.AntD/)
 
