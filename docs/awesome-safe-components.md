@@ -1,4 +1,16 @@
-A set of SAFE-ready wrappers around existing React and JS UI Components. Use [femto](https://github.com/Zaid-Ajaj/Femto) to install the packages so that the npm packages are also installed.
+A set of SAFE-ready wrappers around existing React and JS UI Components. 
+
+## How can I contribute my library to this list?
+
+### Required
+
+- Adding a README with installation instructions
+- Adding [femto](https://github.com/Zaid-Ajaj/Femto) metadata to the projects
+
+### Nice to have
+
+- Adding documentation with sample code on the various use cases 
+- Adding live documentation website with sample code
 
 ## React bindings
 
