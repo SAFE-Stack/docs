@@ -73,10 +73,13 @@ Toastr integration with Fable, implemented as Elmish commands. [Get it!](https:/
 ### [Elmish.AnimatedTree](https://github.com/Zaid-Ajaj/Elmish.AnimatedTree)
 A fork and binding of [react-animated-tree](https://github.com/drcmda/react-animated-tree), adapted to properly work within Elmish applications. [Get it!](https://www.nuget.org/packages/Elmish.AnimatedTree/)
 
-### Feliz.ReactHamburger
+### [Feliz.ReactHamburger](https://github.com/CompositionalIT/feliz-hamburger-react)
 Feliz-style Fable bindings for [hamburger-react](https://hamburger-react.netlify.app/). [Get it!](https://www.nuget.org/packages/Feliz.ReactHamburger/)
 
-### Feliz.ReactSelect
+### [Feliz.ReactAwesomeSlider](https://github.com/Akash-Mair/feliz-react-awesome-slider)
+Feliz-style Fable bindings for [react-awesome-slider](https://github.com/rcaferati/react-awesome-slider). [Get it!](https://www.nuget.org/packages/Feliz.ReactAwesomeSlider/)
+
+### [Feliz.ReactSelect](https://github.com/CompositionalIT/MultiSelect)
 Feliz-style Fable bindings for [react-select](https://react-select.com/home). [Get it!](https://www.nuget.org/packages/Feliz.ReactSelect/0.0.1-alpha)
 
 ### [Fable.React.Flatpickr](https://zaid-ajaj.github.io/Fable.React.Flatpickr/)
