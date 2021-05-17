@@ -105,7 +105,7 @@ An F# computation expression that groups Fable UI data into one or more collapsa
 
 ## Data Visualisation
 
-### Feliz.AgGrid
+### [Feliz.AgGrid](https://github.com/CompositionalIT/feliz-ag-grid)
 Feliz-style Fable bindings for [ag-grid](https://www.ag-grid.com/). [Get it!](https://www.nuget.org/packages/Feliz.AgGrid/)
 
 ### [Fable.ReactAgGrid](https://danpowergruppe.github.io/Fable.ReactAgGrid/)
