@@ -85,7 +85,7 @@ Feliz-style Fable bindings for [react-select](https://react-select.com/home). [G
 ### [Fable.React.Flatpickr](https://zaid-ajaj.github.io/Fable.React.Flatpickr/)
 Fable binding for [react-flatpickr](https://www.npmjs.com/package/react-flatpickr) that is ready to use within Elmish applications. [Get it!](https://www.nuget.org/packages/Fable.React.Flatpickr/)
 
-### Feliz.Tippy
+### [Feliz.Tippy](https://github.com/CompositionalIT/feliz-tippy)
 Feliz-style Fable bindings for [tippyjs-react](https://github.com/atomiks/tippyjs-react). [Get it!](https://www.nuget.org/packages/Feliz.Tippy/0.0.3-alpha)
 
 ### [Feliz.ReactSpeedometer](https://github.com/CompositionalIT/Feliz-ReactSpeedometer)
