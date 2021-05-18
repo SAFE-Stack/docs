@@ -124,7 +124,7 @@ Feliz-style bindings for [pigeon-maps](https://github.com/mariusandra/pigeon-map
 
 ## Charting 
 
-### Feliz.AgChart
+### [Feliz.AgChart](https://github.com/CompositionalIT/feliz-ag-charts)
 Feliz-style bindings for [ag-charts](https://www.ag-grid.com/react-charts/overview/). [Get it!](https://www.nuget.org/packages/Feliz.AgChart/)
 
 ### [Feliz.Plotly](https://shmew.github.io/Feliz.Plotly/)
