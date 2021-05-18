@@ -91,9 +91,6 @@ Feliz-style Fable bindings for [tippyjs-react](https://github.com/atomiks/tippyj
 ### [Feliz.ReactSpeedometer](https://github.com/CompositionalIT/Feliz-ReactSpeedometer)
 Feliz-style Fable bindings for [react-d3-speedometer](https://palerdot.in/react-d3-speedometer/). [Get it!](https://www.nuget.org/packages/Feliz.ReactSpeedometer/)
 
-### Feliz.Draggable
-Feliz-style Fable bindings for [react-draggable](https://www.npmjs.com/package/react-draggable). [Get it!](https://www.nuget.org/packages/Feliz.Draggable/0.0.1-alpha)
-
 ### [Fable.ReactKanban](https://github.com/uxsoft/Fable.ReactKanban)
 [React Kanban](https://github.com/lourenci/react-kanban) bindings for Fable React. [Get it!](https://www.nuget.org/packages/Fable.ReactKanban/)
 
