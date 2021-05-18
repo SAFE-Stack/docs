@@ -88,7 +88,7 @@ Fable binding for [react-flatpickr](https://www.npmjs.com/package/react-flatpick
 ### Feliz.Tippy
 Feliz-style Fable bindings for [tippyjs-react](https://github.com/atomiks/tippyjs-react). [Get it!](https://www.nuget.org/packages/Feliz.Tippy/0.0.3-alpha)
 
-### Feliz.ReactSpeedometer
+### [Feliz.ReactSpeedometer](https://github.com/CompositionalIT/Feliz-ReactSpeedometer)
 Feliz-style Fable bindings for [react-d3-speedometer](https://palerdot.in/react-d3-speedometer/). [Get it!](https://www.nuget.org/packages/Feliz.ReactSpeedometer/)
 
 ### Feliz.Draggable
