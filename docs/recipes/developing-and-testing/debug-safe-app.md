@@ -85,7 +85,7 @@ Click the "Add Configuration..." button and choose **Launch .NET Core Console Ap
 The only change required is to point it at the Server application, by replacing the `program` line with this:
 
 ```json
-"program": "${workspaceFolder}/src/Server/bin/Debug/netcoreapp3.1/Server.dll",
+"program": "${workspaceFolder}/src/Server/bin/Debug/net5.0/Server.dll",
 ```
 
 #### 3. Configure a build task

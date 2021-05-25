@@ -20,11 +20,11 @@ You will find a folder in the solution named **tests**. Inside this there is a p
 
 In order to run the tests, instead of starting your application using
 ```powershell
-dotnet fake build -t run
+dotnet run
 ```
 you should instead use
 ```powershell
-dotnet fake build -t runtests
+dotnet run -- RunTests
 ```
 
 #### 2. View the results
@@ -40,7 +40,7 @@ Once the build is complete and the website is running, navigate to `http://local
 If you are using the minimal template, you will need to first configure a test project as none are included.
 
 #### 1. Add a test project
-In the `src` folder, create a create a **.Net Standard** library called **Client.Tests**.
+In the `src` folder, create a create a **.Net** library called **Client.Tests**.
 
 ```powershell
 cd src
