@@ -22,7 +22,7 @@ SAFE provides developers with a simple and consistent programming model for deve
 * Create client / server applications entirely in F#
 * Re-use development skills on client and server
 * Rapidly create rich client-side web applications with no Javascript knowledge
-* Runs on the latest .NET Core (and tested daily by Microsoft)
+* Runs on the latest .NET (and tested daily by Microsoft)
 * Rapid development cycle with support for [hot module replacement](feature-hmr.md)
 * Interact with native Javascript libraries whenever needed
 * Create client-side applications purely in F#, with full type checking for safety
