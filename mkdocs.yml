@@ -116,6 +116,27 @@ nav:
 - Events: 'events.md'
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'
+- Legacy SAFE Template (v2):
+    - Overview: 'template-overview.md'
+    - The FAKE script: 'template-fake.md'
+    - V2 recipes:
+      - Upgrade from V1 to V2 : 'recipes/upgrading/v1-to-v2.md'
+      - Build:
+        - Remove FAKE from my project: 'recipes/build/remove-fake.md'
+        - Add build automation: 'recipes/build/add-build-script.md'
+        - Package my SAFE app for deployment: 'recipes/build/bundle-app.md'
+        - Support older browsers: 'recipes/build/support-older-browsers.md'
+        - Create a docker image: 'recipes/build/docker-image.md'
+      - Dev / Test:
+        - Test the Client: 'recipes/developing-and-testing/testing-the-client.md'
+        - Test the Server: 'recipes/developing-and-testing/testing-the-server.md'
+        - Debug a SAFE app: 'recipes/developing-and-testing/debug-safe-app.md'
+      - Client / Server:
+        - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
+
+      - Package Management:
+        - Migrate to Yarn from NPM: 'recipes/package-management/migrate-to-yarn.md'
+
 - Legacy SAFE Template (v1):
   - Overview: 'legacy-template-overview.md'
   - Run and Build the app: 'legacy-template-fake.md'
