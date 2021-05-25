@@ -117,7 +117,6 @@ nav:
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'
 - Legacy SAFE Template (v2):
-    - Overview: 'legacy-template-overview.md'
     - The FAKE script: 'legacy-template-fake.md'
     - V2 recipes:
       - Upgrade from V1 to V2 : 'v2-recipes/upgrading/v1-to-v2.md'
