@@ -24,7 +24,7 @@ dotnet run
 ```
 you should instead use
 ```powershell
-dotnet run -- RunTests
+dotnet run RunTests
 ```
 
 #### 2. View the results
