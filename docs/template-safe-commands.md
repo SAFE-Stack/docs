@@ -1,4 +1,4 @@
-The SAFE Stack no longer relies on FAKE.
+The SAFE Stack no longer relies on FAKE to run the app.
 
 ## **"Run"**
 ```powershell
