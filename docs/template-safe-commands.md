@@ -1,4 +1,4 @@
-The SAFE Stack no longer relies on FAKE to run the app.
+The SAFE Stack now runs FAKE using a console app rather than a script.
 
 ## **"Run"**
 ```powershell
@@ -11,7 +11,7 @@ Used for development purposes, and provides a great live-reload experience. It p
 
 ## **"Bundle"** target
 ```powershell
-dotnet run -- Bundle
+dotnet run Bundle
 ```
 
 Used to both build and package up your application in a production fashion, ready for deployment. It will restore all dependencies and build both the client and server in a production and release mode respectively, and correctly copy the outputs into the `deploy` folder in the root of the application. Once your build has completed, you can launch the entire application locally to test it as follows:
@@ -25,7 +25,7 @@ Server
 
 ## **"Azure"** target
 ```powershell
-dotnet run -- Azure
+dotnet run Azure
 ```
 
 This target will deploy your application to Azure with a fully configured Application Insights instance. **You do not need to pre-create any resources in Azure** - the template will create everything needed, using free SKUs so you can test without any costs.
@@ -38,7 +38,7 @@ This build step uses both the [Azure CLI](https://docs.microsoft.com/en-us/cli/a
 
 ## **"RunTests"** target
 ```powershell
-dotnet run -- RunTests
+dotnet run RunTests
 ```
 
 This target behaves similarly to the standard Run target, except that it launches the unit tests for both client and server.
