@@ -203,9 +203,6 @@ module.exports = {
         hot: true,
         inline: true
     },
-    // - babel-loader: transforms JS to old syntax (compatible with old browsers)
-    // - sass-loaders: transforms SASS/SCSS into JS
-    // - file-loader: Moves files referenced in the code (fonts, images) into output folder
     module: {
         rules: [
            
