@@ -49,7 +49,7 @@ nav:
   - Learn about Elmish : 'component-elmish.md'
 - The SAFE Template:
   - Overview: 'template-overview.md'
-  - The FAKE script: 'template-fake.md'
+  - Commands: 'template-safe-commands.md'
 - Features of SAFE:
   - Client / Server Sharing:
     - Sharing Overview : 'feature-clientserver.md'
@@ -65,7 +65,6 @@ nav:
   - Upgrade from V1 to V2 : 'recipes/upgrading/v1-to-v2.md'
   - Create a new Recipe: 'recipes/template.md'
   - Build:
-    - Remove FAKE from my project: 'recipes/build/remove-fake.md'
     - Add build automation: 'recipes/build/add-build-script.md'
     - Package my SAFE app for deployment: 'recipes/build/bundle-app.md'
     - Support older browsers: 'recipes/build/support-older-browsers.md'

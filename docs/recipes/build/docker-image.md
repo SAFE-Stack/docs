@@ -49,7 +49,6 @@ ENTRYPOINT [ "dotnet", "Server.dll" ]
 This uses [multistage builds](https://docs.docker.com/develop/develop-images/multistage-build/) to keep the final image small.
 
 ##### Using the minimal template?
-If you created your SAFE app using the **minimal** option, a [FAKE script](../../template-fake.md) is not included by default so you need to bundle up the client and server separately.
 
 Replace the line
 

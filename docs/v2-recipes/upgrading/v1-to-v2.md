@@ -81,7 +81,7 @@ dotnet paket install
 
 **Important** If you have made any modifications to the webpack file, you will need to apply them back in manually.
 
-* If you were using a CSS files, make sure to follow the [Stylesheet recipe](../ui/add-style.md) to add them back in.
+* If you were using a CSS files, make sure to follow the [Stylesheet recipe](../../recipes/ui/add-style.md) to add them back in.
 
 #### 8. Switch to a project for Shared files
 The v1 template used shared files to allow code reuse between the Server and Client. The v2 template now has a dedicated project for shared content.

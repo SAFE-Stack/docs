@@ -40,7 +40,7 @@ dotnet new SAFE -m
 
 | Feature | Standard | Minimal |
 |-:|:-:|:-:|
-| Styling | Fulma + Bulma | None |
+| Styling | Feliz.Bulma | None |
 | Starter App | Todo List | None |
 | Communication | Fable Remoting | Raw HTTP |
 | .NET Package Manager | Paket | NuGet |
