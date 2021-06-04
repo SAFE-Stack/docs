@@ -61,7 +61,7 @@ The exact instructions will depend on your browser, but essentially it simply in
 * Add breakpoints to it in your browser inspector.
 
 ## I'm using VS Code
-VS Code allows "full stack" debugging i.e. both F# on the client and server. Prerequisites that you should install:
+VS Code allows "full stack" debugging i.e. both the client and server. Prerequisites that you should install:
 
 #### 0. Install Prerequisites
 
@@ -92,16 +92,47 @@ The only change required is to point it at the Server application, by replacing 
 * From the Command Palette, choose `Configure Task`.
 * Select `Create tasks.json file from template`. This will show you a list of pre-configured templates.
 * Select `.NET Core`.
+* Update the build directory using `"options": {"cwd": "src/Server},` as shown below:
+
+```json
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {"cwd": "src/Server"}, 
+            "args": [
+                "build",
+                "debug-pt3.sln",
+                // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
+```
+
 
 #### 4. Debug the Server
 Either hit F5 or open the Debugging pane and press the Play button to build and launch the Server with the debugger attached.
 Observe that the Debug Console panel will show output from the server. The server is now running and you can set breakpoints and view the callstack etc.
 
 #### 5. Debug the Client
-* Start the Client using e.g. `npm run start`.
+* Start the Client using `dotnet fable watch src/Client --run webpack-dev-server`.
 * Open the Command Palette and run `Debug: Open Link`.
 * When prompted for a url, type `http://localhost:8080/`. This will launch a browser which is pointed at the URL and connect the debugger to it.
-* You can now set breakpoints in your Client within VS Code.
+* You can now set breakpoints in the generated `.fs.js` files within VS Code.
 * Select the appropriate Debug Console you wish to view.
 
 > If you find that your breakpoints aren't being hit, try stopping the Client, disconnecting the debugger and re-launching them both.
