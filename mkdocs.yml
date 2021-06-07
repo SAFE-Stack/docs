@@ -110,7 +110,9 @@ nav:
 - FAQs:
   - Moving from dev to prod : 'faq-build.md'
   - Troubleshooting : 'faq-troubleshooting.md'
-- Learning Resources: 'learning.md'
+- Learning Resources:
+    - SAFE-Compatible UI Components: 'awesome-safe-components.md'
+    - Learning: 'learning.md'
 - News: 'news.md'
 - Events: 'events.md'
 - Support: 'support.md'

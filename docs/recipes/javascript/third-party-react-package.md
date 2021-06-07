@@ -106,7 +106,7 @@ That's the bare minimum needed to get going!
 #### Next steps for Feliz
 
 Once your component is working you may want to extract out the logic so that it can be used in multiple pages of your app.
-A full detailed tutorial is in the works!
+For a full detailed tutorial head over to [this blog post](https://www.compositional-it.com/news-blog/f-wrappers-for-react-components/)!
 
 
 
