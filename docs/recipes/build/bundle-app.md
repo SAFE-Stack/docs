@@ -32,8 +32,6 @@ dotnet fable src/Client --run webpack
 
 This will build the client project and copy all outputs into `/deploy/public`.
 
-> The `run build` command run `webpack` using the Production config, and the `webpack.config.js` file specifies its `output` as `/deploy/public`.
-
 #### 2. Bundle the Server (Saturn) application
 Execute the following commands:
 
