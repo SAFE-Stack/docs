@@ -1,24 +1,20 @@
-The template uses [FAKE](https://fake.build/) to build the application.
+The SAFE Stack now runs FAKE using a console app rather than a script.
 
-Generated FAKE script contains a number of useful build targets:
-
-## **"Run"** target
+## **"Run"**
 ```powershell
-dotnet fake build --target run
+dotnet run
 ```
 
-This target is used for development purposes, and provides a great live-reload experience. It pulls down any dependencies required for both the client and server, before running both the client and server in a "watch" mode, so any changes you make on either side will be automatically applied without your needing to restart the application.
+Used for development purposes, and provides a great live-reload experience. It pulls down any dependencies required for both the client and server, before running both the client and server in a "watch" mode, so any changes you make on either side will be automatically applied without your needing to restart the application.
 
 > Navigating to `http://localhost:8080/` will load the application.
 
 ## **"Bundle"** target
 ```powershell
-dotnet fake build
+dotnet run Bundle
 ```
 
-> As Bundle is the default target, you do not need to supply any arguments to FAKE.
-
-This target is used to both build and package up your application in a production fashion, ready for deployment. It will restore all dependencies and build both the client and server in a production and release mode respectively, and correctly copy the outputs into the `deploy` folder in the root of the application. Once your build has completed, you can launch the entire application locally to test it as follows:
+Used to both build and package up your application in a production fashion, ready for deployment. It will restore all dependencies and build both the client and server in a production and release mode respectively, and correctly copy the outputs into the `deploy` folder in the root of the application. Once your build has completed, you can launch the entire application locally to test it as follows:
 
 ```powershell
 cd deploy
@@ -29,7 +25,7 @@ Server
 
 ## **"Azure"** target
 ```powershell
-dotnet fake build --target azure
+dotnet run Azure
 ```
 
 This target will deploy your application to Azure with a fully configured Application Insights instance. **You do not need to pre-create any resources in Azure** - the template will create everything needed, using free SKUs so you can test without any costs.
@@ -42,7 +38,7 @@ This build step uses both the [Azure CLI](https://docs.microsoft.com/en-us/cli/a
 
 ## **"RunTests"** target
 ```powershell
-dotnet fake build --target runtests
+dotnet run RunTests
 ```
 
 This target behaves similarly to the standard Run target, except that it launches the unit tests for both client and server.

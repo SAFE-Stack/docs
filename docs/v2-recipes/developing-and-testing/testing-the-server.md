@@ -14,11 +14,11 @@ You will find a folder in the solution named **tests**. Inside this, there is a 
 
 In order to run the tests, instead of starting your application using
 ```powershell
-dotnet run
+dotnet fake build -t run
 ```
 you should instead use
 ```powershell
-dotnet run -- RunTests
+dotnet fake build -t runtests
 ```
 This will execute the tests and print the results into the console window.
 

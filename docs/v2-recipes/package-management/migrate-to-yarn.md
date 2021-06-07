@@ -78,6 +78,6 @@ Target.create "InstallClient" (fun _ -> yarn "install --frozen-lockfile" clientP
 
 At the root of your solution you can now just run 
 ```powershell
-dotnet run
+dotnet fake build -t run
 ```
 as usual to launch both the Client and Server at the same time.
