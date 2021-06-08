@@ -144,9 +144,10 @@ let update (msg: Msg) (model: Model): Model * Cmd<Msg> =
 ##### c. Dispatch this *message* using a UI element
 
 ```fsharp
-Button.a [
-    Button.OnClick (fun _ -> dispatch DownloadFile)
-] [ str "Click to download" ]
+Html.button [
+    prop.OnClick (fun _ -> dispatch DownloadFile)
+    prop.text "Click to download" 
+]
 ```
 
 Having added this last snippet of code into the `view` function, you will be able to download the file by clicking the button that will now be displayed in your UI.
