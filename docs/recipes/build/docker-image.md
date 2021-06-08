@@ -26,7 +26,7 @@ Now, add the following lines to the `.dockerignore` file:
 Create a `Dockerfile` with the following contents:
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build
+FROM mcr.microsoft.com/dotnet/sdk:5.0 as build
 
 # Install node
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
@@ -36,10 +36,10 @@ WORKDIR /workspace
 COPY . .
 RUN dotnet tool restore
 
-RUN dotnet fake build -t Bundle
+RUN dotnet run Bundle
 
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine
 COPY --from=build /workspace/deploy /app
 WORKDIR /app
 EXPOSE 8085
@@ -53,13 +53,14 @@ This uses [multistage builds](https://docs.docker.com/develop/develop-images/mul
 Replace the line
 
 ```dockerfile
-RUN dotnet fake build -t Bundle
+RUN dotnet run Bundle
 ```
 
 with
 
 ```dockerfile
-RUN npm run build
+RUN npm install
+RUN dotnet fable src/Client --run webpack
 RUN cd src/Server && dotnet publish -c release -o ../../deploy
 ```
 
@@ -75,10 +76,8 @@ Create a `docker-compose.server.test.yml` file with the following contents:
 
 ```yml
 sut:
-  build:
-    context: .
-    target: build
-  command: cd tests/Server && dotnet run
+    build: .
+    command: cd tests/Server && dotnet run
 ```
 
 If you added tests to the **minimal template** according to the [testing the server](../developing-and-testing/testing-the-server.md) recipe, change the command to `cd src/Server.Tests && dotnet run`
@@ -102,7 +101,7 @@ This comes at the expense of making the dockerfile more complex; if any changes 
 The following should be a good starting point but is not guarenteed to work.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build
+FROM mcr.microsoft.com/dotnet/sdk:5.0 as build
 
 # Install node
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
@@ -113,8 +112,6 @@ COPY .config .config
 RUN dotnet tool restore
 COPY .paket .paket
 COPY paket.dependencies paket.lock ./
-RUN dotnet paket restore
-
 
 FROM build as server-build
 COPY src/Shared src/Shared
@@ -128,10 +125,10 @@ RUN npm install
 COPY webpack.config.js ./
 COPY src/Shared src/Shared
 COPY src/Client src/Client
-RUN npm run build
+RUN dotnet fable src/Client --run webpack
 
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim
 COPY --from=server-build /workspace/deploy /app
 COPY --from=client-build /workspace/deploy /app
 WORKDIR /app
