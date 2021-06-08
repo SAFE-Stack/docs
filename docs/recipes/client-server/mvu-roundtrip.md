@@ -45,9 +45,12 @@ let model =
 Update your view to initiate the `LoadCustomer` event. Here, we create a button that will start loading customer 42 on click:
 ```fsharp
 let view model dispatch =
-    div [] [
+    Html.div [
         // ...
-        button [ OnClick (fun _ -> dispatch (LoadCustomer 42)) ] [ str "Load Customer"]
+        Html.button [ 
+            prop.OnClick (fun _ -> dispatch (LoadCustomer 42))  
+            prop.text "Load Customer"
+        ]
     ]
 ```
 #### 5. Handle the Update
