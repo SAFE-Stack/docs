@@ -48,7 +48,7 @@ let view model dispatch =
     Html.div [
         // ...
         Html.button [ 
-            prop.OnClick (fun _ -> dispatch (LoadCustomer 42))  
+            prop.onClick (fun _ -> dispatch (LoadCustomer 42))  
             prop.text "Load Customer"
         ]
     ]
