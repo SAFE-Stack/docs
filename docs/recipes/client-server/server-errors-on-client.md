@@ -72,6 +72,6 @@ Now, if you get an exception from the Server, its message will be added to the `
 
 ```fsharp
 [ for msg in errorMessages do
-    p [] [ str msg ]
+    Html.p msg 
 ]
 ```

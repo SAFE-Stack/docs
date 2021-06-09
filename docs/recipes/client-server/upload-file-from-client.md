@@ -45,15 +45,17 @@ let handleFileEvent onLoad (fileEvent:Browser.Types.Event) =
 Insert the following block of code at the end of `FileUpload.fs`. This function will create a UI element to be used to upload files. [Click here](https://bulma.io/documentation/form/file/) to find out more about Bulma's file input component.
 
 ```fsharp
-open Fulma
+open Feliz.Bulma
 
 let createFileUpload onLoad =
-    File.file [] [
-        File.label [] [
-            File.input [
-                Props [ OnChange (handleFileEvent onLoad) ]
+    Bulma.file [
+        Bulma.fileLabel.label [
+            Bulma.fileInput [
+                prop.onChange (handleFileEvent onLoad)
             ]
-            File.cta [] [ str "Select File" ]
+            Bulma.fileCta [
+                Bulma.fileLabel.label "Choose a file..."
+            ]
         ]
     ]
 ```
@@ -66,10 +68,8 @@ Insert the following block of code at the end of `FileUpload.fs`. This function 
 
 ```fsharp
 let createFileUpload onLoad =
-    input [
-        Type "file"
-        OnChange (handleFileEvent onLoad)
-    ]
+    let input = document.createElement "INPUT"
+    input.onchange <- (handleFileEvent onLoad)
 ```
 
 ---
@@ -78,7 +78,7 @@ let createFileUpload onLoad =
 
 #### 4. Use the UI Element
 
-Having followed all these steps, you can now use the `createFileUpload` function in `Index.fs` to create the UI element for uploading files. One thing to note is that `HandleFile` is a case of the discriminated union type `Msg` that's in `Index.fs`. You can use this message case to [send the file from the client to the server](../messaging-post/).
+Having followed all these steps, you can now use the `createFileUpload` function in `Index.fs` to create the UI element for uploading files. One thing to note is that `HandleFile` is a case of the discriminated union type `Msg` that's in `Index.fs`. You can use this message case to [send the file from the client to the server](./messaging-post).
 
 ```fsharp
 FileUpload.createFileUpload (HandleFile >> dispatch)
