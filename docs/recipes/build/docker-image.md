@@ -128,7 +128,7 @@ COPY src/Client src/Client
 RUN dotnet fable src/Client --run webpack
 
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine
 COPY --from=server-build /workspace/deploy /app
 COPY --from=client-build /workspace/deploy /app
 WORKDIR /app
