@@ -8,12 +8,12 @@ When developing your SAFE application, the local runtime experience uses WebPack
 If you created your SAFE app using the recommended defaults, your application already has a FAKE script which will do the bundling for you. You can create a bundle using the following command:
 
 ```cmd
-dotnet fake build
+dotnet run Bundle
 ```
 
 This will build and package up both the client and server and place them into the `/deploy` folder at the root of the repository.
 
-> See [here](/template-fake#bundle-target) for more details on this build target.
+> See [here](/template-safe-commands) for more details on this build target.
 
 ## I'm using the minimal template
 If you created your SAFE app using the **minimal** option, you need to bundle up the client and server separately.
@@ -21,13 +21,16 @@ If you created your SAFE app using the **minimal** option, you need to bundle up
 #### 1. Bundle the Client (Fable) application
 Execute the following commands:
 
+
 ```bash
-npm run build
+npm install
+
+dotnet tool restore 
+
+dotnet fable src/Client --run webpack
 ```
 
 This will build the client project and copy all outputs into `/deploy/public`.
-
-> The `run build` command run `webpack` using the Production config, and the `webpack.config.js` file specifies its `output` as `/deploy/public`.
 
 #### 2. Bundle the Server (Saturn) application
 Execute the following commands:
