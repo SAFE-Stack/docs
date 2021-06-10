@@ -75,12 +75,18 @@ RUN cd src/Server && dotnet publish -c release -o ../../deploy
 Create a `docker-compose.server.test.yml` file with the following contents:
 
 ```yml
-sut:
-    build: .
-    command: cd tests/Server && dotnet run
+version: '3.4'
+services:
+    sut:
+        build:
+            target: build
+            context: .
+        working_dir: /workspace/tests/Server
+        command: dotnet run
 ```
+To run the tests execute the command `docker-compose -f docker-compose.server.test.yml up --build`
 
-If you added tests to the **minimal template** according to the [testing the server](../developing-and-testing/testing-the-server.md) recipe, change the command to `cd src/Server.Tests && dotnet run`
+If you added tests to the **minimal template** according to the [testing the server](../developing-and-testing/testing-the-server.md) recipe, change the `workdir` to `/workspace/src/Server.Tests`
 
 > Docker Hub can also run [automated tests](https://docs.docker.com/docker-hub/builds/automated-testing/) for you.
 
