@@ -24,7 +24,7 @@ dotnet run
 ```
 you should instead use
 ```powershell
-dotnet run runtests
+dotnet run Runtests
 ```
 
 #### 2. View the results
@@ -40,7 +40,7 @@ Once the build is complete and the website is running, navigate to `http://local
 If you are using the minimal template, you will need to first configure a test project as none are included.
 
 #### 1. Add a test project
-In the `src` folder, create a create a **.Net Standard** library called **Client.Tests**.
+In the `src` folder, create a create a **.Net** library called **Client.Tests**.
 
 ```powershell
 dotnet new ClassLib -lang F# -o src/Client.Tests
