@@ -49,7 +49,7 @@ nav:
   - Learn about Elmish : 'component-elmish.md'
 - The SAFE Template:
   - Overview: 'template-overview.md'
-  - The FAKE script: 'template-fake.md'
+  - Commands: 'template-safe-commands.md'
 - Features of SAFE:
   - Client / Server Sharing:
     - Sharing Overview : 'feature-clientserver.md'
@@ -65,7 +65,6 @@ nav:
   - Upgrade from V1 to V2 : 'recipes/upgrading/v1-to-v2.md'
   - Create a new Recipe: 'recipes/template.md'
   - Build:
-    - Remove FAKE from my project: 'recipes/build/remove-fake.md'
     - Add build automation: 'recipes/build/add-build-script.md'
     - Package my SAFE app for deployment: 'recipes/build/bundle-app.md'
     - Support older browsers: 'recipes/build/support-older-browsers.md'
@@ -116,16 +115,21 @@ nav:
 - Events: 'events.md'
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'
-- Legacy SAFE Template (v1):
-  - Overview: 'legacy-template-overview.md'
-  - Run and Build the app: 'legacy-template-fake.md'
-  - Deploy to Docker: 'legacy-template-docker.md'
-  - Deploy to App Service: 'legacy-template-appservice.md'
-  - Deploy to Google Cloud AppEngine: 'legacy-template-gcp-appengine.md'
-  - Deploy to Google Cloud Kubernetes Engine: 'legacy-template-gcp-kubernetes.md'
-  - Deploy to Heroku: 'legacy-template-heroku.md'
-  - Deploy to IIS: 'legacy-template-iis.md'
-  - Application Insights Integration: 'legacy-template-azure-ai.md'
-  - Registering with Azure: 'legacy-template-azure-registration.md'
-  - Registering with Google Cloud: 'legacy-template-google-cloud.md'
-  - Full Stack Debugging: 'legacy-feature-debugging.md'
+- Legacy SAFE Template (v2):
+    - The FAKE script: 'legacy-template-fake.md'
+    - V2 recipes:
+      - Upgrade from V1 to V2 : 'v2-recipes/upgrading/v1-to-v2.md'
+      - Build:
+        - Remove FAKE from my project: 'v2-recipes/build/remove-fake.md'
+        - Add build automation: 'v2-recipes/build/add-build-script.md'
+        - Package my SAFE app for deployment: 'v2-recipes/build/bundle-app.md'
+        - Support older browsers: 'v2-recipes/build/support-older-browsers.md'
+        - Create a docker image: 'v2-recipes/build/docker-image.md'
+      - Dev / Test:
+        - Test the Client: 'v2-recipes/developing-and-testing/testing-the-client.md'
+        - Test the Server: 'v2-recipes/developing-and-testing/testing-the-server.md'
+        - Debug a SAFE app: 'v2-recipes/developing-and-testing/debug-safe-app.md'
+      - Client / Server:
+        - Add support for Fable Remoting: 'v2-recipes/client-server/fable-remoting.md'
+      - Package Management:
+        - Migrate to Yarn from NPM: 'v2-recipes/package-management/migrate-to-yarn.md'

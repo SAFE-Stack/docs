@@ -1,7 +1,7 @@
 This page explains the key differences that you should be aware of between running SAFE applications in development and production.
 
 ## Developing SAFE applications
-The SAFE template is geared towards a streamlined development process. Firstly, it contains a [FAKE build script](template-fake.md) which you can use to quickly download dependencies, as well as build and run both the client and server on your machine.
+The SAFE template is geared towards a streamlined development process. It builds and runs both the client and server on your machine.
 
 The development process uses *two web servers* running in tandem:
 

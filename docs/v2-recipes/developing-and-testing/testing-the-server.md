@@ -14,11 +14,11 @@ You will find a folder in the solution named **tests**. Inside this, there is a 
 
 In order to run the tests, instead of starting your application using
 ```powershell
-dotnet run
+dotnet fake build -t run
 ```
 you should instead use
 ```powershell
-dotnet run RunTests
+dotnet fake build -t runtests
 ```
 This will execute the tests and print the results into the console window.
 
@@ -76,7 +76,7 @@ There are now two ways to run these tests.
 
 From the command line, you can just run
 ```powershell
-dotnet test src/Server.Tests
+dotnet test
 ```
 from the root of your solution.
 
@@ -90,10 +90,12 @@ If you are using the minimal template, you will need to first configure a test p
 
 #### 1. Add a test project
 
-Create a **.Net 5** library called **Server.Tests** in the src folder.
+In the `src` folder, create a create a **.Net Core** library called **Server.Tests**.
 
 ```powershell
-dotnet new console -lang F# -o src/Server.Tests
+cd src
+dotnet new console -lang F# -o Server.Tests
+cd ..
 dotnet sln add src/Server.Tests
 ```
 
@@ -102,7 +104,7 @@ dotnet sln add src/Server.Tests
 Reference the Server project from the Server.Tests project:
 
 ```powershell
-dotnet add src/Server.Tests reference src/Server
+dotnet add Server.Tests reference Server
 ```
 
 #### 3. Add Expecto to the Test project
@@ -110,7 +112,17 @@ dotnet add src/Server.Tests reference src/Server
 Run the following command:
 
 ```powershell
-dotnet add src/Server.Tests package Expecto
+dotnet add Server.Tests package Expecto
+```
+
+You will see a warning that a Program.fs file might be generated which will need deleting, so do that if necessary.
+
+You can prevent this reoccuring by adding an entry to your test project file:
+
+```xml
+<PropertyGroup>
+    <GenerateProgramFile>false</GenerateProgramFile>
+</PropertyGroup>
 ```
 
 #### 4. Add something to test
@@ -127,9 +139,11 @@ let webApp =
 
 #### 5. Add a test
 
-Replace the contents of `Program.fs` with the following:
+Delete the Library.fs file in your test project and replace it with a new file called `Tests.fs`. Add the following code to it:
 
 ``` fsharp
+module Server.Tests
+
 open Expecto
 
 let server = testList "Server" [
@@ -145,8 +159,9 @@ let main _ = runTests defaultConfig server
 
 #### 6. Run the test
 
+Navigate to the Test project directory and execute it using
 ```powershell
-dotnet run -p src/Server.Tests
+dotnet run
 ```
 
 This will print out the results in the console window
@@ -158,11 +173,11 @@ This will print out the results in the console window
 Navigate to the Test project directory and add the test runners using the following commands:
 
 ```powershell
-dotnet add src/Server.Tests package Microsoft.NET.Test.Sdk
+dotnet add package Microsoft.NET.Test.Sdk
 ```
 and
 ```powershell
-dotnet add src/Server.Tests package YoloDev.Expecto.TestSdk
+dotnet add package YoloDev.Expecto.TestSdk
 ```
 
 You can now add `[<Test>]` attributes to your tests so that they can be discovered, and then run them using the dotnet tooling in the same way as explained earlier for the standard template.
