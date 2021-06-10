@@ -212,7 +212,7 @@ You can now cut the `Build.fsproj`, `Build.fs` and `Helpers.fs` files and paste 
 Run the following command
 
 ```bash
-dotnet sln add Build.fs
+dotnet sln add Build.fsproj
 ```
 
 #### 6. Convert to Paket
