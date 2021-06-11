@@ -6,27 +6,18 @@ If you would prefer not to use FAKE, you can of course simply ignore it, but thi
 > Note that the minimal template does not use FAKE by default, and **this recipe only applies to the standard template**.
 
 #### 1. Build project
-Delete `Build.fs`, `Build.fsproj`, `Helpers.fs` at the root of the solution.
+Delete `Build.fs`, `Build.fsproj`, `Helpers.fs`, `paket.references` at the root of the solution.
 #### 2. Dependencies
 Find the following dependencies inside the `paket.dependencies` file that’s also at the root of the solution and delete them.
+Remove the following dependencies 
 ```fsharp
-nuget Fake.Core.Target
-nuget Fake.IO.FileSystem
-nuget Farmer
+dotnet paket remove Fake.Core.Target
+dotnet paket remove Fake.IO.FileSystem
+dotnet paket remove Farmer
 ```
-
-Also remove the `paket.references` at the root of the solution which should contain:
-```
-Fake.Core.Target
-Fake.IO.FileSystem
-Farmer
-```
-
-#### 3. Paket Install
-Then, execute `paket install` in your terminal at the root of the solution. This will remove the dependencies that the Build project was using.
 
 ## Running the App
-Now that you have FAKE removed, you will have to separately run the server and the client.
+Now that you have the FAKE dependencies removed, you will have to separately run the server and the client.
 #### 1. Start the Client
 
 Execute the following commands inside a terminal *at the root of the solution*.
