@@ -27,8 +27,6 @@ Open it and paste in the following code.
 ```fsharp
 open Fake.Core
 open Fake.IO
-open Farmer
-open Farmer.Builders
 
 open Helpers
 
@@ -43,27 +41,6 @@ Target.create "Clean" (fun _ -> Shell.cleanDir deployPath)
 
 Target.create "InstallClient" (fun _ -> run npm "install" ".")
 
-Target.create "Bundle" (fun _ ->
-    [ "server", dotnet $"publish -c Release -o \"{deployPath}\"" serverPath
-      "client", dotnet "fable --run webpack -p" clientPath ]
-    |> runParallel
-)
-
-Target.create "Azure" (fun _ ->
-    let web = webApp {
-        name "full"
-        zip_deploy "deploy"
-    }
-    let deployment = arm {
-        location Location.WestEurope
-        add_resource web
-    }
-
-    deployment
-    |> Deploy.execute "full" Deploy.NoParameters
-    |> ignore
-)
-
 Target.create "Run" (fun _ ->
     run dotnet "build" sharedPath
     [ "server", dotnet "watch run" serverPath
@@ -74,10 +51,6 @@ Target.create "Run" (fun _ ->
 open Fake.Core.TargetOperators
 
 let dependencies = [
-    "Clean"
-        ==> "InstallClient"
-        ==> "Bundle"
-        ==> "Azure"
 
     "Clean"
         ==> "InstallClient"
@@ -214,43 +187,24 @@ Run the following command
 ```bash
 dotnet sln add Build.fsproj
 ```
+#### 6. Installing dependencies
 
-#### 6. Convert to Paket
-
-Before moving on, we recommend migrating to [Paket](https://fsprojects.github.io/Paket/). In fact, **this is a prerequisite for this recipe**. It is possible to use FAKE without Paket by creating an executable instead of a script file, however this will not be covered in this recipe.
-
-If you’re *not* using Paket to handle your dependencies, go through the [Migrate to Paket](../../package-management/migrate-to-paket) recipe before continuing.
-
-#### 7. Update the build dependencies
-
-Paste the following at the end of your `paket.dependencies` file, which is at the root of the solution.
-```
-nuget Fake.Core.Target
-nuget Fake.IO.FileSystem
-nuget Farmer
-```
-
-#### 8. Update the build project's references
-
-Open the `paket.references` file that was generated for the `Build` project at the root of the solution.
-
-Add the following lines:
+You will need to install the following dependencies:
 
 ```
 Fake.Core.Target
 Fake.IO.FileSystem
-Farmer
 ```
 
-#### 9. Build and deploy the app
+We recommend migrating to [Paket](https://fsprojects.github.io/Paket/).
+It is possible to use FAKE without Paket by creating an executable instead of a script file, however this will not be covered in this recipe.
+
+#### 7. Run the app
 
 At the root of the solution, `dotnet paket install` to install all your dependencies.
 
 If you now execute `dotnet run`, the default target will be run. This will build the app in development mode and launch it locally.
 
-If you execute `dotnet run Azure` then the app will be bundled for production and deployed to Azure using [Farmer](https://compositionalit.github.io/farmer/).
-
 
 To learn more about targets and FAKE in general, see [Getting Started with FAKE](https://fake.build/fake-gettingstarted.html#Minimal-example).
 
-To learn more about customising your Azure deployment, see the Farmer [quickstart guides](https://compositionalit.github.io/farmer/quickstarts/).
