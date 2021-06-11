@@ -18,7 +18,11 @@ dotnet paket remove Farmer
 
 ## Running the App
 Now that you have the FAKE dependencies removed, you will have to separately run the server and the client.
-#### 1. Start the Client
+
+#### 1. Start the Server
+Navigate to `src/Server` inside a terminal and execute `dotnet run`.
+
+#### 2. Start the Client
 
 Execute the following commands inside a terminal *at the root of the solution*.
 
@@ -28,8 +32,6 @@ npm install
 dotnet fable src/Client --run webpack-dev-server
 ``` 
 
-#### 2. Start the Server
-Navigate to `src/Server` inside a terminal and execute `dotnet run`.
 
 ---
 
