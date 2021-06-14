@@ -26,7 +26,7 @@ open System
 let redirect createProcess =
     createProcess
     |> CreateProcess.redirectOutputIfNotRedirected
-    |> CreateProcess.withOutputEvents (Console.WriteLine) (Console.WriteLine)
+    |> CreateProcess.withOutputEvents Console.WriteLine Console.WriteLine
 
 let createProcess exe arg dir =
     CreateProcess.fromRawCommandLine exe arg
