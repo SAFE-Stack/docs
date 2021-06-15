@@ -16,7 +16,13 @@ dotnet new console -lang f# -n Build
 
 #### 2. Create a build script
 
-In the generated folder open the `Program.fs` and paste in the following code.
+Open the generated folder.
+
+Open the project in your IDE and rename the file `Program.fs` to `Build.fs`.
+
+> If you just rename the file directly rather than in your IDE, then the Build project won't be able to find it unless you edit the Build.fsproj file as well
+
+Open `Build.fs` and paste in the following code.
 
 ```fsharp
 open Fake.Core
@@ -86,7 +92,7 @@ let main args =
 
 #### 3. Move the files
 
-You can now cut the `Build.fsproj`, `Program.fs` files and paste them in the root of your solution, then delete the Build folder as it is no longer needed.
+You can now cut the `Build.fsproj` and `Build.fs` files and paste them in the root of your solution, then delete the Build folder as it is no longer needed.
 
 > This is to allow us to execute `dotnet run` at the root of the solution rather than navigating into a `Build` subfolder.
 
