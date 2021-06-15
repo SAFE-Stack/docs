@@ -11,14 +11,14 @@
 Create a new console app called 'Build' at the root of your solution
 
 ```fsharp
-dotnet new console -lang f# -n Build
+dotnet new console -lang f# -n Build -o .
 ```
+
+> We are creating the project directly at the root of the solution in order to allow us to execute the build without needing to navigate into a subfolder.
 
 #### 2. Create a build script
 
-Open the generated folder.
-
-Open the project in your IDE and rename the file `Program.fs` to `Build.fs`.
+Open the project you just created in your IDE and rename the module it contains from `Program.fs` to `Build.fs`.
 
 This renaming is't explicitly necessary, however it keeps your solution consistent with other SAFE apps and is a better name for the file really.
 
@@ -92,20 +92,14 @@ let main args =
       1
 ```
 
-#### 3. Move the files
-
-You can now cut the `Build.fsproj` and `Build.fs` files and paste them in the root of your solution, then delete the Build folder as it is no longer needed.
-
-> This is to allow us to execute `dotnet run` at the root of the solution rather than navigating into a `Build` subfolder.
-
-#### 4. Add the project to the solution
+#### 3. Add the project to the solution
 
 Run the following command
 
 ```bash
 dotnet sln add Build.fsproj
 ```
-#### 5. Installing dependencies
+#### 4. Installing dependencies
 
 You will need to install the following dependencies:
 
@@ -117,7 +111,7 @@ Fake.IO.FileSystem
 We recommend migrating to [Paket](https://fsprojects.github.io/Paket/).
 It is possible to use FAKE without Paket, however this will not be covered in this recipe.
 
-#### 6. Run the app
+#### 5. Run the app
 
 At the root of the solution, run `dotnet paket install` to install all your dependencies.
 
