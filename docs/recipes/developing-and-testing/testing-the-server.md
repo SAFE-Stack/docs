@@ -155,14 +155,9 @@ This will print out the results in the console window
 
 #### 7. Using dotnet test or the Visual Studio Test Explorer
 
-Navigate to the Test project directory and add the test runners using the following commands:
+Add the libraries `Microsoft.NET.Test.Sdk` and `YoloDev.Expecto.TestSdk` to your Test project, using nuget.
 
-```powershell
-dotnet add src/Server.Tests package Microsoft.NET.Test.Sdk
-```
-and
-```powershell
-dotnet add src/Server.Tests package YoloDev.Expecto.TestSdk
-```
+
+> The way you do this will depend on whether you are using nuget directly or via Paket. See [this recipe](..\package-management\add-nuget-package-to-server.md) for more details.
 
 You can now add `[<Test>]` attributes to your tests so that they can be discovered, and then run them using the dotnet tooling in the same way as explained earlier for the standard template.
