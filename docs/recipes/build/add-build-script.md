@@ -20,6 +20,8 @@ Open the generated folder.
 
 Open the project in your IDE and rename the file `Program.fs` to `Build.fs`.
 
+This renaming is't explicitly necessary, however it keeps your solution consistent with other SAFE apps and is a better name for the file really.
+
 > If you just rename the file directly rather than in your IDE, then the Build project won't be able to find it unless you edit the Build.fsproj file as well
 
 Open `Build.fs` and paste in the following code.
