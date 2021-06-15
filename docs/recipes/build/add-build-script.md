@@ -113,14 +113,13 @@ Fake.IO.FileSystem
 ```
 
 We recommend migrating to [Paket](https://fsprojects.github.io/Paket/).
-It is possible to use FAKE without Paket by creating an executable instead of a script file, however this will not be covered in this recipe.
+It is possible to use FAKE without Paket, however this will not be covered in this recipe.
 
 #### 6. Run the app
 
-At the root of the solution, `dotnet paket install` to install all your dependencies.
+At the root of the solution, run `dotnet paket install` to install all your dependencies.
 
 If you now execute `dotnet run`, the default target will be run. This will build the app in development mode and launch it locally.
-
 
 To learn more about targets and FAKE in general, see [Getting Started with FAKE](https://fake.build/fake-gettingstarted.html#Minimal-example).
 
