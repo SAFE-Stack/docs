@@ -218,13 +218,13 @@ function resolve(filePath) {
 #### 8. Install the client's dependencies
 
 ```powershell
- npm install
+npm install
 ```
 
 #### 9. Launch the test website
 
 ```powershell
- dotnet fable watch src/Client --run webpack-dev-server --config webpack.tests.config
+dotnet fable watch src/Client --run webpack-dev-server --config webpack.tests.config
 ```
 
 
