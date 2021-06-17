@@ -16,6 +16,7 @@ In order to run the tests, instead of starting your application using
 ```powershell
 dotnet run
 ```
+
 you should instead use
 ```powershell
 dotnet run RunTests
