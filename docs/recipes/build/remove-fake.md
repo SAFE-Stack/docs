@@ -7,8 +7,8 @@ If you would prefer not to use FAKE, you can of course simply ignore it, but thi
 
 #### 1. Build project
 Delete `Build.fs`, `Build.fsproj`, `Helpers.fs`, `paket.references` at the root of the solution.
+
 #### 2. Dependencies
-Find the following dependencies inside the `paket.dependencies` file that’s also at the root of the solution and delete them.
 Remove the following dependencies 
 ```fsharp
 dotnet paket remove Fake.Core.Target
@@ -32,7 +32,6 @@ npm install
 dotnet fable src/Client --run webpack-dev-server
 ``` 
 
-
 ---
 
 The app will now be running at `http://0.0.0.0:8080/`. Navigate to this address in a browser to see your app running.
@@ -41,5 +40,3 @@ The app will now be running at `http://0.0.0.0:8080/`. Navigate to this address 
 See [this guide](../build/bundle-app.md#2-im-using-the-minimal-template) to learn how to package a SAFE application for deployment to e.g. Azure.
 
 ---
-
-You can now find the outcome of the bundling process in the `deploy` folder at the root of the solution.
