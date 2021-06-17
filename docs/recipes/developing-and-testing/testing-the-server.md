@@ -159,6 +159,6 @@ This will print out the results in the console window
 Add the libraries `Microsoft.NET.Test.Sdk` and `YoloDev.Expecto.TestSdk` to your Test project, using nuget.
 
 
-> The way you do this will depend on whether you are using nuget directly or via Paket. See [this recipe](..\package-management\add-nuget-package-to-server.md) for more details.
+> The way you do this will depend on whether you are using nuget directly or via Paket. See [this recipe](../package-management/add-nuget-package-to-server.md) for more details.
 
 You can now add `[<Test>]` attributes to your tests so that they can be discovered, and then run them using the dotnet tooling in the same way as explained earlier for the standard template.
