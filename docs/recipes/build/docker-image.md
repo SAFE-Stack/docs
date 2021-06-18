@@ -86,11 +86,11 @@ services:
 ```
 To run the tests execute the command `docker-compose -f docker-compose.server.test.yml up --build`
 
-If you added tests to the **minimal template** according to the [testing the server](../developing-and-testing/testing-the-server.md) recipe, change the `workdir` to `/workspace/src/Server.Tests`
+You can add server tests to the **minimal template** with the [testing the server](../developing-and-testing/testing-the-server.md) recipe.
+
+> The template is not currently setup for automating the client tests in ci.
 
 > Docker Hub can also run [automated tests](https://docs.docker.com/docker-hub/builds/automated-testing/) for you.
-
-> The template is not currently setup for automating the client tests.
 
 > Follow [the instructions to enable Autotest](https://docs.docker.com/docker-hub/builds/automated-testing/#enable-automated-tests-on-a-repository) on docker hub.
 
