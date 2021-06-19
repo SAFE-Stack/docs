@@ -10,7 +10,7 @@ In this guide we will look at using **Expecto**, as this is included with the st
 
 If you are using the standard template, then there is nothing more you need to do in order to start testing your Server code.
 
-You will find a folder in the solution named **tests**. Inside this, there is a project named **Server.Tests** that contains a single script demonstrating how to use Expecto to test the TODO sample.
+In the tests/Server folder, there is a project named **Server.Tests** with a single script demonstrating how to use Expecto to test the TODO sample.
 
 In order to run the tests, instead of starting your application using
 ```powershell
@@ -25,7 +25,7 @@ This will execute the tests and print the results into the console window.
 
 <img src="../../../img/expecto-results.png"/>
 
-> This method builds and runs the Client test project too, which can be slow. If you want to run the Server tests alone, you can simply navigate to the Server.Tests directory and run the project using `dotnet run`.
+> This method builds and runs the Client test project too, which can be slow. If you want to run the Server tests alone, you can simply navigate to the tests/Server directory and run the project using `dotnet run`.
 
 ### Using dotnet test or the Visual Studio Test runner 
 
@@ -77,7 +77,7 @@ There are now two ways to run these tests.
 
 From the command line, you can just run
 ```powershell
-dotnet test src/Server.Tests
+dotnet test tests/Server
 ```
 from the root of your solution.
 
@@ -91,11 +91,11 @@ If you are using the minimal template, you will need to first configure a test p
 
 #### 1. Add a test project
 
-Create a **.Net 5** library called **Server.Tests** in the src folder.
+Create a **.Net 5** console project called **Server.Tests** in the tests/Server folder.
 
 ```powershell
-dotnet new console -lang F# -o src/Server.Tests
-dotnet sln add src/Server.Tests
+dotnet new console -lang F# -n Server.Tests -o tests/Server
+dotnet sln add tests/Server
 ```
 
 #### 2. Reference the Server project
@@ -103,7 +103,7 @@ dotnet sln add src/Server.Tests
 Reference the Server project from the Server.Tests project:
 
 ```powershell
-dotnet add src/Server.Tests reference src/Server
+dotnet add tests/Server reference src/Server
 ```
 
 #### 3. Add Expecto to the Test project
@@ -111,7 +111,7 @@ dotnet add src/Server.Tests reference src/Server
 Run the following command:
 
 ```powershell
-dotnet add src/Server.Tests package Expecto
+dotnet add tests/Server package Expecto
 ```
 
 #### 4. Add something to test
@@ -128,7 +128,7 @@ let webApp =
 
 #### 5. Add a test
 
-Replace the contents of `Program.fs` with the following:
+Replace the contents of `tests/Server/Program.fs` with the following:
 
 ``` fsharp
 open Expecto
@@ -147,7 +147,7 @@ let main _ = runTests defaultConfig server
 #### 6. Run the test
 
 ```powershell
-dotnet run -p src/Server.Tests
+dotnet run -p tests/Server
 ```
 
 This will print out the results in the console window
