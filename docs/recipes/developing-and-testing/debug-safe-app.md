@@ -92,7 +92,7 @@ The only change required is to point it at the Server application, by replacing 
 * From the Command Palette, choose `Configure Task`.
 * Select `Create tasks.json file from template`. This will show you a list of pre-configured templates.
 * Select `.NET Core`.
-* Update the build directory using `"options": {"cwd": "src/Server},` as shown below:
+* Update the build directory using `"options": {"cwd": "src/Server"},` as shown below:
 
 ```json
 {
