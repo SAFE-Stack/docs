@@ -1,88 +1,121 @@
-# How do I add a build script to the project?
+# How do I add build automation to the project?
 
 ## FAKE
 [Fake](https://fake.build/) is a DSL for build tasks that is modular, extensible and easy to start with. Fake allows you to easily build, bundle, deploy your app and more by executing a single command.
 
-> The standard template comes [with a FAKE script](../../../template-fake) by default, and **this recipe only applies to the minimal template**.
-
-## Paket
-Before moving on, we recommend migrating to [Paket](https://fsprojects.github.io/Paket/). In fact, **this is a prerequisite for this recipe**. It is possible to use FAKE without Paket by creating an executable instead of a script file, however this will not be covered in this recipe.
-
-If you’re *not* using Paket to handle your dependencies, go through the [Migrate to Paket](../../package-management/migrate-to-paket) recipe before continuing.
+> The standard template comes [with a FAKE project](../../../template-safe-commands) by default, so **this recipe only applies to the minimal template**.
 
 ---
-#### 1. The Build Dependencies
-Paste the following at the end of your `paket.dependencies` file, which is at the root of the solution.
-```
-group Build
-    source https://api.nuget.org/v3/index.json
-    framework: netstandard2.0
-    storage: none
+#### 1. Create a build project
 
-    nuget FSharp.Core
-    nuget Fake.Core.Target
-    nuget Fake.DotNet.Cli
-    nuget Fake.IO.FileSystem
-```
-Then, execute `paket install` to install these dependencies.
+Create a new console app called 'Build' at the root of your solution
 
-#### 2. Fake CLI Tool
-Run the following commands at the root folder of your solution to install FAKE as a local tool:
-```bash
-dotnet tool install fake-cli
-dotnet tool restore
-```
-
-#### 3. The Build Script
-Add an F# script file to the root folder of your solution named `build.fsx` and paste the following code into it.
-The script builds and publishes the client and server applications in their production / release modes, and copies the outputs of both into a `deploy` folder at the root of the repository.
-
-To learn more about targets and FAKE in general, see [Getting Started with FAKE](https://fake.build/fake-gettingstarted.html#Minimal-example).
 ```fsharp
-#r "paket: groupref build //"
-#load "./.fake/build.fsx/intellisense.fsx"
-#r "netstandard"
+dotnet new console -lang f# -n Build -o .
+```
 
+> We are creating the project directly at the root of the solution in order to allow us to execute the build without needing to navigate into a subfolder.
+
+#### 2. Create a build script
+
+Open the project you just created in your IDE and rename the module it contains from `Program.fs` to `Build.fs`.
+
+This renaming is't explicitly necessary, however it keeps your solution consistent with other SAFE apps and is a better name for the file really.
+
+> If you just rename the file directly rather than in your IDE, then the Build project won't be able to find it unless you edit the Build.fsproj file as well
+
+Open `Build.fs` and paste in the following code.
+
+```fsharp
 open Fake.Core
-open Fake.Core.TargetOperators
-open Fake.DotNet
 open Fake.IO
+open System
 
-Target.initEnvironment ()
+let redirect createProcess =
+    createProcess
+    |> CreateProcess.redirectOutputIfNotRedirected
+    |> CreateProcess.withOutputEvents Console.WriteLine Console.WriteLine
 
-let serverPath = Path.getFullName "./src/Server"
-let clientPath = Path.getFullName "./src/Client"
-let deployDir = Path.getFullName "./deploy"
-
-let npm args workingDir =
-    let npmPath = ProcessUtils.tryFindFileOnPath "npm" |> Option.get
-    let arguments = args |> String.split ' ' |> Arguments.OfArgs
-
-    Command.RawCommand (npmPath, arguments)
-    |> CreateProcess.fromCommand
-    |> CreateProcess.withWorkingDirectory workingDir
+let createProcess exe arg dir =
+    CreateProcess.fromRawCommandLine exe arg
+    |> CreateProcess.withWorkingDirectory dir
     |> CreateProcess.ensureExitCode
+
+let dotnet = createProcess "dotnet"
+
+let npm =
+    let npmPath =
+        match ProcessUtils.tryFindFileOnPath "npm" with
+        | Some path -> path
+        | None -> failwith "npm was not found in path."
+    createProcess npmPath
+
+let run proc arg dir =
+    proc arg dir
     |> Proc.run
     |> ignore
 
-let dotnet cmd workingDir = DotNet.exec (DotNet.Options.withWorkingDirectory workingDir) cmd ""
+let execContext = Context.FakeExecutionContext.Create false "build.fsx" [ ]
+Context.setExecutionContext (Context.RuntimeContext.Fake execContext)
 
-Target.create "Bundle" (fun _ ->
-    Shell.cleanDir deployDir
-    npm "install" clientPath
-    dotnet (sprintf "publish -c Release -o \"%s\"" deployDir) serverPath
-    npm "run build" clientPath
+Target.create "Clean" (fun _ -> Shell.cleanDir (Path.getFullName "deploy"))
+
+Target.create "InstallClient" (fun _ -> run npm "install" ".")
+
+Target.create "Run" (fun _ ->
+    run dotnet "build" (Path.getFullName "src/Shared")
+    [ dotnet "watch run" (Path.getFullName "src/Server")
+      dotnet "fable watch --run webpack-dev-server" (Path.getFullName "src/Client") ]
+    |> Seq.toArray
+    |> Array.map redirect
+    |> Array.Parallel.map Proc.run
+    |> ignore
 )
 
-"Clean"
-    ==> "InstallClient"
-    ==> "Bundle"
+open Fake.Core.TargetOperators
 
-Target.runOrDefaultWithArguments "Bundle"
+let dependencies = [
+    "Clean"
+        ==> "InstallClient"
+        ==> "Run"
+]
+
+[<EntryPoint>]
+let main args =
+  try
+      match args with
+      | [| target |] -> Target.runOrDefault target
+      | _ -> Target.runOrDefault "Run"
+      0
+  with e ->
+      printfn "%A" e
+      1
 ```
 
-#### 4. Build the Application
-You can now build your application by running the following command at the root directory of your solution:
-```powershell
-dotnet fake build
+#### 3. Add the project to the solution
+
+Run the following command
+
+```bash
+dotnet sln add Build.fsproj
 ```
+#### 4. Installing dependencies
+
+You will need to install the following dependencies:
+
+```
+Fake.Core.Target
+Fake.IO.FileSystem
+```
+
+We recommend migrating to [Paket](https://fsprojects.github.io/Paket/).
+It is possible to use FAKE without Paket, however this will not be covered in this recipe.
+
+#### 5. Run the app
+
+At the root of the solution, run `dotnet paket install` to install all your dependencies.
+
+If you now execute `dotnet run`, the default target will be run. This will build the app in development mode and launch it locally.
+
+To learn more about targets and FAKE in general, see [Getting Started with FAKE](https://fake.build/fake-gettingstarted.html#Minimal-example).
+

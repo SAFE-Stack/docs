@@ -10,22 +10,21 @@ In this guide we will look at using **Expecto**, as this is included with the st
 
 If you are using the standard template, then there is nothing more you need to do in order to start testing your Server code.
 
-In the tests/Server folder, there is a project named **Server.Tests** with a single script demonstrating how to use Expecto to test the TODO sample.
+You will find a folder in the solution named **tests**. Inside this, there is a project named **Server.Tests** that contains a single script demonstrating how to use Expecto to test the TODO sample.
 
 In order to run the tests, instead of starting your application using
 ```powershell
-dotnet run
+dotnet fake build -t run
 ```
-
 you should instead use
 ```powershell
-dotnet run RunTests
+dotnet fake build -t runtests
 ```
 This will execute the tests and print the results into the console window.
 
 <img src="../../../img/expecto-results.png"/>
 
-> This method builds and runs the Client test project too, which can be slow. If you want to run the Server tests alone, you can simply navigate to the tests/Server directory and run the project using `dotnet run`.
+> This method builds and runs the Client test project too, which can be slow. If you want to run the Server tests alone, you can simply navigate to the Server.Tests directory and run the project using `dotnet run`.
 
 ### Using dotnet test or the Visual Studio Test runner 
 
@@ -77,7 +76,7 @@ There are now two ways to run these tests.
 
 From the command line, you can just run
 ```powershell
-dotnet test tests/Server
+dotnet test
 ```
 from the root of your solution.
 
@@ -91,11 +90,13 @@ If you are using the minimal template, you will need to first configure a test p
 
 #### 1. Add a test project
 
-Create a **.Net 5** console project called **Server.Tests** in the tests/Server folder.
+In the `src` folder, create a create a **.Net Core** library called **Server.Tests**.
 
 ```powershell
-dotnet new console -lang F# -n Server.Tests -o tests/Server
-dotnet sln add tests/Server
+cd src
+dotnet new console -lang F# -o Server.Tests
+cd ..
+dotnet sln add src/Server.Tests
 ```
 
 #### 2. Reference the Server project
@@ -103,7 +104,7 @@ dotnet sln add tests/Server
 Reference the Server project from the Server.Tests project:
 
 ```powershell
-dotnet add tests/Server reference src/Server
+dotnet add Server.Tests reference Server
 ```
 
 #### 3. Add Expecto to the Test project
@@ -111,7 +112,17 @@ dotnet add tests/Server reference src/Server
 Run the following command:
 
 ```powershell
-dotnet add tests/Server package Expecto
+dotnet add Server.Tests package Expecto
+```
+
+You will see a warning that a Program.fs file might be generated which will need deleting, so do that if necessary.
+
+You can prevent this reoccuring by adding an entry to your test project file:
+
+```xml
+<PropertyGroup>
+    <GenerateProgramFile>false</GenerateProgramFile>
+</PropertyGroup>
 ```
 
 #### 4. Add something to test
@@ -128,9 +139,11 @@ let webApp =
 
 #### 5. Add a test
 
-Replace the contents of `tests/Server/Program.fs` with the following:
+Delete the Library.fs file in your test project and replace it with a new file called `Tests.fs`. Add the following code to it:
 
 ``` fsharp
+module Server.Tests
+
 open Expecto
 
 let server = testList "Server" [
@@ -146,8 +159,9 @@ let main _ = runTests defaultConfig server
 
 #### 6. Run the test
 
+Navigate to the Test project directory and execute it using
 ```powershell
-dotnet run -p tests/Server
+dotnet run
 ```
 
 This will print out the results in the console window
@@ -156,9 +170,14 @@ This will print out the results in the console window
 
 #### 7. Using dotnet test or the Visual Studio Test Explorer
 
-Add the libraries `Microsoft.NET.Test.Sdk` and `YoloDev.Expecto.TestSdk` to your Test project, using nuget.
+Navigate to the Test project directory and add the test runners using the following commands:
 
-
-> The way you do this will depend on whether you are using nuget directly or via Paket. See [this recipe](../package-management/add-nuget-package-to-server.md) for more details.
+```powershell
+dotnet add package Microsoft.NET.Test.Sdk
+```
+and
+```powershell
+dotnet add package YoloDev.Expecto.TestSdk
+```
 
 You can now add `[<Test>]` attributes to your tests so that they can be discovered, and then run them using the dotnet tooling in the same way as explained earlier for the standard template.

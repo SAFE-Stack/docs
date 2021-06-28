@@ -26,7 +26,7 @@ Now, add the following lines to the `.dockerignore` file:
 Create a `Dockerfile` with the following contents:
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/sdk:5.0 as build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build
 
 # Install node
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
@@ -36,10 +36,10 @@ WORKDIR /workspace
 COPY . .
 RUN dotnet tool restore
 
-RUN dotnet run Bundle
+RUN dotnet fake build -t Bundle
 
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
 COPY --from=build /workspace/deploy /app
 WORKDIR /app
 EXPOSE 8085
@@ -49,18 +49,18 @@ ENTRYPOINT [ "dotnet", "Server.dll" ]
 This uses [multistage builds](https://docs.docker.com/develop/develop-images/multistage-build/) to keep the final image small.
 
 ##### Using the minimal template?
+If you created your SAFE app using the **minimal** option, a [FAKE script](../../legacy-template-fake.md) is not included by default so you need to bundle up the client and server separately.
 
 Replace the line
 
 ```dockerfile
-RUN dotnet run Bundle
+RUN dotnet fake build -t Bundle
 ```
 
 with
 
 ```dockerfile
-RUN npm install
-RUN dotnet fable src/Client --run webpack
+RUN npm run build
 RUN cd src/Server && dotnet publish -c release -o ../../deploy
 ```
 
@@ -75,22 +75,18 @@ RUN cd src/Server && dotnet publish -c release -o ../../deploy
 Create a `docker-compose.server.test.yml` file with the following contents:
 
 ```yml
-version: '3.4'
-services:
-    sut:
-        build:
-            target: build
-            context: .
-        working_dir: /workspace/tests/Server
-        command: dotnet run
+sut:
+  build:
+    context: .
+    target: build
+  command: cd tests/Server && dotnet run
 ```
-To run the tests execute the command `docker-compose -f docker-compose.server.test.yml up --build`
 
-You can add server tests to the **minimal template** with the [testing the server](../developing-and-testing/testing-the-server.md) recipe.
-
-> The template is not currently setup for automating the client tests in ci.
+If you added tests to the **minimal template** according to the [testing the server](../developing-and-testing/testing-the-server.md) recipe, change the command to `cd src/Server.Tests && dotnet run`
 
 > Docker Hub can also run [automated tests](https://docs.docker.com/docker-hub/builds/automated-testing/) for you.
+
+> The template is not currently setup for automating the client tests.
 
 > Follow [the instructions to enable Autotest](https://docs.docker.com/docker-hub/builds/automated-testing/#enable-automated-tests-on-a-repository) on docker hub.
 
@@ -107,7 +103,7 @@ This comes at the expense of making the dockerfile more complex; if any changes 
 The following should be a good starting point but is not guarenteed to work.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/sdk:5.0 as build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build
 
 # Install node
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
@@ -118,6 +114,8 @@ COPY .config .config
 RUN dotnet tool restore
 COPY .paket .paket
 COPY paket.dependencies paket.lock ./
+RUN dotnet paket restore
+
 
 FROM build as server-build
 COPY src/Shared src/Shared
@@ -131,10 +129,10 @@ RUN npm install
 COPY webpack.config.js ./
 COPY src/Shared src/Shared
 COPY src/Client src/Client
-RUN dotnet fable src/Client --run webpack
+RUN npm run build
 
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
 COPY --from=server-build /workspace/deploy /app
 COPY --from=client-build /workspace/deploy /app
 WORKDIR /app

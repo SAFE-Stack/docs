@@ -9,7 +9,7 @@ Simply put, a [polyfill](https://developer.mozilla.org/en-US/docs/Glossary/Polyf
 First, add [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env) NPM package to the Client.
 > You can find out more about this package [here](https://babeljs.io/docs/en/babel-preset-env). 
 >
-> Also, see: [How Do I Add an NPM Package to the Client](./../package-management/add-npm-package-to-client.md).
+> Also, see: [How Do I Add an NPM Package to the Client](../../recipes/package-management/add-npm-package-to-client.md).
 
 #### 2. Configuration Object
 Add the following object to the `webpack.config.js` file.
