@@ -1,4 +1,10 @@
 # News and Announcements
+## 2021
+### 28th June - SAFE v3 is Live!
+After a long beta test period, we're excited to launch SAFE 3! The new template upgrades SAFE to .NET 5 compatibility, Fable 3 and the latest versions of Giraffe and Saturn. We've also introduced the use of the popular Feliz domain-specific language (DSL), upgraded all documentation and made the build process even easier to use.
+
+We're super excited about this update as well as hearing about your suggestions and ideas to make it even better in the future.
+
 ## 2020
 ### 22nd August - SAFE v2 Launches!
 It's taken a while, but we're delighted to announce the launch of SAFE v2. The new template has been drastically slimmed down and provides a highly streamlined approach, whilst we've incorporated requested features such as testing support out of the box.
