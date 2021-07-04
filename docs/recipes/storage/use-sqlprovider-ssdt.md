@@ -197,3 +197,33 @@ From the VS Code terminal in the SafeTodo folder, launch the app (server and cli
 You should now be able to add todos.
 
 ![image](https://user-images.githubusercontent.com/1030435/111055048-044f2080-8440-11eb-9efc-ae454ff071c4.png)
+
+## Deployment
+When creating a Release build for deployment, it is important to note that SQLProvider SSDT expects that the .dacpac file will be copied to the deployed Server project bin folder. 
+
+Here are the steps to accomplish this:
+
+1) Modify your Server.fsproj to include the .dacpac file with "CopyToOutputDirectory" to ensure that the .dacpac file will always exist in the Server project bin folder.
+
+```
+<ItemGroup>
+    <None Include="..\{relative path to SSDT project}\ssdt\SafeTodo\bin\$(Configuration)\SafeTodoDB.dacpac" Link="SafeTodoDB.dacpac">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    
+    { other files... }
+</ItemGroup>
+```
+
+2) In your Server.Database.fs file, you should also modify the SsdtPath binding so that it can build the project in either Debug or Release mode:
+
+```F#
+[<Literal>]
+#if DEBUG
+      let SsdtPath = __SOURCE_DIRECTORY__ + @"/../../ssdt/SafeTodoDB/bin/Debug/SafeTodoDB.dacpac"
+#else
+      let SsdtPath = __SOURCE_DIRECTORY__ + @"/../../ssdt/SafeTodoDB/bin/Release/SafeTodoDB.dacpac"
+#endif
+```
+
+NOTE: This assumes that your SSDT .sqlproj will be built in Release mode. (You can build it manually, or use a FAKE build script to handle this.)
