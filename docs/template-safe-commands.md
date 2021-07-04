@@ -47,3 +47,10 @@ This target behaves similarly to the standard Run target, except that it launche
 * The client tests run *in the browser*. Again, they use a watch mode so you can make changes to your client code and see the results in the browser.
 
 > Launch the client tests on `http://localhost:8081/`
+
+## **"Format"** target
+```powershell
+dotnet run Format
+```
+
+This target will format all the F# files in the `src` folder using [Fantomas](https://github.com/fsprojects/fantomas). Out of the box, Fantomas tries to reformat the code according to the [F# style guide by Microsoft](https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/formatting). For more info, check out [the documentation](https://github.com/fsprojects/fantomas/blob/master/docs/Documentation.md).
