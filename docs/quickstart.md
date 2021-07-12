@@ -23,7 +23,7 @@ You'll also want an IDE to create F# applications. We recommend one of the follo
 1. Create a new directory on your machine and navigate into it
 1. Enter `dotnet new -i SAFE.Template` to install the [SAFE project template](template-overview.md) (*only required once *)
 1. Enter `dotnet new SAFE` to create a new SAFE project
-1. Enter `dotnet tool restore` to install local tools like FAKE.
+1. Enter `dotnet tool restore` to install local tools like Fable.
 1. Enter `dotnet run` to build and run the app
 1. Open a web browser and navigate to http://localhost:8080.
 
