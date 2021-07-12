@@ -1,0 +1,2243 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for SAFE">
+      
+      
+      
+        <meta name="author" content="SAFE Stack">
+      
+      
+        <link rel="canonical" href="http://safe-stack.github.io/docs/v2-recipes/developing-and-testing/testing-the-server/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>Test the Server - SAFE Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.7.0/dist/mermaid.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="light-blue" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-do-i-test-the-server" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="SAFE Documentation" class="md-header__button md-logo" aria-label="SAFE Documentation" data-md-component="logo">
+      
+  <img src="../../../img/safe_favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SAFE Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Test the Server
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/SAFE-Stack/docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SAFE-Stack/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SAFE Documentation" class="md-nav__button md-logo" aria-label="SAFE Documentation" data-md-component="logo">
+      
+  <img src="../../../img/safe_favicon.png" alt="logo">
+
+    </a>
+    SAFE Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/SAFE-Stack/docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SAFE-Stack/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/" class="md-nav__link">
+        SAFE Stack Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Components of SAFE
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components of SAFE" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Components of SAFE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../component-saturn/" class="md-nav__link">
+        Learn about Saturn
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../component-azure/" class="md-nav__link">
+        Learn about Azure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../component-fable/" class="md-nav__link">
+        Learn about Fable
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../component-elmish/" class="md-nav__link">
+        Learn about Elmish
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        The SAFE Template
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="The SAFE Template" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          The SAFE Template
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../template-overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../template-safe-commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Features of SAFE
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Features of SAFE" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Features of SAFE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      <label class="md-nav__link" for="__nav_7_1">
+        Client / Server Sharing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Client / Server Sharing" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Client / Server Sharing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feature-clientserver/" class="md-nav__link">
+        Sharing Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feature-clientserver-basics/" class="md-nav__link">
+        Sharing Types and Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feature-clientserver-http/" class="md-nav__link">
+        Messaging using HTTP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feature-clientserver-remoting/" class="md-nav__link">
+        Messaging with Protocols
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feature-clientserver-bridge/" class="md-nav__link">
+        Stateful Messaging through Bridge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feature-clientserver-serialization/" class="md-nav__link">
+        Serialization in SAFE
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feature-ssr/" class="md-nav__link">
+        Server Side Rendering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feature-hmr/" class="md-nav__link">
+        Hot Module Replacement
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feature-azurefunctions/" class="md-nav__link">
+        Working with Azure functions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        How do I...
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How do I..." data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          How do I...
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/upgrading/v2-to-v3/" class="md-nav__link">
+        Upgrade from V2 to V3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/template/" class="md-nav__link">
+        Create a new Recipe
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
+      
+      <label class="md-nav__link" for="__nav_8_3">
+        Build
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Build" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Build
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/build/add-build-script/" class="md-nav__link">
+        Add build automation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/build/remove-fake/" class="md-nav__link">
+        Remove FAKE
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/build/bundle-app/" class="md-nav__link">
+        Package my SAFE app for deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/build/docker-image/" class="md-nav__link">
+        Create a docker image
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_4" type="checkbox" id="__nav_8_4" >
+      
+      <label class="md-nav__link" for="__nav_8_4">
+        Dev / Test
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Dev / Test" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_4">
+          <span class="md-nav__icon md-icon"></span>
+          Dev / Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/developing-and-testing/testing-the-client/" class="md-nav__link">
+        Test the Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/developing-and-testing/testing-the-server/" class="md-nav__link">
+        Test the Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/developing-and-testing/debug-safe-app/" class="md-nav__link">
+        Debug a SAFE app
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/developing-and-testing/using-hot-reload/" class="md-nav__link">
+        Use hot reload
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_5" type="checkbox" id="__nav_8_5" >
+      
+      <label class="md-nav__link" for="__nav_8_5">
+        Client / Server
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Client / Server" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_5">
+          <span class="md-nav__icon md-icon"></span>
+          Client / Server
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/client-server/fable-remoting/" class="md-nav__link">
+        Add support for Fable Remoting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/client-server/mvu-roundtrip/" class="md-nav__link">
+        Perform roundtrips with MVU
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/client-server/messaging/" class="md-nav__link">
+        Get data from the server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/client-server/messaging-post/" class="md-nav__link">
+        Post data to the server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/client-server/server-errors-on-client/" class="md-nav__link">
+        Handle server errors on the client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/client-server/share-code/" class="md-nav__link">
+        Share code between the client and the server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/client-server/saturn-to-giraffe/" class="md-nav__link">
+        Use Giraffe instead of Saturn
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/client-server/upload-file-from-client/" class="md-nav__link">
+        Upload file from the client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/client-server/serve-a-file-from-the-backend/" class="md-nav__link">
+        Serve a file from the back-end
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_6" type="checkbox" id="__nav_8_6" >
+      
+      <label class="md-nav__link" for="__nav_8_6">
+        Data
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/storage/use-litedb/" class="md-nav__link">
+        Quickly add a database
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/storage/use-sqlprovider-ssdt/" class="md-nav__link">
+        Create a data module using SQLProvider SQL Server SSDT
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_7" type="checkbox" id="__nav_8_7" >
+      
+      <label class="md-nav__link" for="__nav_8_7">
+        UI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="UI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_7">
+          <span class="md-nav__icon md-icon"></span>
+          UI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/ui/add-fontawesome/" class="md-nav__link">
+        Add FontAwesome support
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/ui/add-style/" class="md-nav__link">
+        Add Stylesheet support
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/ui/add-bulma/" class="md-nav__link">
+        Add Bulma support
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/ui/use-different-bulma-themes/" class="md-nav__link">
+        Use different Bulma Themes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/ui/add-feliz/" class="md-nav__link">
+        Add Feliz support
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/ui/cdn-to-npm/" class="md-nav__link">
+        Migrate from a CDN stylesheet to an NPM package
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_8" type="checkbox" id="__nav_8_8" >
+      
+      <label class="md-nav__link" for="__nav_8_8">
+        Javascript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Javascript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_8">
+          <span class="md-nav__icon md-icon"></span>
+          Javascript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/javascript/import-js-module/" class="md-nav__link">
+        Import a JavaScript module
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/javascript/third-party-react-package/" class="md-nav__link">
+        Add Support for a Third Party React Library
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_9" type="checkbox" id="__nav_8_9" >
+      
+      <label class="md-nav__link" for="__nav_8_9">
+        Package Management
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Package Management" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_9">
+          <span class="md-nav__icon md-icon"></span>
+          Package Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/package-management/add-npm-package-to-client/" class="md-nav__link">
+        Add an NPM package to the Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/package-management/add-nuget-package-to-server/" class="md-nav__link">
+        Add a NuGet package to the Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/package-management/add-nuget-package-to-client/" class="md-nav__link">
+        Add a Nuget package to the Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/package-management/migrate-to-paket/" class="md-nav__link">
+        Migrate to Paket from NuGet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/package-management/sync-nuget-and-npm-packages/" class="md-nav__link">
+        Sync NuGet and NPM Packages
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        FAQs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="FAQs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          FAQs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq-build/" class="md-nav__link">
+        Moving from dev to prod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq-troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Learning Resources
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Learning Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Learning Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../awesome-safe-components/" class="md-nav__link">
+        SAFE-Compatible UI Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/" class="md-nav__link">
+        News
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../events/" class="md-nav__link">
+        Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testimonials/" class="md-nav__link">
+        Testimonials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
+      
+      <label class="md-nav__link" for="__nav_15">
+        Legacy SAFE Template (v2)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Legacy SAFE Template (v2)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_15">
+          <span class="md-nav__icon md-icon"></span>
+          Legacy SAFE Template (v2)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../legacy-template-fake/" class="md-nav__link">
+        The FAKE script
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_2" type="checkbox" id="__nav_15_2" checked>
+      
+      <label class="md-nav__link" for="__nav_15_2">
+        V2 recipes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="V2 recipes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_15_2">
+          <span class="md-nav__icon md-icon"></span>
+          V2 recipes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrading/v1-to-v2/" class="md-nav__link">
+        Upgrade from V1 to V2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_2_2" type="checkbox" id="__nav_15_2_2" >
+      
+      <label class="md-nav__link" for="__nav_15_2_2">
+        Build
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Build" data-md-level="3">
+        <label class="md-nav__title" for="__nav_15_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Build
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/remove-fake/" class="md-nav__link">
+        Remove FAKE from my project
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/add-build-script/" class="md-nav__link">
+        Add build automation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/bundle-app/" class="md-nav__link">
+        Package my SAFE app for deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/support-older-browsers/" class="md-nav__link">
+        Support older browsers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/docker-image/" class="md-nav__link">
+        Create a docker image
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_2_3" type="checkbox" id="__nav_15_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_15_2_3">
+        Dev / Test
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Dev / Test" data-md-level="3">
+        <label class="md-nav__title" for="__nav_15_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Dev / Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-the-client/" class="md-nav__link">
+        Test the Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Test the Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Test the Server
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#im-using-the-standard-template" class="md-nav__link">
+    I'm using the standard template
+  </a>
+  
+    <nav class="md-nav" aria-label="I'm using the standard template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-expecto-runner" class="md-nav__link">
+    Using the Expecto runner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dotnet-test-or-the-visual-studio-test-runner" class="md-nav__link">
+    Using dotnet test or the Visual Studio Test runner
+  </a>
+  
+    <nav class="md-nav" aria-label="Using dotnet test or the Visual Studio Test runner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-the-test-adapters" class="md-nav__link">
+    1. Install the Test Adapters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-disable-entrypoint-generation" class="md-nav__link">
+    2. Disable EntryPoint generation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-discover-tests" class="md-nav__link">
+    3. Discover tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-run-tests" class="md-nav__link">
+    4. Run tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#im-using-the-minimal-template" class="md-nav__link">
+    I'm using the minimal template
+  </a>
+  
+    <nav class="md-nav" aria-label="I'm using the minimal template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-a-test-project" class="md-nav__link">
+    1. Add a test project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reference-the-server-project" class="md-nav__link">
+    2. Reference the Server project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-expecto-to-the-test-project" class="md-nav__link">
+    3. Add Expecto to the Test project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-something-to-test" class="md-nav__link">
+    4. Add something to test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-add-a-test" class="md-nav__link">
+    5. Add a test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-run-the-test" class="md-nav__link">
+    6. Run the test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-using-dotnet-test-or-the-visual-studio-test-explorer" class="md-nav__link">
+    7. Using dotnet test or the Visual Studio Test Explorer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debug-safe-app/" class="md-nav__link">
+        Debug a SAFE app
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_2_4" type="checkbox" id="__nav_15_2_4" >
+      
+      <label class="md-nav__link" for="__nav_15_2_4">
+        Client / Server
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Client / Server" data-md-level="3">
+        <label class="md-nav__title" for="__nav_15_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Client / Server
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../client-server/fable-remoting/" class="md-nav__link">
+        Add support for Fable Remoting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_2_5" type="checkbox" id="__nav_15_2_5" >
+      
+      <label class="md-nav__link" for="__nav_15_2_5">
+        Package Management
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Package Management" data-md-level="3">
+        <label class="md-nav__title" for="__nav_15_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Package Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../package-management/migrate-to-yarn/" class="md-nav__link">
+        Migrate to Yarn from NPM
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#im-using-the-standard-template" class="md-nav__link">
+    I'm using the standard template
+  </a>
+  
+    <nav class="md-nav" aria-label="I'm using the standard template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-expecto-runner" class="md-nav__link">
+    Using the Expecto runner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dotnet-test-or-the-visual-studio-test-runner" class="md-nav__link">
+    Using dotnet test or the Visual Studio Test runner
+  </a>
+  
+    <nav class="md-nav" aria-label="Using dotnet test or the Visual Studio Test runner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-the-test-adapters" class="md-nav__link">
+    1. Install the Test Adapters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-disable-entrypoint-generation" class="md-nav__link">
+    2. Disable EntryPoint generation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-discover-tests" class="md-nav__link">
+    3. Discover tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-run-tests" class="md-nav__link">
+    4. Run tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#im-using-the-minimal-template" class="md-nav__link">
+    I'm using the minimal template
+  </a>
+  
+    <nav class="md-nav" aria-label="I'm using the minimal template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-a-test-project" class="md-nav__link">
+    1. Add a test project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reference-the-server-project" class="md-nav__link">
+    2. Reference the Server project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-expecto-to-the-test-project" class="md-nav__link">
+    3. Add Expecto to the Test project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-something-to-test" class="md-nav__link">
+    4. Add something to test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-add-a-test" class="md-nav__link">
+    5. Add a test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-run-the-test" class="md-nav__link">
+    6. Run the test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-using-dotnet-test-or-the-visual-studio-test-explorer" class="md-nav__link">
+    7. Using dotnet test or the Visual Studio Test Explorer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/SAFE-Stack/docs/edit/master/docs/v2-recipes/developing-and-testing/testing-the-server.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="how-do-i-test-the-server">How do I test the Server?</h1>
+<p>Testing your Server code in a SAFE app is just the same as in any other dotnet app, and you can use the same tools and frameworks that you are familiar with. These include all of the usual suspects such as <a href="https://nunit.org/">NUnit</a>, <a href="https://xunit.net/">XUnit</a>, <a href="https://fsprojects.github.io/FsUnit/">FSUnit</a>, <a href="https://github.com/haf/expecto">Expecto</a>, <a href="https://fscheck.github.io/FsCheck/">FSCheck</a>, <a href="https://github.com/AutoFixture/AutoFixture">AutoFixture</a> etc.</p>
+<p>In this guide we will look at using <strong>Expecto</strong>, as this is included with the standard SAFE template.</p>
+<h2 id="im-using-the-standard-template"><strong>I'm using the standard template</strong></h2>
+<h3 id="using-the-expecto-runner">Using the Expecto runner</h3>
+<p>If you are using the standard template, then there is nothing more you need to do in order to start testing your Server code.</p>
+<p>You will find a folder in the solution named <strong>tests</strong>. Inside this, there is a project named <strong>Server.Tests</strong> that contains a single script demonstrating how to use Expecto to test the TODO sample.</p>
+<p>In order to run the tests, instead of starting your application using
+<div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">fake</span> <span class="n">build</span> <span class="n">-t</span> <span class="n">run</span>
+</code></pre></div>
+you should instead use
+<div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">fake</span> <span class="n">build</span> <span class="n">-t</span> <span class="n">runtests</span>
+</code></pre></div>
+This will execute the tests and print the results into the console window.</p>
+<p><img src="../../../img/expecto-results.png"/></p>
+<blockquote>
+<p>This method builds and runs the Client test project too, which can be slow. If you want to run the Server tests alone, you can simply navigate to the Server.Tests directory and run the project using <code>dotnet run</code>.</p>
+</blockquote>
+<h3 id="using-dotnet-test-or-the-visual-studio-test-runner">Using dotnet test or the Visual Studio Test runner</h3>
+<p>If you would like to use dotnet tests from the command line or the test runner that comes with Visual Studio, there are a couple of extra steps to follow.</p>
+<h4 id="1-install-the-test-adapters">1. Install the Test Adapters</h4>
+<p>Run the following commands at the root of your solution:
+<div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">paket</span> <span class="n">add</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">NET</span><span class="p">.</span><span class="n">Test</span><span class="p">.</span><span class="n">Sdk</span> <span class="n">-p</span> <span class="n">Server</span><span class="p">.</span><span class="n">Tests</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">paket</span> <span class="n">add</span> <span class="n">YoloDev</span><span class="p">.</span><span class="n">Expecto</span><span class="p">.</span><span class="n">TestSdk</span> <span class="n">-p</span> <span class="n">Server</span><span class="p">.</span><span class="n">Tests</span>
+</code></pre></div></p>
+<h4 id="2-disable-entrypoint-generation">2. Disable EntryPoint generation</h4>
+<p>Open your ServerTests.fsproj file and add the following element:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;GenerateProgramFile&gt;</span>false<span class="nt">&lt;/GenerateProgramFile&gt;</span>
+<span class="nt">&lt;/PropertyGroup&gt;</span>
+</code></pre></div>
+<h4 id="3-discover-tests">3. Discover tests</h4>
+<p>To allow your tests to be discovered, you will need to decorate them with a <code>[&lt;Tests&gt;]</code> attribute.</p>
+<p>The provided test would look like this:
+<div class="highlight"><pre><span></span><code><span class="o">[&lt;</span><span class="n">Tests</span><span class="o">&gt;]</span>
+<span class="k">let</span> <span class="nv">server</span> <span class="o">=</span> <span class="n">testList</span> <span class="s">&quot;Server&quot;</span> <span class="o">[</span>
+    <span class="n">testCase</span> <span class="s">&quot;Adding valid Todo&quot;</span> <span class="o">&lt;|</span> <span class="k">fun</span> <span class="o">_</span> <span class="o">-&gt;</span>
+        <span class="k">let</span> <span class="nv">storage</span> <span class="o">=</span> <span class="n">Storage</span><span class="bp">()</span>
+        <span class="k">let</span> <span class="nv">validTodo</span> <span class="o">=</span> <span class="nn">Todo</span><span class="p">.</span><span class="n">create</span> <span class="s">&quot;TODO&quot;</span>
+        <span class="k">let</span> <span class="nv">expectedResult</span> <span class="o">=</span> <span class="n">Ok</span> <span class="bp">()</span>
+
+        <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">storage</span><span class="o">.</span><span class="n">AddTodo</span> <span class="n">validTodo</span>
+
+        <span class="nn">Expect</span><span class="p">.</span><span class="n">equal</span> <span class="n">result</span> <span class="n">expectedResult</span> <span class="s">&quot;Result should be ok&quot;</span>
+        <span class="nn">Expect</span><span class="p">.</span><span class="n">contains</span> <span class="o">(</span><span class="n">storage</span><span class="o">.</span><span class="n">GetTodos</span><span class="bp">()</span><span class="o">)</span> <span class="n">validTodo</span> <span class="s">&quot;Storage should contain new todo&quot;</span>
+<span class="o">]</span>
+</code></pre></div></p>
+<h4 id="4-run-tests">4. Run tests</h4>
+<p>There are now two ways to run these tests.</p>
+<p>From the command line, you can just run
+<div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">test</span>
+</code></pre></div>
+from the root of your solution.</p>
+<p>Alternatively, if you are using Visual Studio or VS Mac you can make use of the built-in test explorers.</p>
+<p><img src="../../../img/test-runner.png" style="height: 200px;"/></p>
+<h2 id="im-using-the-minimal-template"><strong>I'm using the minimal template</strong></h2>
+<p>If you are using the minimal template, you will need to first configure a test project as none are included.</p>
+<h4 id="1-add-a-test-project">1. Add a test project</h4>
+<p>In the <code>src</code> folder, create a create a <strong>.Net Core</strong> library called <strong>Server.Tests</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd </span><span class="n">src</span>
+<span class="n">dotnet</span> <span class="n">new</span> <span class="n">console</span> <span class="n">-lang</span> <span class="n">F</span><span class="c"># -o Server.Tests</span>
+<span class="nb">cd </span><span class="p">..</span>
+<span class="n">dotnet</span> <span class="n">sln</span> <span class="n">add</span> <span class="n">src</span><span class="p">/</span><span class="n">Server</span><span class="p">.</span><span class="n">Tests</span>
+</code></pre></div>
+<h4 id="2-reference-the-server-project">2. Reference the Server project</h4>
+<p>Reference the Server project from the Server.Tests project:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">add</span> <span class="n">Server</span><span class="p">.</span><span class="n">Tests</span> <span class="n">reference</span> <span class="n">Server</span>
+</code></pre></div>
+<h4 id="3-add-expecto-to-the-test-project">3. Add Expecto to the Test project</h4>
+<p>Run the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">add</span> <span class="n">Server</span><span class="p">.</span><span class="n">Tests</span> <span class="n">package</span> <span class="n">Expecto</span>
+</code></pre></div>
+<p>You will see a warning that a Program.fs file might be generated which will need deleting, so do that if necessary.</p>
+<p>You can prevent this reoccuring by adding an entry to your test project file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;GenerateProgramFile&gt;</span>false<span class="nt">&lt;/GenerateProgramFile&gt;</span>
+<span class="nt">&lt;/PropertyGroup&gt;</span>
+</code></pre></div>
+<h4 id="4-add-something-to-test">4. Add something to test</h4>
+<p>Update the Server.fs file in the Server project to extract the message logic from the router like so:
+<div class="highlight"><pre><span></span><code><span class="k">let</span> <span class="nv">getMessage</span> <span class="bp">()</span> <span class="o">=</span> <span class="s">&quot;Hello from SAFE!&quot;</span>
+
+<span class="k">let</span> <span class="nv">webApp</span> <span class="o">=</span>
+    <span class="n">router</span> <span class="o">{</span>
+        <span class="n">get</span> <span class="nn">Route</span><span class="p">.</span><span class="n">hello</span> <span class="o">(</span><span class="n">getMessage</span> <span class="bp">()</span> <span class="o">|&gt;</span> <span class="n">json</span> <span class="o">)</span>
+    <span class="o">}</span>
+</code></pre></div></p>
+<h4 id="5-add-a-test">5. Add a test</h4>
+<p>Delete the Library.fs file in your test project and replace it with a new file called <code>Tests.fs</code>. Add the following code to it:</p>
+<div class="highlight"><pre><span></span><code><span class="k">module</span> <span class="nn">Server.Tests</span>
+
+<span class="k">open</span> <span class="nn">Expecto</span>
+
+<span class="k">let</span> <span class="nv">server</span> <span class="o">=</span> <span class="n">testList</span> <span class="s">&quot;Server&quot;</span> <span class="o">[</span>
+    <span class="n">testCase</span> <span class="s">&quot;Message returned correctly&quot;</span> <span class="o">&lt;|</span> <span class="k">fun</span> <span class="o">_</span> <span class="o">-&gt;</span>
+        <span class="k">let</span> <span class="nv">expectedResult</span> <span class="o">=</span> <span class="s">&quot;Hello from SAFE!&quot;</span>        
+        <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="nn">Server</span><span class="p">.</span><span class="n">getMessage</span><span class="bp">()</span>
+        <span class="nn">Expect</span><span class="p">.</span><span class="n">equal</span> <span class="n">result</span> <span class="n">expectedResult</span> <span class="s">&quot;Result should be ok&quot;</span>
+<span class="o">]</span>
+
+<span class="o">[&lt;</span><span class="n">EntryPoint</span><span class="o">&gt;]</span>
+<span class="k">let</span> <span class="nv">main</span> <span class="o">_</span> <span class="o">=</span> <span class="n">runTests</span> <span class="n">defaultConfig</span> <span class="n">server</span>
+</code></pre></div>
+<h4 id="6-run-the-test">6. Run the test</h4>
+<p>Navigate to the Test project directory and execute it using
+<div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">run</span>
+</code></pre></div></p>
+<p>This will print out the results in the console window</p>
+<p><img src="../../../img/expecto-results.png"/></p>
+<h4 id="7-using-dotnet-test-or-the-visual-studio-test-explorer">7. Using dotnet test or the Visual Studio Test Explorer</h4>
+<p>Navigate to the Test project directory and add the test runners using the following commands:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">add</span> <span class="n">package</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">NET</span><span class="p">.</span><span class="n">Test</span><span class="p">.</span><span class="n">Sdk</span>
+</code></pre></div>
+and
+<div class="highlight"><pre><span></span><code><span class="n">dotnet</span> <span class="n">add</span> <span class="n">package</span> <span class="n">YoloDev</span><span class="p">.</span><span class="n">Expecto</span><span class="p">.</span><span class="n">TestSdk</span>
+</code></pre></div></p>
+<p>You can now add <code>[&lt;Test&gt;]</code> attributes to your tests so that they can be discovered, and then run them using the dotnet tooling in the same way as explained earlier for the standard template.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+
+        <!-- Link to previous page -->
+        
+          <a href="/docs/v2-recipes/developing-and-testing/testing-the-client/"
+              title="Test the Client"
+              class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+              rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back
+                    md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Test the Client
+              </span>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          <a href="/docs/v2-recipes/developing-and-testing/debug-safe-app/" title="Debug a SAFE app"
+              class="md-flex md-footer-nav__link md-footer-nav__link--next"
+              rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Debug a SAFE app
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward
+                    md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        Supported by
+        <a href="http://lambdafactory.io">
+          λFactory</a>
+        and
+        <a href="https://compositional-it.com/">
+          Compositional IT</a>
+      </div>
+
+      <!-- Social links -->
+      
+        
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/SAFE-Stack" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/safe_stack" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://safe-stack.github.io/" target="_blank" rel="noopener" title="safe-stack.github.io" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"/></svg>
+      </a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
