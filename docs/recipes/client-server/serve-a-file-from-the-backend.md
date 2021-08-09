@@ -128,7 +128,7 @@ Since the `downloadFile` function is asynchronous, we can't just call it anywher
 type Msg =
     //...other cases
     | DownloadFile
-    | FileDownloaded
+    | FileDownloaded of unit
 ```
 
 ##### b. Handle these cases in the update function
@@ -138,14 +138,14 @@ let update (msg: Msg) (model: Model): Model * Cmd<Msg> =
 		match msg with
     //...other cases
     | DownloadFile -> model, Cmd.OfAsync.perform downloadFile () FileDownloaded
-    | FileDownloaded -> model, Cmd.none // You can do something else here
+    | FileDownloaded () -> model, Cmd.none // You can do something else here
 ```
 
 ##### c. Dispatch this *message* using a UI element
 
 ```fsharp
 Html.button [
-    prop.OnClick (fun _ -> dispatch DownloadFile)
+    prop.onClick (fun _ -> dispatch DownloadFile)
     prop.text "Click to download" 
 ]
 ```
