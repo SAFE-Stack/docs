@@ -109,7 +109,7 @@ Feliz-style Fable bindings for [ag-grid](https://www.ag-grid.com/). [Get it!](ht
 Fable bindings for [ag-grid](https://www.ag-grid.com/). [Get it!](https://www.nuget.org/packages/Fable.ReactAgGrid/)
 
 ### [Feliz.Reactflow](https://tforkmann.github.io/Feliz.ReactFlow/#/exampleflow)
-Feliz-style Fable bindings for [react flow](https://reactflow.dev/). [Get it!](https://www.nuget.org/packages/Feliz.Markdown/)
+Feliz-style Fable bindings for [react flow](https://reactflow.dev/). [Get it!](https://www.nuget.org/packages/Feliz.ReactFlow/)
 
 ## Maps 
 
