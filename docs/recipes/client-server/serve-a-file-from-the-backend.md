@@ -66,11 +66,9 @@ Now, you can call the `downloadFile` function to initiate the file download.
 Since the standard template uses Fable.Remoting, we need to edit our API definition first. Find your API **type** definition in `Shared.fs`. It's usually the last block of code. The one you see here is named IFileAPI, but the one you see in `Shared.fs` will be named differently. Edit this definition to have the `download` member you see below.
 
 ```fsharp
-open System // We need this for the `Byte` type
-
 type IFileAPI =
 	{ //...other routes 
-	  download : unit -> Async<Byte[]> }
+	  download : unit -> Async<byte[]> }
 ```
 
 #### 2. Add the route
@@ -78,45 +76,27 @@ type IFileAPI =
 Open the *Server.fs* file and find the API that implements the definition we've just edited. It should now have an error since we're not matching the definition at the moment. Add the following route to it
 
 ```fsharp
-download = fun () -> async {
-    let byteArray = System.IO.File.ReadAllBytes("~/files/file.xlsx")
+let download () = async {
+    let byteArray = System.IO.File.ReadAllBytes("/fileFolder/file.xlsx")
     return byteArray
 }
 ```
 
-> Observe that this matches the route we've just defined inside the API definition, in that it takes in a unit and returns a byte array.
+> Make sure to replace "/fileFolder/file.xlsx" with the path to your file
 
 #### 3. The download function
 
 Paste the following code into `Index.fs`, somewhere above the `view` function.
 
 ```fsharp
-open Browser.Dom
-open Fable.Core
-open Fable.Core.JsInterop
-
-[<Emit("new Blob([$0.buffer], { 'type': $1 })")>]
-let createBlobFromBytes (bytes: byte[]) (contentType: string) : Browser.Types.Blob = jsNative
-
-[<Emit("window.URL.createObjectURL($0)")>]
-let createObjectUrl (blob: Browser.Types.Blob) : string = jsNative
 
 let downloadFile () =
     async {
-        let! fileContents = fileApi.download ()
-        let contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        let blob = createBlobFromBytes fileContents contentType
-        let dataUrl = createObjectUrl blob
-        let anchor = document.createElement "a"
-        anchor?style <- "display: none"
-        anchor?href <- dataUrl
-        anchor?download <- "MyFile.xlsx"
-        anchor.click()
-        anchor.remove()
+        let! downloadedFile = todosApi.download ()
+        downloadedFile.SaveFileAs("downloaded-file.xlsx")
     }
 ```
-
-If you looked at the minimal template's download function, you will realise that this snippet is quite larger. The main difference is that in this example we are using a couple of JavaScript interop functions to create a *blob* from the *byte array* that we receive from the server and to generate a URL to download it.
+> The `SaveFileAs` funcion detects the mime-type/content-type automatically based on the file extension of the file input
 
 #### 4. Using the download funciton
 
