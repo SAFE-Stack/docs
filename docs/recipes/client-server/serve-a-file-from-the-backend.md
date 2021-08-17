@@ -130,7 +130,6 @@ Html.button [
 ]
 ```
 
-Having added this last snippet of code into the `view` function, you will be able to download the file by clicking the button that will now be displayed in your UI.
-
+Having added this last snippet of code into the `view` function, you will be able to download the file by clicking the button that will now be displayed in your UI. For more information visit the [Fable.Remoting documentation](https://zaid-ajaj.github.io/Fable.Remoting/src/upload-and-download.html)
 
 
