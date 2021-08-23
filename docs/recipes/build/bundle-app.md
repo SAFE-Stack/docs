@@ -1,6 +1,6 @@
 # How do I bundle my SAFE application?
 
-When developing your SAFE application, the local runtime experience uses WebPack to run the client and redirect API calls to the server on a [different port](/faq-build). However, when you *deploy* your application, you'll need to run your Saturn server which will serve up statically-built client resources (HTML, JavaScript, CSS etc.).
+When developing your SAFE application, the local runtime experience uses WebPack to run the client and redirect API calls to the server on a [different port](../../../faq-build). However, when you *deploy* your application, you'll need to run your Saturn server which will serve up statically-built client resources (HTML, JavaScript, CSS etc.).
 
 ## I'm using the standard template
 
@@ -13,7 +13,7 @@ dotnet run Bundle
 
 This will build and package up both the client and server and place them into the `/deploy` folder at the root of the repository.
 
-> See [here](/template-safe-commands) for more details on this build target.
+> See [here](../../../template-safe-commands) for more details on this build target.
 
 ## I'm using the minimal template
 If you created your SAFE app using the **minimal** option, you need to bundle up the client and server separately.
