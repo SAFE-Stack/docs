@@ -1,4 +1,6 @@
 ## Serialization basics with Thoth
+> If you are using the standard SAFE 3 Template, you do not need to worry about serialization, as this is taken care of for you by Fable Remoting. However, if you are "rolling your own" communication channel or want to create an "open" API for multiple consumers, this article may be relevant for you.
+
 When using basic HTTP communication between the client and server, you'll need to consider how to deserialize data from JSON to F# types.
 
 In order to guarantee that the serialization / deserialization routines between client and server are compatible, you should replace the JSON converter in Giraffe / Saturn with the [Thoth](https://mangelmaxime.github.io/Thoth/index.html) library's serializer. This is the same library as that used in Fable for deserialization, and so will work seamlessly together.
@@ -8,10 +10,8 @@ let configureSerialization (services:IServiceCollection) =
     services.AddSingleton<Giraffe.Serialization.Json.IJsonSerializer>(Thoth.Json.Giraffe.ThothSerializer())
 ```
 
-If you are using the [SAFE Template](safe-template), this will automatically be done for you in `Server.fs`.
-
 ## Approaches to deserialization
-Fable 2 uses the Thoth library for JSON deserialization, which makes use of *decoders* to convert JSON into F# values. There are generally two main approaches to take when doing this: **automatic** and **manual** decoders.
+The Thoth library makes use of *decoders* to convert JSON into F# values. There are generally two main approaches to take when doing this: **automatic** and **manual** decoders.
 
 Assume the following Customer record for the remaining examples.
 
