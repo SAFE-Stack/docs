@@ -1,26 +1,25 @@
 ## Sharing Types
-Sharing your domain types and contracts between client and server is extremely simple. Thanks to Fable's excellent F# transpilation into Javascript, you can use all standard F# language features such as Records, Tuples and Discriminated Unions without worry. To share types across both your client and server project, first create a file in your repository called e.g `Shared.fs`.
-![](img/client-server-01.png)
+Sharing your domain types and contracts between client and server is extremely simple. Thanks to Fable's excellent F# transpilation into Javascript, you can use all standard F# language features such as Records, Tuples and Discriminated Unions without worry. To share types across both your client and server project, first create a project in your repository called e.g `Shared.fsproj`. This project will contain any assets that should be shared across the client and server e.g. types and functions.
 
-Then, create types in the file as needed e.g
+Then, create files with your types in the project as needed e.g
 
 ```fsharp
 type Customer = { Id : int; Name : string }
 ```
 
-Reference this file from your server project. You can now reference those types on the server.
+Reference this project from your server project. You can now reference those types on the server.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
     ...
     <ItemGroup>
-        <Compile Include="../Shared/Shared.fs" />
+        <ProjectReference Include="..\Shared\Shared.fsproj" />
     </ItemGroup>
     ...
 </Project>
 ```
 
-Finally, reference this file in your client project (as above). You can now reference those types on the client; Fable will automatically convert your F# types into Javascript in the background.
+Finally, reference this project in your client project (as above). You can now reference those types on the client; Fable will automatically convert your F# types into Javascript in the background.
 
 ## Sharing Behaviour
 You can also share behaviour using the same mechanism at that for sharing types. This is extremely useful for e.g shared validation or business logic that needs to occur on both client and server.
@@ -34,3 +33,6 @@ Fable will translate your functions into native Javascript, and will even transl
 * Raspberry Pi (via .NET Core)
 
 You can read more about this [on the Fable website](http://fable.io/docs/compatibility.html).
+
+## Conditional sharing
+When sharing assets between client and server, you may wish to have different implementations for the "client" and "server" sides. For example, if the client-side version of a function should call an NPM package but the server-side version should use a NuGet package. This is a more advanced scenario where you may require different implementations for the JS and .NET version of code. In such situations, you can use `#IF` directives to conditionally compile code for either platform - see the [Fable](https://fable.io/) website for more information.
