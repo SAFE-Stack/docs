@@ -9,7 +9,7 @@ It also provides *rich* integration with the JS ecosystem which means that you c
 
 ## How does Fable integrate with SAFE?
 
-Fable is a .NET tool that generates JavaScript files directly this allows us to write full front end applications using F#. Being able to write both the Server and Client in the same language offers huge benefits especially when you can share code between the two, without the need for duplication. More information on code sharing can be found [here](./feature-clientserver).
+Fable is a .NET tool that generates JavaScript files directly this allows us to write full front end applications using F#. Being able to write both the Server and Client in the same language offers huge benefits especially when you can share code between the two, without the need for duplication. More information on code sharing can be found [here](../feature-clientserver).
 
 ## Fable and webpack
 
