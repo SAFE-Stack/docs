@@ -9,7 +9,7 @@ The basics of code sharing across client and server include:
 These two core areas are explained in more detail [here](feature-clientserver-basics.md).
 
 ## Sending messages between client and server
-In addition to types and messages, there are several technologies availabile in SAFE that allow you to send messages from client to server (and from server to client). Each has their own strengths and weaknesses:
+In addition to types and messages, there are several technologies available in SAFE that allow you to send messages from client to server (and from server to client). Each has their own strengths and weaknesses:
 
 * [Contracts / protocols](feature-clientserver-remoting.md) via Fable Remoting.
 * [Raw HTTP](feature-clientserver-http.md) using Saturn's routing capabilities.
