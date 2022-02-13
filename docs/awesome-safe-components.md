@@ -25,8 +25,8 @@ A fresh retake of the React API in Fable and a collection of high-quality compon
 ### [Feliz.MaterialUI](https://shmew.github.io/Feliz.MaterialUI/) 
 Feliz-style Fable bindings for [Material-UI](https://material-ui.com/). [Get it!](https://www.nuget.org/packages/Feliz.MaterialUI/)
 
-### [Feliz.Reactstrap](https://nojaf.com/fable-reactstrap/) 
-Fable binding for [reactstrap](https://reactstrap.github.io/). [Get it!](https://www.nuget.org/packages/Feliz.MaterialUI/)
+### [Fable.Reactstrap](https://nojaf.com/fable-reactstrap/) 
+Fable binding for [reactstrap](https://reactstrap.github.io/). [Get it!](https://www.nuget.org/packages/Fable.Reactstrap/)
 
 ### [Fable.MaterialUI](https://github.com/mvsmal/fable-material-ui)
 Fable bindings for [Material-UI](https://material-ui.com/). [Get it!]((https://www.nuget.org/packages/Fable.MaterialUI/))
