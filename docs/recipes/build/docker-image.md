@@ -26,10 +26,10 @@ Now, add the following lines to the `.dockerignore` file:
 Create a `Dockerfile` with the following contents:
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/sdk:5.0 as build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 as build
 
 # Install node
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
 RUN apt-get update && apt-get install -y nodejs
 
 WORKDIR /workspace
@@ -39,7 +39,7 @@ RUN dotnet tool restore
 RUN dotnet run Bundle
 
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine
+FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine
 COPY --from=build /workspace/deploy /app
 WORKDIR /app
 EXPOSE 8085
@@ -107,10 +107,10 @@ This comes at the expense of making the dockerfile more complex; if any changes 
 The following should be a good starting point but is not guarenteed to work.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/sdk:5.0 as build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 as build
 
 # Install node
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
 RUN apt-get update && apt-get install -y nodejs
 
 WORKDIR /workspace
@@ -134,7 +134,7 @@ COPY src/Client src/Client
 RUN dotnet fable src/Client --run webpack
 
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine
+FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine
 COPY --from=server-build /workspace/deploy /app
 COPY --from=client-build /workspace/deploy /app
 WORKDIR /app

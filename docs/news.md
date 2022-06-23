@@ -1,4 +1,8 @@
 # News and Announcements
+## 2022
+### 23th June - SAFE v4 now with .NET 6.0
+Enjoy the latest version of .NET runtime with newest SAFE Stack template!
+
 ## 2021
 ### 28th June - SAFE v3 is Live!
 After a long beta test period, we're excited to launch SAFE 3! The new template upgrades SAFE to .NET 5 compatibility, Fable 3 and the latest versions of Giraffe and Saturn. We've also introduced the use of the popular Feliz domain-specific language (DSL), upgraded all documentation and made the build process even easier to use.
