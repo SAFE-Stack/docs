@@ -29,7 +29,7 @@ Azure is a comprehensive set of cloud services that developers and IT profession
 Fable is an F# to JavaScript compiler, designed to produce readable and standard code. Fable allows you to create applications for the browser written entirely in F#, whilst also allowing you to interact with native Javascript as needed.
 
 ### [Elmish](component-elmish.md)
-The Elmish model allows you to construct user interfaces running in the browser using a functional programming model. Modelled on the Elm application model, Elmish uses the Model-View-Update paradigm to allow you to write applications that are simple to reason about. Elmish sits on top of the [React](https://reactjs.org/) framework.
+The Elmish model allows you to construct user interfaces running in the browser using a functional programming approach. Based upon on the Elm application model, Elmish uses the Model-View-Update paradigm to allow you to write applications that are simple to reason about. Elmish sits on top of the [React](https://reactjs.org/) framework.
 
 ## Further reading
 

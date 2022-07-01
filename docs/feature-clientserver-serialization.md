@@ -1,5 +1,5 @@
 ## Serialization basics with Thoth
-> If you are using the standard SAFE 3 Template, you do not need to worry about serialization, as this is taken care of for you by Fable Remoting. However, if you are "rolling your own" communication channel or want to create an "open" API for multiple consumers, this article may be relevant for you.
+> If you are using the standard SAFE Template (V3 +), you do not need to worry about serialization, as this is taken care of for you by Fable Remoting. However, if you are "rolling your own" communication channel or want to create an "open" API for multiple consumers, this article may be relevant for you.
 
 When using basic HTTP communication between the client and server, you'll need to consider how to deserialize data from JSON to F# types.
 

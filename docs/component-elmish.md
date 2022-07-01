@@ -2,7 +2,7 @@
 
 ## What is Elmish?
 
-Elmish is a library for building single page applications in F# applications, following the [model-view-update](https://guide.elm-lang.org/architecture/) architecture made famous by [Elm](http://elm-lang.org).
+Elmish is a library for building single page applications in F#, following the [model-view-update](https://guide.elm-lang.org/architecture/) architecture made famous by [Elm](http://elm-lang.org).
 
 > The following diagram is a simplified, high-level view of the MVU pattern. `Model` in this case refers to your application's state, with `Update` and `View` the two functions that handle the flow of messaging. If you wish to read more, we also recommend reading the excellent [Elmish Book](https://zaid-ajaj.github.io/the-elmish-book/#/chapters/elm/the-architecture).
 
