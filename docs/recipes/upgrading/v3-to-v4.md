@@ -77,12 +77,17 @@ dotnet paket install
 **Important** If you have made any modifications to the webpack file, you will need to apply them back in manually.
 
 #### 11. Update TargetFramework in all projects
-* **Overwite** the `Client.Tests.fsproj` file
-* **Overwite** the `Server.Tests.fsproj` file
-* **Overwite** the `Shared.Tests.fsproj` file
-* **Overwite** the `Client.fsproj` file
-* **Overwite** the `Server.fsproj` file
-* **Overwite** the `Shared.fsproj` file
+* **Update** the `Client.Tests.fsproj` file
+* **Update** the `Server.Tests.fsproj` file
+* **Update** the `Shared.Tests.fsproj` file
+* **Update** the `Client.fsproj` file
+* **Update** the `Server.fsproj` file
+* **Update** the `Shared.fsproj` file
+
+For all of the above, change
+`<TargetFramework>net5.0</TargetFramework>`
+to
+`<TargetFramework>net6.0</TargetFramework>`
 
 #### 12. Update the launch settings
 * **Overwite** the `Server/Properties/launch.json` file
