@@ -1,4 +1,4 @@
-# How do I upgrade from SAFE v2 to v3?
+# How do I upgrade from SAFE v3 to v4?
 
 This guide shows you how to upgrade your v3 project to v4.
 
