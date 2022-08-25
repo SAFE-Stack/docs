@@ -14,7 +14,7 @@ There have been a number of changes between the first and second major versions 
 Download and install the latest SAFE Stack V2 template by running the following command:
 
 ```bash
-dotnet new -i SAFE.Template
+dotnet new -i SAFE.Template::2.2.2
 ```
 
 #### 2. Create a v2 project
