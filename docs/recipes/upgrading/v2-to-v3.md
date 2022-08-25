@@ -69,8 +69,13 @@ dotnet paket install
 * **Add** the `Build.fs` file
 * **Add** the `Helpers.fs` file
 * **Add** the `Build.fsproj` project
+* **Add** the `paket.references` file (the one directly under the root directory)
+* Add the build project to the solution by running
+  ```sh
+  dotnet sln add Build.fsproj
+  ```
 
-**Important** If you have made any modifications to the build script e.g. extra targets, you will need to add them back in manually.
+**Important** If you have made any modifications to the build script e.g. extra targets, you will need to add them back in manually. You will also need to add any packages you added for the build to the paket.references file.
 
 #### 10. Update the webpack config
 * **Overwrite** the `webpack.config.js` file.
