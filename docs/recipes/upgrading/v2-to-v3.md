@@ -14,7 +14,7 @@ There have been a number of changes between the second and third major versions 
 Download and install the latest SAFE Stack V3 template by running the following command:
 
 ```bash
-dotnet new -i SAFE.Template
+dotnet new -i SAFE.Template::3.1.1
 ```
 
 #### 2. Create a v3 project
