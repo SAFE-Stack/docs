@@ -57,7 +57,6 @@ Host.CreateDefaultBuilder()
             webHostBuilder
                 .Configure(configureApp)
                 .ConfigureServices(configureServices)
-                .UseUrls([|"http://0.0.0.0:8085"|])
                 .UseWebRoot("public")
                 |> ignore)
     .Build()
