@@ -14,7 +14,7 @@ There have been a number of changes between the second and third major versions 
 Download and install the latest SAFE Stack V3 template by running the following command:
 
 ```bash
-dotnet new -i SAFE.Template
+dotnet new -i SAFE.Template::3.1.1
 ```
 
 #### 2. Create a v3 project
@@ -69,8 +69,13 @@ dotnet paket install
 * **Add** the `Build.fs` file
 * **Add** the `Helpers.fs` file
 * **Add** the `Build.fsproj` project
+* **Add** the `paket.references` file (the one directly under the root directory)
+* Add the build project to the solution by running
+  ```sh
+  dotnet sln add Build.fsproj
+  ```
 
-**Important** If you have made any modifications to the build script e.g. extra targets, you will need to add them back in manually.
+**Important** If you have made any modifications to the build script e.g. extra targets, you will need to add them back in manually. You will also need to add any packages you added for the build to the paket.references file.
 
 #### 10. Update the webpack config
 * **Overwrite** the `webpack.config.js` file.
@@ -78,7 +83,7 @@ dotnet paket install
 
 **Important** If you have made any modifications to the webpack file, you will need to apply them back in manually.
 
-* If you were using a CSS files, make sure to follow the [Stylesheet recipe](../ui/add-style.md) to add them back in.
+* If you were using CSS files, make sure to follow the [Stylesheet recipe](../ui/add-style.md) to add them back in.
 
 #### 11. Update TargetFramework in all projects
 * **Overwite** the `Client.fsproj`
