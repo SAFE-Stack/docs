@@ -11,7 +11,7 @@ The SAFE stack allows you to **develop web applications** almost entirely in [F#
 
 The SAFE stack is made up of four components:
 
-* A **web server** running on .NET Core for hosting back-end services in F#
+* A **web server** running on .NET for hosting back-end services in F#
 * A **hosting platform** that provides simple, scalable deployment models plus associated platform services for application developers
 * A mechanism to run F# in the web browser for **client-side delivery of F#**
 * An F# programming model for **client-side user interfaces**
