@@ -21,7 +21,7 @@ cd deploy
 Server
 ```
 
-> Navigating to `http://localhost:8085/` will load the application.
+> Navigating to `http://localhost:5000/` will load the application.
 
 ## **"Azure"** target
 ```powershell

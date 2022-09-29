@@ -16,7 +16,7 @@ js>Fable-compiled JS]
 webpack(Webpack dev server)
 js -- hot module replacement --- webpack
 end
-subgraph s[localhost:8085]
+subgraph s[localhost:5000]
 dotnet(dotnet watch run)
 saturn(Saturn on Kestrel)
 saturn --- dotnet

@@ -42,7 +42,7 @@ RUN dotnet run Bundle
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine
 COPY --from=build /workspace/deploy /app
 WORKDIR /app
-EXPOSE 8085
+EXPOSE 5000
 ENTRYPOINT [ "dotnet", "Server.dll" ]
 ```
 
@@ -67,7 +67,7 @@ RUN cd src/Server && dotnet publish -c release -o ../../deploy
 #### 3. Building and running with docker locally
 
 1. Build the image `docker build -t my-safe-app .`
-2. Run the container `docker run -it -p 8085:8085 my-safe-app`
+2. Run the container `docker run -it -p 5000:5000 my-safe-app`
 
 > Because the build is done entirely in docker, Docker Hub [automated builds](https://docs.docker.com/docker-hub/builds/) can be setup to automatically build and push the docker image.
 
@@ -138,6 +138,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine
 COPY --from=server-build /workspace/deploy /app
 COPY --from=client-build /workspace/deploy /app
 WORKDIR /app
-EXPOSE 8085
+EXPOSE 5000
 ENTRYPOINT [ "dotnet", "Server.dll" ]
 ```

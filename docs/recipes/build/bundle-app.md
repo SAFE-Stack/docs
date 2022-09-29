@@ -45,7 +45,7 @@ This will bundle the server project and copy all outputs into the `deploy` folde
 ## Testing the bundle
 1. Navigate to the `deploy` folder at the root of your repository.
 2. Run the `Server.exe` application.
-3. Navigate in your browser to `http://localhost:8085`.
+3. Navigate in your browser to `http://localhost:5000`.
 
 You should now see your SAFE application.
 

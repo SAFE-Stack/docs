@@ -21,10 +21,10 @@ var devServer = {
     // other fields elided...
     hot: true,
     proxy : {
-        // Redirect websocket requests that start with /socket/ to the server on the port 8085
+        // Redirect websocket requests that start with /socket/ to the server on the port 5000
         // This is used by Hot Module Replacement
         '/socket/**': {
-            target: 'http://localhost:8085',
+            target: 'http://localhost:5000',
             ws: true
         }
     }

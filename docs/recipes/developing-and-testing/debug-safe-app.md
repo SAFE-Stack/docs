@@ -8,7 +8,7 @@ In order to debug Server code from Visual Studio, we need set the correct URLs i
 #### 1. Configure launch settings
 You can do this through the Server project's **Properties/Debug** editor or by editing the `launchSettings.json` file which is in the **properties** folder.
 
-After selecting the debug profile that you wish to edit (**IIS Express** or **Server**), you will need to set the **App URL** field to `http://localhost:8085` and **Launch browser** field to `http://localhost:8080`. The process is [very similar](https://docs.microsoft.com/en-us/visualstudio/mac/launch-settings?view=vsmac-2019#configure-the-start-url) for VS Mac.
+After selecting the debug profile that you wish to edit (**IIS Express** or **Server**), you will need to set the **App URL** field to `http://localhost:5000` and **Launch browser** field to `http://localhost:8080`. The process is [very similar](https://docs.microsoft.com/en-us/visualstudio/mac/launch-settings?view=vsmac-2019#configure-the-start-url) for VS Mac.
 
 Once this is done, you can expect your `launchSettings.json` file to look something like this:
 ```json
@@ -17,7 +17,7 @@ Once this is done, you can expect your `launchSettings.json` file to look someth
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:8085/",
+      "applicationUrl": "http://localhost:5000/",
       "sslPort": 44330
     }
   },
@@ -37,7 +37,7 @@ Once this is done, you can expect your `launchSettings.json` file to look someth
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:8085"
+      "applicationUrl": "http://localhost:5000"
     }
   }
 }
