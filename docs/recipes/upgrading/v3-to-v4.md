@@ -101,6 +101,19 @@ at the root of the solution to launch the app and check everything is working as
 
 If you have problems loading your website, carefully check that you haven't missed out any javascript or nuget packages when overwriting the paket and package files. The console output will usually give you a good guide if this is the case.
 
+#### Issues
 
+On mac you might get an error like this:
 
+```
+> dotnet run
+dotnet watch 🚀 Started
+/Users/espen/code/dotnet-new-safe-4.1.1/.paket/Paket.Restore.targets(219,5): error MSB3073: The command "dotnet paket restore --project "/Users/espen/code/dotnet-new-safe-4.1.1/src/Shared/Shared.fsproj" --output-path "obj" --target-framework "net6.0"" exited with code 134. [/Users/espen/code/dotnet-new-safe-4.1.1/src/Shared/Shared.fsproj]
 
+The build failed. Fix the build errors and run again.
+dotnet watch ❌ Exited with error code 1
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+^Cdotnet watch 🛑 Shutdown requested. Press Ctrl+C again to force exit.
+```
+
+If so, try uninstalling all .NET SDKs and runtimes below 3.0.100. See [NET uninstall tool](https://learn.microsoft.com/en-us/dotnet/core/additional-tools/uninstall-tool?source=recommendations&tabs=macos) for how to unistall SDKs on mac.
