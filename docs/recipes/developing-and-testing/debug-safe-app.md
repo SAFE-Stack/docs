@@ -72,24 +72,21 @@ VS Code allows "full stack" debugging i.e. both the client and server. Prerequis
 * **Configure VS Code** with the following extensions:
     * [Ionide](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp): Provides F# support to Code.
     * [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp): Provides .NET Core debugging support.
-    * [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome): Provides integrated client-side debugging in Code.
-    * [Debugger for Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge): Provides integrated client-side debugging in Code.
 
 #### 1. Create a launch.json file
-Open the Command Palette using `Ctrl+Shift+P` and run `Debug: Open launch.json`. This will ask you to choose a platform; select `.NET Core`.
+Open the Command Palette using `Ctrl+Shift+P` and run `Debug: Add Configuration...`. This will ask you to choose a debugger; select `Ionide LaunchSettings`.
 
 This will create a `launch.json` file in the root of your solution and also open it in the editor.
 
-#### 2. Add a Configuration
-Click the "Add Configuration..." button and choose **Launch .NET Core Console Application**.
+#### 2. Update the Configuration
 The only change required is to point it at the Server application, by replacing the `program` line with this:
 
 ```json
-"program": "${workspaceFolder}/src/Server/bin/Debug/net5.0/Server.dll",
+"program": "${workspaceFolder}/src/Server/bin/Debug/net6.0/Server.dll",
 ```
 
 #### 3. Configure a build task
-* From the Command Palette, choose `Configure Task`.
+* From the Command Palette, choose `Tasks: Configure Task`.
 * Select `Create tasks.json file from template`. This will show you a list of pre-configured templates.
 * Select `.NET Core`.
 * Update the build directory using `"options": {"cwd": "src/Server"},` as shown below:
@@ -129,7 +126,8 @@ Either hit F5 or open the Debugging pane and press the Play button to build and 
 Observe that the Debug Console panel will show output from the server. The server is now running and you can set breakpoints and view the callstack etc.
 
 #### 5. Debug the Client
-* Start the Client using `dotnet fable watch src/Client --run webpack-dev-server`.
+
+* Start the Client by running `dotnet fable watch -o output -s --run npm run start` in the Client project directory.
 * Open the Command Palette and run `Debug: Open Link`.
 * When prompted for a url, type `http://localhost:8080/`. This will launch a browser which is pointed at the URL and connect the debugger to it.
 * You can now set breakpoints in the generated `.fs.js` files within VS Code.
