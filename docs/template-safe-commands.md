@@ -5,7 +5,7 @@ The SAFE Stack now runs FAKE using a console app rather than a script.
 dotnet run
 ```
 
-Used for development purposes, and provides a great live-reload experience. It pulls down any dependencies required for both the client and server, before running both the client and server in a "watch" mode, so any changes you make on either side will be automatically applied without your needing to restart the application.
+Used for development purposes, and provides a great live-reload experience. It pulls down any dependencies required for both the client and server, before running both the client and server in a "watch" mode, so any changes you make on either side will be automatically applied without you needing to restart the application.
 
 > Navigating to `http://localhost:8080/` will load the application.
 
@@ -53,4 +53,4 @@ This target behaves similarly to the standard Run target, except that it launche
 dotnet run Format
 ```
 
-This target will format all the F# files in the `src` folder using [Fantomas](https://github.com/fsprojects/fantomas). Out of the box, Fantomas tries to reformat the code according to the [F# style guide by Microsoft](https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/formatting). For more info, check out [the documentation](https://github.com/fsprojects/fantomas/blob/master/docs/Documentation.md).
+This target will format all the F# files in the `src` folder using [Fantomas](https://github.com/fsprojects/fantomas). Out of the box, Fantomas tries to reformat the code according to the [F# style guide by Microsoft](https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/formatting). For more info, check out [the documentation](https://fsprojects.github.io/fantomas/docs/index.html).

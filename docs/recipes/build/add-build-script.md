@@ -117,5 +117,5 @@ At the root of the solution, run `dotnet paket install` to install all your depe
 
 If you now execute `dotnet run`, the default target will be run. This will build the app in development mode and launch it locally.
 
-To learn more about targets and FAKE in general, see [Getting Started with FAKE](https://fake.build/fake-gettingstarted.html#Minimal-example).
+To learn more about targets and FAKE in general, see [Getting Started with FAKE](https://fake.build/guide/getting-started.html#Minimal-Example).
 

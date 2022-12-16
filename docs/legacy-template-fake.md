@@ -7,7 +7,7 @@ Generated FAKE script contains a number of useful build targets:
 dotnet fake build --target run
 ```
 
-This target is used for development purposes, and provides a great live-reload experience. It pulls down any dependencies required for both the client and server, before running both the client and server in a "watch" mode, so any changes you make on either side will be automatically applied without your needing to restart the application.
+This target is used for development purposes, and provides a great live-reload experience. It pulls down any dependencies required for both the client and server, before running both the client and server in a "watch" mode, so any changes you make on either side will be automatically applied without you needing to restart the application.
 
 > Navigating to `http://localhost:8080/` will load the application.
 
