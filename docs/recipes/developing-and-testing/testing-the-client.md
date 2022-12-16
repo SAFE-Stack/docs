@@ -40,7 +40,7 @@ Once the build is complete and the website is running, navigate to `http://local
 If you are using the minimal template, you will need to first configure a test project as none are included.
 
 #### 1. Add a test project
-In the tests/Client folder, create a create a **.Net** library called **Client.Tests**.
+Create a **.Net** library called **Client.Tests** in the tests/Client subdirectory using the following commands:
 
 ```powershell
 dotnet new ClassLib -lang F# -n Client.Tests -o tests/Client
@@ -51,7 +51,7 @@ dotnet sln add tests/Client
 Reference the Client project from the Client.Tests project:
 
 ```powershell
-dotnet add src/Client.Tests reference src/Client
+dotnet add tests/Client reference src/Client
 ```
 
 #### 3. Add the Fable.Mocha package to Test project
