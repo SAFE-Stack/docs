@@ -23,4 +23,4 @@ Azure comes with a large number of ready-made platform services that can **drama
 * **Analytical** services such as [Stream Analytics](https://azure.microsoft.com/en-us/services/stream-analytics/), [Databricks](https://azure.microsoft.com/en-us/services/databricks/), [Machine Learning](https://azure.microsoft.com/en-us/overview/machine-learning/) and [Analysis Services](https://azure.microsoft.com/en-us/services/analysis-services/).
 * **Security** services such as [Key Vault](https://azure.microsoft.com/en-us/services/key-vault/) and [Active Directory](https://azure.microsoft.com/en-us/services/active-directory/).
 
-Many of the above services have ready-made SDKs that can be run on .NET and therefore from F#. In addition, the [Azure Storage Type Provider](http://fsprojects.github.io/AzureStorageTypeProvider/) provides unparallel ease of access to Azure Storage Blobs, Queues and Tables from F# *(currently not yet supported on .NET Core)*.
+Many of the above services have ready-made SDKs that can be run on .NET and therefore from F#.
