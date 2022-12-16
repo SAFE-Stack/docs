@@ -40,3 +40,13 @@ Inside a new `ItemGroup` in the project's `.fsproj` file you will need to add an
 
 Once you have added all of your dependencies to the relevant `.fsproj` files, you can remove `paket.lock` and all of the `paket.references` files from your solution if included and delete them.
 
+#### 5. Remove paket tool
+
+If you open `.config/dotnet-tools.json` you will find an entry for paket. Remove it.
+
+Alternatively, run 
+
+```bash
+dotnet tool uninstall paket
+```
+at the root of your solution.
