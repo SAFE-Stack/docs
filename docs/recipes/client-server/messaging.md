@@ -95,6 +95,8 @@ Test out your endpoint using e.g. web browser / Postman / REST Client for VS Cod
 #### 1. Call the endpoint
 Create a new function `loadCustomer` that will call the endpoint.
 
+> This example uses [Thoth.Fetch](https://thoth-org.github.io/Thoth.Fetch/index.html) to download and deserialise the response.
+
 ```fsharp
 let loadCustomer customerId =
     let loadCustomer () = Fetch.get<unit, Customer> (sprintf "/api/customer/%i" customerId)
