@@ -4,7 +4,7 @@
 
 Paket is a fully featured package manager that acts as an alternative to the NuGet package manager commonly used in .NET.
 
-It can help you reference libraries from NuGet, Git repositories or Http resources. It also provides precise control over your dependencies, separating direct and transitive references and capturing the exact configuration with each commit. You can find out more at the [Paket website.](https://fsprojects.github.io/Paket/).
+It can help you reference libraries from NuGet, Git repositories or Http resources. It also provides precise control over your dependencies, separating direct and transitive references and capturing the exact configuration with each commit. You can find out more at the [Paket website](https://fsprojects.github.io/Paket/).
 
 For most use cases, we would recommend sticking with Paket. If, however, you are in a position where you wish to remove it and revert back to the Nuget package manager you can easily do so with the following steps.
 
