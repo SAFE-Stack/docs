@@ -22,7 +22,7 @@ You will find this file at the root of your solution. Remove it from your soluti
 
 #### 3. Add project dependencies via NuGet
 
-Each project directory will contain a `paket.references` file. This lists all the nuget packages that the project requires.
+Each project directory will contain a `paket.references` file. This lists all the NuGet packages that the project requires.
 
 Inside a new `ItemGroup` in the project's `.fsproj` file you will need to add an entry for each of these packages.
 
