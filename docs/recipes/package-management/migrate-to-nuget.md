@@ -32,7 +32,7 @@ Inside a new `ItemGroup` in the project's `.fsproj` file you will need to add an
 <ItemGroup>
   <PackageReference Include="MyPackage1" Version="1.0.0" />
 <PackageReference Include="AnotherPackage" Version="2.0.1" />
-<!--...add entry for each package in the references file...-->
+  <!--...add entry for each package in the references file...-->
 </ItemGroup>
 ```
 
