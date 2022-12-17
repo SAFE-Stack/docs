@@ -17,7 +17,7 @@ cssEntry: './src/Client/style.css',
 ```
 
 #### 2. Embed CSS into outputs
- Find the `entry` field in the  `module.exports` object at the bottom of the file, and replace it with the following:
+ Find the `entry` field in the `module.exports` object at the bottom of the file, and replace it with the following:
 ```javascript
 entry: isProduction ? {
     app: [resolve(CONFIG.fsharpEntry), resolve(CONFIG.cssEntry)]
@@ -31,7 +31,7 @@ This combines the css and F# outputs into a single bundle for production, and se
 
 ### I'm using the Minimal Template
 #### 1. Embed CSS into outputs
-Find the `entry` field in the  `module.exports` object at the bottom of the file, and replace it with the following:
+Find the `entry` field in the `module.exports` object at the bottom of the file, and replace it with the following:
 ```javascript
 entry: {
     app: [

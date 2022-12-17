@@ -1,7 +1,7 @@
 # How do I ensure NPM and Nuget packages stay in sync?
 SAFE Stack uses Fable bindings, which are NuGet packages that provide idiomatic and type-safe wrappers around native JavaScript APIs. These bindings often rely on third-party JavaScript libraries distributed via the NPM registry. This leads to the problem of keeping both the NPM package in sync with its corresponding NuGet F# wrapper. [Femto](https://github.com/Zaid-Ajaj/Femto) is a dotnet CLI tool that solves this issue.
 
-> For in-depth information about Femto, see [Introducing Femto](https://fable.io/blog/Introducing-Femto.html).
+> For in-depth information about Femto, see [Introducing Femto](https://fable.io/blog/2019/2019-06-29-Introducing-Femto.html).
 
 ---
 

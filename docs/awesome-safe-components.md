@@ -29,7 +29,7 @@ Feliz-style Fable bindings for [Material-UI](https://material-ui.com/). [Get it!
 Fable binding for [reactstrap](https://reactstrap.github.io/). [Get it!](https://www.nuget.org/packages/Fable.Reactstrap/)
 
 ### [Fable.MaterialUI](https://github.com/mvsmal/fable-material-ui)
-Fable bindings for [Material-UI](https://material-ui.com/). [Get it!]((https://www.nuget.org/packages/Fable.MaterialUI/))
+Fable bindings for [Material-UI](https://material-ui.com/). [Get it!](https://www.nuget.org/packages/Fable.MaterialUI/)
 
 ### [Feliz.Bulma](https://www.nuget.org/packages/Feliz.Bulma/)
 [Bulma UI](https://bulma.io) wrapper for amazing Feliz DSL. [Get it!](https://www.nuget.org/packages/Feliz.Bulma/)

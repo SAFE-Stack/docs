@@ -1,4 +1,4 @@
-To use a third-party React library in a SAFE application,  you need to write an F# wrapper around it. There are two ways for doing this - using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
+To use a third-party React library in a SAFE application, you need to write an F# wrapper around it. There are two ways for doing this - using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
 ## Prerequisites
 
 This recipe uses the [react-d3-speedometer NPM package](https://www.npmjs.com/package/react-d3-speedometer) for demonstration purposes. [Add it to your Client](../../package-management/add-npm-package-to-client) before continuing.

@@ -35,7 +35,7 @@ let customerApi : ICustomerApi = {
 ```
 
 ## 3. Consume the protocol on the client
-After [exposing an HttpHandler](https://zaid-ajaj.github.io/Fable.Remoting/src/saturn.html) from `customerApi` you can start calling the API from the client. 
+After [exposing an HttpHandler](https://zaid-ajaj.github.io/Fable.Remoting/#/server-setup/saturn) from `customerApi` you can start calling the API from the client. 
 
 ```fsharp
 let api = Remoting.createApi() |> Remoting.buildProxy<ICustomerApi>
@@ -47,4 +47,4 @@ async {
 }
 ```
 
-Notice here, there is no need to configure routes or JSON serialization, worry about HTTP verbs, or even involve yourself with the Giraffe pipeline. If you open your browser network tab, you can easily [inspect](https://zaid-ajaj.github.io/Fable.Remoting/src/raw-http.html) what remoting is doing behind the scenes. 
+Notice here, there is no need to configure routes or JSON serialization, worry about HTTP verbs, or even involve yourself with the Giraffe pipeline. If you open your browser network tab, you can easily [inspect](https://zaid-ajaj.github.io/Fable.Remoting/#/advanced/raw-http-communication) what remoting is doing behind the scenes. 
