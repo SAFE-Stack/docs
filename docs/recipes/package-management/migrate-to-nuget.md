@@ -20,7 +20,7 @@ In every project's `.fsproj` file you will find the following line. Remove it an
 
 You will find this file at the root of your solution. Remove it from your solution if included and then delete it.
 
-#### 3. Add project dependencies via nuget
+#### 3. Add project dependencies via NuGet
 
 Each project directory will contain a `paket.references` file. This lists all the nuget packages that the project requires.
 
