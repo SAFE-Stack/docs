@@ -6,6 +6,6 @@ If there's anything missing from here, please feel free to add the documentation
 
 We hope you enjoy using SAFE as much as we do!
 
-The SAFE team.
+The SAFE team :)
 
 ![](img/safe-logo.png)
