@@ -67,7 +67,7 @@ RUN cd src/Server && dotnet publish -c release -o ../../deploy
 #### 3. Building and running with docker locally
 
 1. Build the image `docker build -t my-safe-app .`
-2. Run the container `docker run -it -p 5000:5000 my-safe-app`
+2. Run the container `docker run -it -p 5000:80 my-safe-app`
 
 > Because the build is done entirely in docker, Docker Hub [automated builds](https://docs.docker.com/docker-hub/builds/) can be setup to automatically build and push the docker image.
 
