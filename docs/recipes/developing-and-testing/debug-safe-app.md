@@ -127,7 +127,7 @@ Observe that the Debug Console panel will show output from the server. The serve
 
 #### 5. Debug the Client
 
-* Start the Client by running `dotnet fable watch -o output -s --run npm run start` in the Client project directory.
+* Start the Client by running `dotnet fable watch -o output -s --run npm run start` from `<repo root>/src/Client/`.
 * Open the Command Palette and run `Debug: Open Link`.
 * When prompted for a url, type `http://localhost:8080/`. This will launch a browser which is pointed at the URL and connect the debugger to it.
 * You can now set breakpoints in the generated `.fs.js` files within VS Code.
