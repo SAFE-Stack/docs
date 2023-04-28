@@ -26,19 +26,39 @@ Each project directory will contain a `paket.references` file. This lists all th
 
 Inside a new `ItemGroup` in the project's `.fsproj` file you will need to add an entry for each of these packages.
 
-> You can find the **version** of each package in the `paket.lock` file at the root of the solution.
-
 ```xml
 <ItemGroup>
-  <PackageReference Include="MyPackage1" Version="1.0.0" />
+  <PackageReference Include="Azure.Core" Version="1.24" />
   <PackageReference Include="AnotherPackage" Version="2.0.1" />
   <!--...add entry for each package in the references file...-->
 </ItemGroup>
 ```
 
+> You can find the **version** of each package in the `paket.lock` file at the root of the solution. The version number is contained in brackets next to the name of the package at the first level of indentation. For example, in this case Azure.Core is version 1.24: 
+
+```
+Azure.Core (1.24)
+    Microsoft.Bcl.AsyncInterfaces (>= 1.1.1)
+    System.Diagnostics.DiagnosticSource (>= 4.6)
+    System.Memory.Data (>= 1.0.2)
+    System.Numerics.Vectors (>= 4.5)
+    System.Text.Encodings.Web (>= 4.7.2)
+    System.Text.Json (>= 4.7.2)
+    System.Threading.Tasks.Extensions (>= 4.5.4)
+```
+
 #### 4. Remove remaining paket files
 
-Once you have added all of your dependencies to the relevant `.fsproj` files, you can remove `paket.lock` and all of the `paket.references` files from your solution if included and delete them.
+Once you have added all of your dependencies to the relevant `.fsproj` files, you can remove the folowing files and folders from your solution.
+    
+**Files:**
+* `paket.lock`
+* `paket.dependencies` 
+* all of the `paket.references` files
+
+**Folders:**
+* `.paket` 
+* `paket-files` 
 
 #### 5. Remove paket tool
 
