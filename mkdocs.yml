@@ -103,6 +103,7 @@ nav:
     - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
     - Add a Nuget package to the Client: 'recipes/package-management/add-nuget-package-to-client.md'
     - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
+    - Migrate to NuGet from Paket: 'recipes/package-management/migrate-to-nuget.md'
     - Sync NuGet and NPM Packages: 'recipes/package-management/sync-nuget-and-npm-packages.md'
 
 - FAQs:
