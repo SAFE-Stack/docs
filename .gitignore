@@ -1,3 +1,5 @@
 site/
 *.orig
 .ionide/
+
+**/.DS_Store
