@@ -16,8 +16,8 @@ npx tailwindcss init
 ```javascript
 module.exports = {
   content: [
-      './src/**/*.html',
-      './src/**/*.fs',
+      './src/Client/**/*.html',
+      './src/Client/**/*.fs',
   ],
   theme: {
     extend: {},
