@@ -12,7 +12,7 @@ dotnet tool restore
 - Install Fable.Form.Simple.Bulma via Paket:
 
 ```sh
-dotnet paket add --project src/Client/ Fable.Form.Simple.Bulma
+dotnet paket add --project src/Client/ Fable.Form.Simple.Bulma --version 3.0.0
 ```
 
 - Install bulma and fable-form-simple-bulma npm packages:
