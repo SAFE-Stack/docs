@@ -10,7 +10,7 @@
     ```
 3. Initialise a `tailwind.config.js`
     ```shell
-      npx tailwindcss init
+    npx tailwindcss init
     ```
 4. Amend the content array in the `tailwind.config.js` as follows
     ```javascript
