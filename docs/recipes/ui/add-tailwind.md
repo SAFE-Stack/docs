@@ -37,7 +37,6 @@ module.exports = {
 ```
 
 6. Add the Tailwind layers to your `style.css`
-
 ```css
 @tailwind base;
 @tailwind components;
@@ -45,7 +44,6 @@ module.exports = {
 ```
 
 7. Find the `module.rules` field in the `webpack.config.js` and in the css files rule’s `use` field add `postcss-loader`
-
 ```javascript
 {
     test: /\.(sass|scss|css)$/,
@@ -64,7 +62,6 @@ module.exports = {
 ```
 
 8. In the `src/Client` folder find the code in `Index.fs` to show the list of todos and add a Tailwind text colour class(text-red-200)
-
 ```fsharp
 for todo in model.Todos do
     Html.li [
