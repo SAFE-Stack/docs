@@ -2,19 +2,18 @@
 
 First off, you need to create a SAFE app, [install the relevant dependencies](https://mangelmaxime.github.io/Fable.Form/Fable.Form.Simple.Bulma/installation.html), and wire them up to be available for use in your F# Fable code.
 
-- Create a new SAFE app and restore local tools:
+1. Create a new SAFE app and restore local tools:
 ```sh
 dotnet new SAFE
 dotnet tool restore
 ```
 
-- Install Fable.Form.Simple.Bulma using Paket:
+1. Install Fable.Form.Simple.Bulma using Paket:
 ```sh
 dotnet paket add --project src/Client/ Fable.Form.Simple.Bulma --version 3.0.0
 ```
 
-- Install bulma and fable-form-simple-bulma npm packages:
-
+1. Install bulma and fable-form-simple-bulma npm packages:
 ```sh
 npm add fable-form-simple-bulma
 npm add bulma@0.9.0
@@ -22,20 +21,20 @@ npm add bulma@0.9.0
 
 ## Register styles
 
-- Create `./src/Client/style.scss` with the following contents:
+1. Create `./src/Client/style.scss` with the following contents:
 ``` { .scss title="style.scss" }
 @import "~bulma";
 @import "~fable-form-simple-bulma";
 ```
 
-- Update webpack config to include the new stylesheet:
+1. Update webpack config to include the new stylesheet:
 
-    - Add a `cssEntry` property to the `CONFIG` object:
+    a. Add a `cssEntry` property to the `CONFIG` object:
     ```{ .js title="webpack.config.js" }
     cssEntry: './src/Client/style.scss',
     ```
 
-    - Modify the `entry` property of the object returned from `module.exports` to include `cssEntry`:
+    b. Modify the `entry` property of the object returned from `module.exports` to include `cssEntry`:
     ```{ .diff title="webpack.config.js" }
     -   entry: {
     -       app: resolve(config.fsharpEntry)
@@ -49,7 +48,7 @@ npm add bulma@0.9.0
     ```
     Further details of these changes can be found in the [stylesheet recipe](/docs/recipes/ui/add-style/).
 
-- Remove the Bulma stylesheet link from `./src/Client/index.html`, as it is no longer needed:
+1. Remove the Bulma stylesheet link from `./src/Client/index.html`, as it is no longer needed:
 ``` { .diff title="index.html" }
     <link rel="icon" type="image/png" href="/favicon.png"/>
 -   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
@@ -60,31 +59,31 @@ npm add bulma@0.9.0
 
 With the above preparation done, you can use Fable.Form.Simple.Bulma in your `./src/Client/Index.fs` file.
 
-- Open the newly added namespaces:
+1. Open the newly added namespaces:
 ``` { .fsharp title="Index.fs" }
 open Fable.Form.Simple
 open Fable.Form.Simple.Bulma
 ```
 
-- Create type `Values` to represent each input field on the form (a single textbox), and create a type `Form` which is an alias for `Form.View.Model<Values>`:
+1. Create type `Values` to represent each input field on the form (a single textbox), and create a type `Form` which is an alias for `Form.View.Model<Values>`:
 ``` { .fsharp title="Index.fs" }
 type Values = { Todo: string }
 type Form = Form.View.Model<Values>
 ```
 
-- In the `Model` type definition, replace `Input: string` with `Form: Form`  
+1. In the `Model` type definition, replace `Input: string` with `Form: Form`  
 ```  { .diff title="Index.fs" }
 -type Model = { Todos: Todo list; Input: string }
 +type Model = { Todos: Todo list; Form: Form }
 ```
 
-- Update the `init` function to reflect the change in `Model`:
+1. Update the `init` function to reflect the change in `Model`:
 ```  { .diff title="Index.fs" }
 -let model = { Todos = []; Input = "" }
 +let model = { Todos = []; Form = Form.View.idle { Todo = "" } }
 ```
 
-- Change `Msg` discriminated union - replace the `SetInput` case with `FormChanged of Form`, and add string data to the `AddTodo` case:
+1. Change `Msg` discriminated union - replace the `SetInput` case with `FormChanged of Form`, and add string data to the `AddTodo` case:
 ``` { .diff title="Index.fs" }
 type Msg =
     | GotTodos of Todo list
@@ -95,7 +94,7 @@ type Msg =
     | AddedTodo of Todo
 ```
 
-- Modify the `update` function to handle the changed `Msg` cases:
+1. Modify the `update` function to handle the changed `Msg` cases:
 ``` { .diff title="Index.fs" }
 let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
     match msg with
@@ -128,7 +127,7 @@ let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
 +       newModel, Cmd.none
 ```
 
-- Create `form`. This defines the logic of the form, and how it responds to interaction:
+1. Create `form`. This defines the logic of the form, and how it responds to interaction:
 ``` { .fsharp title="Index.fs" }
 let form : Form.Form<Values, Msg, _> =
     let todoField =
@@ -150,7 +149,7 @@ let form : Form.Form<Values, Msg, _> =
     |> Form.append todoField
 ```
 
-- In the function `containerBox`, remove the existing form view. Then replace it using `Form.View.asHtml` to render the view:
+1. In the function `containerBox`, remove the existing form view. Then replace it using `Form.View.asHtml` to render the view:
     ```  { .diff title="Index.fs" }
     let containerBox (model: Model) (dispatch: Msg -> unit) =
         Bulma.box [
