@@ -22,157 +22,291 @@ npm add bulma@0.9.0
 ## Register styles
 
 1. Create `./src/Client/style.scss` with the following contents:
-``` { .scss title="style.scss" }
-@import "~bulma";
-@import "~fable-form-simple-bulma";
-```
+
+    === "Code"
+        ``` { .scss title="style.scss" }
+        @import "~bulma";
+        @import "~fable-form-simple-bulma";
+        ```
+    
+    === "Diff"
+        ``` { .diff title="style.scss" }
+        +@import "~bulma";
+        +@import "~fable-form-simple-bulma";
+        ```
 
 1. Update webpack config to include the new stylesheet:
 
     a. Add a `cssEntry` property to the `CONFIG` object:
-    ```{ .js title="webpack.config.js" }
-    cssEntry: './src/Client/style.scss',
-    ```
+    
+    === "Code"    
+        ```{ .js title="webpack.config.js" }
+        cssEntry: './src/Client/style.scss',
+        ```
+    
+    === "Diff"    
+        ```{ .diff title="webpack.config.js" }
+        +cssEntry: './src/Client/style.scss',
+        ```
 
     b. Modify the `entry` property of the object returned from `module.exports` to include `cssEntry`:
-    ```{ .diff title="webpack.config.js" }
-    -   entry: {
-    -       app: resolve(config.fsharpEntry)
-    -   },
-    +   entry: isProduction ? {
-    +           app: [resolve(config.fsharpEntry), resolve(config.cssEntry)]
-    +   } : {
-    +           app: resolve(config.fsharpEntry),
-    +           style: resolve(config.cssEntry)
-    +   },
-    ```
-    Further details of these changes can be found in the [stylesheet recipe](/docs/recipes/ui/add-style/).
+
+    === "Code"
+        ```{ .js title="webpack.config.js" }
+        entry: isProduction ? {
+                app: [resolve(config.fsharpEntry), resolve(config.cssEntry)]
+        } : {
+                app: resolve(config.fsharpEntry),
+                style: resolve(config.cssEntry)
+        },
+        ```
+        
+    === "Diff"
+        ```{ .diff title="webpack.config.js" }
+        -   entry: {
+        -       app: resolve(config.fsharpEntry)
+        -   },
+        +   entry: isProduction ? {
+        +           app: [resolve(config.fsharpEntry), resolve(config.cssEntry)]
+        +   } : {
+        +           app: resolve(config.fsharpEntry),
+        +           style: resolve(config.cssEntry)
+        +   },
+        ```
 
 1. Remove the Bulma stylesheet link from `./src/Client/index.html`, as it is no longer needed:
-``` { .diff title="index.html" }
-    <link rel="icon" type="image/png" href="/favicon.png"/>
--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-```
+
+    ``` { .diff title="index.html (diff)" }
+        <link rel="icon" type="image/png" href="/favicon.png"/>
+    -   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    ```
 
 ## Replace the existing form with a Fable.Form
 
 With the above preparation done, you can use Fable.Form.Simple.Bulma in your `./src/Client/Index.fs` file.
 
 1. Open the newly added namespaces:
-``` { .fsharp title="Index.fs" }
-open Fable.Form.Simple
-open Fable.Form.Simple.Bulma
-```
+
+    === "Code"
+        ``` { .fsharp title="Index.fs" }
+        open Fable.Form.Simple
+        open Fable.Form.Simple.Bulma
+        ```
+
+    === "Diff"
+        ``` { .diff title="Index.fs" }
+        +open Fable.Form.Simple
+        +open Fable.Form.Simple.Bulma
+        ```
 
 1. Create type `Values` to represent each input field on the form (a single textbox), and create a type `Form` which is an alias for `Form.View.Model<Values>`:
-``` { .fsharp title="Index.fs" }
-type Values = { Todo: string }
-type Form = Form.View.Model<Values>
-```
+
+    === "Code"
+        ``` { .fsharp title="Index.fs" }
+        type Values = { Todo: string }
+        type Form = Form.View.Model<Values>
+        ```
+
+    === "Diff"
+        ``` { .diff title="Index.fs" }
+        +type Values = { Todo: string }
+        +type Form = Form.View.Model<Values>
+        ```
 
 1. In the `Model` type definition, replace `Input: string` with `Form: Form`  
-```  { .diff title="Index.fs" }
--type Model = { Todos: Todo list; Input: string }
-+type Model = { Todos: Todo list; Form: Form }
-```
+
+    === "Code"
+        ```  { .fsharp title="Index.fs" }
+        type Model = { Todos: Todo list; Form: Form }
+        ```
+
+    === "Diff"
+        ```  { .diff title="Index.fs" }
+        -type Model = { Todos: Todo list; Input: string }
+        +type Model = { Todos: Todo list; Form: Form }
+        ```
 
 1. Update the `init` function to reflect the change in `Model`:
-```  { .diff title="Index.fs" }
--let model = { Todos = []; Input = "" }
-+let model = { Todos = []; Form = Form.View.idle { Todo = "" } }
-```
+
+    === "Code"
+        ```  { .fsharp title="Index.fs" }
+        let model = { Todos = []; Form = Form.View.idle { Todo = "" } }
+        ```
+
+    === "Diff"
+        ```  { .diff title="Index.fs" }
+        -let model = { Todos = []; Input = "" }
+        +let model = { Todos = []; Form = Form.View.idle { Todo = "" } }
+        ```
 
 1. Change `Msg` discriminated union - replace the `SetInput` case with `FormChanged of Form`, and add string data to the `AddTodo` case:
-``` { .diff title="Index.fs" }
-type Msg =
-    | GotTodos of Todo list
--   | SetInput of string
--   | AddTodo
-+   | FormChanged of Form
-+   | AddTodo of string
-    | AddedTodo of Todo
-```
+
+    === "Code"
+        ``` { .fsharp title="Index.fs" }
+        type Msg =
+            | GotTodos of Todo list
+            | FormChanged of Form
+            | AddTodo of string
+            | AddedTodo of Todo
+        ```
+
+    === "Diff"
+        ``` { .diff title="Index.fs" }
+        type Msg =
+            | GotTodos of Todo list
+        -   | SetInput of string
+        -   | AddTodo
+        +   | FormChanged of Form
+        +   | AddTodo of string
+            | AddedTodo of Todo
+        ```
 
 1. Modify the `update` function to handle the changed `Msg` cases:
-``` { .diff title="Index.fs" }
-let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
-    match msg with
-    | GotTodos todos -> { model with Todos = todos }, Cmd.none
 
-    (* First changed case *)
--   | SetInput value -> { model with Input = value }, Cmd.none
-+   | FormChanged form -> { model with Form = form }, Cmd.none
+    === "Code"
+        ``` { .fsharp title="Index.fs" }
+        let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
+            match msg with
+            | GotTodos todos -> { model with Todos = todos }, Cmd.none
+            | FormChanged form -> { model with Form = form }, Cmd.none
+            | AddTodo todo ->
+                let todo = Todo.create todo
+                let cmd = Cmd.OfAsync.perform todosApi.addTodo todo AddedTodo
+                model, cmd
+            | AddedTodo todo ->
+                let newModel =
+                    { model with
+                        Todos = model.Todos @ [ todo ]
+                        Form =
+                            { model.Form with
+                                State = Form.View.Success "Todo added"
+                                Values = { model.Form.Values with Todo = "" } } }
+                newModel, Cmd.none
+        ```
 
-    (* Second changed case *)
--   | AddTodo ->
--       let todo = Todo.create model.Input
--       let cmd = Cmd.OfAsync.perform todosApi.addTodo todo AddedTodo
--       { model with Input = "" }, cmd
-+   | AddTodo todo ->
-+       let todo = Todo.create todo
-+       let cmd = Cmd.OfAsync.perform todosApi.addTodo todo AddedTodo
-+       model, cmd
+    === "Diff"
+        ``` { .diff title="Index.fs" }
+        let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
+            match msg with
+            | GotTodos todos -> { model with Todos = todos }, Cmd.none
+        -   | SetInput value -> { model with Input = value }, Cmd.none
+        +   | FormChanged form -> { model with Form = form }, Cmd.none
+        -   | AddTodo ->
+        -       let todo = Todo.create model.Input
+        -       let cmd = Cmd.OfAsync.perform todosApi.addTodo todo AddedTodo
+        -       { model with Input = "" }, cmd
+        +   | AddTodo todo ->
+        +       let todo = Todo.create todo
+        +       let cmd = Cmd.OfAsync.perform todosApi.addTodo todo AddedTodo
+        +       model, cmd
+        -   | AddedTodo todo -> { model with Todos = model.Todos @ [ todo ] }, Cmd.none
+        +   | AddedTodo todo ->
+        +       let newModel =
+        +           { model with
+        +               Todos = model.Todos @ [ todo ]
+        +               Form =
+        +                   { model.Form with
+        +                       State = Form.View.Success "Todo added"
+        +                       Values = { model.Form.Values with Todo = "" } } }
+        +       newModel, Cmd.none
+        ```
 
-    (* Changes here also, we will now provide a success message *)
--   | AddedTodo todo -> { model with Todos = model.Todos @ [ todo ] }, Cmd.none
-+   | AddedTodo todo ->
-+       let newModel =
-+           { model with
-+               Todos = model.Todos @ [ todo ]
-+               Form =
-+                   { model.Form with
-+                       State = Form.View.Success "Todo added"
-+                       Values = { model.Form.Values with Todo = "" } } }
-+       newModel, Cmd.none
-```
 
 1. Create `form`. This defines the logic of the form, and how it responds to interaction:
-``` { .fsharp title="Index.fs" }
-let form : Form.Form<Values, Msg, _> =
-    let todoField =
-        Form.textField
-            {
-                Parser = Ok
-                Value = fun values -> values.Todo
-                Update = fun newValue values -> { values with Todo = newValue }
-                Error = fun _ -> None
-                Attributes =
-                    {
-                        Label = "New todo"
-                        Placeholder = "What needs to be done?"
-                        HtmlAttributes = []
-                    }
-            }
 
-    Form.succeed AddTodo
-    |> Form.append todoField
-```
+    === "Code"
+        ``` { .fsharp title="Index.fs" }
+        let form : Form.Form<Values, Msg, _> =
+            let todoField =
+                Form.textField
+                    {
+                        Parser = Ok
+                        Value = fun values -> values.Todo
+                        Update = fun newValue values -> { values with Todo = newValue }
+                        Error = fun _ -> None
+                        Attributes =
+                            {
+                                Label = "New todo"
+                                Placeholder = "What needs to be done?"
+                                HtmlAttributes = []
+                            }
+                    }
+
+            Form.succeed AddTodo
+            |> Form.append todoField
+        ```
+
+    === "Diff"
+        ``` { .diff title="Index.fs" }
+        +let form : Form.Form<Values, Msg, _> =
+        +    let todoField =
+        +        Form.textField
+        +            {
+        +                Parser = Ok
+        +                Value = fun values -> values.Todo
+        +                Update = fun newValue values -> { values with Todo = newValue }
+        +                Error = fun _ -> None
+        +                Attributes =
+        +                    {
+        +                        Label = "New todo"
+        +                        Placeholder = "What needs to be done?"
+        +                        HtmlAttributes = []
+        +                    }
+        +            }
+        +
+        +    Form.succeed AddTodo
+        +    |> Form.append todoField
+        ```
 
 1. In the function `containerBox`, remove the existing form view. Then replace it using `Form.View.asHtml` to render the view:
-    ```  { .diff title="Index.fs" }
-    let containerBox (model: Model) (dispatch: Msg -> unit) =
-        Bulma.box [
-            Bulma.content [
-                Html.ol [
-                    for todo in model.Todos do
-                        Html.li [ prop.text todo.Description ]
+
+    === "Code"
+        ```  { .fsharp title="Index.fs" }
+        let containerBox (model: Model) (dispatch: Msg -> unit) =
+            Bulma.box [
+                Bulma.content [
+                    Html.ol [
+                        for todo in model.Todos do
+                            Html.li [ prop.text todo.Description ]
+                    ]
                 ]
+                Form.View.asHtml
+                    {
+                        Dispatch = dispatch
+                        OnChange = FormChanged
+                        Action = Form.View.Action.SubmitOnly "Add"
+                        Validation = Form.View.Validation.ValidateOnBlur
+                    }
+                    form
+                    model.Form
             ]
-    -       Bulma.field.div [
-    -          // ... removed for brevity ...
-    -       ]
-    +       Form.View.asHtml
-    +           {
-    +               Dispatch = dispatch
-    +               OnChange = FormChanged
-    +               Action = Form.View.Action.SubmitOnly "Add"
-    +               Validation = Form.View.Validation.ValidateOnBlur
-    +           }
-    +           form
-    +           model.Form
-        ]
-    ```
+        ```
+
+    === "Diff"
+        ```  { .diff title="Index.fs" }
+        let containerBox (model: Model) (dispatch: Msg -> unit) =
+            Bulma.box [
+                Bulma.content [
+                    Html.ol [
+                        for todo in model.Todos do
+                            Html.li [ prop.text todo.Description ]
+                    ]
+                ]
+        -       Bulma.field.div [
+        -           ... removed for brevity ...
+        -       ]
+        +       Form.View.asHtml
+        +           {
+        +               Dispatch = dispatch
+        +               OnChange = FormChanged
+        +               Action = Form.View.Action.SubmitOnly "Add"
+        +               Validation = Form.View.Validation.ValidateOnBlur
+        +           }
+        +           form
+        +           model.Form
+            ]
+        ```
 
 
 ## Adding new functionality
