@@ -5,7 +5,7 @@ The following companies provide commercial training, support, consultancy and de
 
 Compositional IT are experts in designing functional-first, cloud-ready systems, offering consultancy and support, training and development. Run by an F# MVP and well-known member of the .NET community, they are dedicated to raising awareness of the benefits of both functional programming and harnessing the power of the cloud to deliver high-quality, low-cost solutions.
 
-## [Lambda Factory](http://lambdafactory.io/)
+## [Lambda Factory](http://lambdafactory.pl/)
 <img src="../img/lambda.png" style="height: 100px;"/>
 
 Lambda Factory is a consulting company specializing in designing and building complex systems using Functional Programming languages such as F#, Elm and Elixir. It also offers help with introducing functional programming and open source driven development to the organization, as well as trainings, workshops and mentoring. Founded by open source contributor and well-known member of F# Community, Lambda Factory has been committed to supporting F# Community and helping it grow.
