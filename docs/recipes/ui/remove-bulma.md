@@ -4,15 +4,16 @@
 
 1. Remove any stylesheet links to Bulma which may exist in the `index.html` page, or in other html pages.
 
-1. Optional: If using Paket make sure Fable.Core is pinned.
+1. Optional: If using Paket ensure `Fable.Core` is set to a specified version.
 
-    Edit `paket.dependencies`, set `Fable.Core < 4` - Fable 4 is not yet supported by SAFE.
+    In `paket.dependencies`, make sure there is a line like so: `Fable.Core ~> 3`
     
-    !!! warning "Dependency changes"
-        When adding or removing dependencies, it is possible an upgraded version of an existing dependency can be incompatible and cause errors. Ensure important versions are pinned to avoid this.
+    !!! warning
+        SAFE is not yet compatible with newer versions of `Fable.Core`.  
+        In the past, the version was not pinned so it was possible to accidentally upgrade to an incompatible version.
     
     !!! info
-        To avoid pinning a version when **adding** a dependency you can use the  `--keep-major` flag to make the upgrade more conservative.
+        To avoid specifying a version when **adding** a dependency - if it is not already pinned to a specific version - you can use the  `--keep-major` flag to make the upgrade more conservative.
 
 1. Remove `Fulma` and `Feliz.Bulma`
 
