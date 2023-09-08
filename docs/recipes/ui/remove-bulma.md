@@ -1,7 +1,10 @@
 # How do I remove Bulma from a SAFE project?
 
-1. Remove / replace all the references to Bulma in the code.
-2. Optional: If using Paket make sure Fable.Core is pinned.
+1. Remove / replace all the references to Bulma in fsharp code
+
+1. Remove any stylesheet links to Bulma which may exist in the `index.html` page, or in other html pages.
+
+1. Optional: If using Paket make sure Fable.Core is pinned.
 
     Edit `paket.dependencies`, set `Fable.Core < 4` - Fable 4 is not yet supported by SAFE.
     
@@ -11,7 +14,7 @@
     !!! info
         To avoid pinning a version when **adding** a dependency you can use the  `--keep-major` flag to make the upgrade more conservative.
 
-3. Remove `Fulma` and `Feliz.Bulma`
+1. Remove `Fulma` and `Feliz.Bulma`
 
     - Paket:
     ```bash
@@ -25,4 +28,3 @@
     dotnet remove package Fulma
     dotnet remove package Feliz.Bulma
     ```
-
