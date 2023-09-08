@@ -97,6 +97,7 @@ nav:
     - Add Bulma support: 'recipes/ui/add-bulma.md'
     - Use different Bulma Themes: 'recipes/ui/use-different-bulma-themes.md'
     - Add Tailwind support: 'recipes/ui/add-tailwind.md'
+    - Add daisyUI support: 'recipes/ui/add-daisyui.md'
     - Add Feliz support: 'recipes/ui/add-feliz.md'
     - Migrate from a CDN stylesheet to an NPM package: 'recipes/ui/cdn-to-npm.md'
   - Javascript:
