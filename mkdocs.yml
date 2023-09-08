@@ -16,6 +16,7 @@ theme:
   logo: img/safe_favicon.png
 
 markdown_extensions:
+  - admonition
   - codehilite
   - pymdownx.tabbed:
       alternate_style: true
