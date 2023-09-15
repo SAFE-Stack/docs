@@ -16,6 +16,7 @@ theme:
   logo: img/safe_favicon.png
 
 markdown_extensions:
+  - admonition
   - codehilite
   - pymdownx.tabbed:
       alternate_style: true
@@ -96,6 +97,7 @@ nav:
     - Add Stylesheet support: 'recipes/ui/add-style.md'
     - Add Bulma support: 'recipes/ui/add-bulma.md'
     - Use different Bulma Themes: 'recipes/ui/use-different-bulma-themes.md'
+    - Remove Bulma: 'recipes/ui/remove-bulma.md'
     - Add Tailwind support: 'recipes/ui/add-tailwind.md'
     - Add daisyUI support: 'recipes/ui/add-daisyui.md'
     - Add Feliz support: 'recipes/ui/add-feliz.md'
