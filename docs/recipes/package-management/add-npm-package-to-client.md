@@ -1,4 +1,4 @@
-#How do I add an NPM package to the Client?
+# How do I add an NPM package to the Client?
 
 When you want to [call a Javascript library](https://fable.io/docs/communicate/js-from-fable.html) from your Client, it is easy to import and reference it using [NPM](https://docs.npmjs.com/cli/npm).
 
