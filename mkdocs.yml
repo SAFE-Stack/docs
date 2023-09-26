@@ -102,6 +102,7 @@ nav:
     - Add daisyUI support: 'recipes/ui/add-daisyui.md'
     - Add Feliz support: 'recipes/ui/add-feliz.md'
     - Migrate from a CDN stylesheet to an NPM package: 'recipes/ui/cdn-to-npm.md'
+    - Add routing with a single state: 'recipes/ui/add-routing.md'
   - Javascript:
     - Import a JavaScript module: 'recipes/javascript/import-js-module.md'
     - Add Support for a Third Party React Library: 'recipes/javascript/third-party-react-package.md'
