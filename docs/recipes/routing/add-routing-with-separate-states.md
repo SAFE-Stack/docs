@@ -113,7 +113,7 @@ type Model = { CurrentPage: Page; CurrentUrl: Url }
 
 ## 2.  Parsing URLs
 
-Add a function to parse `Feliz.Router` style Urls to the `Url` type.
+Add a function to parse `Feliz.Router` style urls to the `Url` type.
 
 ```fsharp
 let parseUrl url = 
@@ -196,7 +196,7 @@ type Msg =
     | UrlChanged of Url
 ```
 
-Handle the case in the `update` function by initializing the appropriate model
+Handle the case in the `update` function by calling initFromUrl
 
 ```fsharp
 let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
@@ -204,11 +204,11 @@ let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
     | _, UrlChanged url -> initFromUrl url
 ```
 
+#### Rendering pages
 
+Add a function containerBox. If the CurrentPage is of `TodoList`, render the todo list using `TodoList.view`; in order to dispatch a `TodoList.Msg`, it needs to be wrapped in a `TodoListMsg`
 
-#### Rendering the right page
-
-Add a function containerBox. Retur
+For the `NotFound` page, return a "Page not found" message.
 
 ```fsharp
 let containerBox model dispatch =
