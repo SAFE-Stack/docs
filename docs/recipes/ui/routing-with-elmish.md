@@ -25,6 +25,7 @@ open Feliz.Router
 ## 2. Extracting the todo list module
 
 Create a new Module `TodoList` in the client project. Move the following functions and types to the TodoList Module:
+
 * Model
 * Msg
 * todosApi
@@ -32,7 +33,7 @@ Create a new Module `TodoList` in the client project. Move the following functio
 * update
 * containerBox; rename this to view
 
-```fsharp
+```fsharp title="TodoList.fs"
 module TodoList
 
 open Shared
@@ -111,30 +112,48 @@ let view (model: Model) (dispatch: Msg -> unit) =
 
 open Feliz.UseElmish in the TodoList Module
 
-```fsharp
+```fsharp title="TodoList.fs"
 open Feliz.UseElmish
+...
 ```
 
-On the first line of the view function, call `React.UseElmish`, passing it the `init` and `update` functions. Bind the output to `model` and `dispatch`
+On the first line of the TodoList's view function, call `React.useElmish`, passing it the `init` and `update` functions. Bind the output to `model` and `dispatch`
 
-```fsharp
-let view (model: Model) (dispatch: Msg -> unit) =
-    let model, dispatch = React.useElmish( init, update, [||] )
-    ...
-```
-Replace the arguments of the function for unit, and add the `ReactComponent` attribute to it
+=== "Code"
+    ```fsharp title="TodoList.fs"
+    let view (model: Model) (dispatch: Msg -> unit) =
+        let model, dispatch = React.useElmish( init, update, [||] )
+        ...
+    ```
 
-```fsharp
-[<ReactComponent>]
-let view () =
-    ...
-```
+=== "Diff"
+    ```.diff title="TodoList.fs"
+    let view (model: Model) (dispatch: Msg -> unit) =
+    +   let model, dispatch = React.useElmish( init, update, [||] )
+        ...
+    ```
+
+Replace the arguments of the function with unit, and add the `ReactComponent` attribute to it
+
+=== "Code"
+    ```fsharp title="Index.fs"
+    [<ReactComponent>]
+    let view () =
+        ...
+    ```
+=== "Diff"
+    ```.diff title="Index.fs"
+    + [<ReactComponent>]
+    - let view (model: Model) (dispatch: Msg -> unit) =
+    + let view () =
+          ...
+    ```
 
 ## 5. Add a new model to the Index module
 
-Create a model that holds the current page.
+Create a model that holds the current page
 
-```fsharp
+```fsharp title="Index.fs"
 Type Page =
     | TodoList
     | NotFound
@@ -147,7 +166,7 @@ Type Model =
 
 add an `Url` type. Use the RequireQualifiedAccess to avoid clashes with `Page`
 
-```fsharp
+```fsharp title="Index.fs"
 Type Url =
     | TodoList
     | NotFound
@@ -155,7 +174,7 @@ Type Url =
 
 Create a function that parses a Feliz.Router's list of Url segments routes to a `Url`
 
-```fsharp
+```fsharp title="Index.fs"
 let ParseUrl url = 
     match url with 
     | [ "Todo" ] -> TodoList
@@ -166,11 +185,11 @@ let ParseUrl url =
 
 Create a function that initializes the app based on an url
 
-```fsharp
+```fsharp title="Index.fs"
 let initFromUrl url =
     match url with
     | Url.TodoList ->
-        let model = {CurrentPage = TodoList }
+        let model = { CurrentPage = TodoList }
         model, Cmd.none
     | Url.NotFound ->
         let model = { CurrentPage = NotFound }
@@ -179,23 +198,23 @@ let initFromUrl url =
 
 Create a new `init` function, that fetches the current url, and calls initFromUrl
 
-```fsharp
+```fsharp title="Index.fs"
 let init () : Model * Cmd<Msg> =
-    Router.currentPath()
+    Router.currentPath ()
     |> parseUrl
     |> initFromUrl
 ```
 ## 7. Updating the Url
 
-Add a Message type, with an UrlChanged case
+Add a `Msg` type, with an UrlChanged case
 
-```fsharp
+```fsharp title="Index.fs"
 type Msg = 
     | UrlChanged of Url
 ```
 add an update method, that reinitializes the application when the Url changes
 
-```fsharp
+```fsharp title="Index.fs"
 let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
     match msg with
     | UrlChanged url ->
@@ -206,7 +225,7 @@ let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
 
 Add a containerBox function to the `Index module`, that returns the appropriate page content
 
-```fsharp
+```fsharp title="Index.fs"
 let containerBox (model: Model) (dispatch: Msg -> unit) =
     match model.CurrentPage with
     | NotFound -> Bulma.box "Page not found"
@@ -216,15 +235,31 @@ let containerBox (model: Model) (dispatch: Msg -> unit) =
 
 Wrap the content of the view method in a `React.Router` element's router.children property, and add a `router.onUrlChanged` property to dispatch the urlChanged message
 
-```fsharp
-
-let view (model: Model) (dispatch: Msg -> unit) =
-    React.router[
-        router.onUrlChanged ( parseUrl>>UrlChanged>>dispatch )
-        router.children[
-            Bulma.hero[
-            ...
+=== "Code"
+    ```fsharp title="Index.fs"
+    let view (model: Model) (dispatch: Msg -> unit) =
+        React.router[
+            router.onUrlChanged ( parseUrl>>UrlChanged>>dispatch )
+            router.children[
+                Bulma.hero[
+                ...
+                ]
+            ]
         ]
-    ]
-```
+    ```
+=== "Diff"
+    ```diff title="Index.fs"
+    let view (model: Model) (dispatch: Msg -> unit) =
+    +   React.router[
+    +       router.onUrlChanged ( parseUrl>>UrlChanged>>dispatch )
+    +       router.children[
+                Bulma.hero[
+                ...
+                ]
+    +       ]
+    +   ]
+    ```
 
+## 10.  Try it out
+
+The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/); you should see a page with "Page not Found". If you go to [localhost:8080/todo](http://localhost:8080/todo), you should see the todo app.
