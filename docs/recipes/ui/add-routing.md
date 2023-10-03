@@ -7,7 +7,7 @@ When building larger apps, you probably want different pages to be accessible th
 Install Feliz.Router in the client project
 
 ```bash
-dotnet paket add Feliz.Router -p Client
+dotnet paket add Feliz.Router -p Client -V 3.8
 ```
 
 To include the router in the Client, add `open Feliz.Router` at the top of Index.fs
