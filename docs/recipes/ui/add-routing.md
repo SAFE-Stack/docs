@@ -72,11 +72,11 @@ On initialization, set the current page
       let init () : Model * Cmd<Msg> =
     +     let page = Router.currentPath () |> parseUrl
     +
-          let model =
-    -        { Todos = []
+    -      let model = { Todos = []; Input = "" }
+    +      let model =
     +        { CurrentPage = page
     +         Todos = []
-              Input = "" }
+    +         Input = "" }
           ...
           model, cmd
     ```
