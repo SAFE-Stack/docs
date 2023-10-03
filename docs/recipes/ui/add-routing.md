@@ -10,6 +10,17 @@ Install Feliz.Router in the client project
 dotnet paket add Feliz.Router -p Client -V 3.8
 ```
 
+!!! Warning "Feliz.Router versions"
+    At the time of writing, the current version of the SAFE template (4.2.0) does not work well with the latest version of Feliz.Router (4.0).
+    To work around this, we install Feliz.Router 3.8, the latest version that works with SAFE template version 4.2.0.
+
+    If you are working with a newer version of the SAFE template, it might be worth trying to install the newest version of Feliz.Router.
+    To see the installed version of the SAFE template, run in the command line:
+    
+    ```bash
+    dotnet new --list
+    ```
+
 To include the router in the Client, add `open Feliz.Router` at the top of Index.fs
 
 ## 2. Adding the URL object
@@ -58,7 +69,7 @@ On initialization, set the current page
 === "Code"
     ```fsharp 
     let init () : Model * Cmd<Msg> =
-        let page = Router.currentPath () |> parseUrl
+        let page = Router.currentUrl () |> parseUrl
     
         let model =
             { CurrentPage = page
@@ -70,7 +81,7 @@ On initialization, set the current page
 === "Diff"
     ```diff
       let init () : Model * Cmd<Msg> =
-    +     let page = Router.currentPath () |> parseUrl
+    +     let page = Router.currentUrl () |> parseUrl
     +
     -      let model = { Todos = []; Input = "" }
     +      let model =
@@ -146,8 +157,8 @@ let view (model: Model) (dispatch: Msg -> unit) =
     
 ```
 
-> ### Adding UI elements to every page of the website
-> In this recipe, we moved all the page content to the `todoView`, but you don't have to. You can add UI you want to display on every page of the application to the `view` function.
+!!! info "Adding UI elements to every page of the website"
+    In this recipe, we moved all the page content to the `todoView`, but you don't have to. You can add UI you want to display on every page of the application to the `view` function.
 
 ## 7. Adding the React router to the view
 
@@ -178,7 +189,11 @@ Add the `React.Router` element as the outermost element of the view. Dispatch th
 
 ## 9.  Try it out 
 
-The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/); you should see a page with "Page not Found". If you go to [localhost:8080/todo](http://localhost:8080/todo), you should see the todo app.
+The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/); you should see a page with "Page not Found". If you go to [localhost:8080/#/todo](http://localhost:8080/#/todo), you should see the todo app.
+
+!!! info "# sign"
+    You might be surprised to see the hash sign as part of the url. It enables React to react to url changes without a full page refresh.
+    There are ways to omit this, but getting this to work properly is outside of the scope of this recipe.
 
 ## 10. Adding more pages
 
