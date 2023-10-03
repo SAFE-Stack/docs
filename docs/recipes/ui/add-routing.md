@@ -16,16 +16,29 @@ To include the router in the Client, add `open Feliz.Router` at the top of Index
 
 Add the current page to the model of the client, using a new `Page` type
 
-```fsharp
-type Page =
-    | TodoList
-    | NotFound
-
-type Model =
-    { CurrentPage: Page
-      Todos: Todo list
-      Input: string }
-```
+=== "Code"
+    ```fsharp
+    type Page =
+        | TodoList
+        | NotFound
+    
+    type Model =
+        { CurrentPage: Page
+          Todos: Todo list
+          Input: string }
+    ```
+=== "Diff"
+    ```.diff
+    + type Page =
+    +     | TodoList
+    +     | NotFound
+    +
+    - type Model = { Todos: Todo list; Input: string }
+    + type Model =
+    +    { CurrentPage: Page
+    +      Todos: Todo list
+    +      Input: string }
+    ```
 
 ## 3.  Parsing URLs
 
