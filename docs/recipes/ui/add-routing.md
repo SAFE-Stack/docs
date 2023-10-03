@@ -151,7 +151,7 @@ let view (model: Model) (dispatch: Msg -> unit) =
 
 ## 7. Adding the React router to the view
 
-Add the `React.Router` element as the outermost element of the view. Dispatch the PageChanged event on `onUrlChange`
+Add the `React.Router` element as the outermost element of the view. Dispatch the PageChanged event on `onUrlChanged`
 
 === "Code"
     ```fsharp
