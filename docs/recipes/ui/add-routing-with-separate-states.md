@@ -4,12 +4,12 @@ If your application has multiple separate components, there is no need to have o
 ## 1. Installing Feliz router
 
 ```bash
-dotnet paket add Feliz.Router -p Client
+dotnet paket add Feliz.Router -p Client -V 3.8
 ```
 To include the router in the Client, add `open Feliz.Router` at the top of index.fs.
 
 ## 2. Creating a module for the Todo list
-Move the following functions and types to the TodoList Module:
+Move the following functions and types to a new `TodoList` Module in a file `TodoList.fs`:
 * Model
 * Msg
 * todosApi
@@ -17,12 +17,17 @@ Move the following functions and types to the TodoList Module:
 * update
 * containerBox; rename this to view
 
+also open `Shared`, `Fable.Remoting.Client`, `Elmish` `Feliz` and `Feliz.Bulma`
+
 ```fsharp title="TodoList.fs"
 module TodoList
 
 open Shared
 open Fable.Remoting.Client
 open Elmish
+open Feliz
+open Feliz.Bulma
+
 
 type Model = { Todos: Todo list; Input: string }
 
@@ -54,9 +59,6 @@ let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
 
         { model with Input = "" }, cmd
     | AddedTodo todo -> { model with Todos = model.Todos @ [ todo ] }, Cmd.none
-
-open Feliz.Bulma
-open Feliz
 
 let view (model: Model) (dispatch: Msg -> unit) =
     Bulma.box [
@@ -95,19 +97,15 @@ let view (model: Model) (dispatch: Msg -> unit) =
 
 ## 3. Adding a new Model to the Index page
 
-Create a new Model to the `Index` module, to keep track of the open page and Url
+Create a new Model to the `Index` module, to keep track of the open page.
 
 ```fsharp title="Index.fs"
 type Page =
     | TodoList of TodoList.Model
     | NotFound 
 
-type Url =
-    | TodoList
-    | NotFound
     
-type Model = { CurrentPage: Page; CurrentUrl: Url }
-
+type Model = { CurrentPage: Page }
 ```
 
 
@@ -153,8 +151,7 @@ let initFromUrl url =
         let todoListModel, todoListMsg = TodoList.init ()
 
         let model =
-            { CurrentPage = TodoList todoListModel
-              CurrentUrl = url }
+            { CurrentPage = TodoList todoListModel }
 
         model, todoListMsg |> Cmd.map TodolistMsg
 ```
