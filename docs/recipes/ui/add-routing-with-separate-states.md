@@ -109,16 +109,36 @@ type Model = { CurrentPage: Page }
 ```
 
 
-## 4.  Parsing URLs
+## 6. Initializing from Url
 
-Add a function to parse `Feliz.Router` style urls to the `Url` type.
+Create a function initFormUrl; return a model with a TodoList `CurrentPage` when given a the url for the todo list page. Also return the command that TodoLists `init` may return, wrapped in a `TodoListMsg`
 
 ```fsharp title="Index.fs"
-let parseUrl url = 
+let initFromUrl url =
     match url with
-    | ["todo"] -> Url.TodoList
-    | _ -> Url.NotFound
+    | [ "todo" ] ->
+        let todoListModel, todoListMsg = TodoList.init ()
+
+        let model = { CurrentPage = TodoList todoListModel }
+
+        model, todoListMsg |> Cmd.map TodolistMsg
 ```
+
+Add a wildcard, so any urls that are not registered display the "not found" page
+
+=== "Code"
+    ```fsharp title="Index.fs"
+    let initFromUrl url =
+        match url with
+        ...
+        | _ -> { CurrentPage = NotFound }, Cmd.none
+    ```
+=== "Diff"
+    ```.diff title="Index.fs"
+     let initFromUrl url =
+         match url with
+    +    | _ -> { CurrentPage = NotFound }, Cmd.none
+    ```
 
 ## 5. Updating the TodoList model
 
@@ -126,7 +146,7 @@ Add a `Msg` type with a case of `TodoList.Msg`
 
 ```fsharp title="Index.fs"
 type Msg =
-    | TodoListMsg of TodoList.Msg
+    | TodolistMsg of TodoList.Msg
 ```
 
 Create an `update` function (we moved the original one to `TodoList`). Handle the `TodoListMsg` by updating the `TodoList` Model
@@ -140,49 +160,6 @@ let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
         model, newCommand |> Cmd.map TodolistMsg
 ```
 
-## 6. Initializing from Url
-
-Create a function initFormUrl; return a model with a TodoList `CurrentPage` and `CurrentUrl` when given a `TodoList` Url. Also return the command that TodoLists `init` may return, wrapped in a `TodoListMsg`
-
-```fsharp title="Index.fs"
-let initFromUrl url =
-    match url with
-    | Url.TodoList ->
-        let todoListModel, todoListMsg = TodoList.init ()
-
-        let model =
-            { CurrentPage = TodoList todoListModel }
-
-        model, todoListMsg |> Cmd.map TodolistMsg
-```
-
-Also add a case for the NotFound page
-
-=== "Code"
-    ```fsharp title="Index.fs"
-    let initFromUrl url =
-        match url with
-        ...
-        | Url.NotFound ->
-            let model =
-                { CurrentPage = NotFound
-                  CurrentUrl = url }
-    
-            model, todoListMsg |> Cmd.map TodolistMsg
-    ```
-=== "Diff"
-    ```.diff title="Index.fs"
-     let initFromUrl url =
-         match url with
-         ...
-    +    | Url.NotFound ->
-    +        let model =
-    +            { CurrentPage = NotFound
-    +              CurrentUrl = url }
-    +
-    +        model, todoListMsg |> Cmd.map TodolistMsg
-    ```
-
 ## 7. Elmish initialization
 
 Add an init function to `Index`; return the current page based on `Router.currentPath`
@@ -190,26 +167,25 @@ Add an init function to `Index`; return the current page based on `Router.curren
 ```fsharp title="Index.fs"
 let init () : Model * Cmd<Msg> =
     Router.currentPath ()
-    |> parseUrl
     |> initFromUrl
 ```
 
 
 ## 8. Handling Url Changes
 
-Add an `UrlChanged` case to the `Msg` type
+Add an `UrlChanged` case of `string list` to the `Msg` type
 
 === "Code"
     ```fsharp title="Index.fs"
     type Msg =
         ...
-        | UrlChanged of Url
+        | UrlChanged of string list
     ```
 === "Diff"
     ```diff title="Index.fs"
      type Msg =
          ...
-    +    | UrlChanged of Url
+    +    | UrlChanged of string list
     ```
 
 Handle the case in the `update` function by calling initFromUrl
@@ -219,7 +195,7 @@ Handle the case in the `update` function by calling initFromUrl
     let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
         ...
         match model.CurrentPage, message with
-        | _, UrlChanged url -> initFromUrl url
+        | _, UrlChangd url -> initFromUrl url
     ```
 === "Diff"
     ```diff title="Index.fs"
@@ -229,6 +205,22 @@ Handle the case in the `update` function by calling initFromUrl
     +    | _, UrlChanged url -> initFromUrl url
     ```
 
+## 10. Catching all cases in the update function
+
+Complete the pattern match in the update method, adding a case with a wildcard for both model and message. Return the model, and no command.
+
+=== "Code"
+    ```fsharp title=="Index.fs"
+    let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
+        ...
+        | _, _ -> model, Cmd.none
+    ```
+===  "Diff"
+    ```fsharp title=="Index.fs"
+     let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
+         ...
+    +    | _, _ -> model, Cmd.none
+    ```
 ## 9. Rendering pages
 
 Add a function containerBox to the `Index` module. If the CurrentPage is of `TodoList`, render the todo list using `TodoList.view`; in order to dispatch a `TodoList.Msg`, it needs to be wrapped in a `TodoListMsg`
@@ -240,7 +232,6 @@ let containerBox model dispatch =
     match model.CurrentPage with
     | TodoList todoModel -> TodoList.view todoModel ( TodolistMsg>>dispatch )
     | NotFound -> Bulma.box "Page not found"
-
 ```
 
 ## 10. Running the app
