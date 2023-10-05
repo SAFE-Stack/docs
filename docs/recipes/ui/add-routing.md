@@ -1,5 +1,7 @@
 ﻿# How do I add routes to a SAFE app without splitting the app into multiple models?
 
+*Written for SAFE template version 4.2.0*
+
 When building larger apps, you probably want different pages to be accessible through different URLs. In this recipe, we show you how to add routes to different pages to an application, including adding a "page not found" page that is displayed when an unknown URL is entered.
 
 ## 1. Adding the Feliz router
