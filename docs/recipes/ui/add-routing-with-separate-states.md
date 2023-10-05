@@ -1,15 +1,38 @@
-﻿# How do I include multiple pages with their own state?
-If your application has multiple separate components, there is no need to have one big, complex state that manages all the information for all components. In this recipe we separate the information of the todo list out of main ```Model```, and give it it's own route. We also add a "Page not found" page.
+﻿# How do I add routing to a SAFE app with separate model for every page?
 
-## 1. Installing Feliz router
+*Written for SAFE template version 4.2.0*
+
+If your application has multiple separate components, there is no need to have one big, complex state that manages all the information for all components. In this recipe we separate the information of the todo list out of the main `Model`, and give the todo list application it's own route. We also add a "Page not found" page.
+
+## 1. Adding the Feliz router
+
+Install Feliz.Router in the client project
 
 ```bash
 dotnet paket add Feliz.Router -p Client -V 3.8
 ```
-To include the router in the Client, add `open Feliz.Router` at the top of index.fs.
+
+!!! Warning "Feliz.Router versions"
+    At the time of writing, the current version of the SAFE template (4.2.0) does not work well with the latest version of Feliz.Router (4.0).
+    To work around this, we install Feliz.Router 3.8, the latest version that works with SAFE template version 4.2.0.
+
+    If you are working with a newer version of the SAFE template, it might be worth trying to install the newest version of Feliz.Router.
+    To see the installed version of the SAFE template, run in the command line:
+    
+    ```bash
+    dotnet new --list
+    ```
+
+To include the router in the Client, open `Feliz.Router` at the top of Index.fs
+
+```fsharp title="Index.fs"
+open Feliz.Router
+```
 
 ## 2. Creating a module for the Todo list
+
 Move the following functions and types to a new `TodoList` Module in a file `TodoList.fs`:
+
 * Model
 * Msg
 * todosApi
@@ -94,10 +117,9 @@ let view (model: Model) (dispatch: Msg -> unit) =
     ]
 ```
 
-
 ## 3. Adding a new Model to the Index page
 
-Create a new Model to the `Index` module, to keep track of the open page.
+Create a new Model in the `Index` module, to keep track of the open page
 
 ```fsharp title="Index.fs"
 type Page =
@@ -116,7 +138,7 @@ type Msg =
     | TodolistMsg of TodoList.Msg
 ```
 
-Create an `update` function (we moved the original one to `TodoList`). Handle the `TodoListMsg` by updating the `TodoList` Model
+Create an `update` function (we moved the original one to `TodoList`). Handle the `TodoListMsg` by updating the `TodoList` Model. Wrap the command returned by the `update` of the todo list in a `TodoListMsg` before returning it
 
 ```fsharp title="Index.fs"
 let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
@@ -124,12 +146,13 @@ let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
     | TodoList todolist, TodolistMsg todolistMessage ->
         let newTodoListModel, newCommand = TodoList.update todolistMessage todolist
         let model = { model with CurrentPage = TodoList newTodoListModel }
+        
         model, newCommand |> Cmd.map TodolistMsg
 ```
 
-## 5. Initializing from Url
+## 5. Initializing from URL
 
-Create a function initFormUrl; initialize the `TodoList` app when given the url of the todo list app. Also return the command that TodoLists `init` may return, wrapped in a `TodoListMsg`
+Create a function initFromUrl; initialize the `TodoList` app when given the URL of the todo list app. Also return the command that TodoList's `init` may return, wrapped in a `TodoListMsg`
 
 ```fsharp title="Index.fs"
 let initFromUrl url =
@@ -141,7 +164,7 @@ let initFromUrl url =
         model, todoListMsg |> Cmd.map TodolistMsg
 ```
 
-Add a wildcard, so any urls that are not registered display the "not found" page
+Add a wildcard, so any URLs that are not registered display the "not found" page
 
 === "Code"
     ```fsharp title="Index.fs"
@@ -154,12 +177,13 @@ Add a wildcard, so any urls that are not registered display the "not found" page
     ```.diff title="Index.fs"
      let initFromUrl url =
          match url with
+         ...
     +    | _ -> { CurrentPage = NotFound }, Cmd.none
     ```
 
 ## 6. Elmish initialization
 
-Add an init function to `Index`; return the current page based on `Router.currentPath`
+Add an `init` function to `Index`; return the current page based on `Router.currentPath`
 
 ```fsharp title="Index.fs"
 let init () : Model * Cmd<Msg> =
@@ -167,8 +191,7 @@ let init () : Model * Cmd<Msg> =
     |> initFromUrl
 ```
 
-
-## 7. Handling Url Changes
+## 7. Handling URL Changes
 
 Add an `UrlChanged` case of `string list` to the `Msg` type
 
@@ -185,7 +208,7 @@ Add an `UrlChanged` case of `string list` to the `Msg` type
     +    | UrlChanged of string list
     ```
 
-Handle the case in the `update` function by calling initFromUrl
+Handle the case in the `update` function by calling `initFromUrl`
 
 === "Code"
     ```fsharp title="Index.fs"
@@ -204,7 +227,7 @@ Handle the case in the `update` function by calling initFromUrl
 
 ## 8. Catching all cases in the update function
 
-Complete the pattern match in the update method, adding a case with a wildcard for both model and message. Return the model, and no command.
+Complete the pattern match in the `update` function, adding a case with a wildcard for both `message` and `model`. Return the model, and no command
 
 === "Code"
     ```fsharp title="Index.fs"
@@ -220,9 +243,9 @@ Complete the pattern match in the update method, adding a case with a wildcard f
     ```
 ## 9. Rendering pages
 
-Add a function containerBox to the `Index` module. If the CurrentPage is of `TodoList`, render the todo list using `TodoList.view`; in order to dispatch a `TodoList.Msg`, it needs to be wrapped in a `TodoListMsg`
+Add a function containerBox to the `Index` module. If the CurrentPage is of `TodoList`, render the todo list using `TodoList.view`; in order to dispatch a `TodoList.Msg`, it needs to be wrapped in a `TodoListMsg`.
 
-For the `NotFound` page, return a "Page not found" message.
+For the `NotFound` page, return a "Page not found" box
 
 ```fsharp title="Index.fs"
 let containerBox model dispatch =
@@ -231,6 +254,39 @@ let containerBox model dispatch =
     | NotFound -> Bulma.box "Page not found"
 ```
 
-## 10. Running the app
+## 10. Adding the React router to the view
 
-The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/todo); you should see a page with "Page not Found". If you go to [localhost:8080/todo](http://localhost:8080/todo), you should see the todo app.
+Wrap the content of the view function in a `router.children` property of a `React.router`. Also add an `onUrlChanged` property, that dispatches the 'UrlChanged' message.
+
+=== "Code"
+    ```fsharp title="Index.fs"
+    let view (model: Model) (dispatch: Msg -> unit) =
+        React.router[
+            router.onUrlChanged (UrlChanged >> dispatch)
+            router.children [
+                Bulma.hero [
+                ...
+                ]
+            ]
+        ]
+    ```
+=== "Diff"
+    ```.diff title="Index.fs"
+     let view (model: Model) (dispatch: Msg -> unit) =
+    +    React.router[
+    +        router.onUrlChanged (UrlChanged >> dispatch)
+    +        router.children [
+                 Bulma.hero [
+                 ...
+                 ]
+    +        ]
+    +    ]
+    ```
+
+## 11. Running the app
+
+The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/todo); you should see a page with "Page not Found". If you go to [localhost:8080/#/todo](http://localhost:8080/#/todo), you should see the todo app.
+
+!!! info "# sign"
+    You might be surprised to see the hash sign as part of the URL. It enables React to react to URL changes without a full page refresh.
+    There are ways to omit this, but getting this to work properly is outside of the scope of this recipe.
