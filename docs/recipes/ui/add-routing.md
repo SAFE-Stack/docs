@@ -1,4 +1,4 @@
-﻿# How do I add routes to a SAFE app without splitting the app into multiple models?
+# How do I add routing to a SAFE app with a shared model for all pages?
 
 *Written for SAFE template version 4.2.0*
 
@@ -105,7 +105,7 @@ To the `Msg` type, add a `PageChanged` case of `Page`
         ...
         | PageChanged of Page
     ```
-=== "diff"
+=== "Diff"
     ```.diff 
      type Msg =
          ...
@@ -194,10 +194,10 @@ Add the `React.Router` element as the outermost element of the view. Dispatch th
 The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/); you should see a page with "Page not Found". If you go to [localhost:8080/#/todo](http://localhost:8080/#/todo), you should see the todo app.
 
 !!! info "# sign"
-    You might be surprised to see the hash sign as part of the url. It enables React to react to url changes without a full page refresh.
+    You might be surprised to see the hash sign as part of the URL. It enables React to react to URL changes without a full page refresh.
     There are ways to omit this, but getting this to work properly is outside of the scope of this recipe.
 
 ## 10. Adding more pages
 
-Now that you have set up the routing, adding more pages is simple: add a new case to the `Page` type; add a route for this page in the `ParseUrl` function; add a function that takes a model and dispatcher to generate your new page, and add a new case to the pattern match inside the view to display the new case.
+Now that you have set up the routing, adding more pages is simple: add a new case to the `Page` type; add a route for this page in the `parseUrl` function; add a function that takes a model and dispatcher to generate your new page, and add a new case to the pattern match inside the `view` function to display the new case.
 
