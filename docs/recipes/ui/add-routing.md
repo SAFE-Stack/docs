@@ -23,7 +23,11 @@ dotnet paket add Feliz.Router -p Client -V 3.8
     dotnet new --list
     ```
 
-To include the router in the Client, add `open Feliz.Router` at the top of Index.fs
+To include the router in the Client, open `Feliz.Router` at the top of Index.fs
+
+```fsharp
+open Feliz.Router
+```
 
 ## 2. Adding the URL object
 
