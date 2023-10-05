@@ -4,6 +4,8 @@
 
 When building larger apps, you probably want different pages to be accessible through different URLs. In this recipe, we show you how to add routes to different pages to an application, including adding a "page not found" page that is displayed when an unknown URL is entered.
 
+In this recipe we use the simplest approach to storing states for multiple pages, by creating a single state for the full app. A potential benefit of this approach is that the state of a page is not lost when navigating away from it. You will see how that works at the end of the recipe.
+
 ## 1. Adding the Feliz router
 
 Install Feliz.Router in the client project
@@ -196,6 +198,8 @@ Add the `React.Router` element as the outermost element of the view. Dispatch th
 ## 9.  Try it out 
 
 The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/); you should see a page with "Page not Found". If you go to [localhost:8080/#/todo](http://localhost:8080/#/todo), you should see the todo app.
+
+To see how the state is maintained even when navigating away from the page, type something in the text box and move away from the page by entering another path in the address bar. Then go back to the todo page. The entered text is still there.
 
 !!! info "# sign"
     You might be surprised to see the hash sign as part of the URL. It enables React to react to URL changes without a full page refresh.
