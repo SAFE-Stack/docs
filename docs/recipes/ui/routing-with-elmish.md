@@ -223,7 +223,7 @@ Add a `Msg` type, with an PageChanged case
 type Msg = 
     | PageChanged of string list
 ```
-add an update method, that reinitializes the application when the URL changes
+Add an `update` function, that reinitializes the app based on an URL
 
 ```fsharp title="Index.fs"
 let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
@@ -234,7 +234,7 @@ let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
 
 ## 8. Displaying pages
 
-Add a containerBox function to the `Index module`, that returns the appropriate page content
+Add a containerBox function to the `Index` module, that returns the appropriate page content
 
 ```fsharp title="Index.fs"
 let containerBox (model: Model) (dispatch: Msg -> unit) =
