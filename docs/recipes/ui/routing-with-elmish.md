@@ -6,8 +6,8 @@ If you build an application with multiple pages that have their own states that 
 
 ## 1. Installing dependencies
 
-!!! warning "Pin Feliz.Core to V3"
-    At the time of writing, the published version of the SAFE template does not have the version of `Feliz.Core` pinned; this can create problems when installing dependencies.
+!!! warning "Pin Fable.Core to V3"
+    At the time of writing, the published version of the SAFE template does not have the version of `Fable.Core` pinned; this can create problems when installing dependencies.
 
     If you are using version v.4.2.0 of the template, pin `Fable.Core` to version 3 in `paket.depedencies` at the root of the project
 
@@ -24,6 +24,17 @@ Install Feliz.Router in the Client project
 ```bash
 dotnet paket add Feliz.Router -p Client -V 3.8
 ```
+
+!!! Warning "Feliz.Router versions"
+    At the time of writing, the current version of the SAFE template (4.2.0) does not work well with the latest version of Feliz.Router (4.0).
+    To work around this, we install Feliz.Router 3.8, the latest version that works with SAFE template version 4.2.0.
+
+    If you are working with a newer version of the SAFE template, it might be worth trying to install the newest version of Feliz.Router.
+    To see the installed version of the SAFE template, run in the command line:
+    
+    ```bash
+    dotnet new --list
+    ```
 
 Install Feliz.UseElmish in the Client project
 
@@ -91,7 +102,7 @@ let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
         { model with Input = "" }, cmd
     | AddedTodo todo -> { model with Todos = model.Todos @ [ todo ] }, Cmd.none
 
-let view (model: Model) (dispatch: Msg -> unit) =
+let containerBox (model: Model) (dispatch: Msg -> unit) =
     Bulma.box [
         Bulma.content [
             Html.ol [
@@ -134,7 +145,7 @@ open Feliz.UseElmish
 ...
 ```
 
-In the todoList module, rename `containerBox` to view.
+In the todoList module, rename `containerBox` to `view`.
 On the first line, call `React.useElmish` passing it the `init` and `update` functions. Bind the output to `model` and `dispatch`
 
 === "Code"
@@ -263,3 +274,7 @@ Wrap the content of the view method in a `React.Router` element's router.childre
 ## 10.  Try it out
 
 The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/); you should see a page with "Page not Found". If you go to [localhost:8080/#/todo](http://localhost:8080/#/todo), you should see the todo app.
+
+!!! info "# sign"
+    You might be surprised to see the hash sign as part of the URL. It enables React to react to URL changes without a full page refresh.
+    There are ways to omit this, but getting this to work properly is outside of the scope of this recipe.
