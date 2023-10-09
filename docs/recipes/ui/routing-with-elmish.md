@@ -1,5 +1,7 @@
 ﻿# How do I create multi-page applications with routing and the useElmish hook?
 
+*Written for SAFE template version 4.2.0*
+
 If you build an application with multiple pages that have their own states that do not interact, you can use the useElmish hook to create pages with their own Model View Update architecture.
 
 ## 1. Installing dependencies
@@ -7,7 +9,7 @@ If you build an application with multiple pages that have their own states that 
 !!! warning "Pin Feliz.Core to V3"
     At the time of writing, the published version of the SAFE template does not have the version of `Feliz.Core` pinned; this can create problems when installing dependencies.
 
-    If you are using version v.4.2.0 of the template, pin `Feliz.Core` to version 3 in `paket.depedencies` at the root of the project
+    If you are using version v.4.2.0 of the template, pin `Fable.Core` to version 3 in `paket.depedencies` at the root of the project
 
     ```.diff title="paket.dependencies"
     ...
@@ -20,7 +22,7 @@ If you build an application with multiple pages that have their own states that 
 Install Feliz.Router in the Client project
 
 ```bash
-dotnet paket add Feliz.Router -p Client
+dotnet paket add Feliz.Router -p Client -V 3.8
 ```
 
 Install Feliz.UseElmish in the Client project
@@ -31,7 +33,7 @@ dotnet paket add Feliz.UseElmish -p client
 
 Open the router in the client project
 
-```
+```fsharp title="Index.fs"
 open Feliz.Router
 ```
 
@@ -44,7 +46,9 @@ Create a new Module `TodoList` in the client project. Move the following functio
 * todosApi
 * init
 * update
-* containerBox; rename this to view
+* containerBox
+
+Also open `Shared`, `Fable.Remoting.Client`, `Elmish`, `Feliz.Bulma` and `Feliz`. 
 
 ```fsharp title="TodoList.fs"
 module TodoList
@@ -52,6 +56,9 @@ module TodoList
 open Shared
 open Fable.Remoting.Client
 open Elmish
+
+open Feliz.Bulma
+open Feliz
 
 type Model = { Todos: Todo list; Input: string }
 
@@ -83,9 +90,6 @@ let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
 
         { model with Input = "" }, cmd
     | AddedTodo todo -> { model with Todos = model.Todos @ [ todo ] }, Cmd.none
-
-open Feliz.Bulma
-open Feliz
 
 let view (model: Model) (dispatch: Msg -> unit) =
     Bulma.box [
@@ -130,7 +134,8 @@ open Feliz.UseElmish
 ...
 ```
 
-On the first line of the TodoList's view function, call `React.useElmish`, passing it the `init` and `update` functions. Bind the output to `model` and `dispatch`
+In the todoList module, rename `containerBox` to view.
+On the first line, call `React.useElmish` passing it the `init` and `update` functions. Bind the output to `model` and `dispatch`
 
 === "Code"
     ```fsharp title="TodoList.fs"
@@ -141,8 +146,9 @@ On the first line of the TodoList's view function, call `React.useElmish`, passi
 
 === "Diff"
     ```.diff title="TodoList.fs"
-    let view (model: Model) (dispatch: Msg -> unit) =
-    +   let model, dispatch = React.useElmish( init, update, [||] )
+    -let containerBox (model: Model) (dispatch: Msg -> unit) =
+    +let view (model: Model) (dispatch: Msg -> unit) =
+    +    let model, dispatch = React.useElmish( init, update, [||] )
         ...
     ```
 
@@ -164,73 +170,54 @@ Replace the arguments of the function with unit, and add the `ReactComponent` at
 
 ## 5. Add a new model to the Index module
 
-Create a model that holds the current page
+In the `Index module`, create a model that holds the current page
 
 ```fsharp title="Index.fs"
-Type Page =
+type Page =
     | TodoList
     | NotFound
 
-Type Model =
+type Model =
     { CurrentPage: Page }
 ```
-
-## 5. Add a function to parse Urls
-
-add an `Url` type. Use the RequireQualifiedAccess to avoid clashes with `Page`
-
-```fsharp title="Index.fs"
-Type Url =
-    | TodoList
-    | NotFound
-```
-
-Create a function that parses a Feliz.Router's list of Url segments routes to a `Url`
-
-```fsharp title="Index.fs"
-let ParseUrl url = 
-    match url with 
-    | [ "Todo" ] -> TodoList
-    | _ -> notFound
-```
-
-## 6. Initialize the application
+## 6. Initializing the application
 
 Create a function that initializes the app based on an url
 
 ```fsharp title="Index.fs"
 let initFromUrl url =
     match url with
-    | Url.TodoList ->
-        let model = { CurrentPage = TodoList }
+    | ["todo"] ->
+        let model = {CurrentPage = TodoList }
+
         model, Cmd.none
-    | Url.NotFound ->
+    | _ ->
         let model = { CurrentPage = NotFound }
+
         model, Cmd.none
 ```
 
-Create a new `init` function, that fetches the current url, and calls initFromUrl
+Create a new `init` function, that fetches the current url, and calls initFromUrl. 
 
 ```fsharp title="Index.fs"
-let init () : Model * Cmd<Msg> =
-    Router.currentPath ()
-    |> parseUrl
+let init () =
+    Router.currentUrl ()
     |> initFromUrl
 ```
-## 7. Updating the Url
+## 7. Updating the Page
 
-Add a `Msg` type, with an UrlChanged case
+Add a `Msg` type, with an PageChanged case
 
 ```fsharp title="Index.fs"
 type Msg = 
-    | UrlChanged of Url
+    | PageChanged of string list
 ```
-add an update method, that reinitializes the application when the Url changes
+add an update method, that reinitializes the application when the URL changes
 
 ```fsharp title="Index.fs"
 let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
     match msg with
-    | UrlChanged url ->
+    | PageChanged url ->
         initFromUrl url
 ```
 
@@ -251,10 +238,10 @@ Wrap the content of the view method in a `React.Router` element's router.childre
 === "Code"
     ```fsharp title="Index.fs"
     let view (model: Model) (dispatch: Msg -> unit) =
-        React.router[
-            router.onUrlChanged ( parseUrl>>UrlChanged>>dispatch )
-            router.children[
-                Bulma.hero[
+        React.router [
+            router.onUrlChanged ( PageChanged>>dispatch )
+            router.children [
+                Bulma.hero [
                 ...
                 ]
             ]
@@ -263,10 +250,10 @@ Wrap the content of the view method in a `React.Router` element's router.childre
 === "Diff"
     ```diff title="Index.fs"
     let view (model: Model) (dispatch: Msg -> unit) =
-    +   React.router[
-    +       router.onUrlChanged ( parseUrl>>UrlChanged>>dispatch )
-    +       router.children[
-                Bulma.hero[
+    +   React.router [
+    +       router.onUrlChanged ( PageChanged>>dispatch )
+    +       router.children [
+                Bulma.hero [
                 ...
                 ]
     +       ]
@@ -275,4 +262,4 @@ Wrap the content of the view method in a `React.Router` element's router.childre
 
 ## 10.  Try it out
 
-The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/); you should see a page with "Page not Found". If you go to [localhost:8080/todo](http://localhost:8080/todo), you should see the todo app.
+The routing should work now. Try navigating to [localhost:8080](http://localhost:8080/); you should see a page with "Page not Found". If you go to [localhost:8080/#/todo](http://localhost:8080/#/todo), you should see the todo app.
