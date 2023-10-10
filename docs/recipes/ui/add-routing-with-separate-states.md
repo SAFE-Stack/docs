@@ -138,7 +138,7 @@ type Msg =
     | TodoListMsg of TodoList.Msg
 ```
 
-Create an `update` function (we moved the original one to `TodoList`). Handle the `TodoListMsg` by updating the `TodoList` Model. Wrap the command returned by the `update` of the todo list in a `TodoListMsg` before returning it
+Create an `update` function (we moved the original one to `TodoList`). Handle the `TodoListMsg` by updating the `TodoList` Model. Wrap the command returned by the `update` of the todo list in a `TodoListMsg` before returning it. We expand this function later with other cases that deal with navigation.
 
 ```fsharp title="Index.fs"
 let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
