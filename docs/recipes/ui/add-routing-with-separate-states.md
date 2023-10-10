@@ -135,7 +135,7 @@ Add a `Msg` type with a case of `TodoList.Msg`
 
 ```fsharp title="Index.fs"
 type Msg =
-    | TodolistMsg of TodoList.Msg
+    | TodoListMsg of TodoList.Msg
 ```
 
 Create an `update` function (we moved the original one to `TodoList`). Handle the `TodoListMsg` by updating the `TodoList` Model. Wrap the command returned by the `update` of the todo list in a `TodoListMsg` before returning it
@@ -143,11 +143,11 @@ Create an `update` function (we moved the original one to `TodoList`). Handle th
 ```fsharp title="Index.fs"
 let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
     match model.CurrentPage, message with
-    | TodoList todolist, TodolistMsg todolistMessage ->
-        let newTodoListModel, newCommand = TodoList.update todolistMessage todolist
+    | TodoList todoList, TodoListMsg todoListMessage ->
+        let newTodoListModel, newCommand = TodoList.update todoListMessage todoList
         let model = { model with CurrentPage = TodoList newTodoListModel }
         
-        model, newCommand |> Cmd.map TodolistMsg
+        model, newCommand |> Cmd.map TodoListMsg
 ```
 
 ## 5. Initializing from URL
@@ -161,7 +161,7 @@ let initFromUrl url =
         let todoListModel, todoListMsg = TodoList.init ()
         let model = { CurrentPage = TodoList todoListModel }
 
-        model, todoListMsg |> Cmd.map TodolistMsg
+        model, todoListMsg |> Cmd.map TodoListMsg
 ```
 
 Add a wildcard, so any URLs that are not registered display the "not found" page
@@ -250,7 +250,7 @@ For the `NotFound` page, return a "Page not found" box
 ```fsharp title="Index.fs"
 let containerBox model dispatch =
     match model.CurrentPage with
-    | TodoList todoModel -> TodoList.view todoModel (TodolistMsg >> dispatch)
+    | TodoList todoModel -> TodoList.view todoModel (TodoListMsg >> dispatch)
     | NotFound -> Bulma.box "Page not found"
 ```
 
