@@ -2,7 +2,9 @@
 
 *Written for SAFE template version 4.2.0*
 
-If you build an application with multiple pages that have their own states that do not interact, you can use the useElmish hook to create pages with their own Model View Update architecture.
+[UseElmish](https://zaid-ajaj.github.io/Feliz/#/Hooks/UseElmish) is a powerful package that allows you to write standalone components using Elmish. A component built around the `UseElmish` hook has it's own view, state and update function.
+
+In this recipe we add routing to a safe app, and implement the todo list page using the `UseElmish` hook.
 
 ## 1. Installing dependencies
 
