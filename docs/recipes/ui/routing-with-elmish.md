@@ -151,7 +151,7 @@ On the first line, call `React.useElmish` passing it the `init` and `update` fun
 === "Code"
     ```fsharp title="TodoList.fs"
     let view (model: Model) (dispatch: Msg -> unit) =
-        let model, dispatch = React.useElmish( init, update, [||] )
+        let model, dispatch = React.useElmish(init, update, [||])
         ...
     ```
 
@@ -159,7 +159,7 @@ On the first line, call `React.useElmish` passing it the `init` and `update` fun
     ```.diff title="TodoList.fs"
     -let containerBox (model: Model) (dispatch: Msg -> unit) =
     +let view (model: Model) (dispatch: Msg -> unit) =
-    +    let model, dispatch = React.useElmish( init, update, [||] )
+    +    let model, dispatch = React.useElmish(init, update, [||])
         ...
     ```
 
@@ -198,8 +198,8 @@ Create a function that initializes the app based on an url
 ```fsharp title="Index.fs"
 let initFromUrl url =
     match url with
-    | ["todo"] ->
-        let model = {CurrentPage = TodoList }
+    | [ "todo" ] ->
+        let model = { CurrentPage = TodoList }
 
         model, Cmd.none
     | _ ->
