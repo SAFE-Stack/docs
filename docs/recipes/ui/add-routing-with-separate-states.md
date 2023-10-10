@@ -2,7 +2,7 @@
 
 *Written for SAFE template version 4.2.0*
 
-If your application has multiple separate components, there is no need to have one big, complex state that manages all the information for all components. In this recipe we separate the information of the todo list out of the main `Model`, and give the todo list application it's own route. We also add a "Page not found" page.
+If your application has multiple separate components, there is no need to have one big, complex model that manages all the state for all components. In this recipe we separate the information of the todo list out of the main `Model`, and give the todo list application its own route. We also add a "Page not found" page.
 
 ## 1. Adding the Feliz router
 
@@ -183,7 +183,7 @@ Add a wildcard, so any URLs that are not registered display the "not found" page
 
 ## 6. Elmish initialization
 
-Add an `init` function to `Index`; return the current page based on `Router.currentPath`
+Add an `init` function to `Index`; return the current page based on `Router.currentUrl`
 
 ```fsharp title="Index.fs"
 let init () : Model * Cmd<Msg> =
@@ -250,7 +250,7 @@ For the `NotFound` page, return a "Page not found" box
 ```fsharp title="Index.fs"
 let containerBox model dispatch =
     match model.CurrentPage with
-    | TodoList todoModel -> TodoList.view todoModel ( TodolistMsg>>dispatch )
+    | TodoList todoModel -> TodoList.view todoModel (TodolistMsg >> dispatch)
     | NotFound -> Bulma.box "Page not found"
 ```
 
@@ -261,7 +261,7 @@ Wrap the content of the view function in a `router.children` property of a `Reac
 === "Code"
     ```fsharp title="Index.fs"
     let view (model: Model) (dispatch: Msg -> unit) =
-        React.router[
+        React.router [
             router.onUrlChanged (UrlChanged >> dispatch)
             router.children [
                 Bulma.hero [
@@ -273,7 +273,7 @@ Wrap the content of the view function in a `router.children` property of a `Reac
 === "Diff"
     ```.diff title="Index.fs"
      let view (model: Model) (dispatch: Msg -> unit) =
-    +    React.router[
+    +    React.router [
     +        router.onUrlChanged (UrlChanged >> dispatch)
     +        router.children [
                  Bulma.hero [
