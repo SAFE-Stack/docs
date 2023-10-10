@@ -152,7 +152,7 @@ let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
 
 ## 5. Initializing from URL
 
-Create a function initFromUrl; initialize the `TodoList` app when given the URL of the todo list app. Also return the command that TodoList's `init` may return, wrapped in a `TodoListMsg`
+Create a function `initFromUrl`; initialize the `TodoList` app when given the URL of the todo list app. Also return the command that TodoList's `init` may return, wrapped in a `TodoListMsg`
 
 ```fsharp title="Index.fs"
 let initFromUrl url =
