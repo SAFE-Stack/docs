@@ -2,7 +2,7 @@
 
 *Written for SAFE template version 4.2.0*
 
-[UseElmish](https://zaid-ajaj.github.io/Feliz/#/Hooks/UseElmish) is a powerful package that allows you to write standalone components using Elmish. A component built around the `UseElmish` hook has it's own view, state and update function.
+[UseElmish](https://zaid-ajaj.github.io/Feliz/#/Hooks/UseElmish) is a powerful package that allows you to write standalone components using Elmish. A component built around the `UseElmish` hook has its own view, state and update function.
 
 In this recipe we add routing to a safe app, and implement the todo list page using the `UseElmish` hook.
 
