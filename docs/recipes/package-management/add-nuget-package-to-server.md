@@ -1,4 +1,4 @@
-# How do I add a Nuget package to the Server?
+# How do I add a NuGet package to the Server?
 You can add NuGet packages to the server to give it more capabilities. You can download a wide variety of packages from [the official NuGet site](https://nuget.org/).
 
 In this example we will add the [FsToolkit ErrorHandling package](https://www.nuget.org/packages/FsToolkit.ErrorHandling/) package.
@@ -38,4 +38,4 @@ Once you have done this, you will find an element in your fsproj file which look
 
 > You can also achieve the same thing using the [Visual Studio Package Manager](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio#nuget-package-manager), the [VS Mac Package Manager](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac) or the [Package Manager Console](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio#package-manager-console).
 
-> For a detailed explanation of package management using Nuget, visit the official [docs](https://docs.microsoft.com/en-us/nuget/consume-packages/overview-and-workflow).
+> For a detailed explanation of package management using NuGet, visit the official [docs](https://docs.microsoft.com/en-us/nuget/consume-packages/overview-and-workflow).

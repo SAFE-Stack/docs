@@ -14,7 +14,7 @@ dotnet tool restore
 ```
 
 #### 2. Run the Migration
-Run this command to move existing Nuget references to Paket from your packages.config or .fsproj file:
+Run this command to move existing NuGet references to Paket from your packages.config or .fsproj file:
 ```bash
 dotnet paket convert-from-nuget
 ```

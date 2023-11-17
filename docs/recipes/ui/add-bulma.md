@@ -8,7 +8,7 @@
 By adding either of these to your SAFE project alongside the [Bulma stylesheet or the Bulma NPM package](https://bulma.io/documentation/overview/start/), you can take full advantage of Bulma.
 
 ### Using Feliz.Bulma
-1. [Add the Feliz.Bulma Nuget package to the solution](./../package-management/add-nuget-package-to-client.md).
+1. [Add the Feliz.Bulma NuGet package to the solution](./../package-management/add-nuget-package-to-client.md).
 1. Start using Feliz.Bulma components in your F# files.
 ```fsharp
 open Feliz.Bulma

@@ -1,6 +1,6 @@
 # How do I migrate to NuGet from Paket?
 
->  Note that the minimal template uses Nuget by default. **This recipe only applies to the full template**.
+>  Note that the minimal template uses NuGet by default. **This recipe only applies to the full template**.
 
 Paket is a fully featured package manager that acts as an alternative to the NuGet package manager commonly used in .NET.
 
