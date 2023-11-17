@@ -50,7 +50,7 @@ Since you will be running the server directly through Visual Studio, you cannot 
 Set the server as your Startup project, either using the drop-down menu at the top of the IDE or by right clicking on the project itself and selecting **Set as Startup Project**. Select the profile that you set up earlier and wish to launch from the drop-down at the top of the IDE. Either press the Play button at the top of the IDE or hit F5 on your keyboard to start the Server debugging and launch a browser pointing at the website.
 
 ### Debugging the Client
-Although we write our client-side code using F#, it is being converted into Javascript at runtime by Fable and executed in the browser.
+Although we write our client-side code using F#, it is being converted into JavaScript at runtime by Fable and executed in the browser.
 However, we can still debug it via the magic of source mapping. If you are using Visual Studio, you cannot directly connect to the browser debugger. You can, however, debug your client F# code using the browser's development tools.
 
 #### 1. Set breakpoints in Client code

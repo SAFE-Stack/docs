@@ -28,7 +28,7 @@ flowchart TB
     saturn --- giraffe --- aspnet --- kestrel
     end
     data[(Transactional Data e.g. SQL)]
-    content>Static Content e.g. HTML, CSS, Javascript]
+    content>Static Content e.g. HTML, CSS, JavaScript]
     outputs -- serves --- host
     kestrel -- reads --- data
     kestrel -- reads --- content

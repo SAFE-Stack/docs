@@ -25,7 +25,7 @@ c -- /api redirect --> s
 ```
 
 # Running SAFE applications in production
-In a production environment, you won't need the Webpack Dev server. Instead, Webpack is used as a one-off compiler step to create your bundled Javascript from your Fable app (plus dependencies), and then deploy this along with your backend web server which also hosts that content directly. For example, you can use Saturn to host the static content required by the application e.g. HTML, JS and CSS files etc. as well as your backend APIs. This fits very well with standard CI / CD processes, as a build step in your Build.fs or Azure DevOps / AppVeyor / Travis step etc.
+In a production environment, you won't need the Webpack Dev server. Instead, Webpack is used as a one-off compiler step to create your bundled JavaScript from your Fable app (plus dependencies), and then deploy this along with your backend web server which also hosts that content directly. For example, you can use Saturn to host the static content required by the application e.g. HTML, JS and CSS files etc. as well as your backend APIs. This fits very well with standard CI / CD processes, as a build step in your Build.fs or Azure DevOps / AppVeyor / Travis step etc.
 
 ```mermaid
 flowchart BT

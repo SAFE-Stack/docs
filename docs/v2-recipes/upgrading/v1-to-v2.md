@@ -140,7 +140,7 @@ dotnet fake build -t run
 ```
 at the root of the solution to launch the app and check everything is working as expected.
 
-If you have problems loading your website, carefully check that you haven't missed out any javascript or nuget packages when overwriting the paket and package files. The console output will usually give you a good guide if this is the case.
+If you have problems loading your website, carefully check that you haven't missed out any JavaScript or NuGet packages when overwriting the paket and package files. The console output will usually give you a good guide if this is the case.
 
 
 

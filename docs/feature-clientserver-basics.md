@@ -1,5 +1,5 @@
 ## Sharing Types
-Sharing your domain types and contracts between client and server is extremely simple. Thanks to Fable's excellent F# transpilation into Javascript, you can use all standard F# language features such as Records, Tuples and Discriminated Unions without worry. To share types across both your client and server project, first create a project in your repository called e.g `Shared.fsproj`. This project will contain any assets that should be shared across the client and server e.g. types and functions.
+Sharing your domain types and contracts between client and server is extremely simple. Thanks to Fable's excellent F# transpilation into JavaScript, you can use all standard F# language features such as Records, Tuples and Discriminated Unions without worry. To share types across both your client and server project, first create a project in your repository called e.g `Shared.fsproj`. This project will contain any assets that should be shared across the client and server e.g. types and functions.
 
 Then, create files with your types in the project as needed e.g
 
@@ -19,17 +19,17 @@ Reference this project from your server project. You can now reference those typ
 </Project>
 ```
 
-Finally, reference this project in your client project (as above). You can now reference those types on the client; Fable will automatically convert your F# types into Javascript in the background.
+Finally, reference this project in your client project (as above). You can now reference those types on the client; Fable will automatically convert your F# types into JavaScript in the background.
 
 ## Sharing Behaviour
 You can also share behaviour using the same mechanism at that for sharing types. This is extremely useful for e.g shared validation or business logic that needs to occur on both client and server.
 
-Fable will translate your functions into native Javascript, and will even translate many calls to the .NET base class library into corresponding Javascript! This allows you to compile your domain model and domain logic to many many different targets including:
+Fable will translate your functions into native JavaScript, and will even translate many calls to the .NET base class library into corresponding JavaScript! This allows you to compile your domain model and domain logic to many many different targets including:
 
 * ASP.NET Core (via Saturn)
 * Azure Functions
-* Javascript that runs in the browser
-* Javascript that runs on mobile devices with [React Native](https://facebook.github.io/react-native/).
+* JavaScript that runs in the browser
+* JavaScript that runs on mobile devices with [React Native](https://facebook.github.io/react-native/).
 * Raspberry Pi (via .NET Core)
 
 You can read more about this [on the Fable website](http://fable.io/docs/compatibility.html).

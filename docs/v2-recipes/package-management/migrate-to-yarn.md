@@ -1,6 +1,6 @@
 #How do I migrate to Yarn from NPM?
 
-[Yarn](https://yarnpkg.com/) is an alternative Javascript package manager created by Facebook. 
+[Yarn](https://yarnpkg.com/) is an alternative JavaScript package manager created by Facebook. 
 
 When it was first released it provided several features which were absent from NPM at the time such as [offline caching](https://yarnpkg.com/features/offline-cache) and [deterministic dependency resolution](https://classic.yarnpkg.com/blog/2016/11/24/lockfiles-for-all/). 
 
