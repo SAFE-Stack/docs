@@ -105,7 +105,7 @@ nav:
     - Add routing with state shared between pages: 'recipes/ui/add-routing.md'
     - Add routing with separate models per page: 'recipes/ui/add-routing-with-separate-models.md'
     - Add Routing with UseElmish: 'recipes/ui/routing-with-elmish.md'
-  - Javascript:
+  - JavaScript:
     - Import a JavaScript module: 'recipes/javascript/import-js-module.md'
     - Add Support for a Third Party React Library: 'recipes/javascript/third-party-react-package.md'
   - Package Management:

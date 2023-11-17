@@ -27,6 +27,6 @@ This will add three files to your solution, all of which should be committed to 
 
 For a more detailed explanation of this process see the official [migration guide.](https://fsprojects.github.io/Paket/convert-from-nuget-tutorial.html)
 
-> In the case where you have added a nuget project to a solution which is already using paket, run this command with the option `--force`.
+> In the case where you have added a NuGet project to a solution which is already using paket, run this command with the option `--force`.
 
 > If you are working in Visual Studio and wish to see your Paket files in the Solution Explorer, you will need to add both the paket.lock and any paket.references files created in your project directories during the last step to your solution.

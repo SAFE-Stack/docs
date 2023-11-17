@@ -2,9 +2,9 @@
 
 Testing on the client is a little different than on the server.
 
-This is because the code which is ultimately being executed in the browser is Javascript, translated from F# by Fable, and so it must be tested in a Javascript environment.
+This is because the code which is ultimately being executed in the browser is JavaScript, translated from F# by Fable, and so it must be tested in a JavaScript environment.
 
-Furthermore, code that is shared between the Client and Server must be tested in both a dotnet environment _and_ a Javascript environment.
+Furthermore, code that is shared between the Client and Server must be tested in both a dotnet environment _and_ a JavaScript environment.
 
 The SAFE template uses a library called Fable.Mocha which allows us to run the same tests in both environments. It mirrors the Expecto API and works in much the same way.
 
@@ -14,7 +14,7 @@ If you are using the standard template then there is nothing more you need to do
 
 You will find a folder in the solution named **tests**. Inside this there is a project, **Client.Tests**, which contains a single script demonstrating how to use Mocha to test the TODO sample.
 
->Note the compiler directive here which makes sure that the Shared tests are only included when executing in a Javascript (Fable) context. They are covered by Expecto under dotnet as you can see in **Server.Tests.fs**.
+>Note the compiler directive here which makes sure that the Shared tests are only included when executing in a JavaScript (Fable) context. They are covered by Expecto under dotnet as you can see in **Server.Tests.fs**.
 
 #### 1. Launch the test server
 

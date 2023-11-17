@@ -1,6 +1,6 @@
 # How do I add an NPM package to the Client?
 
-When you want to call a Javascript library from your Client, it is easy to import and reference it using [NPM](https://docs.npmjs.com/cli/npm).
+When you want to call a JavaScript library from your Client, it is easy to import and reference it using [NPM](https://docs.npmjs.com/cli/npm).
 
 Run the following command:
 ```bash
