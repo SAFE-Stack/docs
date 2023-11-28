@@ -65,8 +65,6 @@
 	- Run `dotnet paket install`
 	- Remove `Fable.React` and `Feliz.Bulma` from `src/Client/paket.references` (moved here according to @Freymaurer feedback)
     - Run `dotnet paket update Fable.Remoting.Client`, needs to be done separately because version changes is a minor one and not major so I can't force it using only the `paket.dependencies` changes
-    - Run `dotnet paket update Fake.Core.Target`
-    - Run `dotnet paket update Fake.IO.FileSystem`
 
 1. Remove all the webpack related dependencies:
 
