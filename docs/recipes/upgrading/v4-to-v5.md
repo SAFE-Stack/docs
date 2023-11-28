@@ -37,7 +37,7 @@
 	framework: net8.0
 	storage: none
 	
-	nuget Fsharp.Core
+	nuget Fsharp.Core ~> 8
 
     //Server
 	nuget Fable.Remoting.Giraffe ~> 5
@@ -53,8 +53,8 @@
 	nuget Feliz ~> 2
 	
     //Build
-	nuget Fake.Core.Target
-	nuget Fake.IO.FileSystem
+	nuget Fake.Core.Target ~> 5
+	nuget Fake.IO.FileSystem ~> 5
 	nuget Farmer ~> 1
 
     //Testing
