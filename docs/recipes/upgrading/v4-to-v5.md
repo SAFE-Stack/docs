@@ -82,6 +82,27 @@
 	    webpack-cli \
 	    webpack-dev-server
 	```
+
+1. Update the `engines` in `package.json` to the following
+
+	```
+	"engines": {
+        "node": "~18 || ~20",
+        "npm": "~9 || ~10"
+    }
+	```
+
+	and install the relevent version of `node` and `npm`
+
+	**Tip**: Node Version Manage or `nvm` can be used to install and manage node/npm versions
+
+1. Remove any existing `scripts` from the `package.json` that relate to `webpack` or `webpack-dev-server`
+
+	```diff
+	- "start": "webpack-dev-server --mode development",
+	- "build": "webpack --mode production",
+	- "test:live": "webpack-dev-server --mode development --env test"
+	```
 	
 1. Update the left over NPM dependencies:
 
@@ -288,14 +309,6 @@
 	```
 	# Ignore Fable files
 	src/Client/output/fable_modules/ 
-	```
-
-1. Remove any existing `scripts` from the `package.json` that relate to `webpack` or `webpack-dev-server`
-
-	```diff
-	- "start": "webpack-dev-server --mode development",
-	- "build": "webpack --mode production",
-	- "test:live": "webpack-dev-server --mode development --env test"
 	```
 
 1. In the `build.fs` file replace the following lines:
