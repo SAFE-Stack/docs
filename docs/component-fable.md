@@ -11,10 +11,10 @@ It also provides *rich* integration with the JS ecosystem which means that you c
 
 Fable is a tool that generates JavaScript files from F# code. This allows us to write full front end applications using F#. Being able to write both the Server and Client in the same language offers huge benefits especially when you can share code between the two, without the need for duplication. More information on code sharing can be found [here](feature-clientserver.md).
 
-## Fable and webpack
+## Fable and Vite
 
-As Fable allows us to integrate into the JS Ecosystem, we can make use of tools such as webpack with features including [Hot Module replacement](feature-hmr.md) and Source Maps.
+As Fable allows us to integrate into the JS Ecosystem, we can make use of tools such as Vite with features including [Hot Module replacement](feature-hmr.md) and Source Maps.
 
-Creating a webpack config file isn't the easiest thing in the world, so the [SAFE Template](template-overview.md) already has one pre-built that contains the basics to get you up and running immediately.
+The [SAFE Template](template-overview.md) already has Vite configured to get you up and running immediately.
 
 Learn more about Fable [here](http://fable.io/).
