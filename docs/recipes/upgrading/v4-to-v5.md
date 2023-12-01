@@ -330,6 +330,13 @@
 	+ "client", dotnet [ "fable"; "watch"; "-o"; "output"; "-s"; "--run"; "npx"; "vite" ] clientTestsPath ]
 	```
 
+	**Note**: If you are using a template created prior to version v4.3, you may have the following string syntax for the `dotnet` commands and therefore the change you need to make will be slightly different.
+
+	```diff
+	- "client", dotnet "fable -o output -s --run npm run build" clientPath
+	+ "client", dotnet "fable -o output -s --run npx vite build" clientPath
+	```
+
 ### Additional resources
 
 In order to get VSCode Tailwind intellisense, user needs to install `Tailwind CSS Intellisense`. We also create the file `.vscode/settings.json` with the following content.
