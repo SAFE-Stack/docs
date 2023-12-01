@@ -6,7 +6,7 @@
     - `dotnet tool update paket`
     - `dotnet tool update fantomas`
     - `dotnet tool update femto`
-	- `dotnet tool restore`
+    - `dotnet tool restore`
 
 1. Remove `fantomas-tool` by running `dotnet tool uninstall fantomas-tool`
     
@@ -16,7 +16,7 @@
 	{
 	  "sdk": {
 	    "version": "8.0.0",
-	    "rollForward": "latestMinor"
+	    "rollForward": "latestMinor" 
 	  }
 	}
 	```
@@ -73,7 +73,7 @@
 
 	and install the relevant version of `node` and `npm`
 
-	**Tip**: Node Version Manage or `nvm` can be used to install and manage node/npm versions
+	**Tip**: Node Version Manager or `nvm` can be used to install and manage node/npm versions
 
 1. Remove any existing `scripts` from the `package.json` that relate to `webpack` or `webpack-dev-server`
 
@@ -180,7 +180,7 @@
 	importSideEffects "./index.css"
 	```
 
-1. In `src/Client/Index.fs` replace all view code after the `update` function with the code [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/src/Client/Index.fs)
+1. In `src/Client/Index.fs` replace all view code after the `update` function with the code [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/src/Client/Index.fs#L42-L112)
 
 1. Create a file `tests/Client/vite.config.mts` with the following content:
 
