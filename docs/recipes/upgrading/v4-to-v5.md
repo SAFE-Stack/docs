@@ -89,9 +89,13 @@
 	
 	If you use the second option, make sure to select `react`, `react-dom`, `sass`.
 	
+	> Note: if you have any problems with the versions of the npm packages, try installing the exact versions that are in the [SAFE Template's package.json](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/package.json)
+
 1. Install the new NPM dependencies
 
 	`npm install -D vite @vitejs/plugin-react tailwindcss postcss autoprefixer @types/node`
+
+	> Note: if you have any problems with the versions of the npm packages, try installing the exact versions that are in the [SAFE Template's package.json](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/package.json)
 	
 1. Delete `webpack.config.js`
 
@@ -172,7 +176,7 @@
 	@tailwind utilities;
 	```
 	
-1. Add the following lines at the top of `src/Client/App.fs`
+1. Add the following lines at the top of `src/Client/App.fs`, after the existing open declarations
 	
 	```fs
 	open Fable.Core.JsInterop
@@ -180,7 +184,7 @@
 	importSideEffects "./index.css"
 	```
 
-1. In `src/Client/Index.fs` replace all view code after the `update` function with the code [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/src/Client/Index.fs#L42-L112)
+1. In `src/Client/Index.fs` replace all view code after the `update` function with the code [here](https://github.com/SAFE-Stack/SAFE-template/blob/064b902c4ca8229f8f671a3fab67c2871cd772c1/Content/default/src/Client/Index.fs#L42-L112)
 
 1. Create a file `tests/Client/vite.config.mts` with the following content:
 
