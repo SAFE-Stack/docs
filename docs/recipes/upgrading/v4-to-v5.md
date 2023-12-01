@@ -164,22 +164,6 @@
 	}
 	```
 
-1. In order to get VSCode Tailwind intellisense, user needs to install `Tailwind CSS Intellisense`. We also create the file `.vscode/settings.json` with the following content.
-
-	*The regex here are for Feliz style DSL, if you want to support Fable.React DSL you need to adapt the regexes*
-	
-	```json
-	{
-	    "tailwindCSS.includeLanguages": {
-	        "fsharp": "html"
-	    },
-	    "tailwindCSS.experimental.classRegex": [
-	        "\\.className\\s+\"([^\"]*)\"",
-	        ["\\.className\\s+\\[([^\\]]*)\\]", "\"([^\"]*)\""]
-	    ]
-	}
-	```
-
 1. Create a file `src/Client/index.css` with the following content
 
 	```css
@@ -338,4 +322,22 @@
 	```diff
 	- "client", dotnet [ "fable"; "watch"; "-o"; "output"; "-s"; "--run"; "npm"; "run"; "test:live" ] clientTestsPath ]
 	+ "client", dotnet [ "fable"; "watch"; "-o"; "output"; "-s"; "--run"; "npx"; "vite" ] clientTestsPath ]
+	```
+
+### Additional resources
+
+In order to get VSCode Tailwind intellisense, user needs to install `Tailwind CSS Intellisense`. We also create the file `.vscode/settings.json` with the following content.
+
+	*The regex here are for Feliz style DSL, if you want to support Fable.React DSL you need to adapt the regexes*
+	
+	```json
+	{
+	    "tailwindCSS.includeLanguages": {
+	        "fsharp": "html"
+	    },
+	    "tailwindCSS.experimental.classRegex": [
+	        "\\.className\\s+\"([^\"]*)\"",
+	        ["\\.className\\s+\\[([^\\]]*)\\]", "\"([^\"]*)\""]
+	    ]
+	}
 	```
