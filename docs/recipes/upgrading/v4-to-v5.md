@@ -29,7 +29,7 @@
     </PropertyGroup>
     ```
 
-1. Upgrade .NET dependencies to latest version:
+1. Upgrade .NET dependencies to latest versions:
 
 	Update your `paket.dependencies` with:
 		
@@ -66,6 +66,12 @@
 	- Run `dotnet paket install`
 	- Run `dotnet paket remove Fable.React -p Client`
 	- Run `dotnet paket remove Feliz.Bulma -p Client`
+
+	Add a `paket.references` file to `src/Shared` with the following
+
+	```
+	FSharp.Core
+	```
 
 1. Remove all the webpack related dependencies:
 
