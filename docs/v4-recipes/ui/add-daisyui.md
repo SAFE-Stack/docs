@@ -1,9 +1,8 @@
-# How do I add daisyUI to a SAFE project?
 
 [DaisyUI](https://daisyui.com/) is a component library for [Tailwind CSS](https://tailwindcss.com/docs/installation).  
 To use the library from within F# we will use [Feliz.DaisyUI](https://dzoukr.github.io/Feliz.DaisyUI/) ([Github](https://github.com/Dzoukr/Feliz.DaisyUI)).
 
-1. Open a terminal at `./src/Client`
+1. Follow the instructions for how to [add Tailwind CSS to your project](../add-tailwind/)
 
 1. Add daisyUI JS dependencies using NPM: `npm i -D daisyui@latest`
 
@@ -16,14 +15,14 @@ To use the library from within F# we will use [Feliz.DaisyUI](https://dzoukr.git
     ```{ .js title=tailwind.config.js hl_lines=10 }
     module.exports = {
         content: [
-            '.index.html',
-            './**/*.fs',
+            './src/Client/**/*.html',
+            './src/Client/**/*.fs',
         ],
         theme: {
             extend: {},
         },
         plugins: [
-            require('daisyui'),
+            require("daisyui"),
         ],
     }
     ```

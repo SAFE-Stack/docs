@@ -21,5 +21,3 @@ Remember to link the first instance of any technology to the appropriate docs el
 Write clear instructions on how to get to the desired outcome. The step-by-step instructions should be clear, short, easy to understand with possibly a use case and an example at the end if suitable.
 
 If you have a step in this section that is relevant to some other recipe we have here in the docs, such as adding a package to a SAFE app, link it to that relevant page.
-
-[See here for an example recipe.](./ui/add-bulma.md)

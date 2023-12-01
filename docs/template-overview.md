@@ -1,6 +1,6 @@
 The [SAFE Template](https://github.com/SAFE-Stack/SAFE-template) is a [dotnet CLI template](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for SAFE Stack projects, designed to get you up and running as quickly as possible, with flexible options to suit your application. The template gets you up and running with the most common elements of the stack with minimal configuration options.
 
-All template options come with a fully working end-to-end SAFE application with known-good dependencies on client (NPM) and server (NuGet), as well as a preconfigured webpack configuration file.
+All template options come with a fully working end-to-end SAFE application with known-good dependencies on client (NPM) and server (NuGet), as well as a preconfigured Vite configuration file.
 
 ## Using the template
 Refer to the [Quick Start guide](quickstart.md#create-your-first-safe-app) to see basic guidance on how to install and use the template.
@@ -31,7 +31,7 @@ dotnet new SAFE -m
 **Use this configuration if..**
 
 * .. you are a SAFE Stack expert and want to hand-craft your own SAFE Stack application from a minimal starting point
-* .. you are coming from a web development background and know your way around tools like NPM and Webpack
+* .. you are coming from a web development background and know your way around tools like NPM and Vite
 * .. you are comfortable creating your own build and packaging pipeline
 * .. you want to see "behind the magic" and get a feel for what is happening behind the scenes
 

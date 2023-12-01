@@ -88,7 +88,7 @@ In the console window (which can be reached by right-clicking and selecting Inse
 If nothing is being seen you may need a slightly different import statement, [please refer to this recipe](../import-js-module).
 
 - `createObj` from `Fable.Core.JsInterop` takes a sequence of `string * obj` which is a prop name and value for the component, you can find the full prop list for react-d3-speedometer [here](https://www.npmjs.com/package/react-d3-speedometer).
-- Using `==>` (short hand for `prop.custom`) to transform the sequence into a javascript object 
+- Using `==>` (short hand for `prop.custom`) to transform the sequence into a JavaScript object 
 
 ```fsharp
 createObj [

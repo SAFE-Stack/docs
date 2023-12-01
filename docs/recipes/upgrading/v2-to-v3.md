@@ -83,7 +83,7 @@ dotnet paket install
 
 **Important** If you have made any modifications to the webpack file, you will need to apply them back in manually.
 
-* If you were using CSS files, make sure to follow the [Stylesheet recipe](../ui/add-style.md) to add them back in.
+* If you were using CSS files, make sure to follow the [Stylesheet recipe](../../v4-recipes/ui/add-style.md) to add them back in.
 
 #### 11. Update TargetFramework in all projects
 * **Overwite** the `Client.fsproj`
@@ -97,7 +97,7 @@ dotnet run
 ```
 at the root of the solution to launch the app and check everything is working as expected.
 
-If you have problems loading your website, carefully check that you haven't missed out any javascript or nuget packages when overwriting the paket and package files. The console output will usually give you a good guide if this is the case.
+If you have problems loading your website, carefully check that you haven't missed out any JavaScript or NuGet packages when overwriting the paket and package files. The console output will usually give you a good guide if this is the case.
 
 
 
