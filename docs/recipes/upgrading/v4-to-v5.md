@@ -67,15 +67,15 @@
 
 	Update your `paket.lock` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.lock)
 	
-	- Run `dotnet paket remove Fable.React -p Client`
-	- Run `dotnet paket remove Feliz.Bulma -p Client`
-	- Run `dotnet paket install`
-
 	Add a `paket.references` file to `src/Shared` with the following
 
 	```
 	FSharp.Core
 	```
+
+	- Run `dotnet paket remove Fable.React -p Client`
+	- Run `dotnet paket remove Feliz.Bulma -p Client`
+	- Run `dotnet paket restore`
 
 1. Remove all the webpack related dependencies:
 
