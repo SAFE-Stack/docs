@@ -69,6 +69,8 @@ nav:
   - Upgrade from V3 to V4 : 'recipes/upgrading/v3-to-v4.md'
   - Upgrade from V4 to V5 : 'recipes/upgrading/v4-to-v5.md'
   - Create a new Recipe: 'recipes/template.md'
+  - UI:
+    - Add daisyUI support: 'recipes/ui/add-daisyui.md'
 - FAQs:
   - Moving from dev to prod : 'faq-build.md'
   - Troubleshooting : 'faq-troubleshooting.md'
