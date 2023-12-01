@@ -290,7 +290,13 @@
 	src/Client/output/fable_modules/ 
 	```
 
-1. Remove the existing `scripts` from the `package.json`, should be `"scripts": {},` now.
+1. Remove any existing `scripts` from the `package.json` that relate to `webpack` or `webpack-dev-server`
+
+	```diff
+	- "start": "webpack-dev-server --mode development",
+	- "build": "webpack --mode production",
+	- "test:live": "webpack-dev-server --mode development --env test"
+	```
 
 1. In the `build.fs` file replace the following lines:
 
