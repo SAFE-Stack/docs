@@ -31,39 +31,10 @@
 
 1. Upgrade .NET dependencies to latest versions:
 
-	Update your `paket.dependencies` with:
-		
-	```
-	source https://api.nuget.org/v3/index.json
-	framework: net8.0
-	storage: none
-	
-	nuget Fsharp.Core ~> 8
+	- Run `dotnet paket remove Fable.React -p Client`
+	- Run `dotnet paket remove Feliz.Bulma -p Client`
 
-    //Server
-	nuget Fable.Remoting.Giraffe ~> 5
-	nuget Saturn ~> 0
-	
-    //Client
-	nuget Fable.Core ~> 4
-	nuget Fable.Elmish ~> 4
-	nuget Fable.Elmish.React ~> 4
-	nuget Fable.Elmish.Debugger ~> 4
-	nuget Fable.Elmish.HMR ~> 7
-	nuget Fable.Remoting.Client ~> 7
-	nuget Feliz ~> 2
-	
-    //Build
-	nuget Fake.Core.Target ~> 5
-	nuget Fake.IO.FileSystem ~> 5
-	nuget Farmer ~> 1
-
-    //Testing
-	nuget Fable.Mocha ~> 2
-	nuget Expecto ~> 9
-
-	//Any other packages you already have here
-	```
+	Update your `paket.dependencies` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.dependencies)
 
 	Update your `paket.lock` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.lock)
 	
@@ -73,8 +44,6 @@
 	FSharp.Core
 	```
 
-	- Run `dotnet paket remove Fable.React -p Client`
-	- Run `dotnet paket remove Feliz.Bulma -p Client`
 	- Run `dotnet paket restore`
 
 1. Remove all the webpack related dependencies:
