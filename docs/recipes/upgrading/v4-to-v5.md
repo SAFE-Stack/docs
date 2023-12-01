@@ -6,6 +6,7 @@
     - `dotnet tool update paket`
     - `dotnet tool update fantomas`
     - `dotnet tool update femto`
+	- `dotnet tool restore`
 
 1. Remove `fantomas-tool` by running `dotnet tool uninstall fantomas-tool`
     
