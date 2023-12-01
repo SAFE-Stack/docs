@@ -316,6 +316,15 @@
 	- "client", dotnet [ "fable"; "-o"; "output"; "-s"; "--run"; "npm"; "run"; "build" ] clientPath ]
 	+ "client", dotnet [ "fable"; "-o"; "output"; "-s"; "--run"; "npx"; "vite"; "build" ] clientPath ]
 	```
+
+	Line 35:
+
+	```diff
+	- operating_system OS.Windows
+	- runtime_stack Runtime.DotNet60
+	+ operating_system OS.Linux
+	+ runtime_stack (DotNet "8.0")
+	```
 	
 	Line 51:
 	
