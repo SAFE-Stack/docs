@@ -23,7 +23,7 @@ You may see the following `SocketProtocolError` message in the Debug Console onc
 
 <center><img src="../img/feature-debugging-5.png" style="height: 175px;"/></center>
 
-Whilst these messages can be safely ignored, you can eliminate them by installing **Redux Dev Tools** in the launched Chrome instance as described in the debugging [prerequisites](../recipes/developing-and-testing/debug-safe-app/#0-install-prerequisites) section.
+Whilst these messages can be safely ignored, you can eliminate them by installing **Redux Dev Tools** in the launched Chrome instance as described in the debugging [prerequisites](v4-recipes/developing-and-testing/debug-safe-app.md) section.
 
 ### Node Process does not stop after stopping the VS Code debugger
 VS Code does not kill the Fable process when you stop the debugger, leaving it running as a "zombie". In such a case, you will have to explicitly kill the process otherwise it will hold onto
