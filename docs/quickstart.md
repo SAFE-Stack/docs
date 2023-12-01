@@ -4,9 +4,9 @@ This page provides some basic guidance on getting up and running with your first
 
 You'll need to install the following pre-requisites in order to build SAFE applications
 
-* The [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
-* [node.js](https://nodejs.org/) (v16.x)
-* [npm](https://www.npmjs.com/) (v8.x)
+* The [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+* [node.js](https://nodejs.org/) (v18.x or v20.x)
+* [npm](https://www.npmjs.com/) (v9.x or v10.x)
 * [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (optional - required for Azure deployments)
 
 ## Install an F# code editor

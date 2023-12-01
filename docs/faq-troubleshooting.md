@@ -1,15 +1,19 @@
 ### Run error due to node/npm version
 
-You may receive an error when trying to run the app, e.g. the current version might require `{"node":"~16 || ~18","npm":"~8"}` but your locally installed versions are different. Ideally we'd like to install different versions side-by-side, which we can do using [Node Version Manager](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/).
+You may receive an error when trying to run the app, e.g. the current version might require `{"node":"~18 || ~20","npm":"~9 || ~10"}` but your locally installed versions are different. Ideally we'd like to install different versions side-by-side, which we can do using [Node Version Manager](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/).
 
-Once NVM is installed, identify the version of Node that you'd like to install by checking this [matrix](https://nodejs.org/en/download/releases). For our example here we can identify version `16.20.1` as satifying both the Node and npm version requirements. To install this version for the current project run:
+Once NVM is installed, identify the version of Node that you'd like to install by checking this [matrix](https://nodejs.org/en/download/releases). For our example here we can identify version `20.10.0` as satifying both the Node and npm version requirements. To install this version for the current project run:
 
-> `nvm install 16.20.1`<br/>
-> `nvm use 16.20.1`
+```
+nvm install 20.10.0
+nvm use 20.10.0
+```
 
 The output from these commands will also tell you which version of npm is linked to the Node version, but if you do not currently have that version of npm installed you need to install it manually with the command:
 
-> `npm install -g npm@8.19.4`
+```
+npm install -g npm@10.2.4
+```
 
 The version numbers may vary depending on the SAFE Stack version you are using.
 
