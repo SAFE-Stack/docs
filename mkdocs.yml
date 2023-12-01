@@ -64,7 +64,11 @@ nav:
   - Server Side Rendering : 'feature-ssr.md'
   - Hot Module Replacement : 'feature-hmr.md'
   - Working with Azure functions : 'feature-azurefunctions.md'
-#- How do I...:
+- How do I...:
+    - Upgrade from V1 to V2: 'recipes/upgrading/v1-to-v2.md'
+    - Upgrade from V2 to V3: 'recipes/upgrading/v2-to-v3.md'
+    - Upgrade from V3 to V4: 'recipes/upgrading/v3-to-v4.md'
+    - Create a new Recipe: 'recipes/template.md'
 - FAQs:
   - Moving from dev to prod : 'faq-build.md'
   - Troubleshooting : 'faq-troubleshooting.md'
@@ -75,12 +79,8 @@ nav:
 - Events: 'events.md'
 - Support: 'support.md'
 - Testimonials: 'testimonials.md'
-- Legacy SAFE Template (v2):
-    - The FAKE script: 'legacy-template-fake.md'
-    - V2 recipes:
-      - Upgrade from V2 to V3 : 'v4-recipes/upgrading/v2-to-v3.md'
-      - Upgrade from V3 to V4 : 'v4-recipes/upgrading/v3-to-v4.md'
-      - Create a new Recipe: 'v4-recipes/template.md'
+- Legacy SAFE Template (v4):
+    - V4 recipes:
       - Build:
         - Add build automation: 'v4-recipes/build/add-build-script.md'
         - Remove FAKE: 'v4-recipes/build/remove-fake.md'
