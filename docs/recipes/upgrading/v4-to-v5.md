@@ -34,15 +34,15 @@
 	- Run `dotnet paket remove Fable.React -p Client`
 	- Run `dotnet paket remove Feliz.Bulma -p Client`
 
-	Update your `paket.dependencies` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.dependencies)
+	- Update your `paket.dependencies` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.dependencies)
 
-	Update your `paket.lock` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.lock)
+	- Update your `paket.lock` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.lock)
 	
-	Add a `paket.references` file to `src/Shared` with the following
+	- Add a `paket.references` file to `src/Shared` with the following
 
-	```
-	FSharp.Core
-	```
+		```
+		FSharp.Core
+		```
 
 	- Run `dotnet paket restore`
 
