@@ -8,6 +8,14 @@
     - `dotnet tool update femto`
     - `dotnet tool restore`
 
+1. If you want to use the same F# style the v5 SAFE Template, update your .editorconfig to include the following lines:
+
+    ```
+    [*.fs]
+    fsharp_multiline_bracket_style = stroustrup
+    fsharp_newline_before_multiline_computation_expression = false
+    ```
+
 1. Remove `fantomas-tool` by running `dotnet tool uninstall fantomas-tool`
     
 1. To upgrade to .NET 8 change the `global.json` to
