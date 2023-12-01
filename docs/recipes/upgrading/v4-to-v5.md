@@ -61,11 +61,15 @@
     //Testing
 	nuget Fable.Mocha ~> 2
 	nuget Expecto ~> 9
+
+	//Any other packages you already have here
 	```
+
+	Update your `paket.lock` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.lock)
 	
-	- Run `dotnet paket install`
 	- Run `dotnet paket remove Fable.React -p Client`
 	- Run `dotnet paket remove Feliz.Bulma -p Client`
+	- Run `dotnet paket install`
 
 	Add a `paket.references` file to `src/Shared` with the following
 
@@ -98,7 +102,7 @@
     }
 	```
 
-	and install the relevent version of `node` and `npm`
+	and install the relevant version of `node` and `npm`
 
 	**Tip**: Node Version Manage or `nvm` can be used to install and manage node/npm versions
 
@@ -207,81 +211,7 @@
 	importSideEffects "./index.css"
 	```
 
-1. In `src/Client/Index.fs` replace all view code after the `update` function with the following 
-
-	```fsharp
-		open Feliz
-
-		let private todoAction model dispatch =
-			Html.div [
-				prop.className "flex flex-col sm:flex-row mt-4 gap-4"
-				prop.children [
-					Html.input [
-						prop.className
-							"shadow appearance-none border rounded w-full py-2 px-3 outline-none focus:ring-2 ring-teal-300 text-grey-darker"
-						prop.value model.Input
-						prop.placeholder "What needs to be done?"
-						prop.autoFocus true
-						prop.onChange (SetInput >> dispatch)
-						prop.onKeyPress (fun ev ->
-							if ev.key = "Enter" then
-								dispatch AddTodo)
-					]
-					Html.button [
-						prop.className
-							"flex-no-shrink p-2 px-12 rounded bg-teal-600 outline-none focus:ring-2 ring-teal-300 font-bold text-white hover:bg-teal disabled:opacity-30 disabled:cursor-not-allowed"
-						prop.disabled (Todo.isValid model.Input |> not)
-						prop.onClick (fun _ -> dispatch AddTodo)
-						prop.text "Add"
-					]
-				]
-			]
-
-		let private todoList model dispatch =
-			Html.div [
-				prop.className "bg-white/80 rounded-md shadow-md p-4 w-5/6 lg:w-3/4 lg:max-w-2xl"
-				prop.children [
-					Html.ol [
-						prop.className "list-decimal ml-6"
-						prop.children [
-							for todo in model.Todos do
-								Html.li [ prop.className "my-1"; prop.text todo.Description ]
-						]
-					]
-
-					todoAction model dispatch
-				]
-			]
-
-		let view model dispatch =
-			Html.section [
-				prop.className "h-screen w-screen"
-				prop.style [
-					style.backgroundSize "cover"
-					style.backgroundImageUrl "https://unsplash.it/1200/900?random"
-					style.backgroundPosition "no-repeat center center fixed"
-				]
-
-				prop.children [
-					Html.a [
-						prop.href "https://safe-stack.github.io/"
-						prop.className "absolute block ml-12 h-12 w-12 bg-teal-300 hover:cursor-pointer hover:bg-teal-400"
-						prop.children [ Html.img [ prop.src "/favicon.png"; prop.alt "Logo" ] ]
-					]
-
-					Html.div [
-						prop.className "flex flex-col items-center justify-center h-full"
-						prop.children [
-							Html.h1 [
-								prop.className "text-center text-5xl font-bold text-white mb-3 rounded-md p-4"
-								prop.text "SAFE.App"
-							]
-							todoList model dispatch
-						]
-					]
-				]
-			]
-	```
+1. In `src/Client/Index.fs` replace all view code after the `update` function with the code [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/src/Client/Index.fs)
 
 1. Create a file `tests/Client/vite.config.mts` with the following content:
 
@@ -317,7 +247,7 @@
 	src/Client/output/fable_modules/ 
 	```
 
-1. In the `build.fs` file replace the following lines:
+1. In the `Build.fs` file replace the following lines:
 
 	Line 27:
 	
