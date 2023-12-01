@@ -67,6 +67,7 @@ nav:
 - How do I...:
   - Upgrade from V2 to V3 : 'recipes/upgrading/v2-to-v3.md'
   - Upgrade from V3 to V4 : 'recipes/upgrading/v3-to-v4.md'
+  - Upgrade from V4 to V5 : 'recipes/upgrading/v4-to-v5.md'
   - Create a new Recipe: 'recipes/template.md'
   - Build:
     - Add build automation: 'recipes/build/add-build-script.md'
