@@ -3,7 +3,7 @@ The [SAFE Template](https://github.com/SAFE-Stack/SAFE-template) is a [dotnet CL
 All template options come with a fully working end-to-end SAFE application with known-good dependencies on client (NPM) and server (NuGet), as well as a preconfigured Vite configuration file.
 
 ## Using the template
-Refer to the [Quick Start guide](quickstart.md#create-your-first-safe-app) to see basic guidance on how to install and use the template.
+Refer to the [Quickstart guide](quickstart.md#create-your-first-safe-app) to see basic guidance on how to install and use the template.
 
 ## Template options
 The template provides two simple modes: the *standard* and *minimal* template.
