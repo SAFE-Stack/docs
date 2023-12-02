@@ -15,7 +15,7 @@ You'll also want an IDE to create F# applications. We recommend one of the follo
 
 * [VS Code](https://code.visualstudio.com/) + [Ionide](https://github.com/ionide/ionide-vscode-fsharp) extension
 * [Visual Studio](https://www.visualstudio.com/downloads/)
-* [Jetbrains Rider](https://www.jetbrains.com/rider/)
+* [JetBrains Rider](https://www.jetbrains.com/rider/)
 
 ## Create your first SAFE app
 
