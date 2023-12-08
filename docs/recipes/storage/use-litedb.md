@@ -1,8 +1,6 @@
 # How Do I Use LiteDB?
 The default template uses in-memory storage. This recipe will show you how to replace the in-memory storage with [LiteDB](https://github.com/mbdavid/LiteDB) in the form of [LiteDB.FSharp](https://github.com/Zaid-Ajaj/LiteDB.FSharp).
 
-> If you're using the minimal template, the first steps will show you how to add a LiteDB database; the remaining section of this recipe are designed to work off the default template's starter app.
-
 #### 1. Add LiteDB.FSharp
 Add the [LiteDB.FSharp](https://www.nuget.org/packages/LiteDB.FSharp/) NuGet package to the [server project](./../package-management/add-nuget-package-to-server.md).
 
