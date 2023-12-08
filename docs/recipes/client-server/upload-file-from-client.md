@@ -41,8 +41,22 @@ let createFileUpload onLoad =
 
 #### 4. Use the UI Element
 
-Having followed all these steps, you can now use the `createFileUpload` function in `Index.fs` to create the UI element for uploading files. One thing to note is that `HandleFile` is a case of the discriminated union type `Msg` that's in `Index.fs`. You can use this message case to [send the file from the client to the server](../messaging-post).
+Having followed all these steps, you can now use the `createFileUpload` function in `Index.fs` to create the UI element for uploading files. 
 
 ```fsharp
 FileUpload.createFileUpload (HandleFile >> dispatch)
+```
+
+One thing to note is that `HandleFile` is a case of the discriminated union type `Msg` that's in `Index.fs`.
+
+```fsharp
+type Msg =
+    // other messages
+    | HandleFile of Browser.Types.Event
+
+let update msg model =
+    match msg with
+    //other messages
+    | HandleFile event ->
+    // do what you need with the file
 ```
