@@ -9,7 +9,7 @@ Html.i [ prop.className "fas fa-star" ]
 This will display a solid star icon.
 
 ## I am Using the Minimal Template
-If you’re using the minimal template, there are a couple of things to do before you can start using FontAwesome. If you don't need the full features of Feliz we suggest using `Fable.FontAwesome.Free`.
+If you don't need the full features of Feliz we suggest using `Fable.FontAwesome.Free`.
 
 #### 1. The NuGet Package
 Add [Fable.FontAwesome.Free NuGet Package](https://www.nuget.org/packages/Fable.FontAwesome.Free/) to the Client project.
