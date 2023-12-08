@@ -72,7 +72,7 @@ nav:
   - UI:
     - Add daisyUI support: 'recipes/ui/add-daisyui.md'
   - Client / Server:
-    - Use Giraffe instead of Saturn: "v4-recipes/client-server/saturn-to-giraffe.md"
+    - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
     - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
 - FAQs:
   - Moving from dev to prod : 'faq-build.md'
