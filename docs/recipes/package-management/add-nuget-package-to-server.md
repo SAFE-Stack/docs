@@ -3,10 +3,6 @@ You can add NuGet packages to the server to give it more capabilities. You can d
 
 In this example we will add the [FsToolkit ErrorHandling package](https://www.nuget.org/packages/FsToolkit.ErrorHandling/) package.
 
----
-
-## **I'm using the standard template** (Paket)
-
 #### 1. Add the package
 Navigate to the **root directory** of your solution and run:
 
