@@ -27,7 +27,7 @@ download =
 
 > Make sure to replace "file.txt" with your file that is placed in `src/Server` or relative path
 
-#### 3. Using the download funciton
+#### 3. Using the download function
 
 Since the `download` function is asynchronous, we can't just call it anywhere in our view. The way we're going to deal with this is to create a `Msg` case and handle it in our `update` funciton.
 
