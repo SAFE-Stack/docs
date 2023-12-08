@@ -77,6 +77,7 @@ nav:
     - Upload file from the client: "recipes/client-server/upload-file-from-client.md"
     - Serve a file from the back-end: 'recipes/client-server/serve-a-file-from-the-backend.md'
     - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
+    - Perform roundtrips with MVU: 'v4-recipes/client-server/mvu-roundtrip.md'
 - FAQs:
   - Moving from dev to prod : 'faq-build.md'
   - Troubleshooting : 'faq-troubleshooting.md'
