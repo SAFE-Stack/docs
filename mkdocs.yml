@@ -71,6 +71,14 @@ nav:
   - Create a new Recipe: 'recipes/template.md'
   - UI:
     - Add daisyUI support: 'recipes/ui/add-daisyui.md'
+  - JavaScript:
+    - Import a JavaScript module: 'recipes/javascript/import-js-module.md'
+    - Add Support for a Third Party React Library: 'recipes/javascript/third-party-react-package.md'
+  - Package Management:
+    - Add an NPM package to the Client: 'recipes/package-management/add-npm-package-to-client.md'
+    - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
+    - Migrate to NuGet from Paket: 'recipes/package-management/migrate-to-nuget.md'
+    - Sync NuGet and NPM Packages: 'recipes/package-management/sync-nuget-and-npm-packages.md'
   - Client / Server:
     - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
     - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
@@ -139,4 +147,3 @@ nav:
     - Migrate to Paket from NuGet: 'v4-recipes/package-management/migrate-to-paket.md'
     - Migrate to NuGet from Paket: 'v4-recipes/package-management/migrate-to-nuget.md'
     - Sync NuGet and NPM Packages: 'v4-recipes/package-management/sync-nuget-and-npm-packages.md'
-
