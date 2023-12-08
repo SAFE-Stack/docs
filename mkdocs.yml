@@ -93,7 +93,6 @@ nav:
     - Create a data module using SQLProvider SQL Server SSDT: 'recipes/storage/use-sqlprovider-ssdt.md'
   - UI:
     - Add FontAwesome support: 'recipes/ui/add-fontawesome.md'
-    - Add Stylesheet support: 'recipes/ui/add-style.md'
     - Add Bulma support: 'recipes/ui/add-bulma.md'
     - Use different Bulma Themes: 'recipes/ui/use-different-bulma-themes.md'
     - Remove Bulma: 'recipes/ui/remove-bulma.md'
