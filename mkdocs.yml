@@ -71,6 +71,11 @@ nav:
   - Create a new Recipe: 'recipes/template.md'
   - UI:
     - Add daisyUI support: 'recipes/ui/add-daisyui.md'
+  - Client / Server:
+    - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
+    - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
+    - Upload file from the client: "recipes/client-server/upload-file-from-client.md"
+    - Serve a file from the back-end: 'recipes/client-server/serve-a-file-from-the-backend.md'
 - FAQs:
   - Moving from dev to prod : 'faq-build.md'
   - Troubleshooting : 'faq-troubleshooting.md'
