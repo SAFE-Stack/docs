@@ -1,237 +1,72 @@
 # How do I upgrade from SAFE v4 to v5?
 
-1. Upgrade dotnet tools to latest version:
+### F# tools and dependencies
 
-    - `dotnet tool update fable`
-    - `dotnet tool update paket`
-    - `dotnet tool update fantomas`
-    - `dotnet tool update femto`
-    - `dotnet tool restore`
+1. **Get the latest dotnet tools such as Fable and Fantomas into your repository**.
+	1. Overwrite your `dotnet-tools.json` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/.config/dotnet-tools.json).
+	1. Ensure tools have been downloaded to your machine with `dotnet tool restore`.
 
-1. If you want to use the same F# style the v5 SAFE Template, update your .editorconfig to include the following lines:
+1. **Use our preferred F# formatting style**.
+	1. Overwrite your `.editorconfig` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/.editorconfig).
 
-    ```
-    [*.fs]
-    fsharp_multiline_bracket_style = stroustrup
-    fsharp_newline_before_multiline_computation_expression = false
-    ```
+1. **Migrate all dependencies to .NET 8**.
+	1. Overwriite your `global.json` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/global.json).
 
-1. Remove `fantomas-tool` by running `dotnet tool uninstall fantomas-tool`
-    
-1. To upgrade to .NET 8 change the `global.json` to
+	1. Update each of your project files to target .NET 8.
 
-	```json
-	{
-	  "sdk": {
-	    "version": "8.0.0",
-	    "rollForward": "latestMinor" 
-	  }
-	}
-	```
+	    ```xml
+	    <PropertyGroup>
+	        <TargetFramework>net8.0</TargetFramework>
+	    </PropertyGroup>
+	    ```
 
-    followed by updating each of your project files to target .NET 8
+	1. Upgrade all .NET dependencies to the latest versions for SAFE v5:
 
-    ```xml
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-    </PropertyGroup>
-    ```
+		1. Run `dotnet paket remove Fable.React -p Client`.
+		1. Run `dotnet paket remove Feliz.Bulma -p Client`.
+		1. Overwrite your `paket.dependencies` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/paket.dependencies).
+		1. Overwrite your `paket.lock` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/paket.lock).
+		1. Overwrite your Shared project's `paket.references` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/src/Shared/paket.references).
+		1. Run `dotnet paket install` to update the Shared project.
+		1. Manually re-add any custom dependencies that you previously had in any projects (Client, Server or Shared etc.):
+			1. `cd` into the required project.
+			1. `dotnet paket add <package> --keep-minor`. This will download the latest version of the package you required *but will not update any associated dependencies outside of their existing major version*.
 
-1. Upgrade .NET dependencies to latest versions:
+### Javascript tools and dependencies
+1. **Update all dependencies.**
+	1. Replace `package.json` with [this file](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/package.json).
+	1. Replace `package-lock.json` with [this file](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/package-lock.json).
+	1. Install Node v18 or v20 and NPM v9 or v10.
+	1. Re-add any NPM packages that you previously had.
+1. **Migrate from webpack to vite**.
+	1. Delete `webpack.config.js`
+	1. Add the `src/Client/vite.config.mts` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/src/Client/vite.config.mts).
 
-	- Run `dotnet paket remove Fable.React -p Client`
-	- Run `dotnet paket remove Feliz.Bulma -p Client`
+### Styling configuration
+1. **Install Tailwind**.
+	1. Run `npx tailwindcss init -p` in `src/Client`
+	1. Add the `src/Client/tailwind.config.js` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/src/Client/tailwind.config.js).
+	1. Add the `src/Client/index.css` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/src/Client/index.css).
 
-	- Update your `paket.dependencies` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.dependencies)
+1. **Update HTML and F# code**.
+	1. Overwrite `src/Client/index.html` with [this file](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/src/Client/index.html).
+	1. Add the following lines at the top of `src/Client/App.fs`, after the existing open declarations
+		```fsharp
+		open Fable.Core.JsInterop
 
-	- Update your `paket.lock` with the current file [here](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/paket.lock)
-	
-	- Add a `paket.references` file to `src/Shared` with the following
-
+		importSideEffects "./index.css"
 		```
-		FSharp.Core
-		```
 
-	- Run `dotnet paket restore`
+### Automated tests
+1. Add the file `tests/Client/vite.config.mts` [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/tests/Client/vite.config.mts).
+1. Overwrite the `tests/Client/index.html` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/tests/Client/index.html).
+1. Add the file `.fantomasignore` [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/.fantomasignore).
 
-1. Remove all the webpack related dependencies:
-
-	```bash
-	npm uninstall copy-webpack-plugin \
-	    css-loader \
-	    file-loader \
-	    html-webpack-plugin \
-	    mini-css-extract-plugin \
-	    sass-loader \
-	    source-map-loader \
-	    style-loader \
-	    webpack \
-	    webpack-cli \
-	    webpack-dev-server
-	```
-
-1. Update the `engines` in `package.json` to the following
-
-	```
-	"engines": {
-        "node": "~18 || ~20",
-        "npm": "~9 || ~10"
-    }
-	```
-
-	and install the relevant version of `node` and `npm`
-
-	**Tip**: Node Version Manager or `nvm` can be used to install and manage node/npm versions
-
-1. Remove any existing `scripts` from the `package.json` that relate to `webpack` or `webpack-dev-server`
-
-	```diff
-	- "start": "webpack-dev-server --mode development",
-	- "build": "webpack --mode production",
-	- "test:live": "webpack-dev-server --mode development --env test"
-	```
-	
-1. Update the left over NPM dependencies:
-
-	- You can run to upgrade all at once `npx npm-check-updates -u` or if you prefer to be more conservative you can use `npx npm-check-updates -i`.
-	
-	If you use the second option, make sure to select `react`, `react-dom`, `sass`.
-	
-	> Note: if you have any problems with the versions of the npm packages, try installing the exact versions that are in the [SAFE Template's package.json](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/package.json)
-
-1. Install the new NPM dependencies
-
-	`npm install -D vite @vitejs/plugin-react tailwindcss postcss autoprefixer @types/node`
-
-	> Note: if you have any problems with the versions of the npm packages, try installing the exact versions that are in the [SAFE Template's package.json](https://github.com/SAFE-Stack/SAFE-template/blob/master/Content/default/package.json)
-	
-1. Delete `webpack.config.js`
-
-1. Create the file `src/Client/vite.config.mts` with the following content
-	
-	```ts
-	import { defineConfig } from "vite";
-	import react from "@vitejs/plugin-react";
-	
-	const proxyPort = process.env.SERVER_PROXY_PORT || "5000";
-	const proxyTarget = "http://localhost:" + proxyPort;
-	
-	// https://vitejs.dev/config/
-	export default defineConfig({
-	    plugins: [react()],
-	    build: {
-	        outDir: "../../deploy/public",
-	    },
-	    server: {
-	        port: 8080,
-	        proxy: {
-	            // redirect requests that start with /api/ to the server on port 5000
-	            "/api/": {
-	                target: proxyTarget,
-	                changeOrigin: true,
-	            }
-	        }
-	    }
-	});
-	```
-
-1. Overwrite `src/Client/index.html` with the following content
-	
-	```html
-	<!doctype html>
-	<html>
-	<head>
-	    <title>SAFE Template</title>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <link rel="icon" type="image/png" href="/favicon.png"/>
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-	</head>
-	<body>
-	    <div id="elmish-app"></div>
-	    <!-- Polyfill for remotedev -->
-	    <script type="text/javascript">
-	        var global = global || window;
-	    </script>
-	    <script type="module" src="/output/App.js"></script>
-	</body>
-	</html>
-	```
-	
-1. Run `npx tailwindcss init -p` in `src/Client`
-1. Change `tailwind.config.js` content with
-
-	```js
-	/** @type {import('tailwindcss').Config} */
-	module.exports = {
-	    mode: "jit",
-	    content: [
-	        "./index.html",
-	        "./**/*.{fs,js,ts,jsx,tsx}",
-	    ],
-	    theme: {
-	        extend: {},
-	    },
-	    plugins: []
-	}
-	```
-
-1. Create a file `src/Client/index.css` with the following content
-
-	```css
-	@tailwind base;
-	@tailwind components;
-	@tailwind utilities;
-	```
-	
-1. Add the following lines at the top of `src/Client/App.fs`, after the existing open declarations
-	
-	```fs
-	open Fable.Core.JsInterop
-	
-	importSideEffects "./index.css"
-	```
-
-1. In `src/Client/Index.fs` replace all view code after the `update` function with the code [here](https://github.com/SAFE-Stack/SAFE-template/blob/064b902c4ca8229f8f671a3fab67c2871cd772c1/Content/default/src/Client/Index.fs#L42-L112)
-
-1. Create a file `tests/Client/vite.config.mts` with the following content:
-
-	```ts
-	import { defineConfig } from "vite";
-	
-	// https://vitejs.dev/config/
-	export default defineConfig({
-	    server: {
-	        port: 8081
-	    }
-	});
-	```
-	
-1. Overwrite `tests/Client/index.html` with 
-
-	```html
-	<!DOCTYPE html>
-	<html>
-	    <head>
-	        <title>SAFE.App Client Tests</title>
-	    </head>
-	    <body>
-	        <script type="module" src="/output/Client.Tests.js"></script>
-	    </body>
-	</html>
-	```
-	
-1. Create `.fantomasignore` with the following content:
-	
-	```
-	# Ignore Fable files
-	src/Client/output/fable_modules/ 
-	```
-
+### Automated build
 1. In the `Build.fs` file replace the following lines:
 
 	Line 27:
-	
+
 	```diff
 	- "client", dotnet [ "fable"; "-o"; "output"; "-s"; "--run"; "npm"; "run"; "build" ] clientPath ]
 	+ "client", dotnet [ "fable"; "-o"; "output"; "-s"; "--run"; "npx"; "vite"; "build" ] clientPath ]
@@ -245,16 +80,16 @@
 	+ operating_system OS.Linux
 	+ runtime_stack (DotNet "8.0")
 	```
-	
+
 	Line 51:
-	
+
 	```diff
 	- "client", dotnet [ "fable"; "watch"; "-o"; "output"; "-s"; "--run"; "npm"; "run"; "start" ] clientPath ]
 	+ "client", dotnet [ "fable"; "watch"; "-o"; "output"; "-s"; "--run"; "npx"; "vite" ] clientPath ]
 	```
-	
+
 	Line 58:
-	
+
 	```diff
 	- "client", dotnet [ "fable"; "watch"; "-o"; "output"; "-s"; "--run"; "npm"; "run"; "test:live" ] clientTestsPath ]
 	+ "client", dotnet [ "fable"; "watch"; "-o"; "output"; "-s"; "--run"; "npx"; "vite" ] clientTestsPath ]
@@ -268,19 +103,6 @@
 	```
 
 ### Additional resources
-
-In order to get VSCode Tailwind intellisense, user needs to install `Tailwind CSS Intellisense`. We also create the file `.vscode/settings.json` with the following content.
-
-	*The regex here are for Feliz style DSL, if you want to support Fable.React DSL you need to adapt the regexes*
-	
-	```json
-	{
-	    "tailwindCSS.includeLanguages": {
-	        "fsharp": "html"
-	    },
-	    "tailwindCSS.experimental.classRegex": [
-	        "\\.className\\s+\"([^\"]*)\"",
-	        ["\\.className\\s+\\[([^\\]]*)\\]", "\"([^\"]*)\""]
-	    ]
-	}
-	```
+1. **VSCode Tailwind intellisense**.
+	1. Install the `Tailwind CSS Intellisense` extension.
+	1. Create the `.vscode/settings.json` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/.vscode/settings.json). *The regexes in this file are for Feliz style DSL, if you want to support Fable.React DSL you will need to adapt the regexes.*
