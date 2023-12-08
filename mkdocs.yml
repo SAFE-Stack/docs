@@ -79,6 +79,7 @@ nav:
     - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
     - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
     - Get data from the server: 'recipes/client-server/messaging.md'
+    - Post data to the server: 'recipes/client-server/messaging-post.md'
 - FAQs:
   - Moving from dev to prod : 'faq-build.md'
   - Troubleshooting : 'faq-troubleshooting.md'
