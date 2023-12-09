@@ -16,7 +16,7 @@ dotnet paket add FsToolkit.ErrorHandling -p Server
 
 This will add an entry to both the solution [paket.dependencies](https://fsprojects.github.io/Paket/dependencies-file.html) file and the Server project's [paket.reference](https://fsprojects.github.io/Paket/references-files.html) file, as well as update the lock file with the updated dependency graph.
 
-> Find information on how you can convert your project from NuGet to Paket [here](../migrate-to-paket).
+> Find information on how you can convert your project from NuGet to Paket [here](migrate-to-paket.md).
 >
 > For a detailed explanation of package management using Paket, visit the official [docs](https://fsprojects.github.io/Paket/learn-how-to-use-paket.html).
 

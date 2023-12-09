@@ -2,7 +2,7 @@
 
 There have been a number of changes between the second and third major versions of the SAFE template. This guide shows you how to upgrade your v2 project to v3.
 
-> If you haven't done so already then you will need to install the prequisites listed in the [Quick Start](../../../quickstart) guide.
+> If you haven't done so already then you will need to install the prequisites listed in the [Quick Start](../../quickstart.md) guide.
 
 ### Terminology for this Recipe:
 

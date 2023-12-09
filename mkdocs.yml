@@ -46,24 +46,24 @@ nav:
 - Quickstart: 'quickstart.md'
 - SAFE Stack Overview: 'overview.md'
 - Components of SAFE:
-  - Learn about Saturn : 'component-saturn.md'
-  - Learn about Azure : 'component-azure.md'
-  - Learn about Fable : 'component-fable.md'
-  - Learn about Elmish : 'component-elmish.md'
+  - Learn about Saturn : 'components/component-saturn.md'
+  - Learn about Azure : 'components/component-azure.md'
+  - Learn about Fable : 'components/component-fable.md'
+  - Learn about Elmish : 'components/component-elmish.md'
 - The SAFE Template:
   - Overview: 'template-overview.md'
   - Commands: 'template-safe-commands.md'
 - Features of SAFE:
   - Client / Server Sharing:
-    - Sharing Overview : 'feature-clientserver.md'
-    - Sharing Types and Code : 'feature-clientserver-basics.md'
-    - Messaging using HTTP : 'feature-clientserver-http.md'
-    - Messaging with Protocols : 'feature-clientserver-remoting.md'
-    - Stateful Messaging through Bridge : 'feature-clientserver-bridge.md'
-    - Serialization in SAFE : 'feature-clientserver-serialization.md'
-  - Server Side Rendering : 'feature-ssr.md'
-  - Hot Module Replacement : 'feature-hmr.md'
-  - Working with Azure functions : 'feature-azurefunctions.md'
+    - Sharing Overview : 'features/feature-clientserver.md'
+    - Sharing Types and Code : 'features/feature-clientserver-basics.md'
+    - Messaging using HTTP : 'features/feature-clientserver-http.md'
+    - Messaging with Protocols : 'features/feature-clientserver-remoting.md'
+    - Stateful Messaging through Bridge : 'features/feature-clientserver-bridge.md'
+    - Serialization in SAFE : 'features/feature-clientserver-serialization.md'
+  - Server Side Rendering : 'features/feature-ssr.md'
+  - Hot Module Replacement : 'features/feature-hmr.md'
+  - Working with Azure functions : 'features/feature-azurefunctions.md'
 - How do I...:
   - Upgrade from V2 to V3 : 'recipes/upgrading/v2-to-v3.md'
   - Upgrade from V3 to V4 : 'recipes/upgrading/v3-to-v4.md'
@@ -91,8 +91,8 @@ nav:
     - Post data to the server: 'recipes/client-server/messaging-post.md'
     - Share code between the client and the server: 'recipes/client-server/share-code.md'
 - FAQs:
-  - Moving from dev to prod : 'faq-build.md'
-  - Troubleshooting : 'faq-troubleshooting.md'
+  - Moving from dev to prod : 'faq/faq-build.md'
+  - Troubleshooting : 'faq/faq-troubleshooting.md'
 - Learning Resources:
     - SAFE-Compatible UI Components: 'awesome-safe-components.md'
     - Learning: 'learning.md'

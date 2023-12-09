@@ -32,4 +32,4 @@ Congratulations - after a short delay, you'll be presented with a basic SAFE app
 The standard template creates an opinionated SAFE Stack app that contains everything you'll need to start developing, testing and deploying applications into Azure. Alternatively there is a "bare-bones" SAFE Stack app with minimal value-add features. Take a look at the [template options](template-overview.md#template-options) to see a side by side comparison of features available between the *standard* and *minimal* template.
 
 ## Troubleshooting
-Still have issues getting started? Check out the [troubleshooting](faq-troubleshooting.md) page.
+Still have issues getting started? Check out the [troubleshooting](faq/faq-troubleshooting.md) page.

@@ -2,7 +2,7 @@
 
 This guide shows you how to upgrade your v3 project to v4.
 
-> If you haven't done so already then you will need to install the prequisites listed in the [Quick Start](../../../quickstart) guide.
+> If you haven't done so already then you will need to install the prequisites listed in the [Quick Start](../../quickstart.md) guide.
 
 ### Terminology for this Recipe:
 

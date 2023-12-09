@@ -2,7 +2,7 @@
 
 [Tailwind](https://tailwindcss.com/) is a utility-first CSS framework packed that can be composed to build any design, directly in your markup.
 
-1. [Add a stylesheet](https://safe-stack.github.io/docs/recipes/ui/add-style/) to the project
+1. [Add a stylesheet](add-style.md) to the project
 
 2. Install the required npm packages
     ```shell

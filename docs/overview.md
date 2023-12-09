@@ -17,18 +17,18 @@ flowchart TB
 ```
 
 
-### [Saturn](component-saturn.md)
+### [Saturn](components/component-saturn.md)
 The Saturn library builds on top of the solid foundation of both the F#-friendly [Giraffe](https://github.com/giraffe-fsharp/Giraffe) and the high performance, rock-solid [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.1) web server to provide a set of optional abstractions which make configuring web applications and constructing complex routes extremely easy to achieve.
 
 Saturn can host RESTful API endpoints, drive static websites or server-generated content, all inside an easy-to-learn functional programming model.
 
-### [Microsoft Azure](component-azure.md)
+### [Microsoft Azure](components/component-azure.md)
 Azure is a comprehensive set of cloud services that developers and IT professionals use to build, deploy and manage applications through a global network of data centres. Integrated tools, DevOps and a marketplace support you in efficiently building anything from simple mobile apps to Internet-scale solutions.
 
-### [Fable](component-fable.md)
+### [Fable](components/component-fable.md)
 Fable is an F# to JavaScript compiler, designed to produce readable and standard code. Fable allows you to create applications for the browser written entirely in F#, whilst also allowing you to interact with native JavaScript as needed.
 
-### [Elmish](component-elmish.md)
+### [Elmish](components/component-elmish.md)
 The Elmish model allows you to construct user interfaces running in the browser using a functional programming approach. Based upon on the Elm application model, Elmish uses the Model-View-Update paradigm to allow you to write applications that are simple to reason about. Elmish sits on top of the [React](https://reactjs.org/) framework.
 
 ## Further reading

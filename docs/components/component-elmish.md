@@ -14,7 +14,7 @@ stateDiagram-v2
 ```
 
 ## How does Elmish integrate with SAFE?
-Elmish is the library used to build the front-end application in SAFE and that application is compiled to JavaScript by [Fable](component-fable.md) to run in the browser. The [SAFE Stack template](template-overview.md) comes pre-bundled with the [Elmish React](https://elmish.github.io/react/) module, which (as the name suggests) uses the [React](https://reactjs.org/) library to handle the heavy lifting of modifyng the DOM in an efficient way. This allow us to use the pure functional style of the MVU pattern whilst still retaining the ability to have a highly performant user interface.
+Elmish is the library used to build the front-end application in SAFE and that application is compiled to JavaScript by [Fable](component-fable.md) to run in the browser. The [SAFE Stack template](../template-overview.md) comes pre-bundled with the [Elmish React](https://elmish.github.io/react/) module, which (as the name suggests) uses the [React](https://reactjs.org/) library to handle the heavy lifting of modifyng the DOM in an efficient way. This allow us to use the pure functional style of the MVU pattern whilst still retaining the ability to have a highly performant user interface.
 
 Because Elmish works alongside React, it is possible to use the vast number of available React components from the JavaScript ecosystem within our Elmish applications.
 

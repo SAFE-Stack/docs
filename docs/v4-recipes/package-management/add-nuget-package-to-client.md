@@ -1,5 +1,5 @@
 # How do I add a NuGet package to the Client?
-Adding packages to the Client project is a very [similar process to the Server](../add-nuget-package-to-server), with a few key differences:
+Adding packages to the Client project is a very [similar process to the Server](add-nuget-package-to-server.md), with a few key differences:
 
 - Any references to the `Server` directory should be `Client`
 

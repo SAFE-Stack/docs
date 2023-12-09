@@ -11,7 +11,7 @@ Find the following line in `src/Client/index.html` and delete it before moving o
 
 #### 2. Add the NPM Package
 Go ahead and add the [Bulma NPM package](https://www.npmjs.com/package/bulma) to your project.
-> See: [How do I add an NPM package to the client?](../../package-management/add-npm-package-to-client)
+> See: [How do I add an NPM package to the client?](../package-management/add-npm-package-to-client.md)
 
 #### 3. Load the Stylesheets
 There are two ways for loading the stylesheets:
@@ -27,7 +27,7 @@ importAll "bulma/bulma.sass"
 > You can use this approach for any NPM package.
 
 ##### b. Using Sass
-1. Add a Sass stylesheet to your project using [this recipe](../add-style).
+1. Add a Sass stylesheet to your project using [this recipe](add-style.md).
 2. Add the following line to your Sass file to bring in Bulma
 ```sass
 @import "~bulma/bulma.sass"
