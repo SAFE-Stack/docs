@@ -14,7 +14,7 @@ This guide shows you how to upgrade your v3 project to v4.
 Download and install the latest SAFE Stack V3 template by running the following command:
 
 ```bash
-dotnet new -i SAFE.Template
+dotnet new install SAFE.Template
 ```
 
 #### 2. Create a v4 project
