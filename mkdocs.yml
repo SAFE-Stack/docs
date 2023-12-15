@@ -72,6 +72,7 @@ nav:
       - Build:
           - Remove FAKE: "recipes/build/remove-fake.md"
           - Package my SAFE app for deployment: "recipes/build/bundle-app.md"
+          - Add build automation: "recipes/build/add-build-script.md"
       - UI:
           - Add Tailwind support: "recipes/ui/add-tailwind.md"
           - Add daisyUI support: "recipes/ui/add-daisyui.md"
