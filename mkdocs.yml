@@ -73,6 +73,7 @@ nav:
           - Remove FAKE: "recipes/build/remove-fake.md"
           - Package my SAFE app for deployment: "recipes/build/bundle-app.md"
       - UI:
+          - Add Tailwind support: "recipes/ui/add-tailwind.md"
           - Add daisyUI support: "recipes/ui/add-daisyui.md"
           - Add Feliz support: "recipes/ui/add-feliz.md"
           - Add FontAwesome support: "recipes/ui/add-fontawesome.md"
