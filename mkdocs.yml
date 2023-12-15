@@ -74,6 +74,7 @@ nav:
           - Package my SAFE app for deployment: "recipes/build/bundle-app.md"
       - UI:
           - Add daisyUI support: "recipes/ui/add-daisyui.md"
+          - Add Feliz support: "recipes/ui/add-feliz.md"
           - Add FontAwesome support: "recipes/ui/add-fontawesome.md"
       - Storage:
           - Quickly add a database: "recipes/storage/use-litedb.md"
@@ -139,7 +140,6 @@ nav:
           - Remove Bulma: "v4-recipes/ui/remove-bulma.md"
           - Add Tailwind support: "v4-recipes/ui/add-tailwind.md"
           - Add daisyUI support: "v4-recipes/ui/add-daisyui.md"
-          - Add Feliz support: "v4-recipes/ui/add-feliz.md"
           - Migrate from a CDN stylesheet to an NPM package: "v4-recipes/ui/cdn-to-npm.md"
           - Add routing with state shared between pages: "v4-recipes/ui/add-routing.md"
           - Add routing with separate models per page: "v4-recipes/ui/add-routing-with-separate-models.md"
