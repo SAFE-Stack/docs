@@ -151,9 +151,4 @@ nav:
           - Import a JavaScript module: "v4-recipes/javascript/import-js-module.md"
           - Add Support for a Third Party React Library: "v4-recipes/javascript/third-party-react-package.md"
       - Package Management:
-          - Add an NPM package to the Client: "v4-recipes/package-management/add-npm-package-to-client.md"
           - Add a NuGet package to the Server: "v4-recipes/package-management/add-nuget-package-to-server.md"
-          - Add a NuGet package to the Client: "v4-recipes/package-management/add-nuget-package-to-client.md"
-          - Migrate to Paket from NuGet: "v4-recipes/package-management/migrate-to-paket.md"
-          - Migrate to NuGet from Paket: "v4-recipes/package-management/migrate-to-nuget.md"
-          - Sync NuGet and NPM Packages: "v4-recipes/package-management/sync-nuget-and-npm-packages.md"
