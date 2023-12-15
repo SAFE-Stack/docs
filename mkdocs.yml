@@ -74,6 +74,7 @@ nav:
           - Package my SAFE app for deployment: "recipes/build/bundle-app.md"
       - UI:
           - Add daisyUI support: "recipes/ui/add-daisyui.md"
+          - Add Stylesheet support: "recipes/ui/add-style.md"
           - Add FontAwesome support: "recipes/ui/add-fontawesome.md"
       - Storage:
           - Quickly add a database: "recipes/storage/use-litedb.md"
@@ -133,7 +134,6 @@ nav:
           - Create a data module using SQLProvider SQL Server SSDT: "v4-recipes/storage/use-sqlprovider-ssdt.md"
       - UI:
           - Add FontAwesome support: "v4-recipes/ui/add-fontawesome.md"
-          - Add Stylesheet support: "v4-recipes/ui/add-style.md"
           - Add Bulma support: "v4-recipes/ui/add-bulma.md"
           - Use different Bulma Themes: "v4-recipes/ui/use-different-bulma-themes.md"
           - Remove Bulma: "v4-recipes/ui/remove-bulma.md"
