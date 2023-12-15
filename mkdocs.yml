@@ -8,11 +8,11 @@ site_url: http://safe-stack.github.io/docs/
 repo_name: SAFE-Stack/docs
 repo_url: https://github.com/SAFE-Stack/docs
 theme:
-  name: 'material'
-  custom_dir: 'theme'
+  name: "material"
+  custom_dir: "theme"
   palette:
-    primary: 'light blue'
-    accent: 'indigo'
+    primary: "light blue"
+    accent: "indigo"
   logo: img/safe_favicon.png
 
 markdown_extensions:
@@ -41,110 +41,116 @@ extra:
       link: https://safe-stack.github.io/
 
 nav:
-- Home: 'index.md'
-- Introduction: 'intro.md'
-- Quickstart: 'quickstart.md'
-- SAFE Stack Overview: 'overview.md'
-- Components of SAFE:
-  - Learn about Saturn : 'component-saturn.md'
-  - Learn about Azure : 'component-azure.md'
-  - Learn about Fable : 'component-fable.md'
-  - Learn about Elmish : 'component-elmish.md'
-- The SAFE Template:
-  - Overview: 'template-overview.md'
-  - Commands: 'template-safe-commands.md'
-- Features of SAFE:
-  - Client / Server Sharing:
-    - Sharing Overview : 'feature-clientserver.md'
-    - Sharing Types and Code : 'feature-clientserver-basics.md'
-    - Messaging using HTTP : 'feature-clientserver-http.md'
-    - Messaging with Protocols : 'feature-clientserver-remoting.md'
-    - Stateful Messaging through Bridge : 'feature-clientserver-bridge.md'
-    - Serialization in SAFE : 'feature-clientserver-serialization.md'
-  - Server Side Rendering : 'feature-ssr.md'
-  - Hot Module Replacement : 'feature-hmr.md'
-  - Working with Azure functions : 'feature-azurefunctions.md'
-- How do I...:
-  - Upgrade from V2 to V3 : 'recipes/upgrading/v2-to-v3.md'
-  - Upgrade from V3 to V4 : 'recipes/upgrading/v3-to-v4.md'
-  - Upgrade from V4 to V5 : 'recipes/upgrading/v4-to-v5.md'
-  - Create a new Recipe: 'recipes/template.md'
-  - UI:
-    - Add daisyUI support: 'recipes/ui/add-daisyui.md'
-  - JavaScript:
-    - Import a JavaScript module: 'recipes/javascript/import-js-module.md'
-    - Add Support for a Third Party React Library: 'recipes/javascript/third-party-react-package.md'
-  - Package Management:
-    - Add an NPM package to the Client: 'recipes/package-management/add-npm-package-to-client.md'
-    - Add a NuGet package to the Server: 'recipes/package-management/add-nuget-package-to-server.md'
-    - Migrate to Paket from NuGet: 'recipes/package-management/migrate-to-paket.md'
-    - Migrate to NuGet from Paket: 'recipes/package-management/migrate-to-nuget.md' 
-    - Sync NuGet and NPM Packages: 'recipes/package-management/sync-nuget-and-npm-packages.md'
-  - Client / Server:
-    - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
-    - Handle server errors on the client: 'recipes/client-server/server-errors-on-client.md'
-    - Upload file from the client: "recipes/client-server/upload-file-from-client.md"
-    - Serve a file from the back-end: 'recipes/client-server/serve-a-file-from-the-backend.md'
-    - Add support for Fable Remoting: 'recipes/client-server/fable-remoting.md'
-    - Perform roundtrips with MVU: 'recipes/client-server/mvu-roundtrip.md'
-    - Get data from the server: 'recipes/client-server/messaging.md'
-    - Post data to the server: 'recipes/client-server/messaging-post.md'
-    - Share code between the client and the server: 'recipes/client-server/share-code.md'
-- FAQs:
-  - Moving from dev to prod : 'faq-build.md'
-  - Troubleshooting : 'faq-troubleshooting.md'
-- Learning Resources:
-    - SAFE-Compatible UI Components: 'awesome-safe-components.md'
-    - Learning: 'learning.md'
-- News: 'news.md'
-- Events: 'events.md'
-- Support: 'support.md'
-- Testimonials: 'testimonials.md'
-- Legacy recipes (v4):
-  - Build:
-    - Add build automation: 'v4-recipes/build/add-build-script.md'
-    - Remove FAKE: 'v4-recipes/build/remove-fake.md'
-    - Package my SAFE app for deployment: 'v4-recipes/build/bundle-app.md'
-    - Create a docker image: 'v4-recipes/build/docker-image.md'
-  - Dev / Test:
-    - Test the Client: 'v4-recipes/developing-and-testing/testing-the-client.md'
-    - Test the Server: 'v4-recipes/developing-and-testing/testing-the-server.md'
-    - Debug a SAFE app: 'v4-recipes/developing-and-testing/debug-safe-app.md'
-    - Use hot reload: 'v4-recipes/developing-and-testing/using-hot-reload.md'
-  - Client / Server:
-    - Add support for Fable Remoting: 'v4-recipes/client-server/fable-remoting.md'
-    - Perform roundtrips with MVU: 'v4-recipes/client-server/mvu-roundtrip.md'
-    - Get data from the server: 'v4-recipes/client-server/messaging.md'
-    - Post data to the server: 'v4-recipes/client-server/messaging-post.md'
-    - Handle server errors on the client: 'v4-recipes/client-server/server-errors-on-client.md'
-    - Share code between the client and the server: 'v4-recipes/client-server/share-code.md'
-    - Use Giraffe instead of Saturn: "v4-recipes/client-server/saturn-to-giraffe.md"
-    - Upload file from the client: "v4-recipes/client-server/upload-file-from-client.md"
-    - Serve a file from the back-end: 'v4-recipes/client-server/serve-a-file-from-the-backend.md'
-    - Add support for Fable.Forms: 'v4-recipes/client-server/fable.forms.md'
-  - Data:
-    - Quickly add a database: 'v4-recipes/storage/use-litedb.md'
-    - Create a data module using SQLProvider SQL Server SSDT: 'v4-recipes/storage/use-sqlprovider-ssdt.md'
-  - UI:
-    - Add FontAwesome support: 'v4-recipes/ui/add-fontawesome.md'
-    - Add Stylesheet support: 'v4-recipes/ui/add-style.md'
-    - Add Bulma support: 'v4-recipes/ui/add-bulma.md'
-    - Use different Bulma Themes: 'v4-recipes/ui/use-different-bulma-themes.md'
-    - Remove Bulma: 'v4-recipes/ui/remove-bulma.md'
-    - Add Tailwind support: 'v4-recipes/ui/add-tailwind.md'
-    - Add daisyUI support: 'v4-recipes/ui/add-daisyui.md'
-    - Add Feliz support: 'v4-recipes/ui/add-feliz.md'
-    - Migrate from a CDN stylesheet to an NPM package: 'v4-recipes/ui/cdn-to-npm.md'
-    - Add routing with state shared between pages: 'v4-recipes/ui/add-routing.md'
-    - Add routing with separate models per page: 'v4-recipes/ui/add-routing-with-separate-models.md'
-    - Add Routing with UseElmish: 'v4-recipes/ui/routing-with-elmish.md'
-  - JavaScript:
-    - Import a JavaScript module: 'v4-recipes/javascript/import-js-module.md'
-    - Add Support for a Third Party React Library: 'v4-recipes/javascript/third-party-react-package.md'
-  - Package Management:
-    - Add an NPM package to the Client: 'v4-recipes/package-management/add-npm-package-to-client.md'
-    - Add a NuGet package to the Server: 'v4-recipes/package-management/add-nuget-package-to-server.md'
-    - Add a NuGet package to the Client: 'v4-recipes/package-management/add-nuget-package-to-client.md'
-    - Migrate to Paket from NuGet: 'v4-recipes/package-management/migrate-to-paket.md'
-    - Migrate to NuGet from Paket: 'v4-recipes/package-management/migrate-to-nuget.md'
-    - Sync NuGet and NPM Packages: 'v4-recipes/package-management/sync-nuget-and-npm-packages.md'
+  - Home: "index.md"
+  - Introduction: "intro.md"
+  - Quickstart: "quickstart.md"
+  - SAFE Stack Overview: "overview.md"
+  - Components of SAFE:
+      - Learn about Saturn: "component-saturn.md"
+      - Learn about Azure: "component-azure.md"
+      - Learn about Fable: "component-fable.md"
+      - Learn about Elmish: "component-elmish.md"
+  - The SAFE Template:
+      - Overview: "template-overview.md"
+      - Commands: "template-safe-commands.md"
+  - Features of SAFE:
+      - Client / Server Sharing:
+          - Sharing Overview: "feature-clientserver.md"
+          - Sharing Types and Code: "feature-clientserver-basics.md"
+          - Messaging using HTTP: "feature-clientserver-http.md"
+          - Messaging with Protocols: "feature-clientserver-remoting.md"
+          - Stateful Messaging through Bridge: "feature-clientserver-bridge.md"
+          - Serialization in SAFE: "feature-clientserver-serialization.md"
+      - Server Side Rendering: "feature-ssr.md"
+      - Hot Module Replacement: "feature-hmr.md"
+      - Working with Azure functions: "feature-azurefunctions.md"
+  - How do I...:
+      - Upgrade from V2 to V3: "recipes/upgrading/v2-to-v3.md"
+      - Upgrade from V3 to V4: "recipes/upgrading/v3-to-v4.md"
+      - Upgrade from V4 to V5: "recipes/upgrading/v4-to-v5.md"
+      - Create a new Recipe: "recipes/template.md"
+      - Build:
+          - Remove FAKE: "recipes/build/remove-fake.md"
+          - Package my SAFE app for deployment: "recipes/build/bundle-app.md"
+      - UI:
+          - Add daisyUI support: "recipes/ui/add-daisyui.md"
+          - Add FontAwesome support: "recipes/ui/add-fontawesome.md"
+      - Storage:
+          - Quickly add a database: "recipes/storage/use-litedb.md"
+      - JavaScript:
+          - Import a JavaScript module: "recipes/javascript/import-js-module.md"
+          - Add Support for a Third Party React Library: "recipes/javascript/third-party-react-package.md"
+      - Package Management:
+          - Add an NPM package to the Client: "recipes/package-management/add-npm-package-to-client.md"
+          - Add a NuGet package to the Server: "recipes/package-management/add-nuget-package-to-server.md"
+          - Migrate to Paket from NuGet: "recipes/package-management/migrate-to-paket.md"
+          - Migrate to NuGet from Paket: "recipes/package-management/migrate-to-nuget.md"
+          - Sync NuGet and NPM Packages: "recipes/package-management/sync-nuget-and-npm-packages.md"
+      - Client / Server:
+          - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
+          - Handle server errors on the client: "recipes/client-server/server-errors-on-client.md"
+          - Upload file from the client: "recipes/client-server/upload-file-from-client.md"
+          - Serve a file from the back-end: "recipes/client-server/serve-a-file-from-the-backend.md"
+          - Add support for Fable Remoting: "recipes/client-server/fable-remoting.md"
+          - Perform roundtrips with MVU: "recipes/client-server/mvu-roundtrip.md"
+          - Get data from the server: "recipes/client-server/messaging.md"
+          - Post data to the server: "recipes/client-server/messaging-post.md"
+          - Share code between the client and the server: "recipes/client-server/share-code.md"
+  - FAQs:
+      - Moving from dev to prod: "faq-build.md"
+      - Troubleshooting: "faq-troubleshooting.md"
+  - Learning Resources:
+      - SAFE-Compatible UI Components: "awesome-safe-components.md"
+      - Learning: "learning.md"
+  - News: "news.md"
+  - Events: "events.md"
+  - Support: "support.md"
+  - Testimonials: "testimonials.md"
+  - Legacy recipes (v4):
+      - Build:
+          - Add build automation: "v4-recipes/build/add-build-script.md"
+          - Remove FAKE: "v4-recipes/build/remove-fake.md"
+          - Package my SAFE app for deployment: "v4-recipes/build/bundle-app.md"
+          - Create a docker image: "v4-recipes/build/docker-image.md"
+      - Dev / Test:
+          - Test the Client: "v4-recipes/developing-and-testing/testing-the-client.md"
+          - Test the Server: "v4-recipes/developing-and-testing/testing-the-server.md"
+          - Debug a SAFE app: "v4-recipes/developing-and-testing/debug-safe-app.md"
+          - Use hot reload: "v4-recipes/developing-and-testing/using-hot-reload.md"
+      - Client / Server:
+          - Add support for Fable Remoting: "v4-recipes/client-server/fable-remoting.md"
+          - Perform roundtrips with MVU: "v4-recipes/client-server/mvu-roundtrip.md"
+          - Get data from the server: "v4-recipes/client-server/messaging.md"
+          - Post data to the server: "v4-recipes/client-server/messaging-post.md"
+          - Handle server errors on the client: "v4-recipes/client-server/server-errors-on-client.md"
+          - Share code between the client and the server: "v4-recipes/client-server/share-code.md"
+          - Use Giraffe instead of Saturn: "v4-recipes/client-server/saturn-to-giraffe.md"
+          - Upload file from the client: "v4-recipes/client-server/upload-file-from-client.md"
+          - Serve a file from the back-end: "v4-recipes/client-server/serve-a-file-from-the-backend.md"
+          - Add support for Fable.Forms: "v4-recipes/client-server/fable.forms.md"
+      - Data:
+          - Quickly add a database: "v4-recipes/storage/use-litedb.md"
+          - Create a data module using SQLProvider SQL Server SSDT: "v4-recipes/storage/use-sqlprovider-ssdt.md"
+      - UI:
+          - Add FontAwesome support: "v4-recipes/ui/add-fontawesome.md"
+          - Add Stylesheet support: "v4-recipes/ui/add-style.md"
+          - Add Bulma support: "v4-recipes/ui/add-bulma.md"
+          - Use different Bulma Themes: "v4-recipes/ui/use-different-bulma-themes.md"
+          - Remove Bulma: "v4-recipes/ui/remove-bulma.md"
+          - Add Tailwind support: "v4-recipes/ui/add-tailwind.md"
+          - Add daisyUI support: "v4-recipes/ui/add-daisyui.md"
+          - Add Feliz support: "v4-recipes/ui/add-feliz.md"
+          - Migrate from a CDN stylesheet to an NPM package: "v4-recipes/ui/cdn-to-npm.md"
+          - Add routing with state shared between pages: "v4-recipes/ui/add-routing.md"
+          - Add routing with separate models per page: "v4-recipes/ui/add-routing-with-separate-models.md"
+          - Add Routing with UseElmish: "v4-recipes/ui/routing-with-elmish.md"
+      - JavaScript:
+          - Import a JavaScript module: "v4-recipes/javascript/import-js-module.md"
+          - Add Support for a Third Party React Library: "v4-recipes/javascript/third-party-react-package.md"
+      - Package Management:
+          - Add an NPM package to the Client: "v4-recipes/package-management/add-npm-package-to-client.md"
+          - Add a NuGet package to the Server: "v4-recipes/package-management/add-nuget-package-to-server.md"
+          - Add a NuGet package to the Client: "v4-recipes/package-management/add-nuget-package-to-client.md"
+          - Migrate to Paket from NuGet: "v4-recipes/package-management/migrate-to-paket.md"
+          - Migrate to NuGet from Paket: "v4-recipes/package-management/migrate-to-nuget.md"
+          - Sync NuGet and NPM Packages: "v4-recipes/package-management/sync-nuget-and-npm-packages.md"
