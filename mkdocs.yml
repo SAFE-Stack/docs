@@ -73,6 +73,7 @@ nav:
           - Remove FAKE: "recipes/build/remove-fake.md"
           - Package my SAFE app for deployment: "recipes/build/bundle-app.md"
           - Create a docker image: "recipes/build/docker-image.md"
+          - Add build automation: "recipes/build/add-build-script.md"
       - UI:
           - Add daisyUI support: "recipes/ui/add-daisyui.md"
           - Add FontAwesome support: "recipes/ui/add-fontawesome.md"
