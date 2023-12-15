@@ -75,6 +75,7 @@ nav:
       - UI:
           - Add daisyUI support: "recipes/ui/add-daisyui.md"
           - Add FontAwesome support: "recipes/ui/add-fontawesome.md"
+          - Migrate from a CDN stylesheet to an NPM package: "recipes/ui/cdn-to-npm.md"
       - Storage:
           - Quickly add a database: "recipes/storage/use-litedb.md"
       - JavaScript:
