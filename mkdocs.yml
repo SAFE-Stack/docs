@@ -70,6 +70,7 @@ nav:
       - Upgrade from V4 to V5: "recipes/upgrading/v4-to-v5.md"
       - Create a new Recipe: "recipes/template.md"
       - Build:
+          - Add build automation: "recipes/build/add-build-script.md"
           - Create a docker image: "recipes/build/docker-image.md"
           - Remove FAKE: "recipes/build/remove-fake.md"
           - Package my SAFE app for deployment: "recipes/build/bundle-app.md"
