@@ -65,9 +65,6 @@ nav:
     - Server Side Rendering : "features/feature-ssr.md"
     - Hot Module Replacement : "features/feature-hmr.md"
     - Working with Azure functions : "features/feature-azurefunctions.md"
-  - Server Side Rendering : "feature-ssr.md"
-  - Hot Module Replacement : "feature-hmr.md"
-  - Working with Azure functions : "feature-azurefunctions.md"
 - How do I...:
   - Upgrade from V2 to V3 : "recipes/upgrading/v2-to-v3.md"
   - Upgrade from V3 to V4 : "recipes/upgrading/v3-to-v4.md"
@@ -108,8 +105,8 @@ nav:
     - Post data to the server: "recipes/client-server/messaging-post.md"
     - Share code between the client and the server: "recipes/client-server/share-code.md"
 - FAQs:
-  - Moving from dev to prod : "faq-build.md"
-  - Troubleshooting : "faq-troubleshooting.md"
+  - Moving from dev to prod : "faq/faq-build.md"
+  - Troubleshooting : "faq/faq-troubleshooting.md"
 - Learning Resources:
     - SAFE-Compatible UI Components: "awesome-safe-components.md"
     - Learning: "learning.md"
@@ -150,7 +147,7 @@ nav:
     - Remove Bulma: "v4-recipes/ui/remove-bulma.md"
     - Add Tailwind support: "v4-recipes/ui/add-tailwind.md"
     - Add daisyUI support: "v4-recipes/ui/add-daisyui.md"
-    - Add Feliz support: "v4-recipes/ui/add-feliz.md"
+    - Add Feliz support: "recipes/ui/add-feliz.md"
     - Migrate from a CDN stylesheet to an NPM package: "v4-recipes/ui/cdn-to-npm.md"
     - Add routing with state shared between pages: "v4-recipes/ui/add-routing.md"
     - Add routing with separate models per page: "v4-recipes/ui/add-routing-with-separate-models.md"

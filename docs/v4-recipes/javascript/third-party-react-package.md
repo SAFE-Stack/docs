@@ -57,7 +57,7 @@ reactSpeedometer [
 
 ## Feliz - Setup
 
-If you don't already have [Feliz](https://www.nuget.org/packages/Feliz/) installed, [add it to your client](../ui/add-feliz.md).
+If you don't already have [Feliz](https://www.nuget.org/packages/Feliz/) installed, [add it to your client](../../recipes/ui/add-feliz.md).
 In the Client projects `Index.fs` add the following snippets
 
 ```fsharp
