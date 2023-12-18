@@ -65,7 +65,7 @@ Target.create "InstallClient" (fun _ -> run npm "install" ".")
 Target.create "Run" (fun _ ->
     run dotnet "build" (Path.getFullName "src/Shared")
     [ dotnet "watch run" (Path.getFullName "src/Server")
-      dotnet "fable watch --run webpack-dev-server" (Path.getFullName "src/Client") ]
+      dotnet "fable watch --run npx vite" (Path.getFullName "src/Client") ]
     |> Seq.toArray
     |> Array.map redirect
     |> Array.Parallel.map Proc.run
