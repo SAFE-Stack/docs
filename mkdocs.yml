@@ -51,9 +51,6 @@ nav:
     - Learn about Azure : "components/component-azure.md"
     - Learn about Fable : "components/component-fable.md"
     - Learn about Elmish : "components/component-elmish.md"
-- The SAFE Template:
-  - Overview: "template-overview.md"
-  - Commands: "template-safe-commands.md"
   - Features:
     - Client / Server Sharing:
       - Sharing Overview : "features/feature-clientserver.md"
@@ -65,6 +62,9 @@ nav:
     - Server Side Rendering : "features/feature-ssr.md"
     - Hot Module Replacement : "features/feature-hmr.md"
     - Working with Azure functions : "features/feature-azurefunctions.md"
+- The SAFE Template:
+  - Overview: "template-overview.md"
+  - Commands: "template-safe-commands.md"
 - How do I...:
   - Upgrade from V2 to V3 : "recipes/upgrading/v2-to-v3.md"
   - Upgrade from V3 to V4 : "recipes/upgrading/v3-to-v4.md"
