@@ -3,7 +3,7 @@
 ## FAKE
 [Fake](https://fake.build/) is a DSL for build tasks that is modular, extensible and easy to start with. Fake allows you to easily build, bundle, deploy your app and more by executing a single command.
 
-> The standard template comes [with a FAKE project](../../template-safe-commands.md) by default, so **this recipe only applies to the minimal template**.
+> The standard template comes [with a FAKE project](../../../template-safe-commands) by default, so **this recipe only applies to the minimal template**.
 
 ---
 #### 1. Create a build project
@@ -65,7 +65,7 @@ Target.create "InstallClient" (fun _ -> run npm "install" ".")
 Target.create "Run" (fun _ ->
     run dotnet "build" (Path.getFullName "src/Shared")
     [ dotnet "watch run" (Path.getFullName "src/Server")
-      dotnet "fable watch --run webpack-dev-server" (Path.getFullName "src/Client") ]
+      dotnet "fable watch --run npx vite" (Path.getFullName "src/Client") ]
     |> Seq.toArray
     |> Array.map redirect
     |> Array.Parallel.map Proc.run
