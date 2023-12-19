@@ -6,8 +6,8 @@
 #### 1. Install NuGet Packages
 Add [Fable.Remoting.Giraffe](https://www.nuget.org/packages/Fable.Remoting.Giraffe/) to the Server and [Fable.Remoting.Client](https://www.nuget.org/packages/Fable.Remoting.Client/) to the Client.
 
-> See [How Do I Add a NuGet Package to the Server](../../package-management/add-nuget-package-to-server)
-> and [How Do I Add a NuGet Package to the Client](../../package-management/add-nuget-package-to-client).
+> See [How Do I Add a NuGet Package to the Server](../../v4-recipes/package-management/add-nuget-package-to-server.md)
+> and [How Do I Add a NuGet Package to the Client](../../v4-recipes/package-management/add-nuget-package-to-client.md).
 
 #### 2. Create the API protocol
 You now need to create the protocol, or contract, of the API we’ll be creating. Insert the following below the `Route` module in `Shared.fs`:
