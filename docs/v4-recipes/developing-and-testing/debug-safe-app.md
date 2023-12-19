@@ -67,8 +67,8 @@ VS Code allows "full stack" debugging i.e. both the client and server. Prerequis
 
 * **Install** either [Google Chrome](https://www.google.com/chrome/) or [Microsoft Edge](https://www.microsoft.com/en-us/edge): Enables client-side debugging.
 * **Configure your browser** with the following extensions:
-    * [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Provides improved debugging support in Chrome with Elmish and access to Redux debugging.
-    * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related): Provides access to React debugging in Chrome.
+    * [Redux Dev Tools](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Provides improved debugging support in Chrome with Elmish and access to Redux debugging.
+    * [React Developer Tools](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi): Provides access to React debugging in Chrome.
 * **Configure VS Code** with the following extensions:
     * [Ionide](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp): Provides F# support to Code.
     * [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp): Provides .NET Core debugging support.
