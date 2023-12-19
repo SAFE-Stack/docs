@@ -40,11 +40,11 @@ dotnet new SAFE -m
 
 | Feature | Standard | Minimal |
 |-:|:-:|:-:|
-| Styling | Feliz.Bulma | None |
+| Styling | Tailwind | None |
 | Starter App | Todo List | None |
 | Communication | Fable Remoting | Raw HTTP |
 | .NET Package Manager | Paket | NuGet |
 | Build Tooling | FAKE | None |
 | Azure Integration | Farmer | None |
 | Testing Support | Client and Server | None |
-| Recommendations | VS Code Extensions, Code Style | No |
+| Tooling | VS Code Extensions, Fantomas | None |
