@@ -10,7 +10,7 @@
 	1. Overwrite your `.editorconfig` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/.editorconfig).
 
 1. **Migrate all dependencies to .NET 8**.
-	1. Overwriite your `global.json` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/global.json).
+	1. Overwrite your `global.json` file [from here](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/global.json).
 
 	1. Update each of your project files to target .NET 8.
 
