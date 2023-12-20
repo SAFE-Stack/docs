@@ -109,9 +109,9 @@ Add a file called `index.html` to the tests/Client folder with following content
 </html>
 ```
 
-#### 7. Add test webpack config
+#### 7. Add test Vite config
 
-Add a file called `vite.config.mts` to the root directory with the following contents:
+Add a file called `vite.config.mts` to `tests/Client`:
 
 ```
 import { defineConfig } from "vite";
