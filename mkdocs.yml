@@ -77,6 +77,8 @@ nav:
           - Package my SAFE app for deployment: "recipes/build/bundle-app.md"
       - Dev / Test:
           - Test the Client: "recipes/developing-and-testing/testing-the-client.md"
+          - Test the Server: "recipes/developing-and-testing/testing-the-server.md"
+
       - UI:
           - Add Tailwind support: "recipes/ui/add-tailwind.md"
           - Add daisyUI support: "recipes/ui/add-daisyui.md"
