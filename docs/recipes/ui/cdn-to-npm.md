@@ -9,11 +9,11 @@ Remove the CDN reference from the index template in `src/Client/index.html`:
 ```
 
 #### 2. Add the NPM Package
-Add styles from NPM. [How do I add an NPM package to the client?](../../package-management/add-npm-package-to-client)  
+Add styles from NPM. [How do I add an NPM package to the client?](../package-management/add-npm-package-to-client.md)
 In this example we will add the [Bulma NPM package](https://www.npmjs.com/package/bulma).
 
 #### 3. Add a reference to your stylesheet
-1. Add a stylesheet to your project using [this recipe](../add-style). Add a scss file instead of a css file.
+1. Add a stylesheet to your project using [this recipe](add-style.md). Add a scss file instead of a css file.
 1. Add the following lines to your scss file:
     ```scss
     // Set variables to affect Bulma styles

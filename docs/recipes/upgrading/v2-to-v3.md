@@ -2,7 +2,7 @@
 
 There have been a number of changes between the second and third major versions of the SAFE template. This guide shows you how to upgrade your v2 project to v3.
 
-> If you haven't done so already then you will need to install the prequisites listed in the [Quick Start](../../../quickstart) guide.
+> If you haven't done so already then you will need to install the prequisites listed in the [Quick Start](../../quickstart.md) guide.
 
 ### Terminology for this Recipe:
 
@@ -14,7 +14,7 @@ There have been a number of changes between the second and third major versions 
 Download and install the latest SAFE Stack V3 template by running the following command:
 
 ```bash
-dotnet new -i SAFE.Template::3.1.1
+dotnet new install SAFE.Template::3.1.1
 ```
 
 #### 2. Create a v3 project
@@ -83,7 +83,7 @@ dotnet paket install
 
 **Important** If you have made any modifications to the webpack file, you will need to apply them back in manually.
 
-* If you were using CSS files, make sure to follow the [Stylesheet recipe](../../v4-recipes/ui/add-style.md) to add them back in.
+* If you were using CSS files, make sure to follow the [Stylesheet recipe](../../recipes/ui/add-style.md) to add them back in.
 
 #### 11. Update TargetFramework in all projects
 * **Overwite** the `Client.fsproj`

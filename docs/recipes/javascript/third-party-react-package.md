@@ -1,7 +1,7 @@
 To use a third-party React library in a SAFE application, you need to write an F# wrapper around it. There are two ways for doing this - using [Fable.React](https://www.nuget.org/packages/Fable.React/) or using [Feliz](https://zaid-ajaj.github.io/Feliz/).
 ## Prerequisites
 
-This recipe uses the [react-d3-speedometer NPM package](https://www.npmjs.com/package/react-d3-speedometer) for demonstration purposes. [Add it to your Client](../../package-management/add-npm-package-to-client) before continuing.
+This recipe uses the [react-d3-speedometer NPM package](https://www.npmjs.com/package/react-d3-speedometer) for demonstration purposes. [Add it to your Client](../package-management/add-npm-package-to-client.md) before continuing.
 
 ## Fable.React - Setup
 
@@ -57,7 +57,7 @@ reactSpeedometer [
 
 ## Feliz - Setup
 
-If you don't already have [Feliz](https://www.nuget.org/packages/Feliz/) installed, [add it to your client](../../ui/add-feliz).
+If you don't already have [Feliz](https://www.nuget.org/packages/Feliz/) installed, [add it to your client](../ui/add-feliz.md).
 In the Client projects `Index.fs` add the following snippets
 
 ```fsharp
@@ -85,7 +85,7 @@ As a quick check to ensure that the library is being imported and we have no typ
 Browser.Dom.console.log("REACT-D3-IMPORT", importDefault "react-d3-speedometer")
 ```
 In the console window (which can be reached by right-clicking and selecting Insepct Element) you should see some output from the above log. 
-If nothing is being seen you may need a slightly different import statement, [please refer to this recipe](../import-js-module).
+If nothing is being seen you may need a slightly different import statement, [please refer to this recipe](../../v4-recipes/javascript/import-js-module.md).
 
 - `createObj` from `Fable.Core.JsInterop` takes a sequence of `string * obj` which is a prop name and value for the component, you can find the full prop list for react-d3-speedometer [here](https://www.npmjs.com/package/react-d3-speedometer).
 - Using `==>` (short hand for `prop.custom`) to transform the sequence into a JavaScript object 
