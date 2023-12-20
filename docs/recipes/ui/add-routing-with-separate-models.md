@@ -141,13 +141,17 @@ type Msg =
 Create an `update` function (we moved the original one to `TodoList`). Handle the `TodoListMsg` by updating the `TodoList` Model. Wrap the command returned by the `update` of the todo list in a `TodoListMsg` before returning it. We expand this function later with other cases that deal with navigation.
 
 ```fsharp title="Index.fs"
-let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
+let update message model =
     match model.CurrentPage, message with
     | TodoList todoList, TodoListMsg todoListMessage ->
-        let newTodoListModel, newCommand = TodoList.update todoListMessage todoList
-        let model = { model with CurrentPage = TodoList newTodoListModel }
-        
-        model, newCommand |> Cmd.map TodoListMsg
+        let newTodoListModel, todoCommand = TodoList.update todoListMessage todoList
+
+        let model = {
+            model with
+                CurrentPage = TodoList newTodoListModel
+        }
+
+        model, todoCommand |> Cmd.map TodoListMsg
 ```
 
 ## 5. Initializing from URL
