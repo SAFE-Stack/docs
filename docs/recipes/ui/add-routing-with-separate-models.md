@@ -271,8 +271,8 @@ In the view function, replace the call to `todoList` with a call to `pageContent
     ```.diff title="Index.fs"
      let view model dispatch =
          ...
+    -     todoList model dispatch
     +     pageContent model dispatch
-    -     pageContent model dispatch
          ...
     ```
 
