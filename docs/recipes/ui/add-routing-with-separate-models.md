@@ -212,14 +212,14 @@ Handle the case in the `update` function by calling `initFromUrl`
 
 === "Code"
     ```fsharp title="Index.fs"
-    let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
+    let update message model =
         ...
         match model.CurrentPage, message with
         | _, UrlChanged url -> initFromUrl url
     ```
 === "Diff"
     ```diff title="Index.fs"
-     let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
+     let update message model =
          ...
     +    match model.CurrentPage, message with
     +    | _, UrlChanged url -> initFromUrl url
@@ -231,13 +231,13 @@ Complete the pattern match in the `update` function, adding a case with a wildca
 
 === "Code"
     ```fsharp title="Index.fs"
-    let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
+    let update message model =
         ...
         | _, _ -> model, Cmd.none
     ```
 === "Diff"
     ```.diff title="Index.fs"
-     let update (message: Msg) (model: Model) : Model * Cmd<Msg> =
+     let update message model =
          ...
     +    | _, _ -> model, Cmd.none
     ```
