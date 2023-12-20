@@ -10,7 +10,7 @@ In this guide we will look at using **Expecto**, as this is included with the st
 
 If you are using the standard template, then there is nothing more you need to do in order to start testing your Server code.
 
-In the tests/Server folder, there is a project named **Server.Tests** with a single script demonstrating how to use Expecto to test the TODO sample.
+In the tests/Server folder, there is a project named `Server.Tests` with a single script demonstrating how to use Expecto to test the TODO sample.
 
 In order to run the tests, instead of starting your application using
 ```powershell
@@ -91,7 +91,7 @@ If you are using the minimal template, you will need to first configure a test p
 
 #### 1. Add a test project
 
-Create a **.Net 5** console project called **Server.Tests** in the tests/Server folder.
+Create a `.Net` console project called `Server.Tests` in the tests/Server folder.
 
 ```powershell
 dotnet new console -lang F# -n Server.Tests -o tests/Server
@@ -141,7 +141,7 @@ let server = testList "Server" [
 ]
 
 [<EntryPoint>]
-let main _ = runTests defaultConfig server
+let main _ = runTestsWithCLIArgs [] [||] server
 ```
 
 #### 6. Run the test
