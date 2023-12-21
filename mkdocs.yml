@@ -75,6 +75,8 @@ nav:
           - Create a docker image: "recipes/build/docker-image.md"
           - Remove FAKE: "recipes/build/remove-fake.md"
           - Package my SAFE app for deployment: "recipes/build/bundle-app.md"
+      - Dev / Test:
+          - Test the Client: "recipes/developing-and-testing/testing-the-client.md"
       - UI:
           - Add Tailwind support: "recipes/ui/add-tailwind.md"
           - Add daisyUI support: "recipes/ui/add-daisyui.md"
@@ -82,6 +84,8 @@ nav:
           - Add Feliz support: "recipes/ui/add-feliz.md"
           - Add FontAwesome support: "recipes/ui/add-fontawesome.md"
           - Migrate from a CDN stylesheet to an NPM package: "recipes/ui/cdn-to-npm.md"
+          - Add routing with state shared between pages: "recipes/ui/add-routing.md"
+          - Add routing with separate models per page: "recipes/ui/add-routing-with-separate-models.md"
       - Storage:
           - Quickly add a database: "recipes/storage/use-litedb.md"
       - JavaScript:
