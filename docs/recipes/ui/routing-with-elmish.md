@@ -1,7 +1,5 @@
 ﻿# How do I create multi-page applications with routing and the useElmish hook?
 
-*Written for SAFE template version 4.2.0*
-
 [UseElmish](https://zaid-ajaj.github.io/Feliz/#/Hooks/UseElmish) is a powerful package that allows you to write standalone components using Elmish. A component built around the `UseElmish` hook has its own view, state and update function.
 
 In this recipe we add routing to a safe app, and implement the todo list page using the `UseElmish` hook.
@@ -234,7 +232,7 @@ let pageContent model =
 In the `view` function, replace the call to `todoList` with a call to `pageContent`
 
 === "Code"
-    ```
+    ```fsharp title="Index.fs"
     let view model dispatch =
         Html.section [
             ...
@@ -243,7 +241,7 @@ In the `view` function, replace the call to `todoList` with a call to `pageConte
         ]
     ```
 === "Diff"
-```
+    ```diff title="Index.fs"
      let view model dispatch =
          Html.section [
          ...
@@ -251,7 +249,7 @@ In the `view` function, replace the call to `todoList` with a call to `pageConte
      +   pageContent model
          ...
          ]
-```
+    ```
 
 ## 9. Add the router to the view
 
