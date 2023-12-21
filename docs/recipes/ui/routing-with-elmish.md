@@ -8,40 +8,17 @@ In this recipe we add routing to a safe app, and implement the todo list page us
 
 ## 1. Installing dependencies
 
-!!! warning "Pin Fable.Core to V3"
-    At the time of writing, the published version of the SAFE template does not have the version of `Fable.Core` pinned; this can create problems when installing dependencies.
-
-    If you are using version v.4.2.0 of the template, pin `Fable.Core` to version 3 in `paket.depedencies` at the root of the project
-
-    ```.diff title="paket.dependencies"
-    ...
-    -nuget Fable.Core
-    +nuget Fable.Core ~> 3
-    ...
-    ```
-
-
 Install Feliz.Router in the Client project
 
 ```bash
-dotnet paket add Feliz.Router -p Client -V 3.8
+dotnet paket add Feliz.Router -p Client
 ```
-
-!!! Warning "Feliz.Router versions"
-    At the time of writing, the current version of the SAFE template (4.2.0) does not work well with the latest version of Feliz.Router (4.0).
-    To work around this, we install Feliz.Router 3.8, the latest version that works with SAFE template version 4.2.0.
-
-    If you are working with a newer version of the SAFE template, it might be worth trying to install the newest version of Feliz.Router.
-    To see the installed version of the SAFE template, run in the command line:
-    
-    ```bash
-    dotnet new --list
-    ```
 
 Install Feliz.UseElmish in the Client project
 
 ```bash
-dotnet paket add Feliz.UseElmish -p client
+cd src/Client
+dotnet femto install Feliz.UseElmish
 ```
 
 Open the router in the client project
@@ -58,10 +35,10 @@ Create a new Module `TodoList` in the client project. Move the following functio
 * Msg
 * todosApi
 * init
-* update
-* containerBox
+* todoAction
+* todoList
 
-Also open `Shared`, `Fable.Remoting.Client`, `Elmish`, `Feliz.Bulma` and `Feliz`. 
+Also open `Shared`, `Fable.Remoting.Client`, `Elmish` and `Feliz`. 
 
 ```fsharp title="TodoList.fs"
 module TodoList
@@ -70,7 +47,6 @@ open Shared
 open Fable.Remoting.Client
 open Elmish
 
-open Feliz.Bulma
 open Feliz
 
 type Model = { Todos: Todo list; Input: string }
@@ -86,13 +62,12 @@ let todosApi =
     |> Remoting.withRouteBuilder Route.builder
     |> Remoting.buildProxy<ITodosApi>
 
-let init () : Model * Cmd<Msg> =
+let init () =
     let model = { Todos = []; Input = "" }
     let cmd = Cmd.OfAsync.perform todosApi.getTodos () GotTodos
-
     model, cmd
 
-let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
+let update msg model =
     match msg with
     | GotTodos todos -> { model with Todos = todos }, Cmd.none
     | SetInput value -> { model with Input = value }, Cmd.none
@@ -102,43 +77,57 @@ let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
         let cmd = Cmd.OfAsync.perform todosApi.addTodo todo AddedTodo
 
         { model with Input = "" }, cmd
-    | AddedTodo todo -> { model with Todos = model.Todos @ [ todo ] }, Cmd.none
+    | AddedTodo todo ->
+        {
+            model with
+                Todos = model.Todos @ [ todo ]
+        },
+        Cmd.none
 
-let containerBox (model: Model) (dispatch: Msg -> unit) =
-    Bulma.box [
-        Bulma.content [
-            Html.ol [
-                for todo in model.Todos do
-                    Html.li [ prop.text todo.Description ]
+let private todoAction model dispatch =
+    Html.div [
+        prop.className "flex flex-col sm:flex-row mt-4 gap-4"
+        prop.children [
+            Html.input [
+                prop.className
+                    "shadow appearance-none border rounded w-full py-2 px-3 outline-none focus:ring-2 ring-teal-300 text-grey-darker"
+                prop.value model.Input
+                prop.placeholder "What needs to be done?"
+                prop.autoFocus true
+                prop.onChange (SetInput >> dispatch)
+                prop.onKeyPress (fun ev ->
+                    if ev.key = "Enter" then
+                        dispatch AddTodo)
+            ]
+            Html.button [
+                prop.className
+                    "flex-no-shrink p-2 px-12 rounded bg-teal-600 outline-none focus:ring-2 ring-teal-300 font-bold text-white hover:bg-teal disabled:opacity-30 disabled:cursor-not-allowed"
+                prop.disabled (Todo.isValid model.Input |> not)
+                prop.onClick (fun _ -> dispatch AddTodo)
+                prop.text "Add"
             ]
         ]
-        Bulma.field.div [
-            field.isGrouped
-            prop.children [
-                Bulma.control.p [
-                    control.isExpanded
-                    prop.children [
-                        Bulma.input.text [
-                            prop.value model.Input
-                            prop.placeholder "What needs to be done?"
-                            prop.onChange (fun x -> SetInput x |> dispatch)
-                        ]
-                    ]
-                ]
-                Bulma.control.p [
-                    Bulma.button.a [
-                        color.isPrimary
-                        prop.disabled (Todo.isValid model.Input |> not)
-                        prop.onClick (fun _ -> dispatch AddTodo)
-                        prop.text "Add"
-                    ]
+    ]
+
+[<ReactComponent>]
+let todoList model dispatch =
+    Html.div [
+        prop.className "bg-white/80 rounded-md shadow-md p-4 w-5/6 lg:w-3/4 lg:max-w-2xl"
+        prop.children [
+            Html.ol [
+                prop.className "list-decimal ml-6"
+                prop.children [
+                    for todo in model.Todos do
+                        Html.li [ prop.className "my-1"; prop.text todo.Description ]
                 ]
             ]
+
+            todoAction model dispatch
         ]
     ]
 ```
 
-## 4. Add the UseElmish hook to the TodoList Module
+## 4. Add the UseElmish hook to the TodoList view function
 
 open Feliz.UseElmish in the TodoList Module
 
@@ -147,21 +136,21 @@ open Feliz.UseElmish
 ...
 ```
 
-In the todoList module, rename `containerBox` to `view`.
-On the first line, call `React.useElmish` passing it the `init` and `update` functions. Bind the output to `model` and `dispatch`
+In the todoList module, rename the function `todoList` to `view`, and remove the `private` access modifier.
+On the first line, call `React.useElmish`, passing it the `init` and `update` functions. Bind the output to `model` and `dispatch`
 
 === "Code"
     ```fsharp title="TodoList.fs"
-    let view (model: Model) (dispatch: Msg -> unit) =
-        let model, dispatch = React.useElmish(init, update, [||])
+    let view model dispatch =
+        let model, dispatch = React.useElmish (init, update, [||])
         ...
     ```
 
 === "Diff"
     ```.diff title="TodoList.fs"
-    -let containerBox (model: Model) (dispatch: Msg -> unit) =
-    +let view (model: Model) (dispatch: Msg -> unit) =
-    +    let model, dispatch = React.useElmish(init, update, [||])
+    -let containerBox model dispatch =
+    +let view model dispatch =
+    +    let model, dispatch = React.useElmish (init, update, [||])
         ...
     ```
 
@@ -176,7 +165,7 @@ Replace the arguments of the function with unit, and add the `ReactComponent` at
 === "Diff"
     ```.diff title="Index.fs"
     + [<ReactComponent>]
-    - let view (model: Model) (dispatch: Msg -> unit) =
+    - let view model dispatch =
     + let view () =
           ...
     ```
@@ -213,9 +202,7 @@ let initFromUrl url =
 Create a new `init` function, that fetches the current url, and calls initFromUrl. 
 
 ```fsharp title="Index.fs"
-let init () =
-    Router.currentUrl ()
-    |> initFromUrl
+let init () = Router.currentUrl () |> initFromUrl
 ```
 ## 7. Updating the Page
 
@@ -228,33 +215,55 @@ type Msg =
 Add an `update` function, that reinitializes the app based on an URL
 
 ```fsharp title="Index.fs"
-let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
+let update msg model =
     match msg with
-    | PageChanged url ->
-        initFromUrl url
+    | PageChanged url -> initFromUrl url
 ```
 
 ## 8. Displaying pages
 
-Add a containerBox function to the `Index` module, that returns the appropriate page content
+Add a pageContent function to the `Index` module, that returns the appropriate page content
 
 ```fsharp title="Index.fs"
-let containerBox (model: Model) (dispatch: Msg -> unit) =
+let pageContent model =
     match model.CurrentPage with
-    | NotFound -> Bulma.box "Page not found"
+    | NotFound -> Html.text "Page not found"
     | TodoList -> TodoList.view ()
 ```
+
+In the `view` function, replace the call to `todoList` with a call to `pageContent`
+
+=== "Code"
+    ```
+    let view model dispatch =
+        Html.section [
+            ...
+            pageContent model
+            ...
+        ]
+    ```
+=== "Diff"
+```
+     let view model dispatch =
+         Html.section [
+         ...
+     -   todoList view model
+     +   pageContent model
+         ...
+         ]
+```
+
 ## 9. Add the router to the view
 
 Wrap the content of the view method in a `React.Router` element's router.children property, and add a `router.onUrlChanged` property to dispatch the urlChanged message
 
 === "Code"
     ```fsharp title="Index.fs"
-    let view (model: Model) (dispatch: Msg -> unit) =
+    let view model dispatch =
         React.router [
             router.onUrlChanged ( PageChanged>>dispatch )
             router.children [
-                Bulma.hero [
+                Html.section [
                 ...
                 ]
             ]
@@ -266,7 +275,7 @@ Wrap the content of the view method in a `React.Router` element's router.childre
     +   React.router [
     +       router.onUrlChanged ( PageChanged>>dispatch )
     +       router.children [
-                Bulma.hero [
+                Html.section [
                 ...
                 ]
     +       ]
