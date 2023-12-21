@@ -110,6 +110,7 @@ nav:
   - Learning Resources:
       - SAFE-Compatible UI Components: "awesome-safe-components.md"
       - Learning: "learning.md"
+      - Creating a SAFE Stack App from Scratch: "safe-from-scratch.md"
   - News: "news.md"
   - Events: "events.md"
   - Support: "support.md"

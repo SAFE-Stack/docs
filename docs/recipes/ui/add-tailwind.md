@@ -49,7 +49,7 @@ If you are are using the minimal template or if you are upgrading from an old ve
     @tailwind utilities;
     ```
 
-1. In the `src/Client` folder find the code in `Index.fs` to show the list of todos and add a Tailwind text colour class(text-red-200)
+1. Start using tailwind classes e.g.
     ```fsharp
     for todo in model.Todos do
         Html.li [
@@ -57,5 +57,3 @@ If you are are using the minimal template or if you are upgrading from an old ve
             prop.text todo.Description
         ]
     ```
-
-You should see some nice red "to-do"s proving that Tailwind is now in your project.
