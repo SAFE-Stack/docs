@@ -6,7 +6,7 @@ In order to debug Server code from Visual Studio, we need set the correct URLs i
 ### Debugging the Server
 
 #### 1. Configure launch settings
-You can do this through the Server project's **Properties/Debug** editor or by editing the `launchSettings.json` file which is in the **properties** folder.
+You can do this through the Server project's **Properties/Debug** editor or by editing the `launchSettings.json` file in `src/Server/Properties`
 
 After selecting the debug profile that you wish to edit (**IIS Express** or **Server**), you will need to set the **App URL** field to `http://localhost:5000` and **Launch browser** field to `http://localhost:8080`. The process is [very similar](https://docs.microsoft.com/en-us/visualstudio/mac/launch-settings?view=vsmac-2019#configure-the-start-url) for VS Mac.
 
@@ -57,7 +57,7 @@ However, we can still debug it via the magic of source mapping. If you are using
 The exact instructions will depend on your browser, but essentially it simply involves:
 
 * Opening the Developer tools panel (usually by hitting F12).
-* Finding the F# file you want to add breakpoints to in the source of the website (look inside the webpack folder).
+* Finding the F# file you want to add breakpoints to in the source of the website.
 * Add breakpoints to it in your browser inspector.
 
 ## I'm using VS Code
