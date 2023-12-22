@@ -62,7 +62,7 @@ npm install vite
 > Vite is a multi-purpose tool used to aid development and packaging of JavaScript applications.
 * You can now launch the application.
 ```bash
-dotnet fable watch -o output -s --run npx vite`
+dotnet fable watch -o output -s --run npx vite
 ```
     This command tells Fable to compile all F# into the `output` folder and then launches Vite, which acts as a local development web server.
 
