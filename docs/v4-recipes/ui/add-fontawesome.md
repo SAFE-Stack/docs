@@ -13,7 +13,7 @@ If you’re using the minimal template, there are a couple of things to do befor
 
 #### 1. The NuGet Package
 Add [Fable.FontAwesome.Free NuGet Package](https://www.nuget.org/packages/Fable.FontAwesome.Free/) to the Client project.
-> See [How do I add a NuGet package to the Client?](../../recipes/package-management/add-nuget-package-to-client.md).
+> See [How do I add a NuGet package to the Client?](../package-management/add-nuget-package-to-client.md).
 
 #### 2. The CDN Link
 Open the `index.html` file and add the following line to the `head` element:
