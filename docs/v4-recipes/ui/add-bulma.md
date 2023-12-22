@@ -19,7 +19,7 @@ Bulma.button.button [
 ```
 
 ### Using Fulma
-1. [Add the Fulma NuGet package to the solution](./../package-management/add-nuget-package-to-client.md).
+1. [Add the Fulma NuGet package to the solution](../package-management/add-nuget-package-to-client.md).
 1. Start using Fulma components in your F# files.
 ```fsharp
 open Fulma
