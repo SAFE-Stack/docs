@@ -7,7 +7,7 @@
 
 ![image](../../img/sql-provider1.png)
 
-2) Enter your connection details, leaving the "Database" dropdown set to `<Default>`.
+2) Enter your connection details, leaving the "Database" dropdown set to `<Default>`. If you are connecting to an SQL Server instance in a Docker container with default port settings, put `localhost` in the **Server** field and use `SQL Login` as **Authentication type**.
 
 ![image](../../img/sql-provider2.png)
 
@@ -80,7 +80,6 @@ nuget System.Data.SqlClient
 ```
 System.Data.SqlClient
 SQLProvider
-System.Data.SqlClient
 ```
 ### Initialize Type Provider
 Next, we will wire up our type provider to generate database types based on the compiled .dacpac file.
