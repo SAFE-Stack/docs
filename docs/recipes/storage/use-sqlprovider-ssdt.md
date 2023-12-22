@@ -78,6 +78,7 @@ nuget System.Data.SqlClient
 ```
 - Add the following lines to `paket.references` in the src/Server folder:
 ```
+System.Data.SqlClient
 SQLProvider
 System.Data.SqlClient
 ```
