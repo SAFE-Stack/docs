@@ -11,7 +11,7 @@ Find the following line in `src/Client/index.html` and delete it before moving o
 
 #### 2. Add the NPM Package
 Go ahead and add the [Bulma NPM package](https://www.npmjs.com/package/bulma) to your project.
-> See: [How do I add an NPM package to the client?](../../recipes/package-management/add-npm-package-to-client.md)
+> See: [How do I add an NPM package to the client?](../package-management/add-npm-package-to-client.md)
 
 #### 3. Load the Stylesheets
 There are two ways for loading the stylesheets:
