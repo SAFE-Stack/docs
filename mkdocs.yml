@@ -39,7 +39,10 @@ extra:
       link: https://twitter.com/safe_stack
     - icon: fontawesome/solid/globe
       link: https://safe-stack.github.io/
-
+  analytics:
+    provider: google
+    property: G-WED2S9FLSL
+    
 nav:
   - Home: "index.md"
   - Introduction: "intro.md"
