@@ -71,7 +71,12 @@ Next, we will use Azure Data Studio with the "SQL Database Projects" extension t
 ## Create a TodoRepository Using the new SSDT provider in SQLProvider
 
 ### Installing SQLProvider from NuGet
-- Add the following NuGet packages to both the `paket.dependencies` in the solution root and the `paket.references` in the src/Server folder:
+- Add the following lines to the `paket.dependencies` in the solution root:
+```
+nuget SQLProvider
+nuget System.Data.SqlClient
+```
+- Add the following lines to `paket.references` in the src/Server folder:
 ```
 SQLProvider
 System.Data.SqlClient
