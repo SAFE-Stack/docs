@@ -27,7 +27,7 @@ importAll "bulma/bulma.sass"
 > You can use this approach for any NPM package.
 
 ##### b. Using Sass
-1. Add a Sass stylesheet to your project using [this recipe](../../recipes/ui/add-style.md).
+1. Add a Sass stylesheet to your project using [this recipe](add-style.md).
 2. Add the following line to your Sass file to bring in Bulma
 ```sass
 @import "~bulma/bulma.sass"
