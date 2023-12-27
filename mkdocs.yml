@@ -86,6 +86,7 @@ nav:
           - Add Feliz support: "recipes/ui/add-feliz.md"
           - Add FontAwesome support: "recipes/ui/add-fontawesome.md"
           - Migrate from a CDN stylesheet to an NPM package: "recipes/ui/cdn-to-npm.md"
+          - Add Bulma Support: "recipes/ui/add-bulma.md"
           - Add routing with state shared between pages: "recipes/ui/add-routing.md"
           - Add routing with separate models per page: "recipes/ui/add-routing-with-separate-models.md"
           - Add Routing with UseElmish: "recipes/ui/routing-with-elmish.md"
