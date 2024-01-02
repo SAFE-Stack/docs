@@ -44,7 +44,11 @@ Once this is done, you can expect your `launchSettings.json` file to look someth
 ```
 
 #### 2. Start the Client
-Since you will be running the server directly through Visual Studio, you cannot use a FAKE script to start the application, so launch the client directly using e.g. `npm run start`.
+Since you will be running the server directly through Visual Studio, you cannot use a FAKE script to start the application. Launch the Client directly by running the following command in `src/Client`
+
+```html
+dotnet fable watch -o output -s --run npx vite
+```
 
 #### 3. Debug the Server
 Set the server as your Startup project, either using the drop-down menu at the top of the IDE or by right clicking on the project itself and selecting **Set as Startup Project**. Select the profile that you set up earlier and wish to launch from the drop-down at the top of the IDE. Either press the Play button at the top of the IDE or hit F5 on your keyboard to start the Server debugging and launch a browser pointing at the website.
