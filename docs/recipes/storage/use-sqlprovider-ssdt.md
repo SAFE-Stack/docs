@@ -71,16 +71,14 @@ Next, we will use Azure Data Studio with the "SQL Database Projects" extension t
 ## Create a TodoRepository Using the new SSDT provider in SQLProvider
 
 ### Installing SQLProvider from NuGet
-- Add the following lines to the `paket.dependencies` in the solution root:
+
+Install dependencies `SqlProvider` and `Microsoft.Data.SqlClient`
+
 ```
-nuget SQLProvider
-nuget System.Data.SqlClient
+dotnet paket add SqlProvider -p Server
+dotnet paket add Microsoft.Data.SqlClient -p Server
 ```
-- Add the following lines to `paket.references` in the src/Server folder:
-```
-System.Data.SqlClient
-SQLProvider
-```
+
 ### Initialize Type Provider
 Next, we will wire up our type provider to generate database types based on the compiled .dacpac file.
 
