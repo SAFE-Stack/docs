@@ -63,7 +63,7 @@ The exact instructions will depend on your browser, but essentially it simply in
 ## I'm using VS Code
 VS Code allows "full stack" debugging i.e. both the client and server. Prerequisites that you should install:
 
-#### 0. Install Prerequisites
+### Install Prerequisites
 
 * **Install** either [Google Chrome](https://www.google.com/chrome/) or [Microsoft Edge](https://www.microsoft.com/en-us/edge): Enables client-side debugging.
 * **Configure your browser** with the following extensions:
@@ -73,22 +73,20 @@ VS Code allows "full stack" debugging i.e. both the client and server. Prerequis
     * [Ionide](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp): Provides F# support to Code.
     * [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp): Provides .NET Core debugging support.
 
-#### Debug the Server
+### Debug the Server
 
 1. Click the debug icon on the left hand side, or hit `ctrl+shift+d` to open the debug pane.
-
 2. In the bar with the play error, where it says "No Configurations", use the dropdown to select ".NET 5 and .NET Core". In the dialog that pops up, select  "Server.Fsproj: Server"
-
 3. Hit F5
 
 The server is now running. You can use the bar at the top of your screen to pause, restart or kill the debugger
 
-#### 5. Debug the Client
+### Debug the Client
 
 1. Start the Client by running `dotnet fable watch -o output -s --run npx vite` from `<repo root>/src/Client/`. 
 2. Open the Command Palettek using `ctrl+shift+p` and run `Debug: Open Link`. 
 3. When prompted for a url, type `http://localhost:8080/`. This will launch a browser which is pointed at the URL and connect the debugger to it. 
-4. You can now set breakpoints in by opening files via the "Loaded Scrips" tab in the debugger; setting breakpoints in files opened from disk does NOT work.
+4. You can now set breakpoints in your F# code by opening files via the "Loaded Scrips" tab in the debugger; setting breakpoints in files opened from disk does NOT work.
 
 > If you find that your breakpoints aren't being hit, try stopping the Client, disconnecting the debugger and re-launching them both.
 
