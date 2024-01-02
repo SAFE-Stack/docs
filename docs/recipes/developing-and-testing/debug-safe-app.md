@@ -73,65 +73,22 @@ VS Code allows "full stack" debugging i.e. both the client and server. Prerequis
     * [Ionide](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp): Provides F# support to Code.
     * [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp): Provides .NET Core debugging support.
 
-#### 1. Create a launch.json file
-Open the Command Palette using `Ctrl+Shift+P` and run `Debug: Add Configuration...`. This will ask you to choose a debugger; select `Ionide LaunchSettings`.
+#### Debug the Server
 
-This will create a `launch.json` file in the root of your solution and also open it in the editor.
+1. Click the debug icon on the left hand side, or hit `ctrl+shift+d` to open the debug pane.
 
-#### 2. Update the Configuration
-The only change required is to point it at the Server application, by replacing the `program` line with this:
+2. In the bar with the play error, where it says "No Configurations", use the dropdown to select ".NET 5 and .NET Core". In the dialog that pops up, select  "Server.Fsproj: Server"
 
-```json
-"program": "${workspaceFolder}/src/Server/bin/Debug/net6.0/Server.dll",
-```
+3. Hit F5
 
-#### 3. Configure a build task
-* From the Command Palette, choose `Tasks: Configure Task`.
-* Select `Create tasks.json file from template`. This will show you a list of pre-configured templates.
-* Select `.NET Core`.
-* Update the build directory using `"options": {"cwd": "src/Server"},` as shown below:
-
-```json
-{
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "build",
-            "command": "dotnet",
-            "type": "shell",
-            "options": {"cwd": "src/Server"}, 
-            "args": [
-                "build",
-                "debug-pt3.sln",
-                // Ask dotnet build to generate full paths for file names.
-                "/property:GenerateFullPaths=true",
-                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "group": "build",
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": "$msCompile"
-        }
-    ]
-}
-```
-
-
-#### 4. Debug the Server
-Either hit F5 or open the Debugging pane and press the Play button to build and launch the Server with the debugger attached.
-Observe that the Debug Console panel will show output from the server. The server is now running and you can set breakpoints and view the callstack etc.
+The server is now running. You can use the bar at the top of your screen to pause, restart or kill the debugger
 
 #### 5. Debug the Client
 
-* Start the Client by running `dotnet fable watch -o output -s --run npm run start` from `<repo root>/src/Client/`.
-* Open the Command Palette and run `Debug: Open Link`.
-* When prompted for a url, type `http://localhost:8080/`. This will launch a browser which is pointed at the URL and connect the debugger to it.
-* You can now set breakpoints in the generated `.fs.js` files within VS Code.
-* Select the appropriate Debug Console you wish to view.
+1. Start the Client by running `dotnet fable watch -o output -s --run npx vite` from `<repo root>/src/Client/`. 
+2. Open the Command Palettek using `ctrl+shift+p` and run `Debug: Open Link`. 
+3. When prompted for a url, type `http://localhost:8080/`. This will launch a browser which is pointed at the URL and connect the debugger to it. 
+4. You can now set breakpoints in by opening files via the "Loaded Scrips" tab in the debugger; setting breakpoints in files opened from disk does NOT work.
 
 > If you find that your breakpoints aren't being hit, try stopping the Client, disconnecting the debugger and re-launching them both.
 
