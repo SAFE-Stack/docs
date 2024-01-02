@@ -168,7 +168,7 @@ open Shared
 open Microsoft.AspNetCore.Http
 
 let todosApi =
-    let db = Database.createContext @"Data Source=.\SQLEXPRESS;Initial Catalog=SafeTodo;Integrated Security=SSPI;"
+    let db = Database.createContext @"Data =.\SQLEXPRESS,1433;Database=SafeTodo;User ID=sa;Password=yourStrong(!)Password;Encrypt=false"
     { getTodos = fun () -> TodoController.getTodos db
       addTodo = TodoController.addTodo db }
 
