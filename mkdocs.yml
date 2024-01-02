@@ -84,6 +84,7 @@ nav:
 
       - UI:
           - Add Tailwind support: "recipes/ui/add-tailwind.md"
+          - Remove Tailwind support: "recipes/ui/remove-tailwind.md"
           - Add daisyUI support: "recipes/ui/add-daisyui.md"
           - Add Stylesheet support: "recipes/ui/add-style.md"
           - Add Feliz support: "recipes/ui/add-feliz.md"
