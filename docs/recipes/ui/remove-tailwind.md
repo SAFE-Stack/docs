@@ -2,12 +2,12 @@ By default, a full SAFE-stack application uses Tailwind CSS for styling. You mig
 
 ## 1. Remove Tailwind css classes 
 
-Tailwind uses classes to style UI elements. In `src/Client`, search for all occurances of `prop.className` and `prop.classes` and remove them if they are used for Tailwind support. In a vanilla SAFE template installation, this means removing **all** occurrences of `prop.className`.
+Tailwind uses classes to style UI elements. In `src/Client`, search for all occurrences of `prop.className` and `prop.classes` and remove them if they are used for Tailwind support. In a vanilla SAFE template installation, this means removing **all** occurrences of `prop.className`.
 
 
 ## 2. Uninstall NPM packages
 
-Remove NPM packages that were installed for tailwind using
+Remove NPM packages that were installed for Tailwind using
 
 ```
  npm uninstall tailwindcss postcss autoprefixer
@@ -23,4 +23,4 @@ src/Client/tailwind.config.js
 src/Client/index.css
 ```
 
-Your SAFE is now tailwind-free.
+Your SAFE Stack app is now Tailwind-free.
