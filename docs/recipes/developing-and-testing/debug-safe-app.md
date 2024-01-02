@@ -76,8 +76,9 @@ VS Code allows "full stack" debugging i.e. both the client and server. Prerequis
 ### Debug the Server
 
 1. Click the debug icon on the left hand side, or hit `ctrl+shift+d` to open the debug pane.
-2. In the bar with the play error, where it says "No Configurations", use the dropdown to select ".NET 5 and .NET Core". In the dialog that pops up, select  "Server.Fsproj: Server"
-3. Hit F5
+2. Hit the `Run and Debug` button
+3. In the bar with the play error, where it says "No Configurations", use the dropdown to select ".NET 5 and .NET Core". In the dialog that pops up, select  "Server.Fsproj: Server"
+4. Hit F5
 
 The server is now running. You can use the bar at the top of your screen to pause, restart or kill the debugger
 
