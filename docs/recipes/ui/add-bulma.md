@@ -1,10 +1,10 @@
 # How do I add Bulma to a SAFE project?
 
-[Bulma](https://bulma.io/documentation/) is a free open-source UI framework based on flex-box that helps you create modern and responsive layouts.
+[Bulma](https://bulma.io/documentation/) is a free open-source UI framework based on flexbox that helps you create modern and responsive layouts.
 
 When using Feliz (the standard for a SAFE app), follow the instructions below. When using Fable.React, use the [Fulma](https://fulma.github.io/Fulma/) wrapper for Bulma.
 
-## 1. Add the Feliz.Bulma NuGet package to the solution
+## 1. Add the Feliz.Bulma NuGet package to the client project
 
 ```
 dotnet paket add Feliz.Bulma -p Client
