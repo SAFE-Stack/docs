@@ -96,6 +96,7 @@ nav:
           - Add Routing with UseElmish: "recipes/ui/routing-with-elmish.md"
       - Storage:
           - Quickly add a database: "recipes/storage/use-litedb.md"
+          - Create a data module using SQLProvider SQL Server SSDT: "recipes/storage/use-sqlprovider-ssdt.md"
       - JavaScript:
           - Import a JavaScript module: "recipes/javascript/import-js-module.md"
           - Add Support for a Third Party React Library: "recipes/javascript/third-party-react-package.md"
