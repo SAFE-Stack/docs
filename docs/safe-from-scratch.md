@@ -144,7 +144,7 @@ Elmish is an F# library modelled closely on the Elm language model for writing b
 This last section adds more UX capabilities.
 
 ### 5.1 [Add Tailwind support](https://github.com/CompositionalIT/safe-from-scratch/commit/fb8b8d02ac4b9b8e97292af23bf37bcee917daff)
-Follow the [Tailwind](ui/add-tailwind.md) guide to add Tailwind to your project.
+Follow the [Tailwind](recipes/ui/add-tailwind.md) guide to add Tailwind to your project.
 ### 5.2 [Revert to "standard" F# Feliz](https://github.com/CompositionalIT/safe-from-scratch/commit/ce4705c5d497cbebf91ea2e4f74dbd0345901e28) *(optional)*
 If you do not want to use the JSX support:
 
