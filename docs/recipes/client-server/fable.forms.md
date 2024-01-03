@@ -43,18 +43,11 @@ npm add bulma
 
 3. Import bulma and fable-form-simple in `Index.scss`
 
-    === "Code"
-        ``` .scss title="Index.scss"
-        @import "~bulma";
-        @import "~fable-form-simple-bulma";
-        ...
-        ```
-    === "Diff"
-        ``` .diff title="Index.scss"
-        + @import "~bulma";
-        + @import "~fable-form-simple-bulma";
-          ...
-        ```
+    ``` .scss title="Index.scss"
+    @import "~bulma";
+    @import "~fable-form-simple-bulma";
+    ...
+    ```
 
 2. Remove the Bulma stylesheet link from `./src/Client/index.html`, as it is no longer needed:
 
@@ -70,17 +63,11 @@ With the above preparation done, you can use Fable.Form.Simple.Bulma in your `./
 
 1. Open the newly added namespaces:
 
-    === "Code"
-        ``` { .fsharp title="Index.fs" }
-        open Fable.Form.Simple
-        open Fable.Form.Simple.Bulma
-        ```
+    ``` { .fsharp title="Index.fs" }
+    open Fable.Form.Simple
+    open Fable.Form.Simple.Bulma
+    ```
 
-    === "Diff"
-        ``` { .diff title="Index.fs" }
-        + open Fable.Form.Simple
-        + open Fable.Form.Simple.Bulma
-        ```
 
 1. Create type `Values` to represent each input field on the form (a single textbox), and create a type `Form` which is an alias for `Form.View.Model<Values>`:
 
