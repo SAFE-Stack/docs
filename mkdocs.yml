@@ -117,6 +117,8 @@ nav:
           - Get data from the server: "recipes/client-server/messaging.md"
           - Post data to the server: "recipes/client-server/messaging-post.md"
           - Share code between the client and the server: "recipes/client-server/share-code.md"
+          - Add support for Fable.Forms: "recipes/client-server/fable.forms.md"
+
   - FAQs:
       - Moving from dev to prod: "faq/faq-build.md"
       - Troubleshooting: "faq/faq-troubleshooting.md"
