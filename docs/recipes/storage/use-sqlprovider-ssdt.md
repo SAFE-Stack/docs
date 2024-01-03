@@ -1,13 +1,23 @@
 # Using SQLProvider SQL Server SSDT
 
+
+## set up your database Server using Docker
+
+The easiest way to get a database running locally is using Docker. You can find the installer on their [website](https://www.docker.com/get-started/). Once docker is installed, use the following command to spin up a database server
+
+```
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<your password>" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+```
+
 ## Creating a "SafeTodo" Database with Azure Data Studio
+
 
 ### Connecting to a SQL Server Instance
 1) In the "Connections" tab, click the "New Connection" button
 
 ![image](../../img/sql-provider1.png)
 
-2) Enter your connection details, leaving the "Database" dropdown set to `<Default>`. If you are connecting to an SQL Server instance in a Docker container with default port settings, put `localhost` in the **Server** field and use `SQL Login` as **Authentication type**.
+2) Enter your connection details, leaving the "Database" dropdown set to `<Default>`.
 
 ![image](../../img/sql-provider2.png)
 
@@ -168,7 +178,7 @@ open Shared
 open Microsoft.AspNetCore.Http
 
 let todosApi =
-    let db = Database.createContext @"Data =.\SQLEXPRESS,1433;Database=SafeTodo;User ID=sa;Password=yourStrong(!)Password;Encrypt=false"
+    let db = Database.createContext @"Data Source=localhost,1433;Database=SafeTodo;User ID=sa;Password=<your password>;TrustServerCertificate=True"
     { getTodos = fun () -> TodoController.getTodos db
       addTodo = TodoController.addTodo db }
 
