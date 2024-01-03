@@ -7,7 +7,7 @@ First off, you need to create a SAFE app, [install the relevant dependencies](ht
 dotnet new SAFE
 dotnet tool restore
 ```
-1.Add bulma to your project:
+1. Add bulma to your project:
 follow [this recipe](../ui/add-bulma.md)
 
 1. Install Fable.Form.Simple.Bulma using Paket:
@@ -25,21 +25,21 @@ npm add bulma
 
 1. Rename `src/Client/Index.css` to `Index.scss`
 
-   2. Update the import in `App.fs`
+2. Update the import in `App.fs`
 
-       === "Code"    
-           ```.fs title="App.fs"
-           ...
-           importSideEffects "./index.scss"
-           ...
-           ```
-       === "Diff"    
-           ```.diff title="App.fs" 
-           ...
-           - importSideEffects "./index.css"
-           + importSideEffects "./index.scss"
-           ...
-           ```
+    === "Code"    
+        ```.fs title="App.fs"
+        ...
+        importSideEffects "./index.scss"
+        ...
+        ```
+    === "Diff"    
+        ```.diff title="App.fs" 
+        ...
+        - importSideEffects "./index.css"
+        + importSideEffects "./index.scss"
+        ...
+        ```
 
 3. Import bulma and fable-form-simple in `Index.scss`
 
@@ -53,12 +53,12 @@ npm add bulma
         ``` .diff title="Index.scss"
         + @import "~bulma";
         + @import "~fable-form-simple-bulma";
-        ...
+          ...
         ```
 
 2. Remove the Bulma stylesheet link from `./src/Client/index.html`, as it is no longer needed:
 
-    ``` { .diff title="index.html (diff)" }
+    ``` { .diff title="index.html" }
         <link rel="icon" type="image/png" href="/favicon.png"/>
     -   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -78,8 +78,8 @@ With the above preparation done, you can use Fable.Form.Simple.Bulma in your `./
 
     === "Diff"
         ``` { .diff title="Index.fs" }
-        +open Fable.Form.Simple
-        +open Fable.Form.Simple.Bulma
+        + open Fable.Form.Simple
+        + open Fable.Form.Simple.Bulma
         ```
 
 1. Create type `Values` to represent each input field on the form (a single textbox), and create a type `Form` which is an alias for `Form.View.Model<Values>`:
