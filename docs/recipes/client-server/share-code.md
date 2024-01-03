@@ -1,10 +1,10 @@
 # How Do I Share Code Types Between the Client and the Server?
-SAFE Stack makes it really simple and easy to share code between the client and the server, since both of them are written in F#. The client side is transpiled into JavaScript via webpack, whilst the server side is compiled down to .NET CIL. Serialization between both happens in the background, so you don't have to worry about it.
+SAFE Stack makes it really simple and easy to share code between the client and the server, since both of them are written in F#. The client side is transpiled into JavaScript by Fable, whilst the server side is compiled down to .NET CIL. Serialization between both happens in the background, so you don't have to worry about it.
 
 ---
 
 ## Types
-Let’s say the you have the following type in `src/Server/Server.fs`:
+Let's say the you have the following type in `src/Server/Server.fs`:
 ```fsharp
 type Customer =
     { Id : Guid
