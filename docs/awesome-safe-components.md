@@ -14,13 +14,19 @@ A set of SAFE-ready wrappers around existing React and JS UI Components.
 
 ## React bindings
 
+### [Feliz](https://zaid-ajaj.github.io/Feliz/) (Recommended)
+A fresh retake of the React API in Fable and a collection of high-quality components to build React applications in F#, optimized for happiness. [Get it!](https://www.nuget.org/packages/Feliz/)
+
 ### [Fable.React](https://github.com/fable-compiler/fable-react) 
 Fable bindings and helpers for React and React Native. [Get it!](https://www.nuget.org/packages/Fable.React/)
 
-### [Feliz](https://zaid-ajaj.github.io/Feliz/)
-A fresh retake of the React API in Fable and a collection of high-quality components to build React applications in F#, optimized for happiness. [Get it!](https://www.nuget.org/packages/Feliz/)
-
 ## UI Frameworks
+
+### [Feliz.Bulma](https://www.nuget.org/packages/Feliz.Bulma/)
+[Bulma UI](https://bulma.io) wrapper for amazing Feliz DSL. [Get it!](https://www.nuget.org/packages/Feliz.Bulma/)
+
+### [Fulma](https://fulma.github.io/Fulma/)
+Fulma provides a wrapper around [Bulma 0.9.0](https://bulma.io), an open source CSS framework, for fable-react. [Get it!](https://www.nuget.org/packages/Fulma/)
 
 ### [Feliz.MaterialUI](https://shmew.github.io/Feliz.MaterialUI/) 
 Feliz-style Fable bindings for [Material-UI](https://material-ui.com/). [Get it!](https://www.nuget.org/packages/Feliz.MaterialUI/)
@@ -30,12 +36,6 @@ Fable binding for [reactstrap](https://reactstrap.github.io/). [Get it!](https:/
 
 ### [Fable.MaterialUI](https://github.com/mvsmal/fable-material-ui)
 Fable bindings for [Material-UI](https://material-ui.com/). [Get it!](https://www.nuget.org/packages/Fable.MaterialUI/)
-
-### [Feliz.Bulma](https://www.nuget.org/packages/Feliz.Bulma/)
-[Bulma UI](https://bulma.io) wrapper for amazing Feliz DSL. [Get it!](https://www.nuget.org/packages/Feliz.Bulma/)
-
-### [Fulma](https://fulma.github.io/Fulma/)
-Fulma provides a wrapper around [Bulma 0.9.0](https://bulma.io), an open source CSS framework, for fable-react. [Get it!](https://www.nuget.org/packages/Fulma/)
 
 ### [Fable.AntD](https://github.com/uxsoft/Fable.AntD)
 Fable bindings for [Ant Design React components](https://ant.design/). [Get it!](https://www.nuget.org/packages/Fable.AntD/)
@@ -153,4 +153,3 @@ Fable bindings for [react-testing-library](https://testing-library.com/docs/reac
 
 ### [Fun.ReactSpring](https://github.com/albertwoo/Fun.Animation)
 Fable bindings for [react spring](https://react-spring.io/). [Get it!](https://www.nuget.org/packages/Fun.ReactSpring/1.0.0-beta8)
-
