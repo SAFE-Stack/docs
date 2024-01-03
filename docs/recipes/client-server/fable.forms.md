@@ -44,8 +44,8 @@ npm add bulma
 3. Import bulma and fable-form-simple in `Index.scss`
 
     ``` .scss title="Index.scss"
-    @import "~bulma";
-    @import "~fable-form-simple-bulma";
+    @import "bulma/bulma.sass";
+    @import "fable-form-simple-bulma/index.scss";
     ...
     ```
 
