@@ -28,7 +28,7 @@ npm add bulma
 2. Update the import in `App.fs`
 
     === "Code"    
-        ```.fs title="App.fs"
+        ```.fsharp title="App.fs"
         ...
         importSideEffects "./index.scss"
         ...
