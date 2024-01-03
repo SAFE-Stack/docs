@@ -1,7 +1,7 @@
 # Using SQLProvider SQL Server SSDT
 
 
-## set up your database Server using Docker
+## Set up your database Server using Docker
 
 The easiest way to get a database running locally is using Docker. You can find the installer on their [website](https://www.docker.com/get-started/). Once docker is installed, use the following command to spin up a database server
 
