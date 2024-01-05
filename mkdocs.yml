@@ -42,7 +42,7 @@ extra:
   analytics:
     provider: google
     property: G-WED2S9FLSL
-    
+
 nav:
   - Home: "index.md"
   - Introduction: "intro.md"
@@ -69,10 +69,8 @@ nav:
       - Overview: "template-overview.md"
       - Commands: "template-safe-commands.md"
   - How do I...:
-      - Upgrade from V2 to V3: "recipes/upgrading/v2-to-v3.md"
-      - Upgrade from V3 to V4: "recipes/upgrading/v3-to-v4.md"
-      - Upgrade from V4 to V5: "recipes/upgrading/v4-to-v5.md"
       - Create a new Recipe: "recipes/template.md"
+      - Upgrade from V4 to V5: "recipes/upgrading/v4-to-v5.md"
       - Build:
           - Add build automation: "recipes/build/add-build-script.md"
           - Create a docker image: "recipes/build/docker-image.md"
@@ -122,6 +120,7 @@ nav:
   - FAQs:
       - Moving from dev to prod: "faq/faq-build.md"
       - Troubleshooting: "faq/faq-troubleshooting.md"
+      - Feliz and Fable React: "faq/faq-felizandfable.md"
   - Learning Resources:
       - SAFE-Compatible UI Components: "awesome-safe-components.md"
       - Learning: "learning.md"
@@ -131,6 +130,9 @@ nav:
   - Support: "support.md"
   - Testimonials: "testimonials.md"
   - Legacy recipes (v4):
+      - Upgrading:
+          - Upgrade from V2 to V3: "v4-recipes/upgrading/v2-to-v3.md"
+          - Upgrade from V3 to V4: "v4-recipes/upgrading/v3-to-v4.md"
       - Build:
           - Add build automation: "v4-recipes/build/add-build-script.md"
           - Remove FAKE: "v4-recipes/build/remove-fake.md"
