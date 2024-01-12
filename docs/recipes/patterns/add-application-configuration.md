@@ -40,12 +40,12 @@ This recipe describe how to add application configuration to the server. It uses
     let todosApi (context: HttpContext) = {
 
         addTodo = fun todo -> async {
-                    // get configuration
-                    let appSettings = context.GetService<IConfiguration>()
+                    // get configuration from appSettings (automatically loaded when appsettings.json present)
+                    let configuration = context.GetService<IConfiguration>()
 
-                    let setting = appSettings.GetSection("AppSettings")
-                    let s = setting["Setting1"]
-                    printfn $"Setting1 in addTodo: {s}"
+                    let appSettings = configuration.GetSection("AppSettings")
+                    let setting1 = appSettings["Setting1"]
+                    printfn $"Setting1 in addTodo: {setting1}"
                     
                     return
                         match Storage.addTodo todo with
@@ -66,10 +66,13 @@ This recipe describe how to add application configuration to the server. It uses
         let configBuilder = ConfigurationBuilder()
         let config = configBuilder.AddJsonFile(settingsFile).Build()
 
+        // in case one wants to read configuration and use it while preparing services etc.
+
         // test loaded settings
         let s1 = config["AppSettings:Setting1"]
         printfn $"Setting1: {s1}"
 
+        // load section and then get setting
         let appSettings = config.GetSection("AppSettings")
         let setting = appSettings["Setting1"]
         printfn $"Setting1: {setting}"
@@ -84,7 +87,7 @@ This recipe describe how to add application configuration to the server. It uses
     let webApp =
         Remoting.createApi ()
         |> Remoting.withRouteBuilder Route.builder
-        |> Remoting.fromContext todosApi
+        |> Remoting.fromContext todosApi 
         |> Remoting.buildHttpHandler
 
     ```
@@ -94,7 +97,7 @@ This recipe describe how to add application configuration to the server. It uses
     ```fs 
         let app = application {
             use_router webApp
-            service_config configureServices
+            service_config configureServices // only needed to prepare further services
             memory_cache
             use_static "public"
             use_gzip
