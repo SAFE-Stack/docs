@@ -2,23 +2,6 @@
 
 This recipe describe how to add application configuration to the server. It uses the regular dotnet middleware
 
-## add necessary packages
-
-```pwsh
-dotnet paket add Microsoft.Extensions.Configuration --version 8.0.0 --project src/Server/Server.fsproj
-```
-
-this will add the following entries to **paket.dependencies** file
-```
-nuget Microsoft.Extensions.Configuration 8.0.0
-```
-
-this will add the following entries to **src/Server/paket.references** file
-
-```
-Microsoft.Extensions.Configuration
-```
-
 ## configure server project
 
 ### create appsettings.json
@@ -58,10 +41,10 @@ Microsoft.Extensions.Configuration
 
         addTodo = fun todo -> async {
                     // get configuration
-                    let settings = context.GetService<IConfiguration>()
+                    let appSettings = context.GetService<IConfiguration>()
 
-                    let s1 = settings.GetSection("AppSettings")
-                    let s = s1["Setting1"]
+                    let setting = appSettings.GetSection("AppSettings")
+                    let s = setting["Setting1"]
                     printfn $"Setting1 in addTodo: {s}"
                     
                     return
@@ -83,14 +66,13 @@ Microsoft.Extensions.Configuration
         let configBuilder = ConfigurationBuilder()
         let config = configBuilder.AddJsonFile(settingsFile).Build()
 
-        // test loaded settings, direct reference
+        // test loaded settings
         let s1 = config["AppSettings:Setting1"]
         printfn $"Setting1: {s1}"
 
-        // test loaded settings, get section first
-        let settings = config.GetSection("AppSettings")
-        let s1 = settings["Setting1"]
-        printfn $"Setting1: {s1}"
+        let appSettings = config.GetSection("AppSettings")
+        let setting = appSettings["Setting1"]
+        printfn $"Setting1: {setting}"
 
         services
 

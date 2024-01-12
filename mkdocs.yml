@@ -109,7 +109,7 @@ nav:
           - Sync NuGet and NPM Packages: "recipes/package-management/sync-nuget-and-npm-packages.md"
       - Patterns:
           - Use Dependency Injection: "recipes/patterns/add-dependency-injection.md"
-          - Use Application Configuration: "recipes/patterns/application-configuration.md"
+          - Use Application Configuration: "recipes/patterns/add-application-configuration.md"
       - Client / Server:
           - Use Giraffe instead of Saturn: "recipes/client-server/saturn-to-giraffe.md"
           - Handle server errors on the client: "recipes/client-server/server-errors-on-client.md"
