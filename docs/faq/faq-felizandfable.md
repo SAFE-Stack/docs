@@ -8,18 +8,16 @@ In a nutshell Fable.React and Feliz are two F# libraries which perform a similar
 The main distinction between the two libraries is that Fable.React follows a layout as follows:
 
 ```fsharp
-element [ attribute; attribute ] [ childElement; childElement ]
+element [ prop; prop ] [ childElement; childElement ]
 ```
-
-> Note: Code snippets below are for illustrative purposes only and do not compile.
 
 For example:
 
 ```fsharp
-h1 [ style "color:Tomato" ] [
-    p [] [ text "Hello" ] // no attributes
-    p [] [ text "Another paragraph" ] // no attributes
-    h2 [ style "color:Blue" ] [] // no child elements
+h1 [ Style [ Color "Tomato" ] ] [
+    p [] [ text [ Value "Hello" ] [] ] // no props
+    p [] [ text [ Value "Another paragraph" ] [] ] // no props
+    h2 [ Style [ Color "Blue" ] ] [] // no child elements
 ]
 ```
 
@@ -30,42 +28,40 @@ Feliz adopts a different style, in which instead of an element having two lists,
 The above snippet would convert into Feliz as follows:
 
 ```fsharp
-h1 [
-    style "color:Tomato"
-    children [
-        p [ text "Hello" ]
-        p [ text "Another paragraph" ]
-        h2 [ style "color:Blue" ]
+Html.h1 [
+    prop.style [ style.color "Tomato" ]
+    prop.children [
+        Html.p [ prop.text "Hello" ]
+        Html.p [ prop.text "Another paragraph" ]
+        Html.h2 [ prop.style [ style.backgroundColor "Blue" ] ]
     ]
 ]
 ```
 
-The `children` function is required when mixing and matching attributes and elements:
+The `prop.children` function is required when mixing and matching attributes and elements:
 
 ```fsharp
-h1 [ // this is fine - just attributes underneath h1
-    style "color:Tomato"
-    title "foo"
+Html.h1 [ // this is fine - just props underneath h1
+    prop.style [ style.color "Tomato" ]
+    prop.title "foo"
 ]
 
-h1 [  // fine - just elements underneath h1
-    p [ text "Hello" ]
+Html.h1 [ // fine - just elements underneath h1
+    Html.p [ prop.text "Hello" ]
 ]
 
-h1 [  // not fine - can't mix and match attributes and elements
-    style "color:Tomato"
-    p [ text "Hello" ]
+Html.h1 [ // not fine - can't mix and match attributes and elements
+    prop.style [ style.color "Tomato" ]
+    Html.p [ prop.text "Hello" ]
 ]
 ```
 
 In order to allow both attributes and elements in the same list, Feliz introduces the `children` node:
 
 ```fsharp
-h1 [ // this is now fine
-    style "color:Tomato"
-    children [
-        p [ text "Hello" ]
-    ]
+Html.h1 [ // this is now fine
+    prop.style [ style.color "Tomato" ]
+    prop.children [ Html.p [ prop.text "Hello" ] ]
 ]
 ```
 
@@ -73,3 +69,5 @@ h1 [ // this is now fine
 * Fable.React was created initially, whilst Feliz was developed some time later.
 * Feliz has better support for React interop and the majority of the community nowadays uses the Feliz DSL style for developing components.
 * As they are both wrappers around the same underlying technology (React) and Feliz uses some parts of Fable.React, you can actually mix and match the two in your applications as required.
+
+* Also see [My journey with Feliz | A comparison between Fable.React and Feliz](https://github.com/Zaid-Ajaj/Feliz/issues/155).
