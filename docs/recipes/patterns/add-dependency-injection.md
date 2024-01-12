@@ -14,21 +14,19 @@
 
     > Instead of functions or modules, DI in .NET and F# only works with classes.
 
-2. Register your type with ASP .NET, typically in the start up / bootstrapper.
+2. Register your type with ASP .NET during startup within the `application { }` block.
     ```diff
     ++ open Microsoft.Extensions.DependencyInjection
 
        application {
+           //...
     ++     service_config (fun services -> services.AddSingleton<DatabaseRepository>())
-       }
     ```
 
     > [This section](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0#lifetime-and-registration-options) of the official ASP .NET Core article explain the distinction between different lifetime registrations, such as Singleton and Transient.
 
 3. Ensure that your Fable Remoting API can access the `HttpContext` type by using the `fromContext` builder function.
     ```diff
-    let webApp =
-        Remoting.createApi ()
     --  |> Remoting.fromValue createFableRemotingApi
     ++  |> Remoting.fromContext createFableRemotingApi
     ```
