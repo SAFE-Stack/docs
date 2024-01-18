@@ -89,6 +89,7 @@ nav:
           - Test the Client: "recipes/developing-and-testing/testing-the-client.md"
           - Test the Server: "recipes/developing-and-testing/testing-the-server.md"
           - Debug a SAFE app: "recipes/developing-and-testing/debug-safe-app.md"
+          - Application Configuration: "recipes/developing-and-testing/app-configuration.md"
       - UI:
           - Add Tailwind support: "recipes/ui/add-tailwind.md"
           - Remove Tailwind support: "recipes/ui/remove-tailwind.md"
