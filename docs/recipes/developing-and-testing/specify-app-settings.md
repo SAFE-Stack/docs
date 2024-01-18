@@ -1,5 +1,5 @@
-# How do I add custom configuration?
-There are many ways to supply configuration settings e.g. connection strings to your application, and the [official ASP .NET documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-8.0) explains in great detail the various options you have available.
+# How do I add custom application settings?
+There are many ways to supply custom application settings e.g. connection strings to your application, and the [official ASP .NET documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-8.0) explains in great detail the various options you have available.
 
 ## Configuration of the Server
 In this recipe, we show how to add configuration using an `appsettings.json` configuration file.
@@ -34,7 +34,10 @@ let todosApi (context: HttpContext) =
 ++    let cfg = context.GetService<IConfiguration>()
 ++    let value = cfg["MyKey"] // "My appsettings.json Value"
 ```
-> Note that the `todosApi` function will be called on every single ASP .NET request. It is  safe to "capture" the `cfg` value and use it across multiple API methods.
+> Note that the `todosApi` function will be called on every single ASP .NET request. It is safe to "capture" the `cfg` value and use it across multiple API methods.
+
+### Publishing settings files
+Be aware that `appsettings.json` files will be included in your bundle by default. However, depending on your application, it can be overridden by e.g. environment variables.
 
 ## Working with User Secrets
 User Secrets are an alternative way of storing secrets which, although still stored in plain text files, are not stored in your repository folder and therefore less at risk to accidentally committing into source control. However, Saturn currently disables User Secrets as part of its startup routine, and you must manually turn them back on:
