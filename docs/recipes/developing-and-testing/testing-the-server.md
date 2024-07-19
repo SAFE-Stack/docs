@@ -19,8 +19,11 @@ dotnet run
 
 you should instead use
 ```powershell
-dotnet run RunTests
+dotnet run WatchRunTests
 ```
+
+> Prior to template version 5.0.8, the command to run the tests was `dotnet run RunTests`
+
 This will execute the tests and print the results into the console window.
 
 <img src="../../../img/expecto-results.png"/>
