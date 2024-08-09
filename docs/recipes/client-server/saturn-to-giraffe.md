@@ -46,7 +46,7 @@ and replace it with this
 ```fsharp
 let configureApp (app : IApplicationBuilder) =
     app
-        .UseStaticFiles()
+        .UseFileServer()
         .UseGiraffe webApp
 
 let configureServices (services : IServiceCollection) =
