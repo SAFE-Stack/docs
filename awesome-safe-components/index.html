@@ -1,0 +1,5072 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for SAFE">
+      
+      
+        <meta name="author" content="SAFE Stack">
+      
+      
+        <link rel="canonical" href="http://safe-stack.github.io/docs/awesome-safe-components/">
+      
+      
+        <link rel="prev" href="../faq/faq-troubleshooting/">
+      
+      
+        <link rel="next" href="../learning/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>SAFE-Compatible UI Components - SAFE Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.7.0/dist/mermaid.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-WED2S9FLSL"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-WED2S9FLSL",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-WED2S9FLSL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-can-i-contribute-my-library-to-this-list" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SAFE Documentation" class="md-header__button md-logo" aria-label="SAFE Documentation" data-md-component="logo">
+      
+  <img src="../img/safe_favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SAFE Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SAFE-Compatible UI Components
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SAFE-Stack/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SAFE-Stack/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SAFE Documentation" class="md-nav__button md-logo" aria-label="SAFE Documentation" data-md-component="logo">
+      
+  <img src="../img/safe_favicon.png" alt="logo">
+
+    </a>
+    SAFE Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SAFE-Stack/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SAFE-Stack/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAFE Stack
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            SAFE Stack
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/component-saturn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn about Saturn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/component-azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn about Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/component-fable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn about Fable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/component-elmish/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn about Elmish
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Client / Server Sharing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Client / Server Sharing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-clientserver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-clientserver-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing Types and Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-clientserver-http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging using HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-clientserver-remoting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging with Protocols
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-clientserver-bridge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stateful Messaging through Bridge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-clientserver-serialization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serialization in SAFE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-ssr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Server Side Rendering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-hmr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hot Module Replacement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-azurefunctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with Azure functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The SAFE Template
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            The SAFE Template
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template-safe-commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How do I...
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            How do I...
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/upgrading/v2-to-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade from V2 to V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/upgrading/v3-to-v4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade from V3 to V4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/upgrading/v4-to-v5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade from V4 to V5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a new Recipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/build/add-build-script/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add build automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/build/docker-image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a docker image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/build/remove-fake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove FAKE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/build/bundle-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Package my SAFE app for deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dev / Test
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Dev / Test
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/developing-and-testing/testing-the-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test the Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/developing-and-testing/testing-the-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test the Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/developing-and-testing/debug-safe-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debug a SAFE app
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/developing-and-testing/specify-app-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Specify app settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            UI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/add-tailwind/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Tailwind support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/remove-tailwind/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove Tailwind support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/add-daisyui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add daisyUI support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/add-style/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Stylesheet support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/add-feliz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Feliz support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/add-fontawesome/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add FontAwesome support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/cdn-to-npm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrate from a CDN stylesheet to an NPM package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/add-bulma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Bulma Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/add-routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add routing with state shared between pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/add-routing-with-separate-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add routing with separate models per page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/ui/routing-with-elmish/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Routing with UseElmish
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/storage/use-litedb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickly add a database
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/storage/use-sqlprovider-ssdt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a data module using SQLProvider SQL Server SSDT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    JavaScript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9">
+            <span class="md-nav__icon md-icon"></span>
+            JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/javascript/import-js-module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Import a JavaScript module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/javascript/third-party-react-package/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Support for a Third Party React Library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_10" id="__nav_6_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Package Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_10">
+            <span class="md-nav__icon md-icon"></span>
+            Package Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/package-management/add-npm-package-to-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add an NPM package to the Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/package-management/add-nuget-package-to-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add a NuGet package to the Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/package-management/add-nuget-package-to-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add a NuGet package to the Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/package-management/migrate-to-paket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrate to Paket from NuGet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/package-management/migrate-to-nuget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrate to NuGet from Paket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/package-management/sync-nuget-and-npm-packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sync NuGet and NPM Packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Patterns
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/patterns/add-dependency-injection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Dependency Injection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_12" id="__nav_6_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Client / Server
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_12">
+            <span class="md-nav__icon md-icon"></span>
+            Client / Server
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/saturn-to-giraffe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Giraffe instead of Saturn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/server-errors-on-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Handle server errors on the client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/upload-file-from-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upload file from the client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/serve-a-file-from-the-backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serve a file from the back-end
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/fable-remoting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add support for Fable Remoting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/mvu-roundtrip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perform roundtrips with MVU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/messaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get data from the server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/messaging-post/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post data to the server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/share-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Share code between the client and the server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/client-server/fable.forms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add support for Fable.Forms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FAQs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            FAQs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/faq-build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving from dev to prod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/faq-troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Learning Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Learning Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SAFE-Compatible UI Components
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    SAFE-Compatible UI Components
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-contribute-my-library-to-this-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can I contribute my library to this list?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How can I contribute my library to this list?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nice-to-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nice to have
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#react-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      React bindings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="React bindings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feliz-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.React
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI Frameworks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizbulma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Bulma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fulma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fulma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizmaterialui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.MaterialUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.Reactstrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablematerialui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.MaterialUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fableantd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.AntD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablefontawesomefree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.FontAwesome.Free
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablefluentui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.FluentUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactgridsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactGridSystem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI Controls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI Controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizpopover" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Popover
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizselectsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.SelectSearch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizkawaii" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Kawaii
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizsweetalert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.SweetAlert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elmishsweetalert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elmish.SweetAlert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elmishtoastr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elmish.Toastr
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elmishanimatedtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elmish.AnimatedTree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreacthamburger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.ReactHamburger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreactawesomeslider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.ReactAwesomeSlider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreactselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.ReactSelect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactflatpickr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.React.Flatpickr
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feliztippy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Tippy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreactspeedometer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.ReactSpeedometer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactkanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactKanban
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactdrawingcanvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.React.DrawingCanvas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablegroupingpanel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.GroupingPanel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Visualisation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Visualisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizaggrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.AgGrid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactaggrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactAgGrid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreactflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Reactflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fablereactgooglemaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactGoogleMaps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizpigeonmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.PigeonMaps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Charting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizagchart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.AgChart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizplotly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Plotly
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizrecharts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Recharts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizroughviz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.RoughViz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      State management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizrecoil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Recoil
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fablejester" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.Jester
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablemocha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.Mocha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereacttestinglibrary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactTestingLibrary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Animation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funreactspring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fun.ReactSpring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safe-from-scratch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating a SAFE Stack App from Scratch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../knownIssues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Known Issues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testimonials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testimonials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legacy recipes (v4)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Legacy recipes (v4)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_1" id="__nav_13_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_1">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/build/add-build-script/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add build automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/build/remove-fake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove FAKE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/build/bundle-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Package my SAFE app for deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/build/docker-image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a docker image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_2" id="__nav_13_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dev / Test
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dev / Test
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/developing-and-testing/testing-the-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test the Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/developing-and-testing/testing-the-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test the Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/developing-and-testing/debug-safe-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debug a SAFE app
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/developing-and-testing/using-hot-reload/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use hot reload
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_3" id="__nav_13_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Client / Server
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_3">
+            <span class="md-nav__icon md-icon"></span>
+            Client / Server
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/fable-remoting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add support for Fable Remoting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/mvu-roundtrip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perform roundtrips with MVU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/messaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get data from the server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/messaging-post/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post data to the server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/server-errors-on-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Handle server errors on the client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/share-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Share code between the client and the server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/saturn-to-giraffe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Giraffe instead of Saturn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/upload-file-from-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upload file from the client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/serve-a-file-from-the-backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serve a file from the back-end
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/client-server/fable.forms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add support for Fable.Forms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_4" id="__nav_13_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/storage/use-litedb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickly add a database
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/storage/use-sqlprovider-ssdt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a data module using SQLProvider SQL Server SSDT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_5" id="__nav_13_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_5">
+            <span class="md-nav__icon md-icon"></span>
+            UI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/add-style/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Stylesheet support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/add-fontawesome/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add FontAwesome support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/add-bulma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Bulma support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/use-different-bulma-themes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use different Bulma Themes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/remove-bulma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove Bulma
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/add-tailwind/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Tailwind support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/add-daisyui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add daisyUI support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/cdn-to-npm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrate from a CDN stylesheet to an NPM package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/add-routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add routing with state shared between pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/add-routing-with-separate-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add routing with separate models per page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/ui/routing-with-elmish/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Routing with UseElmish
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_6" id="__nav_13_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    JavaScript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_6">
+            <span class="md-nav__icon md-icon"></span>
+            JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/javascript/import-js-module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Import a JavaScript module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/javascript/third-party-react-package/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Support for a Third Party React Library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_7" id="__nav_13_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Package Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_7">
+            <span class="md-nav__icon md-icon"></span>
+            Package Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/package-management/add-npm-package-to-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add an NPM package to the Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/package-management/add-nuget-package-to-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add a NuGet package to the Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/package-management/add-nuget-package-to-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add a NuGet package to the Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/package-management/migrate-to-paket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrate to Paket from NuGet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/package-management/migrate-to-nuget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrate to NuGet from Paket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-recipes/package-management/sync-nuget-and-npm-packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sync NuGet and NPM Packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-contribute-my-library-to-this-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can I contribute my library to this list?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How can I contribute my library to this list?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nice-to-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nice to have
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#react-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      React bindings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="React bindings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feliz-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.React
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI Frameworks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizbulma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Bulma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fulma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fulma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizmaterialui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.MaterialUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.Reactstrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablematerialui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.MaterialUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fableantd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.AntD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablefontawesomefree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.FontAwesome.Free
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablefluentui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.FluentUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactgridsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactGridSystem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI Controls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI Controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizpopover" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Popover
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizselectsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.SelectSearch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizkawaii" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Kawaii
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizsweetalert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.SweetAlert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elmishsweetalert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elmish.SweetAlert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elmishtoastr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elmish.Toastr
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elmishanimatedtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elmish.AnimatedTree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreacthamburger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.ReactHamburger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreactawesomeslider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.ReactAwesomeSlider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreactselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.ReactSelect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactflatpickr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.React.Flatpickr
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feliztippy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Tippy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreactspeedometer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.ReactSpeedometer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactkanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactKanban
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactdrawingcanvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.React.DrawingCanvas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablegroupingpanel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.GroupingPanel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Visualisation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Visualisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizaggrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.AgGrid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereactaggrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactAgGrid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizreactflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Reactflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fablereactgooglemaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactGoogleMaps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizpigeonmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.PigeonMaps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Charting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizagchart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.AgChart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizplotly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Plotly
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizrecharts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Recharts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#felizroughviz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.RoughViz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      State management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#felizrecoil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feliz.Recoil
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fablejester" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.Jester
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablemocha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.Mocha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fablereacttestinglibrary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fable.ReactTestingLibrary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Animation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funreactspring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fun.ReactSpring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>SAFE-Compatible UI Components</h1>
+
+<p>A set of SAFE-ready wrappers around existing React and JS UI Components. </p>
+<h2 id="how-can-i-contribute-my-library-to-this-list">How can I contribute my library to this list?</h2>
+<h3 id="required">Required</h3>
+<ul>
+<li>Adding a README with installation instructions</li>
+<li>Adding <a href="https://github.com/Zaid-Ajaj/Femto">femto</a> metadata to the projects</li>
+</ul>
+<h3 id="nice-to-have">Nice to have</h3>
+<ul>
+<li>Adding documentation with sample code on the various use cases </li>
+<li>Adding live documentation website with sample code</li>
+</ul>
+<h2 id="react-bindings">React bindings</h2>
+<h3 id="feliz-recommended"><a href="https://zaid-ajaj.github.io/Feliz/">Feliz</a> (Recommended)</h3>
+<p>A fresh retake of the React API in Fable and a collection of high-quality components to build React applications in F#, optimized for happiness. <a href="https://www.nuget.org/packages/Feliz/">Get it!</a></p>
+<h3 id="fablereact"><a href="https://github.com/fable-compiler/fable-react">Fable.React</a></h3>
+<p>Fable bindings and helpers for React and React Native. <a href="https://www.nuget.org/packages/Fable.React/">Get it!</a></p>
+<h2 id="ui-frameworks">UI Frameworks</h2>
+<h3 id="felizbulma"><a href="https://www.nuget.org/packages/Feliz.Bulma/">Feliz.Bulma</a></h3>
+<p><a href="https://bulma.io">Bulma UI</a> wrapper for amazing Feliz DSL. <a href="https://www.nuget.org/packages/Feliz.Bulma/">Get it!</a></p>
+<h3 id="fulma"><a href="https://fulma.github.io/Fulma/">Fulma</a></h3>
+<p>Fulma provides a wrapper around <a href="https://bulma.io">Bulma 0.9.0</a>, an open source CSS framework, for fable-react. <a href="https://www.nuget.org/packages/Fulma/">Get it!</a></p>
+<h3 id="felizmaterialui"><a href="https://shmew.github.io/Feliz.MaterialUI/">Feliz.MaterialUI</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://material-ui.com/">Material-UI</a>. <a href="https://www.nuget.org/packages/Feliz.MaterialUI/">Get it!</a></p>
+<h3 id="fablereactstrap"><a href="https://nojaf.com/fable-reactstrap/">Fable.Reactstrap</a></h3>
+<p>Fable binding for <a href="https://reactstrap.github.io/">reactstrap</a>. <a href="https://www.nuget.org/packages/Fable.Reactstrap/">Get it!</a></p>
+<h3 id="fablematerialui"><a href="https://github.com/mvsmal/fable-material-ui">Fable.MaterialUI</a></h3>
+<p>Fable bindings for <a href="https://material-ui.com/">Material-UI</a>. <a href="https://www.nuget.org/packages/Fable.MaterialUI/">Get it!</a></p>
+<h3 id="fableantd"><a href="https://github.com/uxsoft/Fable.AntD">Fable.AntD</a></h3>
+<p>Fable bindings for <a href="https://ant.design/">Ant Design React components</a>. <a href="https://www.nuget.org/packages/Fable.AntD/">Get it!</a></p>
+<h3 id="fablefontawesomefree"><a href="https://github.com/Fulma/Fulma/blob/master/src/Fable.FontAwesome/Fable.FontAwesome.fsproj">Fable.FontAwesome.Free</a></h3>
+<p>Bindings for the Free icons of Font Awesome, should be used with Fable.FontAwesome. <a href="https://www.nuget.org/packages/Fable.FontAwesome.Free/">Get it!</a></p>
+<h3 id="fablefluentui"><a href="https://github.com/JordanMarr/Fable.FluentUI">Fable.FluentUI</a></h3>
+<p><a href="https://www.npmjs.com/package/@fluentui/react">FluentUI (React)</a> to Fable bindings. <a href="https://www.nuget.org/packages/Fable.FluentUI/">Get it!</a> </p>
+<h3 id="fablereactgridsystem"><a href="https://github.com/Prolucid/fable-react-grid-system">Fable.ReactGridSystem</a></h3>
+<p><a href="https://www.npmjs.com/package/react-grid-system">React Grid System</a> to Fable bindings. <a href="https://www.nuget.org/packages/Fable.ReactGridSystem/">Get it!</a> </p>
+<h2 id="ui-controls">UI Controls</h2>
+<h3 id="felizpopover"><a href="https://zaid-ajaj.github.io/Feliz/#/Components/Popover">Feliz.Popover</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://github.com/littlebits/react-popover">react-popover</a>. <a href="https://www.nuget.org/packages/Feliz.Popover/">Get it!</a> </p>
+<h3 id="felizselectsearch"><a href="https://zaid-ajaj.github.io/Feliz/#/Components/SelectSearch">Feliz.SelectSearch</a></h3>
+<p>A binding for <a href="https://react-select-search.com/">react-select-search</a> that implements a searchable and customizable dropdown for Feliz applications. <a href="https://www.nuget.org/packages/Feliz.SelectSearch/">Get it!</a></p>
+<h3 id="felizkawaii"><a href="https://zaid-ajaj.github.io/Feliz/#/Components/Kawaii">Feliz.Kawaii</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://react-kawaii.vercel.app/">react-kawaii</a> which contains lovely SVG components. <a href="https://www.nuget.org/packages/Feliz.Kawaii/">Get it!</a></p>
+<h3 id="felizsweetalert"><a href="https://zaid-ajaj.github.io/Feliz/#/Misc/SweetAlert">Feliz.SweetAlert</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://sweetalert2.github.io/">sweetalert2 and sweetalert2-react-content</a> with Feliz style api for use within React applications. Implemented as both normal functions and Elmish commands, for maximum flexibility. <a href="https://www.nuget.org/packages/Feliz.SweetAlert/">Get it!</a></p>
+<h3 id="elmishsweetalert"><a href="https://zaid-ajaj.github.io/Elmish.SweetAlert/">Elmish.SweetAlert</a></h3>
+<p><a href="https://sweetalert2.github.io/">SweetAlert</a> integration for Fable, made with love to work in Elmish apps. <a href="https://www.nuget.org/packages/Elmish.SweetAlert/">Get it!</a></p>
+<h3 id="elmishtoastr"><a href="https://zaid-ajaj.github.io/Elmish.Toastr/">Elmish.Toastr</a></h3>
+<p>Toastr integration with Fable, implemented as Elmish commands. <a href="https://www.nuget.org/packages/Elmish.Toastr/">Get it!</a></p>
+<h3 id="elmishanimatedtree"><a href="https://github.com/Zaid-Ajaj/Elmish.AnimatedTree">Elmish.AnimatedTree</a></h3>
+<p>A fork and binding of <a href="https://github.com/drcmda/react-animated-tree">react-animated-tree</a>, adapted to properly work within Elmish applications. <a href="https://www.nuget.org/packages/Elmish.AnimatedTree/">Get it!</a></p>
+<h3 id="felizreacthamburger"><a href="https://compositionalit.github.io/feliz-hamburger-react/">Feliz.ReactHamburger</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://hamburger-react.netlify.app/">hamburger-react</a>. <a href="https://www.nuget.org/packages/Feliz.ReactHamburger/">Get it!</a></p>
+<h3 id="felizreactawesomeslider"><a href="https://akash-mair.github.io/feliz-react-awesome-slider/">Feliz.ReactAwesomeSlider</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://github.com/rcaferati/react-awesome-slider">react-awesome-slider</a>. <a href="https://www.nuget.org/packages/Feliz.ReactAwesomeSlider/">Get it!</a></p>
+<h3 id="felizreactselect"><a href="https://compositionalit.github.io/MultiSelect/">Feliz.ReactSelect</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://react-select.com/home">react-select</a>. <a href="https://www.nuget.org/packages/Feliz.ReactSelect/0.0.1-alpha">Get it!</a></p>
+<h3 id="fablereactflatpickr"><a href="https://zaid-ajaj.github.io/Fable.React.Flatpickr/">Fable.React.Flatpickr</a></h3>
+<p>Fable binding for <a href="https://www.npmjs.com/package/react-flatpickr">react-flatpickr</a> that is ready to use within Elmish applications. <a href="https://www.nuget.org/packages/Fable.React.Flatpickr/">Get it!</a></p>
+<h3 id="feliztippy"><a href="https://compositionalit.github.io/feliz-tippy/">Feliz.Tippy</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://github.com/atomiks/tippyjs-react">tippyjs-react</a>. <a href="https://www.nuget.org/packages/Feliz.Tippy/0.0.3-alpha">Get it!</a></p>
+<h3 id="felizreactspeedometer"><a href="https://compositionalit.github.io/Feliz-ReactSpeedometer/">Feliz.ReactSpeedometer</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://palerdot.in/react-d3-speedometer/">react-d3-speedometer</a>. <a href="https://www.nuget.org/packages/Feliz.ReactSpeedometer/">Get it!</a></p>
+<h3 id="fablereactkanban"><a href="https://github.com/uxsoft/Fable.ReactKanban">Fable.ReactKanban</a></h3>
+<p><a href="https://github.com/lourenci/react-kanban">React Kanban</a> bindings for Fable React. <a href="https://www.nuget.org/packages/Fable.ReactKanban/">Get it!</a></p>
+<h3 id="fablereactdrawingcanvas"><a href="https://github.com/davedawkins/Fable.React.DrawingCanvas">Fable.React.DrawingCanvas</a></h3>
+<p>This is a Fable React wrapper for canvas that allows you to declare a drawing. <a href="https://www.nuget.org/packages/Fable.React.DrawingCanvas/">Get it!</a></p>
+<h3 id="fablegroupingpanel"><a href="https://github.com/JordanMarr/Fable.GroupingPanel">Fable.GroupingPanel</a></h3>
+<p>An F# computation expression that groups Fable UI data into one or more collapsable panels. <a href="https://www.nuget.org/packages/Fable.GroupingPanel/">Get it!</a></p>
+<h2 id="data-visualisation">Data Visualisation</h2>
+<h3 id="felizaggrid"><a href="https://compositionalit.github.io/feliz-ag-grid/">Feliz.AgGrid</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://www.ag-grid.com/">ag-grid</a>. <a href="https://www.nuget.org/packages/Feliz.AgGrid/">Get it!</a></p>
+<h3 id="fablereactaggrid"><a href="https://danpowergruppe.github.io/Fable.ReactAgGrid/">Fable.ReactAgGrid</a></h3>
+<p>Fable bindings for <a href="https://www.ag-grid.com/">ag-grid</a>. <a href="https://www.nuget.org/packages/Fable.ReactAgGrid/">Get it!</a></p>
+<h3 id="felizreactflow"><a href="https://tforkmann.github.io/Feliz.ReactFlow/#/exampleflow">Feliz.Reactflow</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://reactflow.dev/">react flow</a>. <a href="https://www.nuget.org/packages/Feliz.ReactFlow/">Get it!</a></p>
+<h2 id="maps">Maps</h2>
+<h3 id="fablereactgooglemaps"><a href="https://github.com/fable-compiler/Fable.ReactGoogleMaps">Fable.ReactGoogleMaps</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://www.npmjs.com/package/react-google-maps">react-google-maps</a>. <a href="https://www.nuget.org/packages/Fable.ReactGoogleMaps/">Get it!</a></p>
+<h3 id="felizpigeonmaps"><a href="https://zaid-ajaj.github.io/Feliz/#/Visualizations/PigeonMaps">Feliz.PigeonMaps</a></h3>
+<p>Feliz-style bindings for <a href="https://github.com/mariusandra/pigeon-maps">pigeon-maps</a>, React maps without external dependencies. This binding includes it's own custom PigeonMaps.marker component to build map markers manually. <a href="https://www.nuget.org/packages/Feliz.PigeonMaps/">Get it!</a> </p>
+<h2 id="charting">Charting</h2>
+<h3 id="felizagchart"><a href="https://compositionalit.github.io/feliz-ag-charts/">Feliz.AgChart</a></h3>
+<p>Feliz-style bindings for <a href="https://www.ag-grid.com/react-charts/overview/">ag-charts</a>. <a href="https://www.nuget.org/packages/Feliz.AgChart/">Get it!</a></p>
+<h3 id="felizplotly"><a href="https://shmew.github.io/Feliz.Plotly/">Feliz.Plotly</a></h3>
+<p>Fable bindings for plotly.js and react-plotly.js with Feliz style api for use within React applications. Lets you build visualizations in an easy, discoverable, and safe fashion. <a href="https://www.nuget.org/packages/Feliz.Plotly/">Get it!</a></p>
+<h3 id="felizrecharts"><a href="https://zaid-ajaj.github.io/Feliz/#/Visualizations/Recharts">Feliz.Recharts</a></h3>
+<p>Feliz-style bindings for <a href="https://recharts.org/en-US/">recharts</a>, a composable charting library built on React components. The binding translates the original API of recharts in a one-to-one fashion but makes it type-safe and easily discoverable. <a href="https://www.nuget.org/packages/Feliz.Recharts/">Get it!</a> </p>
+<h3 id="felizroughviz"><a href="https://zaid-ajaj.github.io/Feliz/#/Visualizations/RoughViz">Feliz.RoughViz</a></h3>
+<p>Feliz-style Fable bindings for <a href="https://github.com/jwilber/roughViz">roughViz visualisation library</a>. It is a fun project when your data visualisations don't need to be formal. This binding is actually made to work with original rough-viz library than renders to the DOM rather than an existing third-party React library which makes it a nice example to learn from. <a href="https://www.nuget.org/packages/Feliz.RoughViz/">Get it!</a> </p>
+<h2 id="state-management">State management</h2>
+<h3 id="felizrecoil"><a href="https://zaid-ajaj.github.io/Feliz/#/Misc/Recoil">Feliz.Recoil</a></h3>
+<p>Fable bindings in Feliz style for Facebook's experimental state management library <a href="https://github.com/facebookexperimental/Recoil">recoil</a>. <a href="https://www.nuget.org/packages/Feliz.Recoil/">Get it!</a></p>
+<h2 id="testing">Testing</h2>
+<h3 id="fablejester"><a href="https://zaid-ajaj.github.io/Feliz/#/Testing/Frameworks/Jest">Fable.Jester</a></h3>
+<p>Fable bindings for <a href="https://jestjs.io/">jest</a> and friends for delightful Fable testing. <a href="https://www.nuget.org/packages/Fable.Jester/">Get it!</a></p>
+<h3 id="fablemocha"><a href="https://zaid-ajaj.github.io/Feliz/#/Testing/Frameworks/Mocha">Fable.Mocha</a></h3>
+<p>Fable library for testing. Inspired by the popular Expecto library for F# and adopts the testList, testCase and testCaseAsync primitives for defining tests. <a href="https://www.nuget.org/packages/Fable.Mocha/">Get it!</a></p>
+<h3 id="fablereacttestinglibrary"><a href="https://zaid-ajaj.github.io/Feliz/#/Testing/Utilities/RTL">Fable.ReactTestingLibrary</a></h3>
+<p>Fable bindings for <a href="https://testing-library.com/docs/react-testing-library/intro/">react-testing-library</a> and user-event. <a href="https://www.nuget.org/packages/Fable.ReactTestingLibrary/">Get it!</a></p>
+<h2 id="animation">Animation</h2>
+<h3 id="funreactspring"><a href="https://github.com/albertwoo/Fun.Animation">Fun.ReactSpring</a></h3>
+<p>Fable bindings for <a href="https://react-spring.io/">react spring</a>. <a href="https://www.nuget.org/packages/Fun.ReactSpring/1.0.0-beta8">Get it!</a></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+  <nav class="md-footer__inner md-grid" aria-label="Footer">
+
+    <!-- Link to previous page -->
+    
+    <a href="/docs/faq/faq-troubleshooting/"
+      title="Troubleshooting"
+      class="md-footer__link md-footer__link--prev"
+      aria-label="Troubleshooting"
+      rel="prev">
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path>
+        </svg>
+      </div>
+      <div class="md-footer__title">
+        <span class="md-footer__direction">
+          Previous
+        </span>
+        <div class="md-ellipsis">
+          Troubleshooting
+        </div>
+      </div>
+    </a>
+    
+
+    <!-- Link to next page -->
+    
+    <a href="/docs/learning/"
+      title="Learning"
+      class="md-footer__link md-footer__link--next"
+      aria-label="Learning"
+      rel="next">
+      <div class="md-footer__title">
+        <span class="md-footer__direction">
+          Next
+        </span>
+        <div class="md-ellipsis">
+          Learning
+        </div>
+      </div>
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path>
+        </svg>
+      </div>
+    </a>
+    
+
+  </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        Supported by
+        <a href="http://lambdafactory.pl">
+          λFactory</a>
+        and
+        <a href="https://compositional-it.com/">
+          Compositional IT</a>
+      </div>
+
+      <!-- Social links -->
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/SAFE-Stack" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/safe_stack" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://safe-stack.github.io/" target="_blank" rel="noopener" title="safe-stack.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.2 20.4 3.3 41.8 3.3 64zm28.8-64h123.1c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7zm-209 0H18.6c30-74.1 93.6-130.9 172-151.6-25.5 34.2-45.3 87.7-55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm186.6 254.6c-11.6-26-20.9-58.2-27-94.6h176.6c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5-11.2 10.7-20.5 13.9-27.8 13.9s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6-78.4-20.7-142-77.5-172-151.6h116.7zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.2-87.7 55.3-151.6h116.6z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognise your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
