@@ -59,6 +59,13 @@ let myApi =
     |> Remoting.buildProxy<IMyApi>
 ```
 
+> Note: We have made your life easier by creating Metapackages which abstract some of this boilerplate. You can also create the client proxy like so:
+> ```fsharp
+> open SAFE
+>
+> let myApi = Api.makeProxy<IMyApi> ()
+> ```
+
 #### 7. Make calls to the Server
 Replace the following two lines in the `init` function in `Client.fs`:
 
