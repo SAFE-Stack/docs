@@ -68,6 +68,7 @@ Html.h1 [ // this is now fine
 ## Guidance
 * Fable.React was created initially, whilst Feliz was developed some time later.
 * Feliz has better support for React interop and the majority of the community nowadays uses the Feliz DSL style for developing components.
-* As they are both wrappers around the same underlying technology (React) and Feliz uses some parts of Fable.React, you can actually mix and match the two in your applications as required.
+* Fable.React and Feliz can be mixed into your application if required (for progressive migration for example)
+
 
 * Also see [My journey with Feliz | A comparison between Fable.React and Feliz](https://github.com/Zaid-Ajaj/Feliz/issues/155).
