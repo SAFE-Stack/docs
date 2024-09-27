@@ -32,7 +32,7 @@ Html.h1 [
     prop.style [ style.color "Tomato" ]
     prop.children [
         Html.p [ prop.text "Hello" ]
-        Html.p [ prop.text "Another paragraph" ]
+        Html.p "Another paragraph"
         Html.h2 [ prop.style [ style.backgroundColor "Blue" ] ]
     ]
 ]
