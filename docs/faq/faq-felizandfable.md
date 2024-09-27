@@ -55,8 +55,7 @@ Html.h1 [ // not fine - can't mix and match attributes and elements
     Html.p [ prop.text "Hello" ]
 ]
 
-Html.h1 [ 
-    // fine, adding props, and adding children using prop.children
+Html.h1 [ // fine, adding props, and adding children using prop.children
     prop.style [ style.color "Tomato" ]
     prop.children [ Html.p [ prop.text "Hello" ] ]
 ]
