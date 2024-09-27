@@ -126,7 +126,7 @@ COPY src/Client src/Client
 # vite build command is run from otherwise styles will
 # be missing from the bundle
 COPY src/Client/tailwind.config.js .
-RUN dotnet fable src/Client --run npx vite build src/Client
+RUN dotnet fable src/Client -o src/Client/output --run npx vite build src/Client
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine
 COPY --from=server-build /workspace/deploy /app

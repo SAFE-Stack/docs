@@ -24,8 +24,10 @@ dotnet run
 ```
 you should instead use
 ```powershell
-dotnet run Runtests
+dotnet run WatchRunTests
 ```
+
+> Prior to template version 5.0.8, the command to run the tests was `dotnet run RunTests`
 
 #### 2. View the results
 
