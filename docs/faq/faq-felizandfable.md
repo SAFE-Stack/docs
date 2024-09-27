@@ -54,12 +54,9 @@ Html.h1 [ // not fine - can't mix and match attributes and elements
     prop.style [ style.color "Tomato" ]
     Html.p [ prop.text "Hello" ]
 ]
-```
 
-In order to allow both attributes and elements in the same list, Feliz introduces the `children` node:
-
-```fsharp
-Html.h1 [ // this is now fine
+Html.h1 [ 
+    // fine, adding props, and adding children using prop.children
     prop.style [ style.color "Tomato" ]
     prop.children [ Html.p [ prop.text "Hello" ] ]
 ]
