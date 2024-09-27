@@ -15,8 +15,8 @@ For example:
 
 ```fsharp
 h1 [ Style [ Color "Tomato" ] ] [
-    p [] [ text [ Value "Hello" ] [] ] // no props
-    p [] [ text [ Value "Another paragraph" ] [] ] // no props
+    p [] [ str "Hello" ] // no props
+    p [] [ str "Another paragraph" ] // no props
     h2 [ Style [ Color "Blue" ] ] [] // no child elements
 ]
 ```
