@@ -4,7 +4,7 @@
 
 As of SAFE version 5 (released in December 2023) it is included in the template by default so it can be used straight away.
 
-If you are are using the minimal template or if you are upgrading from an old version of SAFE, continue reading for installation instructions.
+If you are using the minimal template or if you are upgrading from an old version of SAFE, continue reading for installation instructions.
 
 1. [Add a stylesheet](https://safe-stack.github.io/docs/recipes/ui/add-style/) to the project
 

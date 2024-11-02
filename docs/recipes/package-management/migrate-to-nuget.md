@@ -49,7 +49,7 @@ Azure.Core (1.24)
 
 #### 4. Remove remaining paket files
 
-Once you have added all of your dependencies to the relevant `.fsproj` files, you can remove the folowing files and folders from your solution.
+Once you have added all of your dependencies to the relevant `.fsproj` files, you can remove the following files and folders from your solution.
     
 **Files:**
 * `paket.lock`

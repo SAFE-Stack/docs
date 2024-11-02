@@ -17,7 +17,7 @@ For SAFE apps we see various use cases for FAAS:
 
 The [Azure Portal](https://portal.azure.com) allows you to create and edit Functions and their source code via an online editor. 
 
-For a short test go to the portal, click the "New" button and search for "Function App". Click through the wizard to create a new Function App. Open the app when it's created and add a new function. Pick "Timer" as scenario and F# as language.
+For a short test go to the portal, click the "New" button and search for "Function App". Click through the wizard to create a new Function App. Open the app when it's created and add a new function. Pick "Timer" as the scenario and F# as the language.
 
 Replace the contents of function.json with:
 
@@ -50,7 +50,7 @@ and replace the run.fsx with the following F# code:
 
 Now observe the logs to see that the function runs every minute and outputs the message about the meetup duration.
 
-While it seems very convenient, the online editor should only be used for testing and prototyping. In SAFE-Stack you usually benefit from reusing your domain model at various places [see Client/Server](feature-clientserver.md) - so we recommend to use "precompiled Azure Functions" as described below.
+While it seems very convenient, the online editor should only be used for testing and prototyping. In SAFE-Stack you usually benefit from reusing your domain model at various places [see Client/Server](feature-clientserver.md) - so we recommend using "precompiled Azure Functions" as described below.
 
 ## Deployment
 In SAFE-Stack scenarios we recommend all deployments should be automated. Here, we discuss two options for deploying your functions apps into Azure.
@@ -68,4 +68,4 @@ In the case of a CI server etc., you will need to install the Functions Core Too
 ### HTTPS Upload
 Since Azure Functions sits on top of Azure App Service, the same mechanisms for deployment there also exist here. In this case, you can use the exact same HTTPS upload capabilities of the App Service to upload a zip of your functions app into your Functions app. The standard SAFE Template can generate this for you for the core SAFE application as part of the FAKE script; the exact same mechanism can be utilised for your functions app.
 
-As per the standard App Service, HTTPS upload uses a user/pass supplied in the header of the zip which is PUT into the functions app. This user / pass can be taken from the App Service in the Azure Portal directly, or extracted during deployment of your ARM template (as per the FAKE script does for the App Service).
+As per the standard App Service, HTTPS upload uses a user/pass supplied in the header of the zip which is PUT into the functions app. This user / pass can be taken from the App Service in the Azure Portal directly, or extracted during the deployment of your ARM template (as per the FAKE script does for the App Service).
