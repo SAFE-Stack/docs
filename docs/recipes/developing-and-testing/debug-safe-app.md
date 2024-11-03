@@ -1,7 +1,7 @@
 # How do I debug a SAFE app?
 
 ## I'm using Visual Studio
-In order to debug Server code from Visual Studio, we need set the correct URLs in the project's debug properties.
+In order to debug Server code from Visual Studio, we need to set the correct URLs in the project's debug properties.
 
 ### Debugging the Server
 
@@ -61,7 +61,7 @@ However, we can still debug it via the magic of source mapping. If you are using
 The exact instructions will depend on your browser, but essentially it simply involves:
 
 * Opening the Developer tools panel (usually by hitting F12).
-* Finding the F# file you want to add breakpoints to in the source of the website.
+* Find the F# file you want to add breakpoints to in the source of the website.
 * Add breakpoints to it in your browser inspector.
 
 ## I'm using VS Code
@@ -89,7 +89,7 @@ The server is now running. You can use the bar at the top of your screen to paus
 ### Debug the Client
 
 1. Start the Client by running `dotnet fable watch -o output -s --run npx vite` from `<repo root>/src/Client/`. 
-2. Open the Command Palettek using `ctrl+shift+p` and run `Debug: Open Link`. 
+2. Open the Command Palette using `ctrl+shift+p` and run `Debug: Open Link`. 
 3. When prompted for a url, type `http://localhost:8080/`. This will launch a browser which is pointed at the URL and connect the debugger to it. 
 4. You can now set breakpoints in your F# code by opening files via the "Loaded Scrips" tab in the debugger; setting breakpoints in files opened from disk does NOT work.
 

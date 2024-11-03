@@ -29,7 +29,7 @@ This repository shows how to use Azure services to implement a SAFE application 
 This application is a real-time chat application built on SAFE that uses the [AKKA framework](https://getakka.net/) to manage actors that represent chat users, including Akka Streams and the Akkling F# library.
 
 ### [SAFE Nightwatch](https://github.com/SAFE-Stack/SAFE-Nightwatch)
-This application is a sample mobile application using the [React Native](https://facebook.github.io/react-native/) library, built on top of the SAFE stack. React Native permits a very similar programming when writing SAFE applications as browser applications, so the experience should be very familiar to you.
+This application is a sample mobile application using the [React Native](https://facebook.github.io/react-native/) library, built on top of the SAFE stack. React Native permits very similar programming when writing SAFE applications as browser applications, so the experience should be very familiar to you.
 
 ## Videos
 

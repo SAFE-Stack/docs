@@ -1,6 +1,6 @@
 # How do I build with docker?
 
-Using [Docker](https://www.docker.com/) makes it possible to deploy your application as a docker container or release an image on docker hub. This recipe walks you through creating a `Dockerfile` and automating the build and test process with [Docker Hub](https://hub.docker.com/).
+Using [Docker](https://www.docker.com/) makes it possible to deploy your application as a docker container or release an image on the Docker hub. This recipe walks you through creating a `Dockerfile` and automating the build and test process with [Docker Hub](https://hub.docker.com/).
 
 #### 1. Create a .dockerignore file
 
@@ -55,7 +55,7 @@ This uses [multistage builds](https://docs.docker.com/develop/develop-images/mul
 
 1. Build the image `docker build -t my-safe-app .`
 2. Run the container `docker run -it -p 8080:8080 my-safe-app`
-3. Open the page in browser at [http://localhost:8080](http://localhost:8080)
+3. Open the page in a browser at [http://localhost:8080](http://localhost:8080)
 
 
 
@@ -86,7 +86,7 @@ To run the tests execute the command `docker-compose -f docker-compose.server.te
 
 > Not recommended for most applications
 
-If you often build with docker locally, you may wish to make the build faster by optimising the Dockerfile for caching. For example, it is not necessary to download all paket and npm dependencies on every build unless there have been changes to the dependencies.
+If you often build with Docker locally, you may wish to make the build faster by optimising the Dockerfile for caching. For example, it is not necessary to download all Paket and NPM dependencies on every build unless there have been changes to the dependencies.
 
 Furthermore, the client and server can be built in separate build stages so that they are cached independently. Enable [Docker BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/) to build them concurrently.
 

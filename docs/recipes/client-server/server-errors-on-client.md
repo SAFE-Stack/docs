@@ -4,7 +4,7 @@ SAFE Stack makes it easy to catch and handle exceptions raised by the server on 
 ---
 
 #### 1. Update the Model
-Update the model to store the error details that we receive from the server. Find the `Model` type in `src/Client/Index.fs` and add it the following `Errors` field:
+Update the model to store the error details that we receive from the server. Find the `Model` type in `src/Client/Index.fs` and add the following `Errors` field to it:
 
 ```fsharp
 type Model =

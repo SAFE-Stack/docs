@@ -24,7 +24,7 @@ let foo = importDefault "module-name" // F#
 
 #### Testing the import 
 
-To ensure that the import was successful you can console log the value and you should see the value in the browsers console window which you can get to by right-clicking and selecting the Inspect Element.
+To ensure that the import was successful, you can console log the value and you should see the value in the browser's console window, which you can get to by right-clicking and selecting the Inspect Element.
 ```fsharp
 Browser.Dom.console.log("imported value", foo)
 ```
@@ -42,7 +42,7 @@ import React from "react"
 
 #### Setup
 
-In some cases components can use the named export syntax. In the below case "module-name" has an object/function/class that is called `bar`. By referncing it below it is brought into the current scope. 
+In some cases components can use the named export syntax. In the below case "module-name" has an object/function/class that is called `bar`. By referencing it below, it is brought into the current scope. 
 For example, if the module below contained something like:
 ```javascript 
 export const bar (x,y) => x + y 
@@ -56,7 +56,7 @@ let bar = import "bar" "module-name" // F#
 ```
 #### Testing the import 
 
-To ensure that the import was successful you can console log the value and you should see the value in the browsers console window which you can get to by right-clicking and selecting the Inspect Element.
+To ensure that the import was successful, you can console log the value and you should see the value in the browser's console window, which you can get to by right-clicking and selecting the Inspect Element.
 ```fsharp
 Browser.Dom.console.log("imported value", bar)
 ```
@@ -69,7 +69,7 @@ import { useState } from "react"
 ```
 ### Entire module contents 
 
-In rare cases you may have to import an entire module's contents and provide an alias in the below case we named it myModule. You can now use dot notation to access anything that is exported from module-name. For example, if the module being imported below includes an export to a function `doAllTheAmazingThings()` you could access it like:
+In rare cases you may have to import an entire module's contents and provide an alias. In the below case we named it myModule. You can now use dot notation to access anything that is exported from module-name. For example, if the module being imported below includes an export to a function `doAllTheAmazingThings()` you could access it like:
 ```javascript
 myModule.doAllTheAmazingThings()
 ```
@@ -82,7 +82,7 @@ let myModule = importAll "module-name" // F#
 
 #### Testing the import 
 
-To ensure that the import was successful you can console log the value and you should see the value in the browsers console window which you can get to by right-clicking and selecting the Inspect Element.
+To ensure that the import was successful, you can console log the value and you should see the value in the browser's console window, which you can get to by right-clicking and selecting the Inspect Element.
 ```fsharp
 Browser.Dom.console.log("imported value", myModule)
 ```

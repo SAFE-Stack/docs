@@ -23,7 +23,7 @@
     ++     service_config (fun services -> services.AddSingleton<DatabaseRepository>())
     ```
 
-    > [This section](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0#lifetime-and-registration-options) of the official ASP .NET Core article explain the distinction between different lifetime registrations, such as Singleton and Transient.
+    > [This section](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0#lifetime-and-registration-options) of the official ASP .NET Core article explains the distinction between different lifetime registrations, such as Singleton and Transient.
 
 3. Ensure that your Fable Remoting API can access the `HttpContext` type by using the `fromContext` builder function.
     ```diff

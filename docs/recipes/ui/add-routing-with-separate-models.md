@@ -1,4 +1,4 @@
-﻿# How do I add routing to a SAFE app with separate model for every page?
+﻿# How do I add routing to a SAFE app with a separate model for every page?
 
 If your application has multiple separate components, there is no need to have one big, complex model that manages all the state for all components. In this recipe we separate the information of the todo list out of the main `Model`, and give the todo list application its own route. We also add a "Page not found" page.
 

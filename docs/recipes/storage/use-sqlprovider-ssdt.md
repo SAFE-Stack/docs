@@ -108,7 +108,7 @@ type DB =
         UseOptionTypes = Common.NullableColumnType.OPTION
     >
     
-//TO RELOAD SCHEMA: 1) uncomment the line below; 2) save; 3) recomment; 4) save again and wait.
+//TO RELOAD SCHEMA: 1) uncomment the line below; 2) save; 3) recommend; 4) save again and wait.
 //DB.GetDataContext().``Design Time Commands``.ClearDatabaseSchemaCache
 
 let createContext (connectionString: string) =
@@ -136,7 +136,7 @@ let getTodos (db: DB.dataContext) =
 
 let addTodo (db: DB.dataContext) (todo: Shared.Todo) =
     async {
-        let t = db.Dbo.Todos.Create()
+        let t = db.Dbo.Todos.Create() // or even better, use strongly typed .``Create(fields)``(...)
         t.Id <- todo.Id
         t.Description <- todo.Description
         t.IsDone <- false

@@ -1,4 +1,4 @@
-To use a third-party React library in a SAFE application, you need to write an F# wrapper around it. There are two ways for doing this - using [Feliz](https://zaid-ajaj.github.io/Feliz/) or using [Fable.React](https://www.nuget.org/packages/Fable.React/).
+To use a third-party React library in a SAFE application, you need to write an F# wrapper around it. There are two ways to do this - using [Feliz](https://zaid-ajaj.github.io/Feliz/) or using [Fable.React](https://www.nuget.org/packages/Fable.React/).
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ Feliz.Interop.reactApi.createElement (importDefault "react-d3-speedometer", crea
 import ReactSpeedometer from "react-d3-speedometer"
 ```
 
-The reason for using `importDefault` is the documentation for the component uses a default export "ReactSpeedometer". Please find a list of common import statetments at the end of this recipe
+The reason for using `importDefault` is the documentation for the component uses a default export "ReactSpeedometer". Please find a list of common import statements at the end of this recipe
 
 As a quick check to ensure that the library is being imported and we have no typos you can `console.log` the following at the top within the view function 
 
@@ -112,7 +112,7 @@ With all these in place, you can use the React element in your client like so:
 open ReactSpeedometer
 
 reactSpeedometer [
-    Prop.Value 10 // Since Value is already decalred in HTMLAttr you can use Prop.Value to tell the F# compiler its of type Prop and not HTMLAttr
+    Prop.Value 10 // Since Value is already decalred in HTMLAttr you can use Prop.Value to tell the F# compiler it is of type Prop and not HTMLAttr
     MaxValue 100
     MinValue 0 
     StartColor "red"
