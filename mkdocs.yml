@@ -115,6 +115,8 @@ nav:
           - Migrate to Paket from NuGet: "recipes/package-management/migrate-to-paket.md"
           - Migrate to NuGet from Paket: "recipes/package-management/migrate-to-nuget.md"
           - Sync NuGet and NPM Packages: "recipes/package-management/sync-nuget-and-npm-packages.md"
+          - Opt out of META packages: "recipes/package-management/opt-out-of-meta-packages.md"
+
       - Patterns:
           - Use Dependency Injection: "recipes/patterns/add-dependency-injection.md"
       - Client / Server:
