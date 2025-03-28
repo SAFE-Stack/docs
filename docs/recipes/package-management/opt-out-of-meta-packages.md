@@ -1,10 +1,10 @@
 # How do I opt out of Meta packages?
 
-By default, project created using the SAFE template depend on the SAFE.Meta packages. This package has a bit of behavior, but mainly exists to simplify dependency management; a standard SAFE app might very well exist with only two dependencies, being the SAFE.Client and SAFE.Server packages.
+By default, projects created using the SAFE template depend on the SAFE.Meta packages. This package provides functionality, but mainly exists to simplify dependency management; a standard SAFE app might very well exist with only two dependencies, being the SAFE.Client and SAFE.Server packages.
 
 If your app starts deviating a lot from the standard SAFE app, you might want to uninstall the SAFE.Meta packages, so that you can remove packages it pulls in. This recipe explains how to do so.
 
-## 1. Add the SAFE dependencies as explicitly to your SAFE app.
+## 1. Add the SAFE dependencies explicitly to your SAFE app.
 
 Add the packages that SAFE.Meta relies on as explicit dependencies:
 
@@ -144,7 +144,7 @@ and update the corresponding project files:
 ## 3. Use Paket to remove any redundant dependencies
 
 
-You're now able to remove any dependencies your do not need with Paket.
+You're now able to remove any dependencies you do not need with Paket.
 
 ```bash
 dotnet paket remove <package-name>
