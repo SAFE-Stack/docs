@@ -96,7 +96,6 @@ Navigate to the [SAFE.Meta repository](https://github.com/SAFE-Stack/SAFE.Meta) 
 
 and update the corresponding project files:
 
-
 ```diff title="Client.fsproj"
   <?xml version="1.0" encoding="utf-8"?>
   <Project Sdk="Microsoft.NET.Sdk">
@@ -142,7 +141,6 @@ and update the corresponding project files:
 ```
 
 ## 3. Use Paket to remove any redundant dependencies
-
 
 You're now able to remove any dependencies you do not need with Paket.
 
