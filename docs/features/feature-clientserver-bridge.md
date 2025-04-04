@@ -47,24 +47,24 @@ let update clientDispatch msg state =
         state, Cmd.none
 ```
 
-The above example mimics what would have been a `GET` request to the server to get user data from database. However, now the client sends a fire-and-forget message to the server to load users, and at some point the server messages the current client back with the results. Notice that the server could have decided to do other things than just messaging the client back: for example, it could have broadcasted the same message to other clients updating their local state of the users.
+The above example mimics what would have been a `GET` request to the server to get user data from a database. However, now the client sends a fire-and-forget message to the server to load users, and at some point the server messages the current client back with the results. Notice that the server could have decided to do other things than just messaging the client back: for example, it could have broadcasted the same message to other clients updating their local state of the users.
 
 ## When to use Elmish.Bridge
 There are many scenarios where it makes sense to use Elmish.Bridge:
 
 * Chat-like applications with many connected users through many channels
 * Syncing price data in real-time while viewing ticket prices
-* Multiplayer games that need real-time update of game states
+* Multiplayer games that need real-time updates of game states
 * Other applications of web sockets through an Elmish model
 
 ## Things to consider
-The biggest distinction between using this and "raw" Saturn is that your web server becomes a stateful service. This introduces several differences for application design.
+The biggest distinction between using this and "raw" Saturn is that your web server becomes a stateful service. This introduces several differences in application design.
 
-1. The server state has a lifespan equal to the that of the process under which the server instance is running. This means if the server application restarts then the server state will be reset.
+1. The server state has a lifespan equal to that of the process under which the server instance is running. This means if the server application restarts then the server state will be reset.
 
 2. The server state is *local to the server instance*. This means that if you run multiple web servers, they won't be sharing the same server state by default.
 
-As of now there is no built-in persistence for the state, but you can implement this yourself using any number of persistance layers such as Redis Cache, Azure Tables or Blobs etc.
+As of now there is no built-in persistence for the state, but you can implement this yourself using any number of persistence layers such as Redis Cache, Azure Tables or Blobs etc.
 
 In addition Elmish.Bridge does not use standard HTTP verbs for communication, but rather websockets. Therefore, it is not a suitable technology for an open web server that can serve requests from other sources than Elmish.Bridge clients.
 

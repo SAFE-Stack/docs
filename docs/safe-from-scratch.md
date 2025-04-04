@@ -24,7 +24,7 @@ dotnet new global.json
 ```
 
 ## 2. Creating client & server
-Now that we have basic core tools installed, we can go about creating a basic F# server and client and get them communicating with one another.
+Now that we have basic core tools installed, we can go about creating a basic F# server and client and get them to communicate with one another.
 
 ### 2.1 [Create a basic server application](https://github.com/CompositionalIT/safe-from-scratch/commit/90b4fcb6ef948886bb872b3b24d3e5a9d21ecdc0)
 * Create a folder e.g. `server`.
@@ -59,14 +59,14 @@ Now that we have a running HTTP server and the ability to create JS from F#, we 
 ```bash
 npm install vite
 ```
-> Vite is a multi-purpose tool used to aid development and packaging of JavaScript applications.
+> Vite is a multi-purpose tool used to aid the development and packaging of JavaScript applications.
 * You can now launch the application.
 ```bash
 dotnet fable watch -o output -s --run npx vite
 ```
     This command tells Fable to compile all F# into the `output` folder and then launches Vite, which acts as a local development web server.
 
-* You should see output in your terminal similar to this:
+* You should see the output in your terminal similar to this:
 
 ![](img/safe-from-scratch-1.png)
 
@@ -96,14 +96,14 @@ Now that we have a (very) basic F# client/server app, we'll now add support for 
 
 * Add the **react** and **react-dom** packages to your NPM dependencies.
 * Add the **@vitejs/plugin-react** and **remotedev** packages to your NPM dev dependencies.
-* Add react to the list of plugins in your vite config.
+* Add react to the list of plugins in your Vite config.
 
 ### 3.2 [Add F# React support](https://github.com/CompositionalIT/safe-from-scratch/commit/1409820300e2b09db11003c077ff3e2c82f6d9d2)
 Now that we have React added to our application, we can add the appropriate F# libraries such as Feliz to start to use React in a typesafe, F#-friendly manner.
 
 * Add the **Feliz** NuGet package to the Client project.
 * Remove the `<button>` element from the `index.html` - we'll be creating it dynamically with React from now on.
-* Add an empty `<div>` with an named `id` to the body of the `index.html`. This will be the "root" element that React will attach to from which to make HTML elements.
+* Add an empty `<div>` with a named `id` to the body of the `index.html`. This will be the "root" element that React will attach to from which to make HTML elements.
 * Using the Feliz React wrapper types, replace the contents of your `Program.fs` in the Client project so that it creates a React button that can behave as the original static HTML button.
 
 ### 3.3 [Add JSX support *(optional)*](https://github.com/CompositionalIT/safe-from-scratch/commit/78e4093502ec4b8281ec5c14f113e3ad14b4a6f6)
@@ -126,7 +126,7 @@ This next section takes advantage of F#'s typing for both client and server.
     * Add the **Fable.Remoting.Giraffe** package.
     * Create a new folder, `shared`, and a `Contracts.fs` file  inside it.
     * Reference this file from both Client and Server projects.
-    * Inside this file create an API type and a Route builder to be used by Fable Remoting (so that client and server can route traffic).
+    * Inside this file create an API type and a Route builder to be used by Fable Remoting (so that the client and server can route traffic).
     * On the Server, create an implementation of the Api you just defined, convert it to an Http Handler and replace the `text  "Hello world"` call with it.
 * **On the Client**:
     * Add the **Fable.Remoting.Client** package.

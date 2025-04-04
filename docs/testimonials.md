@@ -5,7 +5,7 @@ Please feel free to submit a PR to add testimonials to this page!
 
 > SAFE gives us a fast development cycle for our web and mobile platforms
 
-We at [msu solutions GmbH](https://msu-solutions.de/) are big fans of SAFE stack. For the last couple of years we were already using F# open source technologies for web and mobile projects. Tools like the Fable compiler and elmish are rock solid and a pleasure to work with.
+We at [msu solutions GmbH](https://msu-solutions.de/) are big fans of SAFE stack. For the last couple of years we were already using F# open source technologies for web and mobile projects. Tools like the Fable compiler and Elmish are rock solid and a pleasure to work with.
 
 Since the release of SAFE, we see that all these important technologies are now bundled and tested under one big umbrella. 
 Especially the commercial support for SAFE is very important for us and our customers.
@@ -32,14 +32,14 @@ Porting a production web app from TypeScript/React to use the SAFE stack turned 
 On the front end, the Elmish pattern, which may look intimidating at first glance, is actually quite fun and intuitive to write.  More importantly, it guides you into the "pit of success" by making you write _highly testable_ "pure functions" that outline your UI state transitions (in your `update` function).  Putting all state transitions in one place becomes a breath of fresh air because it eliminates the spaghetti code that can happen in MVVM view models of even modest complexity.  Do you have a complex "sort" that needs to be handled in your `update`?  You can easily write a unit test in F# that passes in the relevant command input for that.  No mocking is required because it will be a pure function!  
 If you still feel leery of the Elmish pattern, you are free to use React Hooks API or any other pattern you prefer.  There are also many excellent external libraries - i.e. Feliz - that allow you to optionally use the Elmish pattern on only certain pages, among other things.  
 
-Worried about getting stuck?  Don't worry because the F# community will practially crawl all over themselves to be the first to answer you question. There are also options for professional consultation as well.  The community support is amazing!
+Worried about getting stuck?  Don't worry because the F# community will practically crawl all over themselves to be the first to answer your question. There are also options for professional consultation as well.  The community support is amazing!
 The SAFE stack is designed to be as turn-key as possible, but there are also plenty of opportunities to customize the stack as you see fit.  
 
 Overall, the SAFE stack has allowed me to completely spoil a very demanding customer with timely, bug-free deliverables. 
 
 ## Jake Witcher
 
-> I really appreciate the effort that went in to this!
+> I really appreciate the effort that went into this!
 
 The F# SAFE stack documentation is incredibly well done. One of the best features is the learning resources page that includes GitHub repos of example projects.
 
