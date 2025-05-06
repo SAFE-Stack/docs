@@ -16,6 +16,7 @@ Check out the following recipe here to install tailwind: [Add Tailwind](https://
 
 Create a file named tsconfig.json in `/src/Client` and add the following:
 
+```json
 {
     "files": [],
     "compilerOptions": {
@@ -27,6 +28,7 @@ Create a file named tsconfig.json in `/src/Client` and add the following:
         }
     }
 }
+```
 
 1. Install shadcn/ui
 
