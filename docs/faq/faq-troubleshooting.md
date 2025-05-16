@@ -1,3 +1,26 @@
+### Dotnet watch cannot open '.fsproj' project
+
+At the time of writing, the release of .net9.0 has precipitated an issue where `dotnet watch` fails:
+
+```sh
+dotnet watch ❌ System.InvalidOperationException: Cannot open project 'D:\code\TodoService\src\app\app.fsproj' because the file extension '.fsproj' is not associated with a language.
+```
+
+Besides deferring upgrading `.net`, [it is possible to fix this issue](https://github.com/dotnet/sdk/issues/44908#issuecomment-2483510197) by modifying the arguments passed to `dotnet` when running the `Server` project in `Build.fs`:
+
+```fs
+Target.create "Run" (fun _ ->
+    run dotnet [ "restore"; "Application.sln" ] "."
+    run dotnet [ "build" ] sharedPath
+
+    [
+                                                          // `--no-hot-reload` applied fix for dotnet cannot open project
+        "server", dotnet [ "watch"; "run"; "--no-restore" ; "--no-hot-reload"] serverPath
+        "client", dotnet [ "fable"; "watch"; "-o"; "output"; "-s"; "--run"; "npx"; "vite" ] clientPath
+    ]
+    |> runParallel)
+```
+
 ### Run error due to node/npm version
 
 You may receive an error when trying to run the app, e.g. the current version might require `{"node":"~18 || ~20","npm":"~9 || ~10"}` but your locally installed versions are different. Ideally we'd like to install different versions side-by-side, which we can do using [Node Version Manager](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/).
