@@ -9,9 +9,7 @@ We will be using the [Feliz.Shadcn](https://github.com/reaptor/feliz.shadcn) wra
 
 Check out the following recipe here to install Tailwind: [Add Tailwind](https://safe-stack.github.io/docs/recipes/ui/add-tailwind/)
 
-#### 2. Move `package.json` & `package-lock.json` to `/src/Client`
-
-#### 3. Configure import alias in tsconfig:
+#### 2. Configure import alias in tsconfig:
 
 Create a file named `tsconfig.json` in `/src/Client` and add the following:
 
@@ -29,7 +27,7 @@ Create a file named `tsconfig.json` in `/src/Client` and add the following:
 }
 ```
 
-#### 4. Update the `vite.config.mts` within `/src/Client`
+#### 3. Update the `vite.config.mts` within `/src/Client`
 
 Add the `resolve` property below under the `defineConfig`
 
@@ -45,7 +43,7 @@ export default defineConfig({
 });
 ```
 
-#### 5. Install shadcn/ui
+#### 4. Install shadcn/ui
 
 > Note: ensure your node version is > 20.5.0
 
@@ -55,7 +53,7 @@ npx shadcn@latest init
 
 You will be asked a few questions to configure components.json
 
-#### 6. Add Feliz.Shadcn
+#### 5. Add Feliz.Shadcn
 
 Inside the `/src/Client` directory run:
 
@@ -63,7 +61,7 @@ Inside the `/src/Client` directory run:
 dotnet add package Feliz.Shadcn
 ```
 
-#### 7. Start adding any shadcn component
+#### 6. Start adding any shadcn component
 
 Specify first which components you want to use.
 You can find the list of available components [here](https://reaptor.github.io/Feliz.Shadcn/):
@@ -72,7 +70,7 @@ You can find the list of available components [here](https://reaptor.github.io/F
 npx shadcn@latest add button
 ```
 
-#### 8. Use it in Feliz:
+#### 7. Use it in Feliz:
 
 ```fsharp
 open Feliz.Shadcn
