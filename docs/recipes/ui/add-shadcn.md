@@ -1,5 +1,7 @@
 # How do I add shadcn to a SAFE project?
 
+> Note: The SAFE.Template has recently been updated to move `package.json` and `package-lock.json`. If you are using a version of the template prior to this change, you will need to move those files into the `src/Client` directory. For reference, here is the [PR](https://github.com/SAFE-Stack/SAFE-template/pull/658) detailing this change.
+
 Integrating Feliz.Shadcn into your SAFE Stack application is straightforward. The following example demonstrates how to integrate Shadcn copmonents within an existing SAFE app.
 
 We will be using the [Feliz.Shadcn](https://github.com/reaptor/feliz.shadcn) wrapper written by [reaptor](https://github.com/reaptor)
@@ -47,6 +49,7 @@ export default defineConfig({
 
 > Note: ensure your node version is > 20.5.0
 
+Inside the `/src/Client` directory run:
 ```
 npx shadcn@latest init
 ```
@@ -56,7 +59,6 @@ You will be asked a few questions to configure components.json
 #### 5. Add Feliz.Shadcn
 
 Inside the `/src/Client` directory run:
-
 ```
 dotnet add package Feliz.Shadcn
 ```
@@ -66,6 +68,7 @@ dotnet add package Feliz.Shadcn
 Specify first which components you want to use.
 You can find the list of available components [here](https://reaptor.github.io/Feliz.Shadcn/):
 
+Inside the `/src/Client` directory run:
 ```
 npx shadcn@latest add button
 ```
