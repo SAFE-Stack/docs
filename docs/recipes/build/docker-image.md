@@ -26,7 +26,6 @@ Now, add the following lines to the `.dockerignore` file:
 Create a `Dockerfile` with the following contents:
 
 ```dockerfile
-
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 # Install node
