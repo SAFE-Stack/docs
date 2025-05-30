@@ -26,6 +26,7 @@ Now, add the following lines to the `.dockerignore` file:
 Create a `Dockerfile` with the following contents:
 
 ```dockerfile
+
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 # Install node
@@ -39,6 +40,13 @@ RUN apt-get update && apt-get install nodejs -y
 
 WORKDIR /workspace
 COPY . .
+
+# Install npm dependencies
+WORKDIR /workspace/src/Client
+RUN npm ci
+
+# Restore tools and build
+WORKDIR /workspace
 RUN dotnet tool restore
 RUN dotnet run Bundle
 
@@ -118,8 +126,8 @@ COPY src/Server src/Server
 RUN cd src/Server && dotnet publish -c release -o ../../deploy
 
 FROM build as client-build
-COPY package.json package-lock.json ./
-RUN npm install
+COPY src/Client/package.json src/Client/package-lock.json src/Client/
+RUN cd src/Client && npm install
 COPY src/Shared src/Shared
 COPY src/Client src/Client
 # tailwind.config.js needs to be in the dir where the
