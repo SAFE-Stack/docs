@@ -57,3 +57,24 @@ For more info, see this [issue](https://github.com/SAFE-Stack/SAFE-template/issu
 ### Server port change
 
 The port that the server runs on changed from 8085 to 5000 (the ASP.NET Core default) in v4 of the SAFE Template. This was to make it compatible with deployment to Azure App Service on Linux.
+
+### Cannot connect to the Client app when running in a VS Code Dev Container
+
+There is an [open issue](https://github.com/microsoft/vscode-remote-release/issues/7029) for VS Code not forwarding ports for services using IPv6 inside a Dev Container. Node uses IPv6 if it's available, so out of the box we cannot connect to the client.
+
+Until Microsoft resolve that issue there are 2 ways to work around it:
+
+1. **Disable IPv6 in the Dev Container** by adding a runArgs setting in `.devcontainer/devcontainer.json`:
+
+```diff
+    "image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
++   "runArgs": [ "--sysctl", "net.ipv6.conf.all.disable_ipv6=1"],
+```
+
+2. Alternatively, **force the Client app to use IPv4 only** by specifying hostname in the Vite config `src/Client/vite.config.mts`:
+
+```diff
+    server: {
+        port: 8080,
++       host: "127.0.0.1",
+```
