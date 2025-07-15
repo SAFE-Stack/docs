@@ -89,10 +89,10 @@ This will remove the Meta packages from paket.lock, and may, depending on how up
 
 If you are using any of the code supplied by the Meta packages, you need to copy the code into your own project:
 
-Navigate to the [SAFE.Meta repository](https://github.com/SAFE-Stack/SAFE.Meta) and copy the following files into your repository:
+Navigate to the [SAFE.Utils repository](https://github.com/SAFE-Stack/SAFE.Utils) and copy the following files into your repository:
 
-* src/SAFE.Client/SAFE.fs -> src/Client/SAFE.fs
-* src/SAFE.Server/SAFE.fs -> src/Server/SAFE.fs
+* src/Client/SAFE.fs -> src/Client/SAFE.fs
+* src/Server/SAFE.fs -> src/Server/SAFE.fs
 
 and update the corresponding project files:
 
