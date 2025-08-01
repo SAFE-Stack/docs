@@ -33,6 +33,7 @@
 			1. `dotnet paket add <package> --keep-minor`. This will download the latest version of the package you required *but will not update any associated dependencies outside of their existing major version*.
 
 ### Javascript tools and dependencies
+1. **Move package.json & package-lock.json to `src/Client`**
 1. **Update all dependencies.**
 	1. Replace `package.json` with [this file](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/package.json).
 	1. Replace `package-lock.json` with [this file](https://raw.githubusercontent.com/SAFE-Stack/SAFE-template/master/Content/default/package-lock.json).
