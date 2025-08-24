@@ -18,7 +18,7 @@ The cleanest way to add your own stylesheet is to create a new file e.g. `src/Cl
     ```
 
 ## Method B: Import without `index.css`
-In order for Vite to know that there are styles to be bundled, you must import them into your app. By default this is already configured for `index.css` but if you don't have it set up, not to worry! Follow these steps:
+In order for Vite to know that there are styles to be bundled, you must import them into your app. By default this is already configured for `index.css`, but if you don't have it set up, don't worry! Follow these steps:
 
 1. Create your custom css file in `src/Client`, e.g. `custom-style.css`
 1. Direct Fable to emit an import for your style file.

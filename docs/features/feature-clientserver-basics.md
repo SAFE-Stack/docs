@@ -22,7 +22,7 @@ Reference this project from your server project. You can now reference those typ
 Finally, reference this project in your client project (as above). You can now reference those types on the client; Fable will automatically convert your F# types into JavaScript in the background.
 
 ## Sharing Behaviour
-You can also share behaviour using the same mechanism at that for sharing types. This is extremely useful for e.g shared validation or business logic that needs to occur on both client and server.
+You can also share behaviour using the same mechanism as for sharing types. This is extremely useful for e.g shared validation or business logic that needs to occur on both client and server.
 
 Fable will translate your functions into native JavaScript, and will even translate many calls to the .NET base class library into corresponding JavaScript! This allows you to compile your domain model and domain logic to many many different targets including:
 
@@ -35,4 +35,4 @@ Fable will translate your functions into native JavaScript, and will even transl
 You can read more about this [on the Fable website](http://fable.io/docs/compatibility.html).
 
 ## Conditional sharing
-When sharing assets between client and server, you may wish to have different implementations for the "client" and "server" sides. For example, if the client-side version of a function should call an NPM package but the server-side version should use a NuGet package. This is a more advanced scenario where you may require different implementations for the JS and .NET version of code. In such situations, you can use `#IF` directives to conditionally compile code for either platform - see the [Fable](https://fable.io/) website for more information.
+When sharing assets between client and server, you may wish to have different implementations for the "client" and "server" sides. For example, if the client-side version of a function should call an NPM package but the server-side version should use a NuGet package. This is a more advanced scenario where you may require different implementations for the JS and .NET versions of code. In such situations, you can use `#IF` directives to conditionally compile code for either platform - see the [Fable](https://fable.io/) website for more information.

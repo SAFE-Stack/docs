@@ -3,7 +3,7 @@
 
 When using basic HTTP communication between the client and server, you'll need to consider how to deserialize data from JSON to F# types.
 
-In order to guarantee that the serialization / deserialization routines between client and server are compatible, you should replace the JSON converter in Giraffe / Saturn with the [Thoth](https://mangelmaxime.github.io/Thoth/index.html) library's serializer. This is the same library as that used in Fable for deserialization, and so will work seamlessly together.
+In order to guarantee that the serialization / deserialization routines between client and server are compatible, you should replace the JSON converter in Giraffe / Saturn with the [Thoth](https://mangelmaxime.github.io/Thoth/index.html) library's serializer. This is the same library as that used in Fable for deserialization, and so they will work seamlessly together.
 
 ```fsharp
 let configureSerialization (services:IServiceCollection) =
@@ -22,7 +22,7 @@ type Customer =
 ```
 
 ### Automatic Decoders
-Automatic decoders are the quickest and easier way to deserialize data. It works by Thoth trying to decode JSON automatically from a raw string to an F# type using automatic mapping rules. In the sample below, we fetch data from the `/api/customers` endpoint and have Thoth create a strongly-typed Decoder for a `Customer` array.
+Automatic decoders are the quickest and easiest way to deserialize data. It works by Thoth trying to decode JSON automatically from a raw string to an F# type using automatic mapping rules. In the sample below, we fetch data from the `/api/customers` endpoint and have Thoth create a strongly-typed Decoder for a `Customer` array.
 
 ```fsharp
 fetchAs<Customer []> "/api/customers" (Decode.Auto.generateDecoder()) []
@@ -49,7 +49,7 @@ Notice how the decoder is bound to a single Customer, and not an array. This way
 Manual decoders give you total control over how you rehydrate an object from JSON. Use them when:
 
 * The JSON does not directly map 1:1 with your F# types
-* You want flexibility to evolve JSON and F# types independently
+* You want the flexibility to evolve JSON and F# types independently
 * You are calling an external service and need fine-grained control over the deserialization process
 * You are using F# on the client and another language on the server
 

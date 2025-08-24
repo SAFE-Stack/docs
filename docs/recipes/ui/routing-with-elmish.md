@@ -182,7 +182,7 @@ type Model =
 ```
 ## 6. Initializing the application
 
-Create a function that initializes the app based on an url
+Create a function that initializes the app based on a url
 
 ```fsharp title="Index.fs"
 let initFromUrl url =

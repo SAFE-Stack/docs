@@ -28,7 +28,7 @@ let customerIsValid customer =
 If at any point you realise you need to use both the `Customer` type and the `customerIsValid` function both in the Client and the Server, all you need to do is to move both of them to `Shared` project. You can either put them in the `Shared.fs` file, or create your own file in the Shared project (eg. `Customer.fs`). After this, you will be able to use both the `Customer` type and the `customerIsValid` function in both the Client and the Server.
 
 ## Serialization
-SAFE comes out of the box with [Fable.Remoting] or [Thoth] for serialization. These will handle transport of data seamlessly for you.
+SAFE comes out of the box with [Fable.Remoting] or [Thoth] for serialization. These will handle the transport of data seamlessly for you.
 
 ## Considerations
 

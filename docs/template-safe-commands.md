@@ -14,7 +14,7 @@ Used for development purposes, and provides a great live-reload experience. It p
 dotnet run Bundle
 ```
 
-Used to both build and package up your application in a production fashion, ready for deployment. It will restore all dependencies and build both the client and server in a production and release mode respectively, and correctly copy the outputs into the `deploy` folder in the root of the application. Once your build has completed, you can launch the entire application locally to test it as follows:
+Used to both build and package up your application in a production fashion, ready for deployment. It will restore all dependencies and build both the client and server in a production and release mode respectively, and correctly copy the outputs into the `deploy` folder in the root of the application. Once your build has been completed, you can launch the entire application locally to test it as follows:
 
 ```powershell
 cd deploy
